@@ -1,10 +1,17 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["prettier", "@typescript-eslint", "prettier/@typescript-eslint"],
   "extends": [
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/babel"
   ],
+  "plugins": ["@typescript-eslint", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "es6": true,
+    "node": true
+  },
   "rules": {
     "prettier/prettier": "error"
   }
