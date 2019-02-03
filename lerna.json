@@ -8,7 +8,7 @@
       "conventionalCommits": true,
       "access": "public",
       "npmClient": "yarn",
-      "allowBranch": ["master", "feature/*"]
+      "allowBranch": ["feature/*"]
     }
   }
 }
