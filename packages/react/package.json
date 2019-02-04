@@ -1,38 +1,67 @@
 {
-  "name": "@frontendrangers/platoon-react",
-  "version": "0.0.0",
-  "description": "A themeable component library for React",
-  "keywords": [
-    "react"
-  ],
-  "author": "Benoit Deziel <bdeziel@landr.com>",
-  "homepage": "https://github.com/FrontendRangers/platoon#readme",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "directories": {
-    "lib": "dist",
-    "test": "__tests__"
-  },
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FrontendRangers/platoon.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/FrontendRangers/platoon/issues"
-  },
-  "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "styled-components": "^4.1.3"
-  },
-  "devDependencies": {
-    "@types/react": "^16.8.1",
-    "@types/react-dom": "^16.0.11"
-  }
+    "name": "@frontendrangers/platoon-react",
+    "version": "0.0.0",
+    "description": "A themeable component library for React",
+    "keywords": [
+        "react"
+    ],
+    "author": "Benoit Deziel <bdeziel@landr.com>",
+    "homepage": "https://github.com/FrontendRangers/platoon#readme",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "directories": {
+        "lib": "dist",
+        "test": "__tests__"
+    },
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/FrontendRangers/platoon.git"
+    },
+    "scripts": {
+        "prebuild": "tsc",
+        "build": "",
+        "test": "jest --passWithNoTests",
+        "lint": "run-p -c lint:*",
+        "lint:ts": "eslint './**/*.ts{,x}'",
+        "lint:css": "stylelint './**/*.ts{,x}'"
+    },
+    "bugs": {
+        "url": "https://github.com/FrontendRangers/platoon/issues"
+    },
+    "dependencies": {
+        "react": "^16.7.0",
+        "react-dom": "^16.7.0",
+        "styled-components": "^4.1.3"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.2.3",
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.3.1",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/preset-typescript": "^7.1.0",
+        "@types/node": "^10.12.21",
+        "@types/react": "^16.8.1",
+        "@types/react-dom": "^16.0.11",
+        "prettier": "^1.16.4",
+        "tslint": "^5.12.1",
+        "tslint-config-prettier": "^1.17.0",
+        "tslint-plugin-prettier": "^2.0.1",
+        "tslint-react": "^3.6.0",
+        "typescript": "^3.3.1"
+    },
+    "peerDependencies": {
+        "typescript": "^3.3.1"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ]
 }
