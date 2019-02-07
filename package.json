@@ -25,9 +25,11 @@
         "typescript": "^3.3.1"
     },
     "scripts": {
-        "test": "lerna run test",
+        "bootstrap": "lerna bootstrap",
+        "build": "lerna build",
+        "test": "lerna test",
         "commit": "git-cz",
-        "prerelease": "lerna run build",
+        "prerelease": "lerna build",
         "release": "lerna publish"
     },
     "config": {
