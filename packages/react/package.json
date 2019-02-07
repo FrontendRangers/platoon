@@ -24,8 +24,8 @@
         "url": "git+https://github.com/FrontendRangers/platoon.git"
     },
     "scripts": {
-        "prebuild": "tsc",
-        "build": "",
+        "prebuild": "rimraf ./dist",
+        "build": "tsc",
         "test": "jest --passWithNoTests",
         "lint": "run-p -c lint:*",
         "lint:ts": "eslint './**/*.ts{,x}'",
