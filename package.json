@@ -26,10 +26,10 @@
     },
     "scripts": {
         "bootstrap": "lerna bootstrap",
-        "build": "lerna build",
-        "test": "lerna test",
+        "build": "lerna run build",
+        "test": "lerna run test",
         "commit": "git-cz",
-        "prerelease": "lerna build",
+        "prerelease": "lerna run build",
         "release": "lerna publish"
     },
     "config": {
