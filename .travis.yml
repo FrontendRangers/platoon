@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-    - 'stable'
+    - "10.8.0"
 os:
     - linux
 
@@ -19,7 +19,7 @@ script:
 
 deploy:
     provider: script
-    script: 'yarn run release'
+    script: "yarn run release"
     skip_cleanup: true
     on:
         tags: true
