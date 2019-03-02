@@ -1,6 +1,7 @@
 # Platoon
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/FrontendRangers/platoon.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/FrontendRangers/platoon.svg?style=flat-square)](https://greenkeeper.io/)
+[![Known Vulnerabilities](https://snyk.io/test/github/FrontendRangers/platoon/badge.svg?style=flat-square)](https://snyk.io/test/github/{username}/{repo})
 
 A themeable UI kit for React &amp; Vue.
 
