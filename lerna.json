@@ -1,5 +1,7 @@
 {
-  "packages": ["packages/*"],
+  "packages": [
+    "packages/*"
+  ],
   "version": "independent",
   "useWorkspaces": true,
   "npmClient": "yarn",
@@ -8,7 +10,9 @@
       "conventionalCommits": true,
       "access": "public",
       "npmClient": "yarn",
-      "allowBranch": ["feature/*"]
+      "allowBranch": [
+        "feature/*"
+      ]
     }
   }
 }

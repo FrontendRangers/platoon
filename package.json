@@ -5,24 +5,40 @@
         "packages/*"
     ],
     "devDependencies": {
+        "@babel/cli": "^7.2.3",
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.3.1",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/preset-typescript": "^7.1.0",
         "@types/jest": "^24.0.6",
         "@types/node": "^11.9.4",
+        "@types/react": "^16.8.1",
+        "@types/react-dom": "^16.0.11",
+        "@vue/cli-plugin-babel": "^3.4.0",
+        "@vue/cli-plugin-typescript": "^3.4.0",
+        "@vue/cli-service": "^3.4.0",
         "commitizen": "^3.0.5",
         "cz-lerna-changelog": "^2.0.0",
         "eslint": "^5.13.0",
         "husky": "^1.3.1",
         "jest": "^24.0.0",
-        "lerna": "^3.10.7",
+        "lerna": "^3.13.1",
         "lint-staged": "^8.1.3",
         "npm-run-all": "^4.1.5",
         "prettier": "^1.16.4",
         "rimraf": "^2.6.3",
+        "semantic-release": "^15.13.3",
         "stylelint": "^9.10.1",
         "stylelint-config-standard": "^18.2.0",
         "stylelint-config-styled-components": "^0.1.1",
         "stylelint-processor-styled-components": "^1.5.2",
         "ts-jest": "^24.0.0",
-        "typescript": "^3.3.1"
+        "tslint": "^5.12.1",
+        "tslint-config-prettier": "^1.17.0",
+        "tslint-plugin-prettier": "^2.0.1",
+        "tslint-react": "^3.6.0",
+        "typescript": "^3.3.1",
+        "vue-template-compiler": "^2.5.21"
     },
     "scripts": {
         "bootstrap": "lerna bootstrap",
@@ -36,5 +52,12 @@
         "commitizen": {
             "path": "./node_modules/cz-lerna-changelog"
         }
+    },
+    "dependencies": {
+        "@frontendrangers/platoon-core": "file:packages/core",
+        "@frontendrangers/platoon-react": "file:packages/react",
+        "@frontendrangers/platoon-vue": "file:packages/vue",
+        "example-react": "file:packages/example-react",
+        "example-vue": "file:packages/example-vue"
     }
 }
