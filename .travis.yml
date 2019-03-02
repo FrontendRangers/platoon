@@ -14,8 +14,17 @@ install:
     - yarn global add lerna
     - lerna bootstrap
 
+matrix:
+    include:
+        - name: "React Pipeline"
+          env: PACKAGE_LOCATION=packages/react
+        - name: "Vue Pipeline"
+          env: PACKAGE_LOCATION=packages/vue
+
 script:
-    - lerna run test
+    - cd $PACKAGE_LOCATION
+    - yarn test
+    - yarn build
 
 deploy:
     provider: script

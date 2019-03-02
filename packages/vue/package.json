@@ -21,7 +21,8 @@
         "url": "git+https://github.com/FrontendRangers/platoon.git"
     },
     "scripts": {
-        "test": "echo \"No tests yet\" && exit 0"
+        "test": "echo \"No tests yet\" && exit 0",
+        "build": "echo \"No build yet\" && exit 0"
     },
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"
