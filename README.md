@@ -1,5 +1,7 @@
 # Platoon
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/FrontendRangers/platoon.svg)](https://greenkeeper.io/)
+
 A themeable UI kit for React &amp; Vue.
 
 > This project is a work in progress
