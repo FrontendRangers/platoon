@@ -14,19 +14,14 @@ install:
   - yarn global add lerna rimraf typescript
   - lerna bootstrap
 
-env:
-  - PACKAGE_LOCATION=packages/react
-  - PACKAGE_LOCATION=packages/vue
-
 script:
   - cd $PACKAGE_LOCATION
 
 jobs:
   include:
-    - stage: build
+    - stage: test
       script:
-        - yarn test
-        - yarn build
+        - "lerna test"
     - stage: npm release
       before_deploy:
         - "yarn version"
