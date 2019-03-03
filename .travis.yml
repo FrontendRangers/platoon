@@ -21,13 +21,13 @@ matrix:
     - name: "Vue Pipeline"
       env: PACKAGE_LOCATION=packages/vue
 
-script:
-  - cd $PACKAGE_LOCATION
-  - yarn test
-  - yarn build
-
 jobs:
   include:
+    - stage: build
+      script:
+        - cd $PACKAGE_LOCATION
+        - yarn test
+        - yarn build
     - stage: npm release
       before_deploy:
         - "yarn version"
