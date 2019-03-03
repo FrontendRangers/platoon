@@ -14,14 +14,11 @@ install:
   - yarn global add lerna rimraf typescript
   - lerna bootstrap
 
-script:
-  - cd $PACKAGE_LOCATION
-
 jobs:
   include:
     - stage: test
       script:
-        - "lerna test"
+        - "lerna run test"
     - stage: npm release
       before_deploy:
         - "yarn version"
