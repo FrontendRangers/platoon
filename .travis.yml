@@ -20,8 +20,6 @@ jobs:
       script:
         - yarn test
     - stage: npm release
-      script:
-        - yarn bump
       deploy:
         - provider: script
           script: yarn release
