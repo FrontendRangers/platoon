@@ -21,7 +21,7 @@ jobs:
         - yarn test
     - stage: npm release
       script:
-        - yarn version
+        - yarn bump
       deploy:
         - provider: script
           script: yarn release

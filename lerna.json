@@ -6,9 +6,10 @@
     "command": {
         "version": {
             "conventionalCommits": true,
-            "access": "public",
-            "npmClient": "yarn",
             "allowBranch": ["master", "next", "feat/*", "fix/*"]
+        },
+        "publish": {
+            "access": "public"
         }
     }
 }
