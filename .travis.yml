@@ -12,15 +12,15 @@ cache:
 
 install:
   - yarn global add lerna rimraf typescript
-  - lerna bootstrap
+  - yarn bootstrap
 
 jobs:
   include:
-    - stage: test
+    - stage: tests
       script:
-        - lerna run test
+        - yarn test
     - stage: npm release
-      before_deploy:
+      script:
         - yarn version
       deploy:
         - provider: script
