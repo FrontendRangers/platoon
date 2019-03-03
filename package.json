@@ -45,7 +45,8 @@
         "build": "lerna run build",
         "test": "lerna run test",
         "commit": "git-cz",
-        "prerelease": "lerna run build",
+        "bump": "lerna version --yes",
+        "prerelease": "yarn build",
         "release": "lerna publish"
     },
     "config": {
