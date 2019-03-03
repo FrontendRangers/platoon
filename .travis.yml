@@ -19,10 +19,13 @@ jobs:
     - stage: tests
       script:
         - yarn test
-    - stage: npm release
-      deploy:
-        - provider: script
-          script: yarn release
-          skip_cleanup: true
-          on:
-            tags: true
+    - stage: build
+      script:
+        - yarn build
+    # - stage: npm release
+    #   deploy:
+    #     - provider: script
+    #       script: yarn release
+    #       skip_cleanup: true
+    #       on:
+    #         tags: true
