@@ -1,18 +1,14 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "version": "independent",
-  "useWorkspaces": true,
-  "npmClient": "yarn",
-  "command": {
-    "publish": {
-      "conventionalCommits": true,
-      "access": "public",
-      "npmClient": "yarn",
-      "allowBranch": [
-        "feature/*"
-      ]
+    "packages": ["packages/*"],
+    "version": "independent",
+    "useWorkspaces": true,
+    "npmClient": "yarn",
+    "command": {
+        "publish": {
+            "conventionalCommits": true,
+            "access": "public",
+            "npmClient": "yarn",
+            "allowBranch": ["feat/*", "fix/*"]
+        }
     }
-  }
 }

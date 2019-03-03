@@ -26,6 +26,9 @@ script:
     - yarn test
     - yarn build
 
+before_deploy:
+    - lerna version --yes
+
 deploy:
     provider: script
     script: "yarn run release"
