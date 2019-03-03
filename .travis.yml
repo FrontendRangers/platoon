@@ -1,37 +1,39 @@
 language: node_js
 
 node_js:
-    - "10.8.0"
+  - "10.8.0"
 os:
-    - linux
+  - linux
 
 cache:
-    yarn: true
-    directories:
-        - node_modules
+  yarn: true
+  directories:
+    - node_modules
 
 install:
-    - yarn global add lerna rimraf typescript
-    - lerna bootstrap
+  - yarn global add lerna rimraf typescript
+  - lerna bootstrap
 
 matrix:
-    include:
-        - name: "React Pipeline"
-          env: PACKAGE_LOCATION=packages/react
-        - name: "Vue Pipeline"
-          env: PACKAGE_LOCATION=packages/vue
+  include:
+    - name: "React Pipeline"
+      env: PACKAGE_LOCATION=packages/react
+    - name: "Vue Pipeline"
+      env: PACKAGE_LOCATION=packages/vue
 
 script:
-    - cd $PACKAGE_LOCATION
-    - yarn test
-    - yarn build
+  - cd $PACKAGE_LOCATION
+  - yarn test
+  - yarn build
 
-before_deploy:
-    - lerna version --yes
-
-deploy:
-    provider: script
-    script: "yarn run release"
-    skip_cleanup: true
-    on:
-        tags: true
+jobs:
+  include:
+    - stage: npm release
+      before_deploy:
+        - "yarn version"
+      deploy:
+        - provider: script
+          script: "yarn release"
+          skip_cleanup: true
+          on:
+            tags: true

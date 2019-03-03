@@ -4,11 +4,11 @@
     "useWorkspaces": true,
     "npmClient": "yarn",
     "command": {
-        "publish": {
+        "version": {
             "conventionalCommits": true,
             "access": "public",
             "npmClient": "yarn",
-            "allowBranch": ["feat/*", "fix/*"]
+            "allowBranch": ["master", "next", "feat/*", "fix/*"]
         }
     }
 }
