@@ -18,13 +18,13 @@ jobs:
   include:
     - stage: test
       script:
-        - "lerna run test"
+        - lerna run test
     - stage: npm release
       before_deploy:
-        - "yarn version"
+        - yarn version
       deploy:
         - provider: script
-          script: "yarn release"
+          script: yarn release
           skip_cleanup: true
           on:
             tags: true
