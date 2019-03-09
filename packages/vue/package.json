@@ -5,7 +5,7 @@
     "keywords": [
         "vue"
     ],
-    "author": "Benoit Deziel <bdeziel@landr.com>",
+    "author": "Benoit Deziel <ben@benoitdeziel.com>",
     "homepage": "https://github.com/FrontendRangers/platoon#readme",
     "license": "MIT",
     "main": "dist/index.js",

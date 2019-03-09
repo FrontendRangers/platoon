@@ -6,7 +6,7 @@
         "react",
         "uikit"
     ],
-    "author": "Benoit Deziel <bdeziel@landr.com>",
+    "author": "Benoit Deziel <ben@benoitdeziel.com>",
     "homepage": "https://github.com/FrontendRangers/platoon#readme",
     "license": "MIT",
     "main": "dist/index.js",
@@ -30,7 +30,9 @@
         "test": "echo \"No tests yet\" && exit 0",
         "lint": "run-p -c lint:*",
         "lint:ts": "eslint './**/*.ts{,x}'",
-        "lint:css": "stylelint './**/*.ts{,x}'"
+        "lint:css": "stylelint './**/*.ts{,x}'",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
     },
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"
@@ -48,5 +50,21 @@
         "not dead",
         "not ie <= 11",
         "not op_mini all"
-    ]
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.3.4",
+        "@storybook/addon-actions": "^5.0.1",
+        "@storybook/addon-info": "^5.0.1",
+        "@storybook/addon-links": "^5.0.1",
+        "@storybook/addons": "^5.0.1",
+        "@storybook/react": "^5.0.1",
+        "@types/storybook__addon-actions": "^3.4.2",
+        "@types/storybook__addon-links": "^3.3.4",
+        "@types/storybook__react": "^4.0.1",
+        "@types/styled-components": "^4.1.12",
+        "awesome-typescript-loader": "^5.2.1",
+        "babel-loader": "^8.0.5",
+        "react-docgen-typescript-webpack-plugin": "^1.1.0",
+        "typescript-plugin-styled-components": "^1.3.0"
+    }
 }
