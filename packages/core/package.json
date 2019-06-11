@@ -25,5 +25,8 @@
     },
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"
+    },
+    "dependencies": {
+        "typescript": "^3.5.1"
     }
 }

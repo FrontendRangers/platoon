@@ -17,7 +17,8 @@
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": true,
         "declaration": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "types": ["react"]
     },
     "include": ["**/*.ts", "**/*.tsx"],
     "exclude": ["node_modules", "**/*.spec.tsx", "**/*.stories.tsx"]

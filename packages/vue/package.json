@@ -31,7 +31,7 @@
         "url": "https://github.com/FrontendRangers/platoon/issues"
     },
     "dependencies": {
-        "vue": "^2.5.22",
-        "vue-styled-components": "^1.4.4"
+        "typescript": "^3.5.1",
+        "vue": "^2.6.10"
     }
 }

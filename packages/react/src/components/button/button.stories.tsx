@@ -1,15 +1,15 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
 
 import Button from './index';
+import HeartIcon from '../../icons/heart';
 
-storiesOf('Button', module)
-    .add('with text', () => <Button>Hello Button</Button>)
-    .add('with some emoji', () => (
-        <Button>
-            <span role="img" aria-label="so cool">
-                😀 😎 👍 💯
-            </span>
+storiesOf('Components|Button', module)
+    .add('with text', () => <Button>Hello</Button>)
+    .add('as a link', () => <Button href="#">Hello</Button>)
+    .add('with an icon', () => <Button icon={<HeartIcon />}>Hello</Button>)
+    .add('with an icon on the right', () => (
+        <Button icon={<HeartIcon />} iconPosition="right">
+            Hello
         </Button>
     ));
