@@ -1,5 +1,7 @@
 {
-    "packages": ["packages/*"],
+    "packages": [
+        "packages/*"
+    ],
     "version": "independent",
     "useWorkspaces": true,
     "npmClient": "yarn",
@@ -8,7 +10,12 @@
             "conventionalCommits": true,
             "registry": "http://localhost:4873",
             "access": "public",
-            "allowBranch": ["master", "next", "feat/*", "fix/*"],
+            "allowBranch": [
+                "master",
+                "next",
+                "feat/*",
+                "fix/*"
+            ],
             "yes": true
         }
     }
