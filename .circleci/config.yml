@@ -35,6 +35,8 @@ jobs:
             - run:
                   name: Run Build
                   command: yarn run build
+                  environment:
+                      SKIP_PREFLIGHT_CHECK: "true"
 
             - run:
                   name: Run Tests

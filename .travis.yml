@@ -14,6 +14,9 @@ install:
   - yarn global add lerna rimraf typescript
   - yarn bootstrap
 
+env:
+  - SKIP_PREFLIGHT_CHECK=true
+
 jobs:
   include:
     - stage: tests
