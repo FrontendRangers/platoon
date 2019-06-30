@@ -11,7 +11,9 @@
         "commit": "git-cz",
         "bump": "lerna version --yes",
         "prerelease": "yarn build",
-        "release": "cross-env HUSKY_BYPASS=true lerna publish"
+        "release": "cross-env HUSKY_BYPASS=true lerna publish",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
     },
     "config": {
         "commitizen": {
@@ -35,29 +37,38 @@
         "example-react": "file:packages/example-react"
     },
     "devDependencies": {
+        "@babel/core": "^7.4.5",
+        "babel-loader": "^8.0.6",
         "@commitlint/cli": "^8.0.0",
         "@commitlint/config-conventional": "^8.0.0",
-        "@types/styled-components": "^4.1.16",
+        "@storybook/preset-typescript": "^1.1.0",
+        "@storybook/react": "^5.1.9",
         "@typescript-eslint/eslint-plugin": "^1.11.0",
         "@typescript-eslint/parser": "^1.11.0",
         "commitizen": "^3.1.1",
         "cross-env": "^5.2.0",
         "cz-lerna-changelog": "^2.0.2",
         "eslint": "^6.0.1",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-import-resolver-lerna": "^1.1.0",
+        "eslint-plugin-import": "^2.18.0",
+        "eslint-plugin-jest": "^22.7.1",
+        "eslint-plugin-jsx-a11y": "^6.2.1",
         "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-react": "^7.14.2",
         "husky": "^2.4.0",
         "lerna": "^3.15.0",
         "lint-staged": "^8.2.0",
         "npm-run-all": "^4.1.5",
         "prettier": "^1.18.2",
-        "react": "^16.8.6",
-        "react-dom": "^16.8.6",
+        "react-docgen-typescript-loader": "^3.1.0",
         "rimraf": "^2.6.3",
         "semantic-release": "^15.13.12",
-        "styled-components": "^4.3.2",
         "stylelint": "^10.1.0",
         "stylelint-config-standard": "^18.3.0",
-        "typescript": "^3.5.1",
-        "webpack": "^4.33.0"
+        "ts-loader": "^6.0.4",
+        "typescript": "^3.5.2",
+        "webpack": "^4.33.0",
+        "styled-components": "^4.3.1"
     }
 }

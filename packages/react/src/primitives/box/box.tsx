@@ -1,68 +1,70 @@
-import styled from 'styled-components';
+import React from 'react';
+// import styled from 'styled-components';
 
-export const Box = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-        'topLeft topCenter topRight'
-        'middleLeft ... middleRight'
-        'bottomLeft bottomCenter bottomRight';
+export interface BoxProps {}
 
-    && > * {
-        /* outline: 1px solid rebeccapurple; */
-        /* text-align: center; */
-    }
-`;
+const Box = (props: BoxProps) => <div {...props}></div>;
 
-export const Top = styled.div`
-    grid-area: topLeft / topLeft / topLeft / topRight;
-`;
+// Box.Element = styled.div`
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     grid-template-rows: 1fr 1fr 1fr;
+//     grid-template-areas:
+//         'topLeft topCenter topRight'
+//         'middleLeft ... middleRight'
+//         'bottomLeft bottomCenter bottomRight';
+// `;
 
-export const TopLeft = styled.div`
-    grid-area: topLeft;
-`;
+// Box.Top = styled.div`
+//     grid-area: topLeft / topLeft / topLeft / topRight;
+// `;
 
-export const TopCenter = styled.div`
-    grid-area: topCenter;
-`;
+// Box.TopLeft = styled.div`
+//     grid-area: topLeft;
+// `;
 
-export const TopRight = styled.div`
-    grid-area: topRight;
-`;
+// Box.TopCenter = styled.div`
+//     grid-area: topCenter;
+// `;
 
-export const Middle = styled.div`
-    grid-area: middleLeft / middleRight;
-`;
+// Box.TopRight = styled.div`
+//     grid-area: topRight;
+// `;
 
-export const MiddleLeft = styled.div`
-    grid-area: middleLeft;
-`;
+// Box.Middle = styled.div`
+//     grid-area: middleLeft / middleRight;
+// `;
 
-export const MiddleRight = styled.div`
-    grid-area: middleRight;
-`;
+// Box.MiddleLeft = styled.div`
+//     grid-area: middleLeft;
+// `;
 
-export const Left = styled.div`
-    grid-area: topLeft / topLeft / bottomLeft / topLeft;
-`;
+// Box.MiddleRight = styled.div`
+//     grid-area: middleRight;
+// `;
 
-export const Right = styled.div`
-    grid-area: topRight / bottomRight / bottomRight / BottomRight;
-`;
+// Box.Left = styled.div`
+//     grid-area: topLeft / topLeft / bottomLeft / topLeft;
+// `;
 
-export const Bottom = styled.div`
-    grid-area: bottomLeft / bottomLeft / bottomLeft / bottomRight;
-`;
+// Box.Right = styled.div`
+//     grid-area: topRight / bottomRight / bottomRight / BottomRight;
+// `;
 
-export const BottomLeft = styled.div`
-    grid-area: bottomLeft;
-`;
+// Box.Bottom = styled.div`
+//     grid-area: bottomLeft / bottomLeft / bottomLeft / bottomRight;
+// `;
 
-export const BottomCenter = styled.div`
-    grid-area: bottomCenter;
-`;
+// Box.BottomLeft = styled.div`
+//     grid-area: bottomLeft;
+// `;
 
-export const BottomRight = styled.div`
-    grid-area: bottomRight;
-`;
+// Box.BottomCenter = styled.div`
+//     grid-area: bottomCenter;
+// `;
+
+// Box.BottomRight = styled.div`
+//     grid-area: bottomRight;
+// `;
+
+export default Box;

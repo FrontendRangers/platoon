@@ -12,13 +12,13 @@
         "forceConsistentCasingInFileNames": true,
         "noImplicitReturns": true,
         "noImplicitThis": true,
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": true,
         "declaration": true,
         "esModuleInterop": true,
-        "types": ["react"]
+        "types": ["react", "node"]
     },
     "include": ["**/*.ts", "**/*.tsx"],
     "exclude": ["node_modules", "**/*.spec.tsx", "**/*.stories.tsx"]
