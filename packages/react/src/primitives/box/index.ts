@@ -1,5 +1,5 @@
-import Box from './Box';
+import Box from './Box-temp';
 
-export * from './Box';
+export * from './Box-temp';
 
 export default Box;
