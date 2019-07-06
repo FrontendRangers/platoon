@@ -30,7 +30,7 @@
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"
     },
-    "dependencies": {
+    "peerDependencies": {
         "typescript": "^3.5.2",
         "vue": "^2.6.10"
     }
