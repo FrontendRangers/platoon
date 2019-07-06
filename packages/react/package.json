@@ -1,82 +1,80 @@
 {
-  "name": "@frontendrangers/platoon-react",
-  "version": "0.0.2",
-  "description": "A themeable component library for React",
-  "keywords": [
-    "react",
-    "uikit"
-  ],
-  "author": "Benoit Deziel <ben@benoitdeziel.com>",
-  "homepage": "https://github.com/FrontendRangers/platoon#readme",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "directories": {
-    "lib": "dist",
-    "test": "__tests__"
-  },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FrontendRangers/platoon.git"
-  },
-  "scripts": {
-    "prebuild": "rimraf ./dist",
-    "build": "tsc",
-    "test": "echo \"No tests yet\" && exit 0",
-    "lint": "run-p -c lint:*",
-    "lint:ts": "eslint './**/*.ts{,x}'",
-    "lint:css": "stylelint './**/*.ts{,x}'",
-    "start": "yarn run storybook",
-    "docz": "docz dev",
-    "docz:build": "docz build",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "bugs": {
-    "url": "https://github.com/FrontendRangers/platoon/issues"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@storybook/addon-a11y": "^5.1.9",
-    "@storybook/addon-actions": "^5.1.9",
-    "@storybook/addon-centered": "^5.1.9",
-    "@storybook/addon-contexts": "^5.1.9",
-    "@storybook/addon-knobs": "^5.1.9",
-    "@storybook/addon-links": "^5.1.9",
-    "@storybook/addons": "^5.1.9",
-    "@storybook/preset-typescript": "^1.1.0",
-    "@storybook/react": "^5.1.9",
-    "@types/node": "^12.0.10",
-    "@types/react": "^16.8.22",
-    "@types/storybook__react": "^4.0.2",
-    "@types/styled-components": "^4.1.16",
-    "@types/styled-system": "^4.2.1",
-    "babel-loader": "^8.0.6",
-    "react": "^16.8.6",
-    "react-docgen-typescript-loader": "^3.1.0",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.3.1",
-    "ts-loader": "^6.0.4",
-    "typescript": "^3.5.2",
-    "webpack": "^4.35.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.3.1"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "dependencies": {
-    "styled-system": "^5.0.12"
-  }
+    "name": "@frontendrangers/platoon-react",
+    "version": "0.0.2",
+    "description": "A themeable component library for React",
+    "keywords": [
+        "react",
+        "uikit"
+    ],
+    "author": "Benoit Deziel <ben@benoitdeziel.com>",
+    "homepage": "https://github.com/FrontendRangers/platoon#readme",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "directories": {
+        "lib": "dist",
+        "test": "__tests__"
+    },
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/FrontendRangers/platoon.git"
+    },
+    "scripts": {
+        "prebuild": "rimraf ./dist",
+        "build": "tsc",
+        "test": "echo \"No tests yet\" && exit 0",
+        "lint": "run-p -c lint:*",
+        "lint:ts": "eslint './**/*.ts{,x}'",
+        "lint:css": "stylelint './**/*.ts{,x}'",
+        "start": "yarn run storybook",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook",
+        "docz": "docz dev",
+        "docz:build": "docz build"
+    },
+    "bugs": {
+        "url": "https://github.com/FrontendRangers/platoon/issues"
+    },
+    "dependencies": {
+        "typescript": "^3.5.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.5.0",
+        "@storybook/addon-actions": "^5.1.9",
+        "@storybook/addon-links": "^5.1.9",
+        "@storybook/addons": "^5.1.9",
+        "@storybook/preset-typescript": "^1.1.0",
+        "@storybook/react": "^5.1.9",
+        "@types/node": "^12.0.12",
+        "@types/react": "^16.8.23",
+        "@types/storybook__react": "^4.0.2",
+        "@types/styled-components": "^4.1.16",
+        "babel-loader": "^8.0.6",
+        "eslint-plugin-jest": "^22.7.2",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "react": "^16.8.6",
+        "react-docgen-typescript-loader": "^3.1.0",
+        "react-dom": "^16.8.6",
+        "styled-components": "^4.3.2",
+        "ts-loader": "^6.0.4"
+    },
+    "peerDependencies": {
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "styled-components": "^4.3.2"
+    },
+    "resolutions": {
+        "@types/react": "^16.8.19"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ]
 }
