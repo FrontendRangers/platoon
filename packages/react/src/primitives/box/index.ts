@@ -1,3 +1,5 @@
-import { Box } from './box';
+import Box from './Box';
 
-export default { Box };
+export * from './Box';
+
+export default Box;
