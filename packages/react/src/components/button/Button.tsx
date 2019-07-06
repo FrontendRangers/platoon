@@ -5,7 +5,7 @@ import { space, SpaceProps } from 'styled-system';
 
 export interface ButtonProps extends SpaceProps {
     children?: React.ReactNode;
-    icon?: any;
+    icon?: Function;
 }
 
 const Button = ({ children, icon, ...props }: ButtonProps) => (

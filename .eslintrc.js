@@ -1,11 +1,14 @@
 module.exports = {
     root: true,
     extends: [
-        'plugin:jest/recommended',
+        'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:jest/recommended',
+        'plugin:prettier/recommended',
+        'plugin:react/recommended',
         'prettier',
-        'prettier/react',
         'prettier/@typescript-eslint',
+        'prettier/react',
     ],
     plugins: [
         '@typescript-eslint',
@@ -19,15 +22,20 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 8,
         sourceType: 'module',
-        ecmaFeatures: {
-            jsx: true,
-        },
     },
     env: { es6: true, node: true, 'jest/globals': true },
     settings: {
+        react: {
+            version: 'detect',
+        },
         'import/resolver': {
             node: { extensions: ['.js', '.ts', '.tsx'] },
         },
     },
-    rules: {},
+    rules: {
+        'prettier/prettier': ['error', { singleQuote: true }],
+        '@typescript-eslint/no-explicit-any': 0,
+        '@typescript-eslint/explicit-member-accessibility': 0,
+        '@typescript-eslint/explicit-function-return-type': 0,
+    },
 };
