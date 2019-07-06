@@ -41,6 +41,7 @@
         "url": "https://github.com/FrontendRangers/platoon/issues"
     },
     "dependencies": {
+        "styled-system": "^5.0.12",
         "typescript": "^3.5.2"
     },
     "devDependencies": {
