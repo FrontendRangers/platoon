@@ -24,10 +24,5 @@
         "not ie <= 11",
         "not op_mini all"
     ],
-    "devDependencies": {
-        "@storybook/addon-actions": "^5.1.9",
-        "@storybook/addon-links": "^5.1.9",
-        "@storybook/addons": "^5.1.9",
-        "@storybook/react": "^5.1.9"
-    }
+    "devDependencies": {}
 }
