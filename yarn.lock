@@ -9751,9 +9751,9 @@ gatsby-transformer-sharp@^2.2.1:
     sharp "^0.22.1"
 
 gatsby@^2.13.6:
-  version "2.13.7"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.13.7.tgz#0d8c223612c6e77a8e9cef1d75c0bdf7c5a21896"
-  integrity sha512-wgPJSOUxto9BasEeIRn0BqoYFp4xkzjJ4J53PO8EpvOrEeA/r1MVTOMtG6+D1r74xL9yKwANYOWZxCYtpT+hDQ==
+  version "2.13.9"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.13.9.tgz#9952acb547a217b3e104ab7f90549ca4e74d2ae1"
+  integrity sha512-h/MpRGfifFE1J47eGatF0TEl8JepnG+g4hI2ZrFSWiH/1NuiVH9exZLvsNT9E48m9GFW9YVnRExsmoEjpLcmWA==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -9854,7 +9854,6 @@ gatsby@^2.13.6:
     react-dev-utils "^4.2.3"
     react-error-overlay "^3.0.0"
     react-hot-loader "^4.12.5"
-    read-package-tree "^5.3.1"
     redux "^4.0.0"
     redux-thunk "^2.3.0"
     semver "^5.6.0"
@@ -17484,7 +17483,7 @@ read-installed@~4.0.3:
   optionalDependencies:
     graceful-fs "^4.1.2"
 
-read-package-tree@^5.1.6, read-package-tree@^5.2.2, read-package-tree@^5.3.1:
+read-package-tree@^5.1.6, read-package-tree@^5.2.2:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/read-package-tree/-/read-package-tree-5.3.1.tgz#a32cb64c7f31eb8a6f31ef06f9cedf74068fe636"
   integrity sha512-mLUDsD5JVtlZxjSlPPx1RETkNjjvQYuweKwNVt1Sn8kP5Jh44pvYuUHCp6xSVDZWbNxVxG5lyZJ921aJH61sTw==
