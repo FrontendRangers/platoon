@@ -1,28 +1,32 @@
 {
-    "name": "example-react",
-    "version": "0.1.2",
-    "private": true,
-    "dependencies": {
-        "@types/react-dom": "^16.8.4",
-        "react": "16.8.6",
-        "react-dom": "^16.8.6",
-        "react-scripts": "^3.0.1",
-        "typescript": "^3.5.2"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "echo \"No tests yet\" && exit 0",
-        "eject": "react-scripts eject"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "browserslist": [
-        ">0.2%",
-        "not dead",
-        "not ie <= 11",
-        "not op_mini all"
-    ],
-    "devDependencies": {}
+  "name": "example-react",
+  "version": "0.1.2",
+  "private": true,
+  "dependencies": {
+    "@types/react-dom": "^16.8.4",
+    "react": "16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^3.0.1",
+    "typescript": "^3.5.2",
+    "snyk": "^1.192.6"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "echo \"No tests yet\" && exit 0",
+    "eject": "react-scripts eject",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {},
+  "snyk": true
 }
