@@ -26,6 +26,7 @@ Button.Element = styled.button`
     /* To theme */
     padding: 0 0.8em;
     background-color: #e5e5e5;
+    color: #fff;
     font-size: 1rem;
     line-height: 2rem;
 

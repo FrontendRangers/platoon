@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import Button from './';
 import HeartIcon from '../../icons/heart';
 
-storiesOf('Components|Button', module)
+storiesOf('Components|Actions.Button', module)
     .add('with text', () => <Button>Hello</Button>)
     .add('with an icon', () => <Button icon={HeartIcon}>Eat</Button>)
     .add('multiple', () => (
