@@ -22,3 +22,9 @@ A themeable UI kit for React &amp; Vue.
 **Platoon Vue**
 
 ![Platoon Vue](https://img.shields.io/npm/v/@frontendrangers/platoon-vue.svg?style=flat-square)
+
+## Development
+
+[Storybook React](http://localhost:6006/)
+[React example](http://localhost:3000/)
+[Documentation site](http://localhost:8000/)
