@@ -13,7 +13,8 @@
         "prerelease": "yarn build",
         "release": "cross-env HUSKY_BYPASS=true lerna publish",
         "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "build-storybook": "build-storybook",
+        "build-website": "lerna run build --scope=platoon-website"
     },
     "config": {
         "commitizen": {
