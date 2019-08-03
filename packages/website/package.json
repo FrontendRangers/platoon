@@ -27,6 +27,9 @@
         "@types/react": "^16.8.24",
         "@types/react-dom": "^16.8.5",
         "@types/react-helmet": "^5.0.8",
+        "docz": "^2.0.0-rc.1",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
         "typescript": "^3.5.2"
     },
     "keywords": [
