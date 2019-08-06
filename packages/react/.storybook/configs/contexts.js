@@ -18,10 +18,14 @@ export const contexts = [
         title: 'Themes',
         components: [AppProvider],
         params: [
-            { name: 'Light Theme', props: { theme } },
+            { name: 'No theme', props: { theme: {} } },
+            {
+                name: 'Light Theme',
+                props: { theme: { ...theme, mode: 'light' } },
+            },
             {
                 name: 'Dark Theme',
-                props: { theme },
+                props: { theme: { ...theme, mode: 'dark' } },
                 default: true,
             },
         ],
