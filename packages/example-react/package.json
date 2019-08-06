@@ -3,7 +3,7 @@
     "version": "0.1.2",
     "private": true,
     "dependencies": {
-        "@types/react-dom": "^16.8.5",
+        "@frontendrangers/platoon-react": "^0.0.2",
         "react": "16.8.6",
         "react-dom": "^16.8.6",
         "react-scripts": "^3.0.1",
@@ -24,5 +24,8 @@
         "not ie <= 11",
         "not op_mini all"
     ],
-    "devDependencies": {}
+    "devDependencies": {
+        "@types/react": "^16.8.24",
+        "@types/react-dom": "^16.8.5"
+    }
 }

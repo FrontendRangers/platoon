@@ -205,7 +205,7 @@ const Components = {
     },
 };
 
-export default {
+export const theme = {
     ...tokens,
     ...Components,
 };

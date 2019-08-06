@@ -23,10 +23,10 @@ const Button = ({
     children,
     icon,
     variant,
-    onClick,
+    onClick = () => {},
     ...props
 }: ButtonProps) => (
-    <Button.Element variant={variant} {...props} onClick={() => onClick!()}>
+    <Button.Element variant={variant} {...props} onClick={() => onClick()}>
         {!!icon && <Button.Icon>{icon()}</Button.Icon>}
         {children}
     </Button.Element>
@@ -62,4 +62,4 @@ Button.defaultProps = {
     type: 'button',
 };
 
-export default Button;
+export { Button };

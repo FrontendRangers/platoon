@@ -1,6 +1,6 @@
 import React from 'react';
-import PlatoonThemeProvider from '../../src/themes/themeProvider';
-import GlobalStyles from '../../src/themes/globals';
+import { PlatoonThemeProvider } from '../../src/themes/themeProvider';
+import { GlobalStyles } from '../../src/themes/globals';
 import theme from '../../src/themes/theme';
 
 const AppProvider = ({ theme, children }) => (

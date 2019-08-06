@@ -1,12 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Button from './';
+import { Button } from './';
 import HeartIcon from '../../icons/heart';
 
 storiesOf('Components|Actions.Button.Variants', module)
     .add('default', () => <Button>Button</Button>)
     .add('primary', () => (
+        // eslint-disable-next-line no-undef
         <Button variant={'primary'} onClick={() => alert(`You've clicked me`)}>
             Button
         </Button>

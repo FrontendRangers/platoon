@@ -101,4 +101,4 @@ const GlobalStyles = createGlobalStyle`
     ${Reset};
 `;
 
-export default GlobalStyles;
+export { GlobalStyles };
