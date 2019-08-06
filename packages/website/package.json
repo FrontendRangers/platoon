@@ -8,7 +8,7 @@
         "@frontendrangers/platoon-react": "^0.0.2",
         "@mdx-js/mdx": "^1.1.5",
         "@mdx-js/react": "^1.1.5",
-        "gatsby": "^2.13.50",
+        "gatsby": "^2.13.51",
         "gatsby-image": "^2.2.8",
         "gatsby-plugin-manifest": "^2.2.4",
         "gatsby-plugin-mdx": "^1.0.22",
@@ -27,7 +27,7 @@
     "devDependencies": {
         "@types/react": "^16.8.24",
         "@types/react-dom": "^16.8.5",
-        "@types/react-helmet": "^5.0.8",
+        "@types/react-helmet": "^5.0.9",
         "docz": "^2.0.0-rc.1",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
