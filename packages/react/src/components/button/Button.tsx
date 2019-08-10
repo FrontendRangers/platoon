@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ButtonStyles } from '@frontendrangers/platoon-core';
 import { themed } from '../../themes/helpers';
 import {
     compose,
@@ -33,13 +34,7 @@ const Button = ({
 );
 
 Button.Element = styled.button.attrs(() => ({ role: 'button' }))<ButtonProps>`
-    display: inline-flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    position: relative;
-
+    ${ButtonStyles};
     ${themed('Button')};
 
     /* Overrides */

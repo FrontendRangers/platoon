@@ -41,9 +41,9 @@
         "url": "https://github.com/FrontendRangers/platoon/issues"
     },
     "dependencies": {
-        "@styled-system/theme-get": "^5.0.18",
+        "@frontendrangers/platoon-core": "^0.0.3",
         "styled-system": "^5.0.18",
-        "typescript": "^3.5.2"
+        "typescript": "^3.5.3"
     },
     "devDependencies": {
         "@babel/core": "^7.5.5",
@@ -56,13 +56,13 @@
         "@storybook/addons": "^5.1.10",
         "@storybook/preset-typescript": "^1.1.0",
         "@storybook/react": "^5.1.10",
-        "@types/node": "^12.6.9",
+        "@types/node": "^12.7.0",
         "@types/react": "^16.8.24",
         "@types/react-dom": "^16.8.5",
         "@types/storybook__addon-centered": "^3.4.1",
         "@types/storybook__addon-knobs": "^5.0.3",
         "@types/storybook__react": "^4.0.2",
-        "@types/styled-components": "^4.1.16",
+        "@types/styled-components": "^4.1.18",
         "@types/styled-system": "^5.0.1",
         "babel-loader": "^8.0.6",
         "eslint-plugin-jest": "^22.14.1",

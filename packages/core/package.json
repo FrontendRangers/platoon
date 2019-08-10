@@ -21,12 +21,26 @@
         "url": "git+https://github.com/FrontendRangers/platoon.git"
     },
     "scripts": {
+        "prebuild": "rimraf ./dist",
+        "build": "yarn build:types && yarn build:js",
+        "build:types": "tsc --emitDeclarationOnly",
+        "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+        "type-check": "tsc --noEmit",
+        "type-check:watch": "yarn type-check -- --watch",
         "test": "echo \"No tests yet\" && exit 0"
     },
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"
     },
     "dependencies": {
-        "typescript": "^3.5.2"
+        "typescript": "^3.5.3"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "@babel/preset-typescript": "^7.3.3",
+        "babel-plugin-styled-components": "^1.10.6",
+        "styled-components": "^5.0.0-beta.8"
     }
 }
