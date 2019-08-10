@@ -42,7 +42,7 @@
     },
     "dependencies": {
         "@frontendrangers/platoon-core": "^0.1.0",
-        "styled-system": "^5.0.18",
+        "styled-system": "^5.0.21",
         "typescript": "^3.5.3"
     },
     "devDependencies": {
@@ -55,9 +55,9 @@
         "@storybook/addon-links": "^5.1.10",
         "@storybook/addons": "^5.1.10",
         "@storybook/preset-typescript": "^1.1.0",
-        "@storybook/react": "^5.1.10",
-        "@types/node": "^12.7.0",
-        "@types/react": "^16.8.24",
+        "@storybook/react": "^5.2.0-beta.26",
+        "@types/node": "^12.7.1",
+        "@types/react": "^16.9.1",
         "@types/react-dom": "^16.8.5",
         "@types/storybook__addon-centered": "^3.4.1",
         "@types/storybook__addon-knobs": "^5.0.3",
@@ -65,12 +65,12 @@
         "@types/styled-components": "^4.1.18",
         "@types/styled-system": "^5.0.1",
         "babel-loader": "^8.0.6",
-        "eslint-plugin-jest": "^22.14.1",
+        "eslint-plugin-jest": "^22.15.0",
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "plop": "^2.4.0",
-        "react": "^16.8.6",
-        "react-dom": "^16.8.6",
-        "styled-components": "^4.3.2"
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "styled-components": "^5.0.0-beta.8"
     },
     "peerDependencies": {
         "react": "^16.8.6",

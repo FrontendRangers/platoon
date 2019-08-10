@@ -23,7 +23,7 @@ module.exports = {
         ecmaVersion: 8,
         sourceType: 'module',
     },
-    env: { es6: true, node: true, 'jest/globals': true },
+    env: { 'jest/globals': true },
     settings: {
         react: {
             version: 'detect',
