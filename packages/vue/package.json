@@ -1,6 +1,6 @@
 {
     "name": "@frontendrangers/platoon-vue",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "description": "A themeable component library for Vue",
     "keywords": [
         "vue"
@@ -38,7 +38,7 @@
         "vue": "^2.6.10"
     },
     "dependencies": {
-        "@frontendrangers/platoon-core": "^0.0.3",
+        "@frontendrangers/platoon-core": "^0.1.0",
         "vue": "^2.6.10",
         "vue-styled-components": "^1.4.9"
     },

@@ -1,6 +1,6 @@
 {
     "name": "@frontendrangers/platoon-react",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "description": "A themeable component library for React",
     "keywords": [
         "react",
@@ -41,7 +41,7 @@
         "url": "https://github.com/FrontendRangers/platoon/issues"
     },
     "dependencies": {
-        "@frontendrangers/platoon-core": "^0.0.3",
+        "@frontendrangers/platoon-core": "^0.1.0",
         "styled-system": "^5.0.18",
         "typescript": "^3.5.3"
     },

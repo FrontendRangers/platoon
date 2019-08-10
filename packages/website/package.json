@@ -2,10 +2,10 @@
     "name": "platoon-website",
     "private": true,
     "description": "A simple starter to get up and developing quickly with Gatsby",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "author": "Benoit Deziel <ben@benoitdeziel.com>",
     "dependencies": {
-        "@frontendrangers/platoon-react": "^0.0.2",
+        "@frontendrangers/platoon-react": "^0.1.0",
         "@mdx-js/mdx": "^1.1.6",
         "@mdx-js/react": "^1.1.6",
         "gatsby": "^2.13.52",
