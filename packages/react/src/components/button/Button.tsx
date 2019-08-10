@@ -1,38 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getTheme } from '../../themes/helpers';
-import { space, SpaceProps } from 'styled-system';
+import { ButtonStyles } from '@frontendrangers/platoon-core';
+import { themed } from '../../themes/helpers';
+import {
+    compose,
+    space,
+    SpaceProps,
+    borderRadius,
+    BorderRadiusProps,
+} from 'styled-system';
 
-export interface ButtonProps extends SpaceProps {
+export interface ButtonProps extends SpaceProps, BorderRadiusProps {
     children?: React.ReactNode;
     icon?: Function;
+    variant?: string;
+    size?: string;
+    disabled?: boolean;
+    onClick?: Function;
+    type?: 'submit' | 'reset' | 'button';
 }
 
-const Button = ({ children, icon, ...props }: ButtonProps) => (
-    <Button.Element {...props}>
+const Button = ({
+    children,
+    icon,
+    variant,
+    onClick = () => {},
+    ...props
+}: ButtonProps) => (
+    <Button.Element variant={variant} {...props} onClick={() => onClick()}>
         {!!icon && <Button.Icon>{icon()}</Button.Icon>}
         {children}
     </Button.Element>
 );
 
-Button.Element = styled.button`
-    display: inline-flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    position: relative;
-
-    /* To theme */
-    padding: 0 0.8em;
-    background-color: #e5e5e5;
-    font-size: 1rem;
-    line-height: 2rem;
-
-    ${getTheme('Button')};
+Button.Element = styled.button.attrs(() => ({ role: 'button' }))<ButtonProps>`
+    ${ButtonStyles};
+    ${themed('Button')};
 
     /* Overrides */
-    ${space}
+    ${compose(
+        space,
+        borderRadius,
+    )}
 `;
 
 Button.Icon = styled.span`
@@ -42,4 +51,10 @@ Button.Icon = styled.span`
     line-height: 1;
 `;
 
-export default Button;
+Button.defaultProps = {
+    variant: 'default',
+    size: 'md',
+    type: 'button',
+};
+
+export { Button };

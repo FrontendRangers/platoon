@@ -1,8 +1,15 @@
-import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
+import { SpaceProps, space, ColorProps, color, compose } from 'styled-system';
 
-export interface BoxProps {}
+export interface BoxProps extends SpaceProps, ColorProps {
+    children?: React.ReactNode;
+}
 
-const Box = (props: BoxProps) => <div {...props}></div>;
+const Box = styled('div')<BoxProps>`
+    ${compose(
+        space,
+        color,
+    )};
+`;
 
 export default Box;

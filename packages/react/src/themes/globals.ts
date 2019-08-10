@@ -10,6 +10,7 @@ const Reset = css`
         box-sizing: border-box;
         font-family: ${({ theme }) =>
             theme.fontFamily ? theme.fontFamily : defaultSettings.fontFamily};
+        font-size: 10px;
     }
 
     *,
@@ -100,4 +101,4 @@ const GlobalStyles = createGlobalStyle`
     ${Reset};
 `;
 
-export default GlobalStyles;
+export { GlobalStyles };

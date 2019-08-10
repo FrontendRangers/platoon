@@ -15,4 +15,4 @@ const PlatoonThemeProvider = ({
     </ThemeProvider>
 );
 
-export default PlatoonThemeProvider;
+export { PlatoonThemeProvider };

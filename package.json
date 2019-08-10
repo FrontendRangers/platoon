@@ -6,6 +6,7 @@
     ],
     "scripts": {
         "bootstrap": "lerna bootstrap",
+        "start": "lerna run start",
         "build": "lerna run build",
         "test": "lerna run test",
         "commit": "git-cz",
@@ -13,8 +14,7 @@
         "prerelease": "yarn build",
         "release": "cross-env HUSKY_BYPASS=true lerna publish",
         "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook",
-        "build-website": "lerna run build --scope=platoon-website"
+        "build-storybook": "build-storybook"
     },
     "config": {
         "commitizen": {
@@ -65,7 +65,7 @@
         "stylelint": "^10.1.0",
         "stylelint-config-standard": "^18.3.0",
         "ts-loader": "^6.0.4",
-        "typescript": "^3.5.2",
+        "typescript": "^3.5.3",
         "webpack": "^4.39.1"
     }
 }
