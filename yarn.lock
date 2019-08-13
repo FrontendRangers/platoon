@@ -2204,9 +2204,9 @@
     uuid "^3.3.2"
 
 "@storybook/addon-centered@^5.1.10":
-  version "5.1.10"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-centered/-/addon-centered-5.1.10.tgz#497acc7b2be6814bd0fe1ab95c2b782dc3c55fd2"
-  integrity sha512-0Sdlbj4RO6CzqaMgib0S3x/cIQxtHr//sDpv6J2KybDKLDhxOEbKgTRptG0pXDyhTxhhIx56bX8XHG4xY9m14A==
+  version "5.1.11"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-centered/-/addon-centered-5.1.11.tgz#4a50f2103528994d86fea4789ad0b5366638bbbc"
+  integrity sha512-XZ7recfyzXHQVY7M60P9SpwHFCxR19Z46bH2A2QmPiVx+qvPmLZF1qRqW++T4C9gVPp0wxbpUT7FxFIbp1aXYg==
   dependencies:
     core-js "^3.0.1"
     global "^4.3.2"
