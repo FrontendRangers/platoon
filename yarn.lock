@@ -2116,7 +2116,7 @@
     redux "^4.0.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-actions@5.2.0-beta.33":
+"@storybook/addon-actions@5.2.0-beta.33", "@storybook/addon-actions@^5.2.0-beta.32":
   version "5.2.0-beta.33"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.2.0-beta.33.tgz#9edcf8e69006db06a91468d3060d088f504e0488"
   integrity sha512-VoyUFCKpxDY3NKPRU5mUIWkZ5TJs5aziqaboPh0ECGKPzhuiLUowcx/54RwzZOwMrdwwOqY0AsPvdbn3zl0Ccg==
@@ -2150,26 +2150,6 @@
     fast-deep-equal "^2.0.1"
     global "^4.3.2"
     lodash "^4.17.11"
-    polished "^3.3.1"
-    prop-types "^15.7.2"
-    react "^16.8.3"
-    react-inspector "^3.0.2"
-    uuid "^3.3.2"
-
-"@storybook/addon-actions@^5.2.0-beta.32":
-  version "5.2.0-beta.32"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.2.0-beta.32.tgz#dd0663e1328fbcd08ab3d904de8dd88df71b12bc"
-  integrity sha512-EmjEodhpmprzTLHgd7JqIMZVLYW3O9/Nrzeyc7XL0eUduEOkBSqfvDMh9fBtYImiJSbUJiUmgf+5Qquhppj8HA==
-  dependencies:
-    "@storybook/addons" "5.2.0-beta.32"
-    "@storybook/api" "5.2.0-beta.32"
-    "@storybook/client-api" "5.2.0-beta.32"
-    "@storybook/components" "5.2.0-beta.32"
-    "@storybook/core-events" "5.2.0-beta.32"
-    "@storybook/theming" "5.2.0-beta.32"
-    core-js "^3.0.1"
-    fast-deep-equal "^2.0.1"
-    global "^4.3.2"
     polished "^3.3.1"
     prop-types "^15.7.2"
     react "^16.8.3"
