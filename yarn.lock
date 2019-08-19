@@ -2197,7 +2197,7 @@
     "@storybook/core-events" "5.2.0-beta.32"
     core-js "^3.0.1"
 
-"@storybook/addon-knobs@5.2.0-beta.33":
+"@storybook/addon-knobs@5.2.0-beta.33", "@storybook/addon-knobs@^5.2.0-beta.32":
   version "5.2.0-beta.33"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.2.0-beta.33.tgz#a4eaf0a1d7dd420b948823e0c181d10c66502243"
   integrity sha512-utciGBQI2DAcmjOy2siDcJftb/zQKZ9g+O0YOfL/jEDMjt7PSKVhQCbYj/ZmQb349oM70Exppt+70kxtGc8jEQ==
@@ -2208,29 +2208,6 @@
     "@storybook/components" "5.2.0-beta.33"
     "@storybook/core-events" "5.2.0-beta.33"
     "@storybook/theming" "5.2.0-beta.33"
-    copy-to-clipboard "^3.0.8"
-    core-js "^3.0.1"
-    escape-html "^1.0.3"
-    fast-deep-equal "^2.0.1"
-    global "^4.3.2"
-    lodash "^4.17.11"
-    prop-types "^15.7.2"
-    qs "^6.6.0"
-    react-color "^2.17.0"
-    react-lifecycles-compat "^3.0.4"
-    react-select "^3.0.0"
-
-"@storybook/addon-knobs@^5.2.0-beta.32":
-  version "5.2.0-beta.32"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.2.0-beta.32.tgz#f152bb76e12c10d68fce2cacae9fca211ff29e75"
-  integrity sha512-MHb5ikoW/6fcsDYU41AgLNxrj6YoIdDdwAnuJe/L9Gcwokn8fxNjtn+SlCTGOGJ6HtkaYkTSme/b9CA48lPTJg==
-  dependencies:
-    "@storybook/addons" "5.2.0-beta.32"
-    "@storybook/api" "5.2.0-beta.32"
-    "@storybook/client-api" "5.2.0-beta.32"
-    "@storybook/components" "5.2.0-beta.32"
-    "@storybook/core-events" "5.2.0-beta.32"
-    "@storybook/theming" "5.2.0-beta.32"
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
     escape-html "^1.0.3"
