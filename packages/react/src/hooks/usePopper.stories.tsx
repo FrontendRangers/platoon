@@ -16,7 +16,7 @@ storiesOf('Hooks|usePopper', module).add('default', () => {
                 Show popper
             </button>
             {visible && (
-                <div ref={popper} style={...popperStyles}>
+                <div ref={popper} style={{ ...popperStyles }}>
                     I&apos;m popping
                 </div>
             )}
