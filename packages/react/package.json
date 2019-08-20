@@ -68,6 +68,7 @@
         "@types/styled-components": "^4.1.18",
         "@types/styled-system": "^5.1.0",
         "babel-loader": "^8.0.6",
+        "eslint": "^6.1.0",
         "eslint-plugin-jest": "^22.15.1",
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "plop": "^2.4.0",
@@ -79,8 +80,8 @@
     "peerDependencies": {
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
-        "styled-components": "^4.3.2",
-        "react-transition-group": "^4.2.2"
+        "react-transition-group": "^4.2.2",
+        "styled-components": "^4.3.2"
     },
     "resolutions": {
         "@types/react": "^16.8.19"
