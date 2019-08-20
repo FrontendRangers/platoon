@@ -5,12 +5,17 @@ const defaultSettings = {
         'SF UI Display, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
 };
 
-const Reset = css`
+const resetStyles = css`
     html {
         box-sizing: border-box;
-        font-family: ${({ theme }) =>
-            theme.fontFamily ? theme.fontFamily : defaultSettings.fontFamily};
         font-size: 10px;
+    }
+
+    body {
+        font-size: 1.6rem;
+        font-family:
+            ${({ theme }) =>
+            theme.fontFamily ? theme.fontFamily : defaultSettings.fontFamily};
     }
 
     *,
@@ -98,7 +103,7 @@ const Reset = css`
 `;
 
 const GlobalStyles = createGlobalStyle`
-    ${Reset};
+    ${resetStyles}
 `;
 
 export { GlobalStyles };

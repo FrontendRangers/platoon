@@ -11,9 +11,22 @@ addDecorator(withA11y);
 addDecorator(centered);
 
 // automatically import all files ending in *.stories.js
-const req = require.context('../src', true, /\.stories\.tsx$/);
+const primitives = require.context(
+    '../src/primitives',
+    true,
+    /\.stories\.tsx$/,
+);
+const components = require.context(
+    '../src/components',
+    true,
+    /\.stories\.tsx$/,
+);
+const hooks = require.context('../src/hooks', true, /\.stories\.tsx$/);
+
 function loadStories() {
-    req.keys().forEach((filename) => req(filename));
+    primitives.keys().forEach((filename) => primitives(filename));
+    components.keys().forEach((filename) => components(filename));
+    hooks.keys().forEach((filename) => hooks(filename));
 }
 
 configure(loadStories, module);

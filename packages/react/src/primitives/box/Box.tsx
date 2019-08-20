@@ -9,7 +9,7 @@ const Box = styled('div')<BoxProps>`
     ${compose(
         space,
         color,
-    )};
+    )}
 `;
 
 export default Box;

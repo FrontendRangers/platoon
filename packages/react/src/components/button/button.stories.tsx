@@ -2,7 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Button } from './';
-import HeartIcon from '../../icons/heart';
+
+storiesOf('Components|Actions.Button', module).add('base', () => (
+    <Button>Button</Button>
+));
 
 storiesOf('Components|Actions.Button.Variants', module)
     .add('default', () => <Button>Button</Button>)
@@ -24,7 +27,7 @@ storiesOf('Components|Actions.Button.Sizes', module)
     .add('xlarge', () => <Button size={'xl'}>Button</Button>);
 
 storiesOf('Components|Actions.Button', module)
-    .add('with an icon', () => <Button icon={HeartIcon}>Eat</Button>)
+    .add('with an icon', () => <Button icon={'heart'}>Eat</Button>)
     .add('multiple', () => (
         <>
             <Button mr={'sm'}>Button</Button>
