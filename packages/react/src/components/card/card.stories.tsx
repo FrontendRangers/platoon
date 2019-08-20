@@ -5,6 +5,12 @@ import Card from './index';
 
 storiesOf('Components|Others.Card', module)
     .add('default', () => <Card>Hello</Card>)
+    .add('with a header', () => (
+        <Card>
+            <Card.Header>I&apos;m the header</Card.Header>
+            Hello
+        </Card>
+    ))
     .add('with a footer', () => (
         <Card>
             Hello

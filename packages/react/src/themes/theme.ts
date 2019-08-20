@@ -1,30 +1,18 @@
 import { css } from 'styled-components';
 import tokens from './tokens';
+import { themeGet } from './helpers';
+import { ButtonProps } from '../components/button';
 
-const get = (obj, path, defaultValue) => {
-    const result = String.prototype.split
-        .call(path, /[,[\].]+?/)
-        .filter(Boolean)
-        .reduce(
-            (res, key) => (res !== null && res !== undefined ? res[key] : res),
-            obj,
-        );
-    return result === undefined || result === obj ? defaultValue : result;
+const Paragraph = {
+    styles: [
+        css`
+            font-size: ${themeGet('fontSizes.md')};
+        `,
+    ],
 };
-
-export const themeGet = (path, fallback: any = null) => (props) =>
-    get(props.theme, path, fallback);
-
-const Paragraph = [
-    css`
-        font-size: ${themeGet('fontSizes.md')};
-    `,
-];
 
 const ButtonBaseStyles = [
     css`
-        font-weight: bold;
-        text-transform: uppercase;
         border-radius: 4px;
 
         &:focus {
@@ -177,31 +165,37 @@ const ButtonSizeStyles = {
 const Components = {
     components: {
         Paragraph,
-        Button: ({ variant, size }) => css`
-            ${ButtonBaseStyles};
-            ${ButtonSizeStyles[size]};
-            ${ButtonVariantSyles[variant] &&
-                ButtonVariantSyles[variant]['base']};
+        Button: {
+            defaultProps: {
+                variant: 'primary',
+            },
+            styles: ({ variant, size }: ButtonProps) => css`
+                ${ButtonBaseStyles}
+                ${ButtonSizeStyles[size!]}
+                ${ButtonVariantSyles[variant!] &&
+                    ButtonVariantSyles[variant!]['base']}
 
-            &:hover {
-                ${ButtonVariantSyles[variant] &&
-                    ButtonVariantSyles[variant]['hover']};
-            }
+                &:hover {
+                    ${ButtonVariantSyles[variant!] &&
+                        ButtonVariantSyles[variant!]['hover']}
+                }
 
-            &:active {
-                ${ButtonVariantSyles[variant] &&
-                    ButtonVariantSyles[variant]['active']};
-            }
+                &:active {
+                    ${ButtonVariantSyles[variant!] &&
+                        ButtonVariantSyles[variant!]['active']}
+                }
 
-            &:focus {
-                ${ButtonVariantSyles[variant] &&
-                    ButtonVariantSyles[variant]['focus']};
-            }
+                &:focus {
+                    ${ButtonVariantSyles[variant!] &&
+                        ButtonVariantSyles[variant!]['focus']}
+                }
 
-            &:disabled {
-                ${ButtonVariantSyles[variant] && ButtonVariantSyles.disabled};
-            }
-        `,
+                &:disabled {
+                    ${ButtonVariantSyles[variant!] &&
+                        ButtonVariantSyles.disabled}
+                }
+`,
+        },
     },
 };
 

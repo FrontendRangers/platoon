@@ -6,8 +6,8 @@ import { FontSizeProps, fontSize } from 'styled-system';
 export interface ParagraphProps extends FontSizeProps {}
 
 const Paragraph = styled(Text).attrs(() => ({ as: 'p' }))<ParagraphProps>`
-    ${themed('Paragraph')};
-    ${fontSize};
+    ${themed('Paragraph')}
+    ${fontSize}
 `;
 
 export default Paragraph;

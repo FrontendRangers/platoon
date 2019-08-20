@@ -71,6 +71,12 @@ const tokens = {
     radii: {
         md: '4px',
     },
+    animation: {
+        duration: {
+            slow: 600,
+            fast: 300,
+        },
+    },
 };
 
 export default tokens;
