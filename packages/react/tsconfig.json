@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "outDir": "./dist",
-        "rootDir": "./src",
+        "outDir": "dist",
+        "rootDir": "src",
         "module": "esnext",
         "target": "esnext",
         "lib": ["esnext", "es6", "dom"],
@@ -21,5 +21,11 @@
         "types": ["react", "node"]
     },
     "include": ["**/*.ts", "**/*.tsx"],
-    "exclude": ["node_modules", "**/*.spec.tsx", "**/*.stories.tsx"]
+    "exclude": [
+        "node_modules",
+        "**/*.spec.tsx",
+        "**/*.stories.tsx",
+        "dist",
+        "plop-templates"
+    ]
 }
