@@ -2094,16 +2094,16 @@
     read-pkg-up "^6.0.0"
 
 "@storybook/addon-a11y@^5.2.0-beta.32":
-  version "5.2.0-beta.33"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.2.0-beta.33.tgz#4c6b837a26ef3ecfa6f67d0fd57bade007482d33"
-  integrity sha512-lsSKQIR4sTBuhf1j68f7JECz7+zVKo+oCOoq5TOd0RPk22pGK5FoF3T+UQrUjVtvti7OCb7y6zfTL/K+fSFyuw==
+  version "5.2.0-beta.36"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.2.0-beta.36.tgz#3b2092b32d614a4a1c77a1978b5dc52a63fa3d2e"
+  integrity sha512-ABH/qPHUTyf+UprVok47pcVuKWKOSSTNxi3Ur62/eEbGXU5Fj/wmxj421XkOCQxQ/aRXsMNUxZVLrvZAqklUDw==
   dependencies:
-    "@storybook/addons" "5.2.0-beta.33"
-    "@storybook/api" "5.2.0-beta.33"
-    "@storybook/client-logger" "5.2.0-beta.33"
-    "@storybook/components" "5.2.0-beta.33"
-    "@storybook/core-events" "5.2.0-beta.33"
-    "@storybook/theming" "5.2.0-beta.33"
+    "@storybook/addons" "5.2.0-beta.36"
+    "@storybook/api" "5.2.0-beta.36"
+    "@storybook/client-logger" "5.2.0-beta.36"
+    "@storybook/components" "5.2.0-beta.36"
+    "@storybook/core-events" "5.2.0-beta.36"
+    "@storybook/theming" "5.2.0-beta.36"
     axe-core "^3.2.2"
     common-tags "^1.8.0"
     core-js "^3.0.1"
