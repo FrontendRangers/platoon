@@ -17,7 +17,7 @@ module.exports = function(plop) {
             {
                 type: 'add',
                 path:
-                    'src/components/{{kebabCase name}}/{{properCase name}}.ts',
+                    'src/components/{{kebabCase name}}/{{properCase name}}.tsx',
                 templateFile: 'plop-templates/component.hbs',
             },
             {
@@ -25,6 +25,12 @@ module.exports = function(plop) {
                 path:
                     'src/components/{{kebabCase name}}/{{kebabCase name}}.stories.tsx',
                 templateFile: 'plop-templates/component-stories.hbs',
+            },
+            {
+                type: 'append',
+                path: 'src/index.ts',
+                pattern: `/* PLOP_INJECT_EXPORT */`,
+                template: `export * from './components/{{kebabCase name}}';`,
             },
         ],
     });
