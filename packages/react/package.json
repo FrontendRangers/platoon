@@ -29,7 +29,7 @@
         "build": "tsc",
         "test": "echo \"No tests yet\" && exit 0",
         "lint": "run-p -c lint:*",
-        "lint:ts": "eslint './**/*.ts{,x}'",
+        "lint:ts": "eslint './**/*.ts{,x}' --fix",
         "lint:css": "stylelint './**/*.ts{,x}'",
         "start": "yarn run storybook",
         "storybook": "start-storybook -p 6006",
@@ -44,7 +44,7 @@
     "dependencies": {
         "@frontendrangers/platoon-core": "^0.1.0",
         "popper.js": "^1.15.0",
-        "styled-system": "^5.0.21",
+        "styled-system": "^5.1.0",
         "typescript": "^3.5.3"
     },
     "devDependencies": {
@@ -77,8 +77,8 @@
         "styled-components": "^5.0.0-beta.8"
     },
     "peerDependencies": {
-        "react": "^16.8.6",
-        "react-dom": "^16.8.6",
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
         "styled-components": "^4.3.2",
         "react-transition-group": "^4.2.2"
     },
