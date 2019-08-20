@@ -2177,11 +2177,11 @@
     uuid "^3.3.2"
 
 "@storybook/addon-centered@^5.2.0-beta.32":
-  version "5.2.0-beta.32"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-centered/-/addon-centered-5.2.0-beta.32.tgz#4de1a657efca79c740d38be0b660816e94a8d31c"
-  integrity sha512-6CM820I6buIR3hS3mVr2G2c2RSkwaooy7QQWzcCklmOHpUAFpUqvBWXbFqwyS+K2oU3V9rPC4fWNtuUnI/1meg==
+  version "5.2.0-beta.36"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-centered/-/addon-centered-5.2.0-beta.36.tgz#f8f54b615bcf4c30a0c16a8082325faa8870aedf"
+  integrity sha512-GFHKqZ7tfGSuDXqaFAmKDck7E7ha960LX5+6AhF/MOECzXrWDU0Ctp9RfBQ60Chx5sfRo1eUp3918eReFmuVlQ==
   dependencies:
-    "@storybook/addons" "5.2.0-beta.32"
+    "@storybook/addons" "5.2.0-beta.36"
     core-js "^3.0.1"
     global "^4.3.2"
     util-deprecate "^1.0.2"
