@@ -2258,13 +2258,13 @@
     qs "^6.6.0"
 
 "@storybook/addon-links@^5.2.0-beta.32":
-  version "5.2.0-beta.33"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-5.2.0-beta.33.tgz#d87ceef8b62cfcf9d9239c64eddb60f4100c3c4b"
-  integrity sha512-KLhaXZm3MuEoislxntcOionaLmjxNyffCPs9WxCGRnzZw3gLaVB2wLV2F7Z9m7kk/Xl/ubY88Hsw+D4PmjK79w==
+  version "5.2.0-beta.36"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-5.2.0-beta.36.tgz#1367448621d0062fa504ff97a6e7f963da9e5f7b"
+  integrity sha512-7bw39FzsPZewAtr2AzFbaodNzIn8BaUYSR8uq7D1lwfmYsYM8pD4EwjeAq/qiYb4rGl2/C9OjKrDVWfaPpHWQQ==
   dependencies:
-    "@storybook/addons" "5.2.0-beta.33"
-    "@storybook/core-events" "5.2.0-beta.33"
-    "@storybook/router" "5.2.0-beta.33"
+    "@storybook/addons" "5.2.0-beta.36"
+    "@storybook/core-events" "5.2.0-beta.36"
+    "@storybook/router" "5.2.0-beta.36"
     common-tags "^1.8.0"
     core-js "^3.0.1"
     global "^4.3.2"
