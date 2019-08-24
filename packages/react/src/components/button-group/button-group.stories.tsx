@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import ButtonGroup from './';
+import { ButtonGroup } from './';
 
 storiesOf('Components|Actions.Button Group', module).add('default', () => (
     <ButtonGroup>
