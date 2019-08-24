@@ -7,7 +7,7 @@
     "dependencies": {
         "@frontendrangers/platoon-react": "^0.1.0",
         "babel-plugin-styled-components": "^1.10.6",
-        "gatsby": "^2.13.80",
+        "gatsby": "^2.13.82",
         "gatsby-plugin-styled-components": "^3.1.3",
         "gatsby-plugin-typescript": "^2.1.5",
         "prop-types": "^15.7.2",
