@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Box from './';
+import { Box } from './';
 
 storiesOf('Primitives|Layout.Box', module)
     .add('Default', () => <Box>Hello</Box>)

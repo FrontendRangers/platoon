@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Transition } from 'react-transition-group';
-import Box from '../../primitives/box';
+import { Box } from '../../primitives/box';
 import { Overlay } from '../../primitives/overlay';
 
 const DURATION = 300;

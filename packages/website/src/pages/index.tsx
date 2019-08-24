@@ -3,14 +3,18 @@ import {
     Button,
     theme,
     PlatoonThemeProvider,
+    GlobalStyles,
+    Box,
+    Heading,
 } from '@frontendrangers/platoon-react';
 
 const Page = () => (
     <PlatoonThemeProvider theme={theme}>
-        <div>
-            <p>Platoon website</p>
-            <Button>Hello</Button>
-        </div>
+        <GlobalStyles></GlobalStyles>
+        <Box>
+            <Heading>Platoon website</Heading>
+            <Button variant="primary">Hello</Button>
+        </Box>
     </PlatoonThemeProvider>
 );
 

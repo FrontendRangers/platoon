@@ -9,7 +9,7 @@ import {
     borderRadius,
     BorderRadiusProps,
 } from 'styled-system';
-import Box from '../../primitives/box';
+import { Box } from '../../primitives/box';
 import { Icon } from '../icon';
 
 export interface ButtonProps extends SpaceProps, BorderRadiusProps {

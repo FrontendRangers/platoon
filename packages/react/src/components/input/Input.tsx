@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Box from '../../primitives/box';
+import { Box } from '../../primitives/box';
 import { themed } from '../../themes/helpers';
 
 export interface InputProps {
@@ -20,4 +20,4 @@ const Input = ({ placeholder, ...props }: InputProps) => (
     </InputComponent>
 );
 
-export default Input;
+export { Input };

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Text, { TextProps } from '../text';
+import { Text, TextProps } from '../text';
 import { themeGet } from '../../themes/helpers';
 
 export interface HeadingProps extends TextProps {
@@ -14,4 +14,4 @@ Heading.defaultProps = {
     as: 'h2',
 };
 
-export default Heading;
+export { Heading };

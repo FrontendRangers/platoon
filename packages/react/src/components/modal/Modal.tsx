@@ -4,4 +4,4 @@ export interface ModalProps {}
 
 const Modal = styled('div')``;
 
-export default Modal;
+export { Modal };

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Box from '../../primitives/box';
+import { Box } from '../../primitives/box';
 
 export interface RadioProps {}
 
@@ -15,4 +15,4 @@ const Radio = ({ ...props }: RadioProps) => (
     </RadioComponent>
 );
 
-export default Radio;
+export { Radio };
