@@ -3,6 +3,12 @@
 // Theme
 export * from './themes';
 
+// Icons
+export * from './icons';
+
+// Hooks
+export * from './hooks';
+
 // Primitives
 export * from './primitives/box';
 export * from './primitives/overlay';

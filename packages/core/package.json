@@ -6,6 +6,8 @@
     "homepage": "https://github.com/FrontendRangers/platoon#readme",
     "license": "MIT",
     "main": "dist/index.js",
+    "module": "dist/index.es.js",
+    "jsnext:main": "dist/index.es.js",
     "directories": {
         "lib": "dist",
         "test": "__tests__"
@@ -21,13 +23,13 @@
         "url": "git+https://github.com/FrontendRangers/platoon.git"
     },
     "scripts": {
-        "prebuild": "rimraf ./dist",
-        "build": "yarn build:types && yarn build:js",
-        "build:types": "tsc --emitDeclarationOnly",
-        "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+        "prebuild": "rimraf ./dist & yarn type-check",
+        "build": "rollup -c",
         "type-check": "tsc --noEmit",
         "type-check:watch": "yarn type-check -- --watch",
-        "test": "echo \"No tests yet\" && exit 0"
+        "test": "echo \"No tests yet\" && exit 0",
+        "lint": "run-p -c lint:*",
+        "lint:ts": "eslint './**/*.ts{,x}' --fix"
     },
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"
@@ -41,6 +43,9 @@
         "@babel/preset-env": "^7.5.5",
         "@babel/preset-typescript": "^7.3.3",
         "babel-plugin-styled-components": "^1.10.6",
+        "styled-components": "^5.0.0-beta.8"
+    },
+    "peerDependencies": {
         "styled-components": "^5.0.0-beta.8"
     }
 }
