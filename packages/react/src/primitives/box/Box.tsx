@@ -12,4 +12,4 @@ const Box = styled('div')<BoxProps>`
     )}
 `;
 
-export default Box;
+export { Box };

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Text from '../text';
+import { Text } from '../text';
 import { themed } from '../../themes/helpers';
 import { FontSizeProps, fontSize } from 'styled-system';
 
@@ -10,4 +10,4 @@ const Paragraph = styled(Text).attrs(() => ({ as: 'p' }))<ParagraphProps>`
     ${fontSize}
 `;
 
-export default Paragraph;
+export { Paragraph };

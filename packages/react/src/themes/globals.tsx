@@ -13,8 +13,7 @@ const resetStyles = css`
 
     body {
         font-size: 1.6rem;
-        font-family:
-            ${({ theme }) =>
+        font-family: ${({ theme }) =>
             theme.fontFamily ? theme.fontFamily : defaultSettings.fontFamily};
     }
 

@@ -14,6 +14,7 @@ const Paragraph = {
 const ButtonBaseStyles = [
     css`
         border-radius: 4px;
+        padding: 0.5em 1em;
 
         &:focus {
             outline: none;
@@ -169,32 +170,32 @@ const Components = {
             defaultProps: {
                 variant: 'primary',
             },
-            styles: ({ variant, size }: ButtonProps) => css`
+            styles: ({ variant = 'primary', size = 'md' }: ButtonProps) => css`
                 ${ButtonBaseStyles}
-                ${ButtonSizeStyles[size!]}
-                ${ButtonVariantSyles[variant!] &&
-                    ButtonVariantSyles[variant!]['base']}
+                ${ButtonSizeStyles[size]}
+                ${ButtonVariantSyles[variant] &&
+                    ButtonVariantSyles[variant]['base']}
 
                 &:hover {
-                    ${ButtonVariantSyles[variant!] &&
-                        ButtonVariantSyles[variant!]['hover']}
+                    ${ButtonVariantSyles[variant] &&
+                        ButtonVariantSyles[variant]['hover']}
                 }
 
                 &:active {
-                    ${ButtonVariantSyles[variant!] &&
-                        ButtonVariantSyles[variant!]['active']}
+                    ${ButtonVariantSyles[variant] &&
+                        ButtonVariantSyles[variant]['active']}
                 }
 
                 &:focus {
-                    ${ButtonVariantSyles[variant!] &&
-                        ButtonVariantSyles[variant!]['focus']}
+                    ${ButtonVariantSyles[variant] &&
+                        ButtonVariantSyles[variant]['focus']}
                 }
 
                 &:disabled {
-                    ${ButtonVariantSyles[variant!] &&
+                    ${ButtonVariantSyles[variant] &&
                         ButtonVariantSyles.disabled}
                 }
-`,
+            `,
         },
     },
 };

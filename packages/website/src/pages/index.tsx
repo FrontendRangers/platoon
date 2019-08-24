@@ -1,11 +1,21 @@
 import React from 'react';
-import { Button } from '@frontendrangers/platoon-react';
+import {
+    Button,
+    theme,
+    PlatoonThemeProvider,
+    GlobalStyles,
+    Box,
+    Heading,
+} from '@frontendrangers/platoon-react';
 
 const Page = () => (
-    <div>
-        <p>Platoon website</p>
-        <Button>Button</Button>
-    </div>
+    <PlatoonThemeProvider theme={theme}>
+        <GlobalStyles></GlobalStyles>
+        <Box>
+            <Heading>Platoon website</Heading>
+            <Button variant="primary">Hello</Button>
+        </Box>
+    </PlatoonThemeProvider>
 );
 
 export default Page;

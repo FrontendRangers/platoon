@@ -7,4 +7,4 @@ export interface TextProps {
 
 const Text = styled('span')<TextProps>``;
 
-export default Text;
+export { Text };

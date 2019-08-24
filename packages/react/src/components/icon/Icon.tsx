@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import styled from 'styled-components';
-import Box from '../../primitives/box';
+import { Box } from '../../primitives/box';
 import { themed } from '../../themes/helpers';
 
 export interface IconProps {
@@ -9,7 +9,6 @@ export interface IconProps {
 }
 
 const IconComponent = styled(Box)<IconProps>`
-
     width: 24px;
     height: 24px;
 
@@ -22,7 +21,9 @@ const IconComponent = styled(Box)<IconProps>`
 `;
 
 const Icon = ({ name, size }: IconProps) => {
-    const IconSvg = React.lazy(() => import(`../../icons/${name}.tsx`));
+    const IconSvg = React.lazy(() =>
+        import('../../icons').then((module) => module[name]),
+    );
     return (
         <Suspense
             fallback={<IconComponent name={name} size={size}></IconComponent>}

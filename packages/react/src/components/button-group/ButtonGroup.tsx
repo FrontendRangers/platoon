@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Box from '../../primitives/box';
+import { Box } from '../../primitives/box';
 import { MarginProps } from 'styled-system';
 import { Button } from '../button';
 
@@ -24,7 +24,6 @@ export interface ButtonGroupProps extends MarginProps {
     children: any;
 }
 const ButtonGroupComponent = styled<any>(Box)`
-
     color: red;
 `;
 
@@ -36,4 +35,4 @@ ButtonGroup.Item = ButtonGroupItem;
 
 ButtonGroup.displayName = 'ButtonGroup';
 
-export default ButtonGroup;
+export { ButtonGroup };

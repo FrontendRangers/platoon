@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Box from '../../primitives/box';
+import { Box } from '../../primitives/box';
 
 export interface CheckboxProps {}
 
@@ -17,4 +17,4 @@ const Checkbox = ({ ...props }: CheckboxProps) => (
     </CheckboxComponent>
 );
 
-export default Checkbox;
+export { Checkbox };

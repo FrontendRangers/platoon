@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import Box from '../box';
+import { Box } from '../box';
 
 export interface OverlayProps {
     children?: any;
 }
 
 const Overlay = styled(Box)<OverlayProps>`
-
     position: absolute;
     top: 0;
     left: 0;
