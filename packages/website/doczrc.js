@@ -1,5 +1,3 @@
 export default {
-    themeConfig: {
-        mode: 'dark',
-    },
+    menu: ['Home', 'Components'],
 };
