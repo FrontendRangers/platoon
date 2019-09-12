@@ -2745,14 +2745,14 @@
     util-deprecate "^1.0.2"
 
 "@storybook/addon-contexts@^5.2.0-rc.8":
-  version "5.2.0-rc.8"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-contexts/-/addon-contexts-5.2.0-rc.8.tgz#eaa7aa2f30bad0a9613411f9dadc3bff1cbedd5e"
-  integrity sha512-EETXD9epDzV5cVn3WII5J1QWDQ8ZIijaVf1NJU531mHPrGZHFF7ULvn5bpZjBAFoJ+mo5X1RtsyHkUgDWB4IIg==
+  version "5.2.0-rc.11"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-contexts/-/addon-contexts-5.2.0-rc.11.tgz#9e29ce0c8091036ca9bb3677ead732de55f68cd3"
+  integrity sha512-vSQnH7bkvUBhCNEBTrGRVfhoKiMER6YzW4HiQeKyo7IqR/WGXZV2gULg6RPz7NBSO1PnxFPm5AggMoVhVYCtUQ==
   dependencies:
-    "@storybook/addons" "5.2.0-rc.8"
-    "@storybook/api" "5.2.0-rc.8"
-    "@storybook/components" "5.2.0-rc.8"
-    "@storybook/core-events" "5.2.0-rc.8"
+    "@storybook/addons" "5.2.0-rc.11"
+    "@storybook/api" "5.2.0-rc.11"
+    "@storybook/components" "5.2.0-rc.11"
+    "@storybook/core-events" "5.2.0-rc.11"
     core-js "^3.0.1"
 
 "@storybook/addon-knobs@5.2.0-rc.11":
