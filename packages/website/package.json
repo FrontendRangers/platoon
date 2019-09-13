@@ -8,11 +8,11 @@
         "@frontendrangers/platoon-react": "^0.1.0",
         "babel-plugin-styled-components": "^1.10.6",
         "gatsby": "^2.15.9",
-        "gatsby-plugin-offline": "^3.0.3",
-        "gatsby-plugin-sharp": "^2.2.20",
-        "gatsby-plugin-styled-components": "^3.1.4",
-        "gatsby-plugin-typescript": "^2.1.6",
-        "gatsby-transformer-sharp": "^2.2.13",
+        "gatsby-plugin-offline": "^3.0.6",
+        "gatsby-plugin-sharp": "^2.2.21",
+        "gatsby-plugin-styled-components": "^3.1.5",
+        "gatsby-plugin-typescript": "^2.1.7",
+        "gatsby-transformer-sharp": "^2.2.14",
         "prop-types": "^15.7.2",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
@@ -21,10 +21,10 @@
     },
     "devDependencies": {
         "@types/react": "^16.9.2",
-        "@types/react-dom": "^16.8.5",
+        "@types/react-dom": "^16.9.0",
         "gatsby-theme-docz": "^2.0.0-rc.35",
         "styled-components": "^5.0.0-beta.8",
-        "typescript": "^3.6.2"
+        "typescript": "^3.6.3"
     },
     "keywords": [
         "gatsby"

@@ -50,7 +50,7 @@
         "@styled-system/css": "^5.0.23",
         "popper.js": "^1.15.0",
         "react-transition-group": "^4.3.0",
-        "styled-system": "^5.1.1"
+        "styled-system": "^5.1.2"
     },
     "devDependencies": {
         "@babel/core": "^7.6.0",
@@ -63,7 +63,7 @@
         "@storybook/addons": "^5.2.0-rc.8",
         "@storybook/preset-typescript": "^1.1.0",
         "@storybook/react": "^5.2.0-rc.8",
-        "@types/node": "^12.7.4",
+        "@types/node": "^12.7.5",
         "@types/react": "^16.9.2",
         "@types/react-dom": "^16.9.0",
         "@types/react-transition-group": "^4.2.2",
@@ -73,25 +73,32 @@
         "@types/styled-components": "^4.1.18",
         "@types/styled-system": "^5.1.1",
         "@types/styled-system__css": "^5.0.4",
+        "@typescript-eslint/eslint-plugin": "^2.2.0",
+        "@typescript-eslint/parser": "^2.2.0",
         "babel-loader": "^8.0.6",
         "babel-plugin-styled-components": "^1.10.6",
         "eslint": "^6.3.0",
+        "eslint-config-prettier": "^6.3.0",
         "eslint-plugin-jest": "^22.17.0",
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "plop": "^2.4.0",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
         "react-transition-group": "^4.3.0",
+        "rollup-plugin-terser": "^5.1.2",
+        "rollup-plugin-typescript2": "^0.24.2",
         "styled-components": "^5.0.0-beta.8",
         "stylelint-config-styled-components": "^0.1.1",
         "stylelint-processor-styled-components": "^1.8.0",
-        "typescript": "^3.6.2"
+        "ts-loader": "^6.1.0",
+        "typescript": "^3.6.3",
+        "webpack": "^4.40.1"
     },
     "peerDependencies": {
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
         "styled-components": "^5.0.0-beta.8",
-        "typescript": "^3.5.3"
+        "typescript": "^3.6.3"
     },
     "resolutions": {
         "@types/react": "^16.8.19"
