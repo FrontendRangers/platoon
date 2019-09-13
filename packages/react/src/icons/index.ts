@@ -1,1 +1,1 @@
-export * from './heart';
+export * from './icons';
