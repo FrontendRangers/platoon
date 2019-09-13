@@ -2,12 +2,15 @@
     "name": "platoon",
     "private": true,
     "workspaces": [
-        "packages/*"
+        "packages/*",
+        "examples/*"
     ],
     "scripts": {
         "bootstrap": "lerna bootstrap",
         "start": "lerna run start",
-        "build": "lerna run build",
+        "build": "yarn build:libs && yarn build:docs",
+        "build:libs": "yarn workspace @frontendrangers/platoon-core build && yarn workspace @frontendrangers/platoon-react build",
+        "build:docs": "yarn workspace @frontendrangers/platoon-website build",
         "test": "lerna run test",
         "commit": "git-cz",
         "bump": "lerna version --yes",
