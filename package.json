@@ -5,6 +5,12 @@
         "packages/*",
         "examples/*"
     ],
+    "nohoist": [
+        "**/react-*",
+        "**/react-*/**",
+        "@storybook/**",
+        "react-transition-group"
+      ],
     "scripts": {
         "bootstrap": "lerna bootstrap",
         "start": "lerna run start",
@@ -15,9 +21,7 @@
         "commit": "git-cz",
         "bump": "lerna version --yes",
         "prerelease": "yarn build",
-        "release": "cross-env HUSKY_BYPASS=true lerna publish",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "release": "cross-env HUSKY_BYPASS=true lerna publish"
     },
     "config": {
         "commitizen": {
@@ -38,8 +42,6 @@
         "@babel/core": "^7.6.0",
         "@commitlint/cli": "^8.1.0",
         "@commitlint/config-conventional": "^8.1.0",
-        "@storybook/preset-typescript": "^1.1.0",
-        "@storybook/react": "^5.2.0-rc.6",
         "@types/react": "^16.9.2",
         "@typescript-eslint/eslint-plugin": "^2.1.0",
         "@typescript-eslint/parser": "^2.1.0",
