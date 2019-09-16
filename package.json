@@ -2,8 +2,7 @@
     "name": "platoon",
     "private": true,
     "workspaces": [
-        "packages/*",
-        "examples/*"
+        "packages/*"
     ],
     "nohoist": [
         "**/react-*",
