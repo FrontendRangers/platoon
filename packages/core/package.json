@@ -43,9 +43,9 @@
         "@babel/preset-env": "^7.6.0",
         "@babel/preset-typescript": "^7.6.0",
         "babel-plugin-styled-components": "^1.10.6",
-        "styled-components": "^5.0.0-beta.8"
+        "styled-components": "beta"
     },
     "peerDependencies": {
-        "styled-components": "^5.0.0-beta.8"
+        "styled-components": "beta"
     }
 }
