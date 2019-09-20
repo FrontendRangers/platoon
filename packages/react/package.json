@@ -71,8 +71,8 @@
         "@types/storybook__react": "^4.0.2",
         "@types/styled-components": "^4.1.18",
         "@types/styled-system": "^5.1.1",
-        "@typescript-eslint/eslint-plugin": "^2.2.0",
-        "@typescript-eslint/parser": "^2.2.0",
+        "@typescript-eslint/eslint-plugin": "^2.3.0",
+        "@typescript-eslint/parser": "^2.3.0",
         "babel-loader": "^8.0.6",
         "eslint": "^6.4.0",
         "eslint-config-prettier": "^6.3.0",
@@ -84,17 +84,17 @@
         "rollup": "^1.21.4",
         "rollup-plugin-terser": "^5.1.2",
         "rollup-plugin-typescript2": "^0.24.2",
-        "styled-components": "^5.0.0-beta.8",
+        "styled-components": "beta",
         "stylelint": "^11.0.0",
         "stylelint-config-standard": "^19.0.0",
-        "ts-loader": "^6.1.0",
+        "ts-loader": "^6.1.1",
         "typescript": "^3.6.3",
         "webpack": "^4.40.2"
     },
     "peerDependencies": {
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
-        "styled-components": "^5.0.0-beta.8",
+        "styled-components": "beta",
         "typescript": "^3.6.3"
     },
     "resolutions": {
