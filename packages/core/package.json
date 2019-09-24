@@ -38,9 +38,9 @@
         "typescript": "^3.6.3"
     },
     "devDependencies": {
-        "@babel/cli": "^7.6.0",
-        "@babel/core": "^7.6.0",
-        "@babel/preset-env": "^7.6.0",
+        "@babel/cli": "^7.6.2",
+        "@babel/core": "^7.6.2",
+        "@babel/preset-env": "^7.6.2",
         "@babel/preset-typescript": "^7.6.0",
         "babel-plugin-styled-components": "^1.10.6",
         "styled-components": "beta"

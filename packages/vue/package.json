@@ -43,7 +43,7 @@
         "vue-styled-components": "^1.4.9"
     },
     "devDependencies": {
-        "@babel/core": "^7.6.0",
+        "@babel/core": "^7.6.2",
         "@storybook/addon-actions": "^5.2.1",
         "@storybook/addon-links": "^5.2.1",
         "@storybook/addons": "^5.2.1",
