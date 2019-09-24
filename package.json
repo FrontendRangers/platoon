@@ -13,6 +13,7 @@
     "scripts": {
         "bootstrap": "lerna bootstrap",
         "start": "lerna run start",
+        "start:lib:react": "yarn workspace @frontendrangers/platoon-react start",
         "build": "yarn build:libs && yarn build:docs",
         "build:libs": "yarn workspace @frontendrangers/platoon-core build && yarn workspace @frontendrangers/platoon-react build",
         "build:docs": "yarn workspace @frontendrangers/platoon-website build",
