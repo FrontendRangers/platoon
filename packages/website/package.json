@@ -22,7 +22,7 @@
     "devDependencies": {
         "@types/react": "^16.9.2",
         "@types/react-dom": "^16.9.0",
-        "gatsby-theme-docz": "2.0.0-rc.41",
+        "gatsby-theme-docz": "2.0.0-rc.42",
         "styled-components": "beta",
         "typescript": "^3.6.3"
     },
