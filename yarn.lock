@@ -4064,38 +4064,6 @@
     text-table "^0.2.0"
     webpack-log "^1.1.2"
 
-"@xstyled/core@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/core/-/core-1.11.0.tgz#633b2f9bacaec17a9a37d05c429c93edb3f91907"
-  integrity sha512-ECn3r+yvIJrgd+1cFl/qJhLkxdzf365O0/q1ryeYUGuJIrcYI/hOGdygrrcjzeoLP5uPv45t/rApsCS8yMDDEA==
-  dependencies:
-    "@babel/runtime" "^7.5.5"
-    "@xstyled/system" "^1.11.0"
-
-"@xstyled/styled-components@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/styled-components/-/styled-components-1.11.0.tgz#ddd3fb04c78f61683e7ac8bb5926caec22f2102f"
-  integrity sha512-l5TrDqxHLPEZqf8P9l34pQsg/8nhyz7yIDiGBTwov+1n2kixpIEiXiZ63MBTdfwl+DQHf5O1LAMUbRl7jfvoog==
-  dependencies:
-    "@babel/runtime" "^7.5.5"
-    "@xstyled/core" "^1.11.0"
-    "@xstyled/util" "^1.11.0"
-
-"@xstyled/system@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/system/-/system-1.11.0.tgz#7b3161f5dd818dd2064f38638c38c2ed81c55713"
-  integrity sha512-6jGQMSSqURV2FSRMYNZYB4M2PipAk4IMr+aesVNm8+aOumQeICTKfikKg4QTdQIoWgt65z2SePAdUw6JNG4JDA==
-  dependencies:
-    "@babel/runtime" "^7.5.5"
-    "@xstyled/util" "^1.11.0"
-
-"@xstyled/util@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@xstyled/util/-/util-1.11.0.tgz#0a8d9e7e2c3977c9dd7e79b8fd8c2600b368b7e8"
-  integrity sha512-TpYNCWggan3wXJNjmIUmV2CaK012RNguxRHP0QKY7DwuWECJWIUc2g6OtXzJZpH/r6qGFYi8yefh15CiGqVMaA==
-  dependencies:
-    "@babel/runtime" "^7.5.5"
-
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
