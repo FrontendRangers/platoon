@@ -39,7 +39,7 @@
     "dependencies": {
         "@frontendrangers/platoon-core": "^0.1.0",
         "vue": "^2.6.10",
-        "vue-styled-components": "^1.4.9"
+        "vue-styled-components": "^1.4.12"
     },
     "devDependencies": {
         "@babel/core": "^7.6.2",
