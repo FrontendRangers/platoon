@@ -1338,22 +1338,10 @@
     "@emotion/utils" "0.11.2"
     "@emotion/weak-memoize" "0.2.3"
 
-"@emotion/core@^10.0.14", "@emotion/core@^10.0.16":
+"@emotion/core@^10.0.14", "@emotion/core@^10.0.16", "@emotion/core@^10.0.9":
   version "10.0.21"
   resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.21.tgz#2e8398d2b92fd90d4ed6ac4d0b66214971de3458"
   integrity sha512-U9zbc7ovZ2ceIwbLXYZPJy6wPgnOdTNT4jENZ31ee6v2lojetV5bTbCVk6ciT8G3wQRyVaTTfUCH9WCrMzpRIw==
-  dependencies:
-    "@babel/runtime" "^7.5.5"
-    "@emotion/cache" "^10.0.17"
-    "@emotion/css" "^10.0.14"
-    "@emotion/serialize" "^0.11.10"
-    "@emotion/sheet" "0.9.3"
-    "@emotion/utils" "0.11.2"
-
-"@emotion/core@^10.0.9":
-  version "10.0.17"
-  resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.17.tgz#3367376709721f4ee2068cff54ba581d362789d8"
-  integrity sha512-gykyjjr0sxzVuZBVTVK4dUmYsorc2qLhdYgSiOVK+m7WXgcYTKZevGWZ7TLAgTZvMelCTvhNq8xnf8FR1IdTbg==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@emotion/cache" "^10.0.17"
@@ -7895,10 +7883,10 @@ docz-components@2.0.0-rc.48:
     theme-ui "^0.2.38"
     typography-theme-moraga "^0.16.19"
 
-docz-core@2.0.0-rc.54:
-  version "2.0.0-rc.54"
-  resolved "https://registry.yarnpkg.com/docz-core/-/docz-core-2.0.0-rc.54.tgz#2432714ea328e881757205a636ce2aac9ec360c0"
-  integrity sha512-Dm7uxv7HLYNI06Vmy1rTwE7L+BGQQqK8iju4fBLdeNkRk2nd08+UQ/grZ3aJ/UnFI/MtN8Gg8J80I7y5EHNg4A==
+docz-core@2.0.0-rc.55:
+  version "2.0.0-rc.55"
+  resolved "https://registry.yarnpkg.com/docz-core/-/docz-core-2.0.0-rc.55.tgz#e6ff9411217a3afecb5589d2445d1b59c334e4e2"
+  integrity sha512-0Lf7wTLb6LTS9cf1X7EyW3dj708Fqo07ytLI+8GAe2ZGN1cYSzLLYTY19KuG/lK2a0EYoRNadiSXrPH4kASSgw==
   dependencies:
     "@sindresorhus/slugify" "^0.9.1"
     chalk "^2.4.2"
@@ -7959,22 +7947,22 @@ docz-utils@2.0.0-rc.54:
     unist-util-is "^3.0.0"
     unist-util-visit "^1.4.1"
 
-docz@2.0.0-rc.54:
-  version "2.0.0-rc.54"
-  resolved "https://registry.yarnpkg.com/docz/-/docz-2.0.0-rc.54.tgz#e9efb1cc5b1466d4106acc2319d8c4569fdf9c07"
-  integrity sha512-8Oon1wSS4od3UHntVKJ1M3njPz9vYhqsYKUGzHaGU0mmYE4wSdA2Q/REIeps4lzE+EdYh68l8z7AElkhfXKToA==
+docz@2.0.0-rc.55:
+  version "2.0.0-rc.55"
+  resolved "https://registry.yarnpkg.com/docz/-/docz-2.0.0-rc.55.tgz#45264755746ceb10e84d8e11714b3985063ae100"
+  integrity sha512-4lAip7F5NpzJiKu1q9f2h5tdtNNHHc95xaZsL+J7L8hogYZj1T/0zQLKriPOA1GxWPBd6uoGt2/NON6taw2lBw==
   dependencies:
     "@emotion/core" "^10.0.16"
     "@mdx-js/react" "^1.0.27"
     array-sort "^1.0.0"
     capitalize "^2.0.0"
     docz-components "2.0.0-rc.48"
-    docz-core "2.0.0-rc.54"
+    docz-core "2.0.0-rc.55"
     fast-deep-equal "^2.0.1"
     gatsby "^2.13.27"
     gatsby-plugin-eslint "^2.0.5"
     gatsby-plugin-typescript "^2.1.6"
-    gatsby-theme-docz "2.0.0-rc.54"
+    gatsby-theme-docz "2.0.0-rc.55"
     lodash "^4.17.14"
     marksy "^8.0.0"
     match-sorter "^3.1.1"
@@ -10085,10 +10073,10 @@ gatsby-telemetry@^1.1.30:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-theme-docz@2.0.0-rc.54, gatsby-theme-docz@^2.0.0-rc.53:
-  version "2.0.0-rc.54"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-docz/-/gatsby-theme-docz-2.0.0-rc.54.tgz#c8e98d6a54b974141aba08e231390673f839002d"
-  integrity sha512-s/lxBA8xxfngp2yC3nuEjGcSVHWpBtShRCESV3TmPZI1p/kO5iU7jowTJOLJ4e3J3TB4lh1Rt2NdZFb7DXbTDA==
+gatsby-theme-docz@2.0.0-rc.55, gatsby-theme-docz@^2.0.0-rc.53:
+  version "2.0.0-rc.55"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-docz/-/gatsby-theme-docz-2.0.0-rc.55.tgz#428220ae7205a198862c14f2ed2badfe8a0af76c"
+  integrity sha512-WLGT5i9GhtVVHCvfttPsILNxKh4vu06vGXzE1LevA7VgBLXSvTN0bmPmBf4dJz9+OlSjkUy9qck/JKEhAj45DA==
   dependencies:
     "@emotion/core" "^10.0.14"
     "@emotion/styled" "^10.0.14"
@@ -10098,8 +10086,8 @@ gatsby-theme-docz@2.0.0-rc.54, gatsby-theme-docz@^2.0.0-rc.53:
     "@theme-ui/typography" "^0.2.5"
     babel-plugin-export-metadata "2.0.0-rc.54"
     copy-text-to-clipboard "^2.1.0"
-    docz "2.0.0-rc.54"
-    docz-core "2.0.0-rc.54"
+    docz "2.0.0-rc.55"
+    docz-core "2.0.0-rc.55"
     emotion-theming "^10.0.14"
     fs-extra "^8.1.0"
     gatsby "^2.13.27"
@@ -20631,12 +20619,7 @@ typescript@3.5.3:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.3.tgz#c830f657f93f1ea846819e929092f5fe5983e977"
   integrity sha512-ACzBtm/PhXBDId6a6sDJfroT2pOWt/oOnk4/dElG5G33ZL776N3Y6/6bKZJBFpd+b05F3Ct9qDjMeJmRWtE2/g==
 
-typescript@^3.5.3:
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.2.tgz#105b0f1934119dde543ac8eb71af3a91009efe54"
-  integrity sha512-lmQ4L+J6mnu3xweP8+rOrUwzmN+MRAj7TgtJtDaXE5PMyX2kCrklhg3rvOsOIfNeAWMQWO2F1GPc1kMD2vLAfw==
-
-typescript@^3.6.3:
+typescript@^3.5.3, typescript@^3.6.3:
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.3.tgz#fea942fabb20f7e1ca7164ff626f1a9f3f70b4da"
   integrity sha512-N7bceJL1CtRQ2RiG0AQME13ksR7DiuQh/QehubYcghzv20tnh+MQnQIuJddTmsbqYj+dztchykemz0zFzlvdQw==
