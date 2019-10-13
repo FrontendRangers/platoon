@@ -7,8 +7,8 @@
     "dependencies": {
         "@frontendrangers/platoon-react": "^0.1.0",
         "babel-plugin-styled-components": "^1.10.6",
-        "gatsby": "^2.15.34",
-        "gatsby-plugin-offline": "^3.0.13",
+        "gatsby": "^2.15.36",
+        "gatsby-plugin-offline": "^3.0.14",
         "gatsby-plugin-sharp": "^2.2.29",
         "gatsby-plugin-styled-components": "^3.1.9",
         "gatsby-plugin-typescript": "^2.1.12",
@@ -23,7 +23,7 @@
     "devDependencies": {
         "@types/react": "^16.9.5",
         "@types/react-dom": "^16.9.1",
-        "typescript": "^3.6.3"
+        "typescript": "^3.6.4"
     },
     "keywords": [
         "gatsby"
