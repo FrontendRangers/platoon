@@ -12,9 +12,9 @@ module.exports = {
     ],
     plugins: [
         '@typescript-eslint',
-        'prettier',
         'jest',
         'import',
+        'prettier',
         'react',
         'jsx-a11y',
     ],
@@ -22,6 +22,9 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 8,
         sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true,
+        },
     },
     env: { browser: true, node: true, es6: true, 'jest/globals': true },
     settings: {
@@ -35,7 +38,7 @@ module.exports = {
     rules: {
         'prettier/prettier': ['error', { singleQuote: true }],
         '@typescript-eslint/no-explicit-any': 0,
-        '@typescript-eslint/explicit-member-accessibility': 0,
-        '@typescript-eslint/explicit-function-return-type': 0,
+        '@typescript-eslint/explicit-member-accessibility': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
     },
 };
