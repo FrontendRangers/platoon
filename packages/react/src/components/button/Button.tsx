@@ -1,94 +1,124 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ButtonStyles } from '@frontendrangers/platoon-core';
-import { themed } from '../../themes/helpers';
+import React, { useState } from 'react';
+import { SpaceProps } from 'styled-system';
+import { withForwardRef } from '../../hoc';
+import { composeComponent } from '../../utils';
+import { Transition } from 'react-transition-group';
+import { ButtonStyleProps, PlatoonComponent } from './types';
+import { Styled } from './styled';
 import {
-    compose,
-    space,
-    SpaceProps,
-    borderRadius,
-    BorderRadiusProps,
-} from 'styled-system';
-import { Box } from '../../primitives/box';
-import { Icon } from '../icon';
+    getButtonStyles,
+    getButtonIconStyles,
+    getButtonLabelStyles,
+} from './styles';
+import { Spinner } from '../spinner';
 
-export interface ButtonProps extends SpaceProps, BorderRadiusProps {
-    children?: React.ReactNode;
-    icon?: string;
-    variant?: string;
-    size?: string;
-    disabled?: boolean;
-    onClick?: Function;
-    type?: 'submit' | 'reset' | 'button';
-    theme?: any;
+type ButtonProps = ButtonStyleProps &
+    SpaceProps &
+    React.ComponentPropsWithRef<'button'> &
+    React.Ref<HTMLButtonElement>;
+
+interface ButtonCompoundComponents {
+    Icon?: React.FC;
 }
 
-const ButtonElement = styled<any>(Box).attrs(() => ({
-    as: 'button',
-    role: 'button',
-}))<ButtonProps>`
-    ${ButtonStyles}
-    ${themed('Button')}
+const ButtonComponent: PlatoonComponent<ButtonProps> &
+    ButtonCompoundComponents = ({
+    as = 'button',
+    forwardRef,
+    children,
+    icon,
+    iconRight,
+    size = 'md',
+    intent = 'primary',
+    variant = 'solid',
+    isFull = false,
+    isDisabled = false,
+    isLoading = false,
+    onClick = () => {},
+    ...props
+}: ButtonStyleProps) => {
+    const [isFocus, setIsFocus] = useState(false);
 
-    /* Overrides */
-    ${compose(
-        space,
-        borderRadius,
-    )}
-`;
+    const handleOnFocus: React.FocusEventHandler<HTMLButtonElement> = () => {
+        setIsFocus(true);
+    };
 
-const ButtonIcon = styled.span`
+    const handleOnBlur: React.FocusEventHandler<HTMLButtonElement> = () => {
+        setIsFocus(false);
+    };
 
-    margin-right: 0.5em;
-    vertical-align: middle;
-    font-size: 1rem;
-    line-height: 1;
-`;
+    const buttonThemeStyles = getButtonStyles({
+        size,
+        intent,
+        variant,
+        isDisabled,
+        isFull,
+    });
 
-const Button = React.forwardRef(
-    (
-        {
-            children,
-            icon,
-            size,
-            variant,
-            type,
-            onClick = () => {},
-            ...props
-        }: ButtonProps,
-        ref: any,
-    ): any => {
-        // TODO: Create an HOC to optimize this
-        // variant = variant
-        //     ? variant
-        //     : props.theme.components.Button.defaultProps.variant || 'default';
-        // size = size
-        //     ? size
-        //     : props.theme.components.Button.defaultProps.size || 'md';
-        // type = type
-        //     ? type
-        //     : props.theme.components.Button.defaultProps.type || 'button';
+    const buttonIconThemeStyles = getButtonIconStyles({ size });
 
-        return (
-            <ButtonElement
-                ref={ref}
-                variant={variant}
-                size={size}
-                type={type}
-                {...props}
-                onClick={() => onClick()}
-            >
-                {!!icon && (
-                    <ButtonIcon>
-                        <Icon name={icon}></Icon>
-                    </ButtonIcon>
+    const buttonLabelThemeStyles = getButtonLabelStyles({ size });
+
+    const isLinkTag = as === 'a';
+
+    return (
+        <Styled.Button
+            role={isLinkTag ? 'link' : 'button'}
+            as={as}
+            intent={intent}
+            themeStyles={buttonThemeStyles}
+            onFocus={(e: React.FocusEvent<HTMLButtonElement>) =>
+                handleOnFocus(e)
+            }
+            onBlur={(e: React.FocusEvent<HTMLButtonElement>) => handleOnBlur(e)}
+            onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
+                onClick(event)
+            }
+            disabled={isDisabled || isLoading}
+            isFull={isFull}
+            isLoading={isLoading}
+            isFocus={isFocus}
+            ref={forwardRef}
+            {...props}
+        >
+            {!!icon && (
+                <Styled.ButtonIcon
+                    name={icon}
+                    isLoading={isLoading}
+                    themeStyles={buttonIconThemeStyles}
+                ></Styled.ButtonIcon>
+            )}
+            {children && (
+                <Styled.ButtonLabel
+                    isLoading={isLoading}
+                    themeStyles={buttonLabelThemeStyles}
+                >
+                    {children}
+                </Styled.ButtonLabel>
+            )}
+            {!!iconRight && (
+                <Styled.ButtonIcon
+                    name={iconRight}
+                    isLoading={isLoading}
+                    themeStyles={buttonIconThemeStyles}
+                ></Styled.ButtonIcon>
+            )}
+
+            <Transition timeout={200} in={isLoading} mountOnEnter unmountOnExit>
+                {(state) => (
+                    <Styled.ButtonLoading state={state}>
+                        <Spinner></Spinner>
+                    </Styled.ButtonLoading>
                 )}
-                {children}
-            </ButtonElement>
-        );
-    },
-);
+            </Transition>
+        </Styled.Button>
+    );
+};
 
-Button.displayName = 'Button';
+ButtonComponent.Icon = Styled.ButtonIcon;
+
+ButtonComponent.displayName = 'Button';
+
+const Button = composeComponent(withForwardRef)(ButtonComponent);
 
 export { Button };
