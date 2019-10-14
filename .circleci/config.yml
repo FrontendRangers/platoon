@@ -5,7 +5,7 @@
 version: 2
 
 defaults: &defaults
-    working_directory: ~/auto
+    working_directory: ~/repo
     docker:
         - image: circleci/node:latest-browsers
 
@@ -18,7 +18,10 @@ jobs:
                   key: dependency-cache-{{ checksum "yarn.lock" }}
             - run:
                   name: bootstrap
-                  command: yarn bootstrap
+                  command: yarn install
+            - run:
+                  name: bootstrap
+                  command: yarn run bootstrap
             - save_cache:
                   key: dependency-cache-{{ checksum "yarn.lock" }}
                   paths:
@@ -28,7 +31,7 @@ jobs:
         <<: *defaults
         steps:
             - attach_workspace:
-                  at: ~/auto
+                  at: ~/repo
             - run:
                   name: Release
                   command: yarn run release
