@@ -3,49 +3,49 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
+defaults: &defaults
+    working_directory: ~/auto
+    docker:
+        - image: circleci/node:latest-browsers
+
 jobs:
-    build:
-        docker:
-            # specify the version you desire here
-            - image: circleci/node:11.11
-
-            # Specify service dependencies here if necessary
-            # CircleCI maintains a library of pre-built images
-            # documented at https://circleci.com/docs/2.0/circleci-images/
-            # - image: circleci/mongo:3.4.4
-
-        working_directory: ~/repo
-
+    install:
+        <<: *defaults
         steps:
             - checkout
-
-            # Download and cache dependencies
             - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "package.json" }}
-                      # fallback to using the latest cache if no exact match is found
-                      - v1-dependencies-
-
-            - run: yarn install
-
+                  key: dependency-cache-{{ checksum "package-lock.json" }}
             - run:
-                  name: Run Bootstrap
-                  command: yarn run bootstrap
-
-            - run:
-                  name: Run Build
-                  command: yarn run build
-                  environment:
-                      SKIP_PREFLIGHT_CHECK: "true"
-
-            - run:
-                  name: Run Tests
-                  command: yarn run test
-
+                  name: install
+                  command: yarn install
             - save_cache:
+                  key: dependency-cache-{{ checksum "package-lock.json" }}
                   paths:
-                      - node_modules
-                  key: v1-dependencies-{{ checksum "package.json" }}
+                      - ./node_modules
 
-            # run tests!
-            - run: yarn test
+    release:
+        <<: *defaults
+        steps:
+            - attach_workspace:
+                  at: ~/auto
+            - run:
+                  name: Release
+                  command: yarn run release
+
+workflows:
+    version: 2
+    build_and_release:
+        jobs:
+            - install:
+                  filters:
+                      tags:
+                          only: /.*/
+
+            - release:
+                  requires:
+                      - install
+                  filters:
+                      branches:
+                          only:
+                              - master

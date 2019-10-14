@@ -1,0 +1,5 @@
+{
+    "noVersionPrefix": true,
+    "onlyPublishWithReleaseLabel": true,
+    "plugins": ["conventional-commits"]
+}
