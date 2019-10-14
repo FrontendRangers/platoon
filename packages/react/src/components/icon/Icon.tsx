@@ -1,38 +1,46 @@
-import React, { Suspense } from 'react';
-import styled from 'styled-components';
-import { Box } from '../../primitives/box';
-import { themed } from '../../themes/helpers';
+import React, { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
+import { SpaceProps } from 'styled-system';
+import { Box } from '../../primitives';
+
+interface IconElementProps extends React.SVGAttributes<SVGElement> {
+    size?: string;
+}
+
+const IconElement = styled(Box)<IconElementProps>`
+    width: 1em;
+    height: 1em;
+`;
 
 export interface IconProps {
     name: string;
     size?: string;
 }
 
-const IconComponent = styled(Box)<IconProps>`
-    width: 24px;
-    height: 24px;
+type Props = IconProps & SpaceProps & React.ComponentPropsWithoutRef<'svg'>;
 
-    svg {
-        width: 100%;
-        height: 100%;
-    }
-
-    ${themed('Icon')}
-`;
-
-const Icon = ({ name, size }: IconProps) => {
-    const IconSvg = React.lazy(() =>
-        import('../../icons').then((module) => module[name]),
-    );
+const Icon: React.FC<Props> = ({ name, size = 'md', ...props }: IconProps) => {
+    const { icons } = useContext(ThemeContext);
+    const paths = icons[name].path;
+    const viewBox = '0 0 24 24';
     return (
-        <Suspense
-            fallback={<IconComponent name={name} size={size}></IconComponent>}
+        <IconElement
+            as="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox={viewBox}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            size={size}
+            {...props}
         >
-            <IconComponent name={name} size={size}>
-                <IconSvg></IconSvg>
-            </IconComponent>
-        </Suspense>
+            {paths}
+        </IconElement>
     );
 };
+
+Icon.displayName = 'Icon';
 
 export { Icon };
