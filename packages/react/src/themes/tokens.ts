@@ -10,7 +10,7 @@ const palette = {
         800: '#102694',
         900: '#091c7a',
     },
-    success: '#67c23a',
+    success: { 500: '#67c23a' },
     danger: {
         500: '#f56c6c',
     },
@@ -56,7 +56,16 @@ const textStyles = {
 
 const tokens = {
     fontSizes: fontSizes,
-    colors: palette,
+    colors: {
+        ...palette,
+        ...{
+            text: { light: palette.neutral[900], dark: palette.neutral[0] },
+            background: {
+                light: palette.neutral[0],
+                dark: palette.neutral[900],
+            },
+        },
+    },
     textStyles: textStyles,
     space: {
         none: '0',
@@ -69,13 +78,20 @@ const tokens = {
         xxl: '4.4rem',
     },
     radii: {
-        md: '4px',
+        rectangle: '0',
+        rounded: '4px',
+        round: '100em',
     },
     animation: {
         duration: {
             slow: 600,
             fast: 300,
         },
+    },
+    shapes: {
+        rectangle: '0',
+        rounded: '4px',
+        round: '100em',
     },
 };
 
