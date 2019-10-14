@@ -21,6 +21,7 @@ export * from './components/avatar';
 export * from './components/button';
 export * from './components/card';
 /* PLOP_INJECT_EXPORT */
+export * from './components/spinner';
 export * from './components/notification';
 export * from './components/switch';
 export * from './components/site-layout';
