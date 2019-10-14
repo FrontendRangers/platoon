@@ -3,12 +3,10 @@ import { PlatoonThemeProvider } from '../../src/themes/themeProvider';
 import { GlobalStyles } from '../../src/themes/globals';
 import {theme} from '../../src/themes/theme';
 
-const AppProvider = ({ theme, children }) => (
-    <PlatoonThemeProvider theme={theme}>
-        <>
-            <GlobalStyles />
-            {children}
-        </>
+const AppProvider = ({ theme, children, mode }) => (
+    <PlatoonThemeProvider theme={theme} mode={mode}>
+        <GlobalStyles />
+        {children}
     </PlatoonThemeProvider>
 );
 
@@ -21,11 +19,11 @@ export const contexts = [
             { name: 'No theme', props: { theme: {} } },
             {
                 name: 'Light Theme',
-                props: { theme: { ...theme, mode: 'light' } },
+                props: { theme, mode: 'light' },
             },
             {
                 name: 'Dark Theme',
-                props: { theme: { ...theme, mode: 'dark' } },
+                props: { theme, mode: 'dark' },
                 default: true,
             },
         ],
