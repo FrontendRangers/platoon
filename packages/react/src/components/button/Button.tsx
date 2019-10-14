@@ -39,11 +39,19 @@ const ButtonComponent: PlatoonComponent<ButtonProps> &
 }: ButtonStyleProps) => {
     const [isFocus, setIsFocus] = useState(false);
 
-    const handleOnFocus: React.FocusEventHandler<HTMLButtonElement> = () => {
+    const handleOnFocus: React.FocusEventHandler<HTMLButtonElement> = (
+        event: React.FocusEvent<HTMLButtonElement>,
+    ) => {
+        // TODO: handle focus state with keyboard
+        console.log(event);
         setIsFocus(true);
     };
 
-    const handleOnBlur: React.FocusEventHandler<HTMLButtonElement> = () => {
+    const handleOnBlur: React.FocusEventHandler<HTMLButtonElement> = (
+        event: React.FocusEvent<HTMLButtonElement>,
+    ) => {
+        // TODO: handle blur state with keyboard
+        console.log(event);
         setIsFocus(false);
     };
 
@@ -67,10 +75,12 @@ const ButtonComponent: PlatoonComponent<ButtonProps> &
             as={as}
             intent={intent}
             themeStyles={buttonThemeStyles}
-            onFocus={(e: React.FocusEvent<HTMLButtonElement>) =>
-                handleOnFocus(e)
+            onFocus={(event: React.FocusEvent<HTMLButtonElement>) =>
+                handleOnFocus(event)
             }
-            onBlur={(e: React.FocusEvent<HTMLButtonElement>) => handleOnBlur(e)}
+            onBlur={(event: React.FocusEvent<HTMLButtonElement>) =>
+                handleOnBlur(event)
+            }
             onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
                 onClick(event)
             }
