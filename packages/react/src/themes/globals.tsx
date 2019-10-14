@@ -1,105 +1,112 @@
 import { css, createGlobalStyle } from 'styled-components';
+import { get } from './helpers';
+import { useColorMode } from './themeProvider';
 
 const defaultSettings = {
     fontFamily:
         'SF UI Display, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
 };
 
-const resetStyles = css`
-    html {
-        box-sizing: border-box;
-        font-size: 10px;
-    }
+const resetStyles = ({ theme }) => {
+    const mode = useColorMode();
 
-    body {
-        font-size: 1.6rem;
-        font-family: ${({ theme }) =>
-            theme.fontFamily ? theme.fontFamily : defaultSettings.fontFamily};
-    }
+    const fontFamily = get(theme, `fontFamily`, false)
+        ? theme.fontFamily
+        : defaultSettings.fontFamily;
+    const textColor = get(theme, `colors.text[${mode}]`, false)
+        ? theme.colors.text[mode]
+        : 'initial';
+    const bgColor = get(theme, `colors.background[${mode}]`, false)
+        ? theme.colors.background[mode]
+        : 'initial';
 
-    *,
-    *::before,
-    *::after {
-        box-sizing: inherit;
-    }
+    return css`
+        html {
+            box-sizing: border-box;
+            font-size: 10px;
+        }
 
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    ul,
-    ol,
-    li,
-    p,
-    pre,
-    blockquote,
-    figure,
-    hr {
-        margin: 0;
-        padding: 0;
-    }
+        body {
+            font-size: 1.6rem;
+            font-family: ${fontFamily};
+            color: ${textColor};
+            background-color: ${bgColor};
+        }
 
-    ul {
-        list-style: none;
-    }
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
 
-    input,
-    textarea,
-    select,
-    button {
-        color: inherit;
-        font: inherit;
-        letter-spacing: inherit;
-    }
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul,
+        ol,
+        li,
+        p,
+        pre,
+        blockquote,
+        figure,
+        hr {
+            margin: 0;
+            padding: 0;
+        }
 
-    input[type='text'],
-    textarea {
-        width: 100%;
-    }
+        ul {
+            list-style: none;
+        }
 
-    input,
-    textarea,
-    button {
-        border: none;
-        padding: 0;
-    }
+        input,
+        textarea,
+        select {
+            color: inherit;
+            font: inherit;
+            letter-spacing: inherit;
+        }
 
-    button {
-        background-color: transparent;
-    }
+        input[type='text'],
+        textarea {
+            width: 100%;
+        }
 
-    button * {
-        pointer-events: none;
-    }
+        input,
+        textarea {
+            border: none;
+            padding: 0;
+        }
 
-    img,
-    svg,
-    iframe,
-    video,
-    object,
-    embed {
-        display: block;
-        max-width: 100%;
-    }
+        img,
+        svg,
+        iframe,
+        video,
+        object,
+        embed {
+            display: block;
+            max-width: 100%;
+        }
 
-    table {
-        table-layout: fixed;
-        width: 100%;
-    }
+        table {
+            table-layout: fixed;
+            width: 100%;
+        }
 
-    [hidden] {
-        display: none !important;
-    }
+        [hidden] {
+            display: none !important;
+        }
 
-    noscript {
-        display: block;
-        margin-bottom: 1em;
-        margin-top: 1em;
-    }
-`;
+        noscript {
+            display: block;
+            margin-bottom: 1em;
+            margin-top: 1em;
+        }
+    `;
+};
 
 const GlobalStyles = createGlobalStyle`
     ${resetStyles}
