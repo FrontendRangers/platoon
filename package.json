@@ -8,19 +8,26 @@
         "url": "https://github.com/FrontendRangers/platoon.git"
     },
     "license": "MIT",
-    "workspaces": [
-        "packages/*"
-    ],
-    "nohoist": [
-        "**/react-*",
-        "**/react-*/**",
-        "@storybook/**",
-        "react-transition-group"
-    ],
+    "workspaces": {
+        "packages": [
+            "packages/*"
+        ],
+        "nohoist": [
+            "**/react-*",
+            "**/react-*/**",
+            "@storybook/**",
+            "react-transition-group",
+            "react-transition-group/**",
+            "platoon-website/**"
+        ]
+    },
     "scripts": {
         "bootstrap": "lerna bootstrap",
         "start": "lerna run start",
-        "build": "lerna run build",
+        "build": "run-s build:core build:libs build:website",
+        "build:core": "yarn workspace @frontendrangers/platoon-core build",
+        "build:libs": "yarn workspace @frontendrangers/platoon-react build",
+        "build:website": "yarn workspace platoon-website build",
         "test": "lerna run test",
         "commit": "git-cz",
         "bump": "lerna version --yes",
@@ -34,7 +41,10 @@
     },
     "husky": {
         "hooks": {
-            "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -E HUSKY_GIT_PARAMS"
+            "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -E HUSKY_GIT_PARAMS",
+            "post-checkout": "yarnhook",
+            "post-merge": "yarnhook",
+            "post-rewrite": "yarnhook"
         }
     },
     "commitlint": {
@@ -48,9 +58,9 @@
         "@babel/core": "^7.6.4",
         "@commitlint/cli": "^8.2.0",
         "@commitlint/config-conventional": "^8.2.0",
-        "@types/react": "^16.9.5",
-        "@typescript-eslint/eslint-plugin": "^2.3.3",
-        "@typescript-eslint/parser": "^2.3.3",
+        "@types/react": "^16.9.7",
+        "@typescript-eslint/eslint-plugin": "^2.4.0",
+        "@typescript-eslint/parser": "^2.4.0",
         "auto": "^7.8.0",
         "babel-loader": "^8.0.6",
         "commitizen": "^4.0.3",
@@ -66,13 +76,13 @@
         "eslint-plugin-prettier": "^3.1.1",
         "eslint-plugin-react": "^7.16.0",
         "husky": "^3.0.9",
-        "lerna": "^3.17.0",
+        "lerna": "^3.18.1",
         "lint-staged": "^9.4.2",
         "npm-run-all": "^4.1.5",
         "prettier": "^1.18.2",
         "react-docgen-typescript-loader": "^3.3.0",
         "rimraf": "^3.0.0",
-        "rollup": "^1.23.1",
+        "rollup": "^1.24.0",
         "rollup-plugin-commonjs": "^10.1.0",
         "rollup-plugin-node-resolve": "^5.2.0",
         "rollup-plugin-peer-deps-external": "^2.2.0",
@@ -85,6 +95,7 @@
         "stylelint-processor-styled-components": "^1.8.0",
         "ts-loader": "^6.2.0",
         "typescript": "^3.6.4",
-        "webpack": "^4.41.1"
+        "webpack": "^4.41.2",
+        "yarnhook": "^0.4.3"
     }
 }

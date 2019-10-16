@@ -17,10 +17,10 @@ jobs:
             - restore_cache:
                   key: dependency-cache-{{ checksum "yarn.lock" }}
             - run:
-                  name: bootstrap
+                  name: Install
                   command: yarn install
             - run:
-                  name: bootstrap
+                  name: Bootstrap
                   command: yarn run bootstrap
             - save_cache:
                   key: dependency-cache-{{ checksum "yarn.lock" }}

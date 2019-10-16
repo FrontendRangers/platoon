@@ -67,7 +67,6 @@
         "@types/react-dom": "^16.9.1",
         "@types/react-transition-group": "^4.2.3",
         "@types/storybook__addon-centered": "^3.4.1",
-        "@types/storybook__addon-knobs": "^5.0.4",
         "@types/storybook__react": "^4.0.2",
         "@types/styled-components": "^4.1.19",
         "@types/styled-system": "^5.1.2",
