@@ -17,7 +17,8 @@
             "**/react-*/**",
             "@storybook/**",
             "react-transition-group",
-            "react-transition-group/**"
+            "react-transition-group/**",
+            "platoon-website/**"
         ]
     },
     "scripts": {
