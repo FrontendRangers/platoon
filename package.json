@@ -24,7 +24,10 @@
     "scripts": {
         "bootstrap": "lerna bootstrap",
         "start": "lerna run start",
-        "build": "lerna run build",
+        "build": "run-s build:core build:libs build:website",
+        "build:core": "yarn workspace @frontendrangers/platoon-core build",
+        "build:libs": "yarn workspace @frontendrangers/platoon-react build",
+        "build:website": "yarn workspace platoon-website build",
         "test": "lerna run test",
         "commit": "git-cz",
         "bump": "lerna version --yes",

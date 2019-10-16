@@ -47,5 +47,8 @@
     },
     "peerDependencies": {
         "styled-components": "beta"
+    },
+    "resolutions": {
+        "@types/react": "^16.8.19"
     }
 }
