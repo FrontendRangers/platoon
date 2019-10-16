@@ -8,15 +8,18 @@
         "url": "https://github.com/FrontendRangers/platoon.git"
     },
     "license": "MIT",
-    "workspaces": [
-        "packages/*"
-    ],
-    "nohoist": [
-        "**/react-*",
-        "**/react-*/**",
-        "@storybook/**",
-        "react-transition-group"
-    ],
+    "workspaces": {
+        "packages": [
+            "packages/*"
+        ],
+        "nohoist": [
+            "**/react-*",
+            "**/react-*/**",
+            "@storybook/**",
+            "react-transition-group",
+            "react-transition-group/**"
+        ]
+    },
     "scripts": {
         "bootstrap": "lerna bootstrap",
         "start": "lerna run start",
