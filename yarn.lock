@@ -15,17 +15,17 @@
     "@auto-it/core" "^7.8.0"
     parse-commit-message "4.0.0"
 
-"@auto-it/core@^7.8.0":
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.8.0.tgz#f41dab7787a9b1fbc4f5edd4a2cb9ef7b254f34c"
-  integrity sha512-JDLl2CQ63unmFWjgsrYb5woQ3nQg13w9sXTNCOJm+R2ymAIQb5P9W49PMKCzZffpZwKa4O3e/+nM9DmWS/aoSA==
+"@auto-it/core@^7.11.0", "@auto-it/core@^7.8.0":
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.11.0.tgz#c281c9f4d94679879acf751ddfea9117f5aeeaf0"
+  integrity sha512-NcehLqJI1LI3wZ7muYXHMxP0PZe5JTXlmdwBRBklNZCxt/Kb0TxDw056OEV8Kpv0PruwgQIWWF6VyxBifGAyKw==
   dependencies:
     "@atomist/slack-messages" "~1.1.0"
     "@octokit/graphql" "^4.0.0"
     "@octokit/plugin-enterprise-compatibility" "^1.1.1"
     "@octokit/plugin-retry" "^2.2.0"
     "@octokit/plugin-throttling" "^2.6.0"
-    "@octokit/rest" "16.30.1"
+    "@octokit/rest" "16.33.1"
     await-to-js "^2.1.1"
     cosmiconfig "5.2.1"
     dedent "^0.7.0"
@@ -34,7 +34,7 @@
     enquirer "^2.3.0"
     env-ci "^4.1.1"
     gitlog "^3.1.2"
-    https-proxy-agent "^2.2.2"
+    https-proxy-agent "^3.0.0"
     import-cwd "^3.0.0"
     lodash.chunk "^4.2.0"
     node-fetch "2.6.0"
@@ -42,32 +42,35 @@
     signale "^1.4.0"
     tapable "^2.0.0-beta.2"
     tinycolor2 "^1.4.1"
+    tslib "1.10.0"
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
-"@auto-it/npm@^7.8.0":
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.8.0.tgz#3d33b777fc5fbd502c3771f1ad90f0f1ed1f8df6"
-  integrity sha512-ezKOm7IShb1xfgxpSFSyS3L7ofeKq1RCT9PEd0Ka+/jx4etqtv6DSEqVQtrW7aaCe9Ny+pTzWn0DkK8lqtjyhg==
+"@auto-it/npm@^7.11.0", "@auto-it/npm@^7.8.0":
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.11.0.tgz#1de909e4ce16fdd276635ba9c17dab1f864c5f6f"
+  integrity sha512-KSHKGndoE0GgqE3fzzh2pEP40+N9nwnV5wpCWfCC3HVyBuYemHtCVwAsd70TrssqGEHKIKxCdaRdqlz3IHSBnQ==
   dependencies:
-    "@auto-it/core" "^7.8.0"
+    "@auto-it/core" "^7.11.0"
     env-ci "^4.1.1"
     get-monorepo-packages "^1.1.0"
     parse-author "^2.0.0"
     parse-github-url "1.0.2"
     registry-url "^5.1.0"
     semver "^6.0.0"
+    tslib "1.10.0"
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
     user-home "^2.0.0"
 
-"@auto-it/released@^7.8.0":
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-7.8.0.tgz#dc36c6cceb9f4455005c439b956c0ef1d9dd747c"
-  integrity sha512-umMipqLSYI2f3sgs9RafFRQ+53idF3pwsjyKtd6Ot/P+HOqrBlgqdWj+Ni/eE8He/Hbp31wJJLrh+vpwqB+1yg==
+"@auto-it/released@^7.11.0":
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-7.11.0.tgz#6d446dfa53fc34eebcc7fd226c5d0291db9264bf"
+  integrity sha512-9aP1B/3RPyaWC/dOCSGt8Xuv4fK3vVsAuj8wpt6QH+EMgcI1tB1keom41gBlVu8tSKlg0IGUqx8AWP8IDW8h3g==
   dependencies:
-    "@auto-it/core" "^7.8.0"
+    "@auto-it/core" "^7.11.0"
     deepmerge "^4.0.0"
+    tslib "1.10.0"
 
 "@babel/cli@^7.5.5", "@babel/cli@^7.6.4":
   version "7.6.4"
@@ -2520,25 +2523,7 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
-"@octokit/rest@16.30.1":
-  version "16.30.1"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.30.1.tgz#03e6dfb93e9a9cd2b3bacb95c49a8c7923f42ad0"
-  integrity sha512-1n2QzTbbaBXNLpx7WHlcsSMdJvxSdKmerXQm+bMYlKDbQM19uq446ZpGs7Ynq5SsdLj1usIfgJ9gJf4LtcWkDw==
-  dependencies:
-    "@octokit/request" "^5.0.0"
-    "@octokit/request-error" "^1.0.2"
-    atob-lite "^2.0.0"
-    before-after-hook "^2.0.0"
-    btoa-lite "^1.0.0"
-    deprecation "^2.0.0"
-    lodash.get "^4.4.2"
-    lodash.set "^4.3.2"
-    lodash.uniq "^4.5.0"
-    octokit-pagination-methods "^1.1.0"
-    once "^1.4.0"
-    universal-user-agent "^4.0.0"
-
-"@octokit/rest@^16.27.0", "@octokit/rest@^16.28.4":
+"@octokit/rest@16.33.1", "@octokit/rest@^16.27.0", "@octokit/rest@^16.28.4":
   version "16.33.1"
   resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.33.1.tgz#19229f5fd28d8e071644d37c249775ee40add433"
   integrity sha512-lOQ+fJZwkeJ/1PRTdnY1uNja01aKOMioRhQfZtei64gZMXIX3EAfF4koMQMvoLFwsnVBu3ifj1JW1WAAKdXcnA==
@@ -3300,6 +3285,16 @@
     compass-vertical-rhythm "^1.4.5"
     modularscale "^2.0.1"
     object-assign "^4.1.1"
+
+"@types/command-line-args@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@types/command-line-args/-/command-line-args-5.0.0.tgz#484e704d20dbb8754a8f091eee45cdd22bcff28c"
+  integrity sha512-4eOPXyn5DmP64MCMF8ePDvdlvlzt2a+F8ZaVjqmh2yFCpGjc1kI3kGnCFYX9SCsGTjQcWIyVZ86IHCEyjy/MNg==
+
+"@types/command-line-usage@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@types/command-line-usage/-/command-line-usage-5.0.1.tgz#99424950da567ba67b6b65caee57ff03c4e751ec"
+  integrity sha512-/xUgezxxYePeXhg5S04hUjxG9JZi+rJTs1+4NwpYPfSaS7BeDa6tVJkH6lN9Cb6rl8d24Fi2uX0s0Ngg2JT6gg==
 
 "@types/configstore@^2.1.1":
   version "2.1.1"
@@ -4371,18 +4366,18 @@ auto-bind@^2.0.0:
     "@types/react" "^16.8.12"
 
 auto@^7.8.0:
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/auto/-/auto-7.8.0.tgz#37a2f8f7f991f8f44b1466c7c6bc8206e247eab7"
-  integrity sha512-0yn62L10lLKJRpc7f1oO0oMai1WJqvw5Oxa2aT7yNX/U2zZbewGjPV33HT+GMhzm0kKkfSRUzA6rQ7IOHwwTsw==
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/auto/-/auto-7.11.0.tgz#442216f8de8df940b4f6f1e509a1054e4b139d79"
+  integrity sha512-j4FT3rQOhThkLhSIUS267f2MQ8mscCuwGWE2SVDlA7+z9csvmId2H25ScFwyUt6gNXzwZgOcrjdiS7A6VkASRw==
   dependencies:
-    "@auto-it/core" "^7.8.0"
-    "@auto-it/npm" "^7.8.0"
-    "@auto-it/released" "^7.8.0"
+    "@auto-it/core" "^7.11.0"
+    "@auto-it/npm" "^7.11.0"
+    "@auto-it/released" "^7.11.0"
     chalk "^2.4.2"
-    command-line-args "^5.1.1"
-    command-line-usage "^6.0.2"
+    command-line-application "^0.9.3"
     dedent "^0.7.0"
     signale "^1.4.0"
+    tslib "1.10.0"
 
 autoprefixer@^9.4.9, autoprefixer@^9.5.1, autoprefixer@^9.6.5:
   version "9.6.5"
@@ -6182,6 +6177,20 @@ command-exists@^1.2.2:
   resolved "https://registry.yarnpkg.com/command-exists/-/command-exists-1.2.8.tgz#715acefdd1223b9c9b37110a149c6392c2852291"
   integrity sha512-PM54PkseWbiiD/mMsbvW351/u+dafwTJ0ye2qB60G1aGQP9j3xK2gmMDc+R34L3nDtx4qMCitXT75mkbkGJDLw==
 
+command-line-application@^0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/command-line-application/-/command-line-application-0.9.3.tgz#3c9ce8cc15fa38bf398fc2ef6e2755d2d15e6014"
+  integrity sha512-/xzhsmBjggqM1xqLKvNf6yEe1zu3VzDdhb6Z7PjW1G0lM0TNUvH3iKZGrC52xTlTilW/g23tishK8tYGxr+Tgg==
+  dependencies:
+    "@types/command-line-args" "^5.0.0"
+    "@types/command-line-usage" "^5.0.1"
+    chalk "^2.4.1"
+    command-line-args "^5.1.1"
+    command-line-usage "^6.0.0"
+    meant "^1.0.1"
+    remove-markdown "^0.3.0"
+    tslib "1.10.0"
+
 command-line-args@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/command-line-args/-/command-line-args-5.1.1.tgz#88e793e5bb3ceb30754a86863f0401ac92fd369a"
@@ -6192,7 +6201,7 @@ command-line-args@^5.1.1:
     lodash.camelcase "^4.3.0"
     typical "^4.0.0"
 
-command-line-usage@^6.0.2:
+command-line-usage@^6.0.0:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/command-line-usage/-/command-line-usage-6.0.2.tgz#b130e3495ae743ce4833e1c9373bbb0898275dda"
   integrity sha512-Jr9RQM43qWDwpRJOa0lgZw0LhiU8tgOqoR+xxIcb3eT5vFZi69fBWUODMSBtGUYI1qTlElPl3txFQY6rChVuXQ==
@@ -7209,7 +7218,7 @@ debug@^4.0.0, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@~4.1.0:
   dependencies:
     ms "^2.1.1"
 
-debuglog@*, debuglog@^1.0.1:
+debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
   integrity sha1-qiT/uaw9+aI1GDfPstJ5NgzXhJI=
@@ -11060,7 +11069,7 @@ https-browserify@^1.0.0:
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
-https-proxy-agent@^2.2.1, https-proxy-agent@^2.2.2:
+https-proxy-agent@^2.2.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-2.2.2.tgz#271ea8e90f836ac9f119daccd39c19ff7dfb0793"
   integrity sha512-c8Ndjc9Bkpfx/vCJueCPy0jlP4ccCCSNDp8xwCZzPjKJUm+B+u9WX2x98Qx4n1PiMNTWo3D7KK5ifNV/yJyRzg==
@@ -11297,7 +11306,7 @@ import-local@^2.0.0:
     pkg-dir "^3.0.0"
     resolve-cwd "^2.0.0"
 
-imurmurhash@*, imurmurhash@^0.1.4:
+imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
@@ -12964,11 +12973,6 @@ lodash-es@^4.17.15:
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
   integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
 
-lodash._baseindexof@*:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
-  integrity sha1-/lK1OhxnYeQmGNZU5KJXie1hgiw=
-
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -12977,32 +12981,10 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
-lodash._bindcallback@*:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
-  integrity sha1-5THCdkTPi1epnhftlbNcdIeJOS4=
-
-lodash._cacheindexof@*:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
-  integrity sha1-PcaayCSY0u5ePOVgkbr9Ktx73pI=
-
-lodash._createcache@*:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
-  integrity sha1-VtagZAF2JeeevKa4AY4XRAvc8JM=
-  dependencies:
-    lodash._getnative "^3.0.0"
-
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
   integrity sha1-D0ZZ+7CddRlPqeK4imZE02PJ/iY=
-
-lodash._getnative@*, lodash._getnative@^3.0.0:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
-  integrity sha1-VwvH3t5G1hzc3mh9ZdPuy6o6r/U=
 
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
@@ -13163,11 +13145,6 @@ lodash.reject@^4.4.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.reject/-/lodash.reject-4.6.0.tgz#80d6492dc1470864bbf583533b651f42a9f52415"
   integrity sha1-gNZJLcFHCGS79YNTO2UfQqn1JBU=
-
-lodash.restparam@*:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
-  integrity sha1-k2pOMJ7zMKdkXtQUWYbIWuWyCAU=
 
 lodash.set@^4.3.2:
   version "4.3.2"
@@ -17893,6 +17870,11 @@ remove-accents@0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/remove-accents/-/remove-accents-0.4.2.tgz#0a43d3aaae1e80db919e07ae254b285d9e1c7bb5"
   integrity sha1-CkPTqq4egNuRngeuJUsoXZ4ce7U=
+
+remove-markdown@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/remove-markdown/-/remove-markdown-0.3.0.tgz#5e4b667493a93579728f3d52ecc1db9ca505dc98"
+  integrity sha1-XktmdJOpNXlyjz1S7MHbnKUF3Jg=
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
