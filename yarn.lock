@@ -7209,7 +7209,7 @@ debug@^4.0.0, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@~4.1.0:
   dependencies:
     ms "^2.1.1"
 
-debuglog@*, debuglog@^1.0.1:
+debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
   integrity sha1-qiT/uaw9+aI1GDfPstJ5NgzXhJI=
@@ -7633,10 +7633,10 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-components@2.0.0-rc.48:
-  version "2.0.0-rc.48"
-  resolved "https://registry.yarnpkg.com/docz-components/-/docz-components-2.0.0-rc.48.tgz#ea23e397ec20f1f62a855dd975f260db2b286101"
-  integrity sha512-GfCLM5AvJTTY7bShVI3nvVgGtll6sTVxLIQnu/wij6eE8H2Tlc9uxIU7CK2hakROJC6tUPziJNarjNPu+n0LvA==
+docz-components@2.0.0-rc.63:
+  version "2.0.0-rc.63"
+  resolved "https://registry.yarnpkg.com/docz-components/-/docz-components-2.0.0-rc.63.tgz#452cd0f5af29b126bf6115a948c1f1483464ad8e"
+  integrity sha512-6GGpa0Jl/vsx6a1QiN6guxnIVkI/U4ZeiqQoHN/ElD87k5qXs4T6dWU7h+NNiNeaWNqrpyFOrZGt3vNCv/Kefw==
   dependencies:
     "@emotion/core" "^10.0.16"
     "@mdx-js/react" "^1.4.0"
@@ -7650,10 +7650,10 @@ docz-components@2.0.0-rc.48:
     theme-ui "^0.2.38"
     typography-theme-moraga "^0.16.19"
 
-docz-core@2.0.0-rc.57:
-  version "2.0.0-rc.57"
-  resolved "https://registry.yarnpkg.com/docz-core/-/docz-core-2.0.0-rc.57.tgz#cbc03033087d2a247d15b3faf19242eb59400193"
-  integrity sha512-d9oxcJQD7J+UZFffxuDTxh9blQOJwJRI9393ifRYRrU82V3wQKgavqRojqVDwoSctjT74O7AtxH5nzGsQ2RcOg==
+docz-core@2.0.0-rc.63:
+  version "2.0.0-rc.63"
+  resolved "https://registry.yarnpkg.com/docz-core/-/docz-core-2.0.0-rc.63.tgz#b04ebcd9ee74e4809a566e408e413840675372de"
+  integrity sha512-ery0KVEkscF9beZQviVgOqbN06IlDEQB0kNY1ZVBi/Gt31twXRbp4OCTjN8iP2S4uL0K2s8kB0gg5CN42nZj2Q==
   dependencies:
     "@sindresorhus/slugify" "^0.9.1"
     chalk "^2.4.2"
@@ -7714,22 +7714,22 @@ docz-utils@2.0.0-rc.54:
     unist-util-is "^3.0.0"
     unist-util-visit "^1.4.1"
 
-docz@2.0.0-rc.57:
-  version "2.0.0-rc.57"
-  resolved "https://registry.yarnpkg.com/docz/-/docz-2.0.0-rc.57.tgz#a56f39ae0b45d58afd95f8fb9cd21328ca52c7fe"
-  integrity sha512-btZg9VmVjHhUNwH/VgDRKIDS331mksuX82na3EGXN4ghzMC/+ONyicgAvkADOqQsGA/PB7Us9SwHKej0f/6d7Q==
+docz@2.0.0-rc.63:
+  version "2.0.0-rc.63"
+  resolved "https://registry.yarnpkg.com/docz/-/docz-2.0.0-rc.63.tgz#4875faa77c3a28566a911415a9b272f5c3e31e5a"
+  integrity sha512-ByUehJLAgwAbG4RbfBsWlw4X+d+oIUGAjz5J7qvPKg2/By+uOzx/6va5ENp9S3q4BPYnvpN6uftPMDo8oobc7Q==
   dependencies:
     "@emotion/core" "^10.0.16"
     "@mdx-js/react" "^1.0.27"
     array-sort "^1.0.0"
     capitalize "^2.0.0"
-    docz-components "2.0.0-rc.48"
-    docz-core "2.0.0-rc.57"
+    docz-components "2.0.0-rc.63"
+    docz-core "2.0.0-rc.63"
     fast-deep-equal "^2.0.1"
     gatsby "^2.13.27"
     gatsby-plugin-eslint "^2.0.5"
     gatsby-plugin-typescript "^2.1.6"
-    gatsby-theme-docz "2.0.0-rc.57"
+    gatsby-theme-docz "2.0.0-rc.63"
     lodash "^4.17.14"
     marksy "^8.0.0"
     match-sorter "^3.1.1"
@@ -9780,10 +9780,10 @@ gatsby-telemetry@^1.1.33:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-theme-docz@2.0.0-rc.57, gatsby-theme-docz@^2.0.0-rc.53:
-  version "2.0.0-rc.57"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-docz/-/gatsby-theme-docz-2.0.0-rc.57.tgz#a09f7a751b00d9a39262aba08afdfd4fc4690dd9"
-  integrity sha512-dtFYcj1pWgeRymJPhrMDvMowZOgt4i0b5NLv4q11X5YgULUmbWy9SKrwoJz8xpMKfLcgAn1lDwGm3NJo4D2Vmw==
+gatsby-theme-docz@2.0.0-rc.63, gatsby-theme-docz@^2.0.0-rc.53:
+  version "2.0.0-rc.63"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-docz/-/gatsby-theme-docz-2.0.0-rc.63.tgz#14e6fe156a3e4b1f11e4391ac4fb247654ca48b3"
+  integrity sha512-ThP7IUDWi9c6kPPvPwSsDu5fWqAZOqcUxYbc7SpgA6mVXn9PSbXuykSavUoNNoKJKDNcvY5wAOleXbtmYx7lNw==
   dependencies:
     "@emotion/core" "^10.0.14"
     "@emotion/styled" "^10.0.14"
@@ -9793,8 +9793,8 @@ gatsby-theme-docz@2.0.0-rc.57, gatsby-theme-docz@^2.0.0-rc.53:
     "@theme-ui/typography" "^0.2.5"
     babel-plugin-export-metadata "2.0.0-rc.56"
     copy-text-to-clipboard "^2.1.0"
-    docz "2.0.0-rc.57"
-    docz-core "2.0.0-rc.57"
+    docz "2.0.0-rc.63"
+    docz-core "2.0.0-rc.63"
     emotion-theming "^10.0.14"
     fs-extra "^8.1.0"
     gatsby "^2.13.27"
@@ -9808,7 +9808,7 @@ gatsby-theme-docz@2.0.0-rc.57, gatsby-theme-docz@^2.0.0-rc.53:
     lodash "^4.17.14"
     mdx-utils "^0.2.0"
     prop-types "^15.7.2"
-    re-resizable "^5.0.1"
+    re-resizable "^6.1.0"
     react-feather "^2.0.3"
     react-helmet "^5.2.1"
     react-live "^2.1.2"
@@ -11297,7 +11297,7 @@ import-local@^2.0.0:
     pkg-dir "^3.0.0"
     resolve-cwd "^2.0.0"
 
-imurmurhash@*, imurmurhash@^0.1.4:
+imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
@@ -12964,11 +12964,6 @@ lodash-es@^4.17.15:
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
   integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
 
-lodash._baseindexof@*:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
-  integrity sha1-/lK1OhxnYeQmGNZU5KJXie1hgiw=
-
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -12977,32 +12972,10 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
-lodash._bindcallback@*:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
-  integrity sha1-5THCdkTPi1epnhftlbNcdIeJOS4=
-
-lodash._cacheindexof@*:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
-  integrity sha1-PcaayCSY0u5ePOVgkbr9Ktx73pI=
-
-lodash._createcache@*:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
-  integrity sha1-VtagZAF2JeeevKa4AY4XRAvc8JM=
-  dependencies:
-    lodash._getnative "^3.0.0"
-
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
   integrity sha1-D0ZZ+7CddRlPqeK4imZE02PJ/iY=
-
-lodash._getnative@*, lodash._getnative@^3.0.0:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
-  integrity sha1-VwvH3t5G1hzc3mh9ZdPuy6o6r/U=
 
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
@@ -13163,11 +13136,6 @@ lodash.reject@^4.4.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.reject/-/lodash.reject-4.6.0.tgz#80d6492dc1470864bbf583533b651f42a9f52415"
   integrity sha1-gNZJLcFHCGS79YNTO2UfQqn1JBU=
-
-lodash.restparam@*:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
-  integrity sha1-k2pOMJ7zMKdkXtQUWYbIWuWyCAU=
 
 lodash.set@^4.3.2:
   version "4.3.2"
@@ -16842,14 +16810,7 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-re-resizable@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/re-resizable/-/re-resizable-5.0.1.tgz#66756a7aa0583b199e23e23f12a71c546031146d"
-  integrity sha512-Iy8v5li7bhNBDxCN1DbA4l6G2Hk8NCZtcExoI1D+5pfvKyQcH8LH2P5h3DGoEfHhs0uyyRC1Qx8bHBomfrmxgA==
-  dependencies:
-    fast-memoize "^2.5.1"
-
-re-resizable@^6.0.0:
+re-resizable@^6.0.0, re-resizable@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/re-resizable/-/re-resizable-6.1.0.tgz#ba4ece505b48f05691446d57837151349d7575e8"
   integrity sha512-Jj9zdYW6SnUto8pmH4b/3Kms/PKPv9CuWE70W1IuUIR1HlrEibgsqhbUe8BYDRBTuagH1gav09806k7TieUeSA==
