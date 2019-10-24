@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v1
-    - name: Bootstrap
-      run: yarn bootstrap
-    - name: Build
-      run: yarn run build
+      - uses: actions/checkout@v1
+      - name: action-lerna
+        uses: m19c/action-lerna@1.0.0
+      - name: Bootstrap
+        run: yarn bootstrap
+      - name: Build
+        run: yarn run build
     
