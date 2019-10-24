@@ -6,9 +6,13 @@ jobs:
     build:
         runs-on: ubuntu-latest
 
-        steps:
-            - uses: actions/checkout@v1
-            - name: Bootstrap
-              run: yarn bootstrap
-            - name: Build
-              run: yarn run build
+    runs-on: ubuntu-latest
+
+    steps:
+        - uses: actions/checkout@v1
+        - name: Install lerna
+          run: yarn global add lerna
+        - name: Bootstrap
+          run: yarn bootstrap
+        - name: Build
+          run: yarn run build
