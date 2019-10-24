@@ -1,16 +1,14 @@
-name: CI
+name: Build
 
 on: [push]
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v1
-    - name: Bootstrap
-      run: yarn bootstrap
-    - name: Build
-      run: yarn run build
-    
+        steps:
+            - uses: actions/checkout@v1
+            - name: Bootstrap
+              run: yarn bootstrap
+            - name: Build
+              run: yarn run build
