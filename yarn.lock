@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@atomist/slack-messages@~1.1.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@atomist/slack-messages/-/slack-messages-1.1.1.tgz#9de42932e89065fb4fe4842978ca2d1ed3424cea"
-  integrity sha512-m2OzlTDbhvzK4hgswH9Lx0cdpq1AntXu53Klz5RGkFfuoDvKsnlU7tmtVfNWtUiP0zZbGtrb/BZYH7aB6TRnMA==
-
 "@auto-it/conventional-commits@^7.12.2":
   version "7.12.2"
   resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-7.12.2.tgz#56dc1769bac1f3f7b10b0882af53f5d6f6128dab"
@@ -16,12 +11,11 @@
     parse-commit-message "4.0.0"
     tslib "1.10.0"
 
-"@auto-it/core@^7.12.2":
-  version "7.12.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.12.2.tgz#1b070829a5f9b3df64fbbee8f5eaf613d3ca4941"
-  integrity sha512-H1JtXElJ0HVMnnHA6ZYTC00EsRV+gISPqtmRwJLXMqtn9bDGFOQw9lLNrmOA0Uab4NUTGD2c6x3ZSYH5Zlai8w==
+"@auto-it/core@^7.12.2", "@auto-it/core@^7.12.3":
+  version "7.12.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.12.3.tgz#d7211b5edd31620f0e2fa1a16660a599c84c354f"
+  integrity sha512-qvxD6QxEjQmx5L0/S4Pq3suzq5Jgof/jqZ862yYE9XgzidSd5kaAV380lMdEghU98pkImnHNq1KEGl5cmZJ6yw==
   dependencies:
-    "@atomist/slack-messages" "~1.1.0"
     "@octokit/graphql" "^4.0.0"
     "@octokit/plugin-enterprise-compatibility" "^1.1.1"
     "@octokit/plugin-retry" "^2.2.0"
@@ -48,11 +42,11 @@
     url-join "^4.0.0"
 
 "@auto-it/npm@^7.12.2":
-  version "7.12.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.12.2.tgz#0400848044896c091a19200a54e2e92187f3817e"
-  integrity sha512-1m+0jIa7qxf2PfextFA5FcMzvsmrXyn+wVGv24pnjc9yzA/3l7KTrMn1023PO5HNTFjzpsj/vh1P71sPTK9umQ==
+  version "7.12.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.12.3.tgz#981c33415b71cf9af0940c86450fbba9bc7c9399"
+  integrity sha512-9197U26Hmy129jKRM9pDOvP0c5UA+97VIDuMQUxU1jv6ejxSOiXBaafsn0E7q7nRgQZoUFsTYkx1xIP4BPVOCQ==
   dependencies:
-    "@auto-it/core" "^7.12.2"
+    "@auto-it/core" "^7.12.3"
     env-ci "^4.1.1"
     get-monorepo-packages "^1.1.0"
     parse-author "^2.0.0"
@@ -3436,7 +3430,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.8.12", "@types/react@^16.8.19", "@types/react@^16.8.6", "@types/react@^16.9.5", "@types/react@^16.9.7":
+"@types/react@*", "@types/react@^16.8.12", "@types/react@^16.8.6", "@types/react@^16.9.5", "@types/react@^16.9.7":
   version "16.9.9"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.9.tgz#a62c6f40f04bc7681be5e20975503a64fe783c3a"
   integrity sha512-L+AudFJkDukk+ukInYvpoAPyJK5q1GanFOINOJnM0w6tUgITuWvJ4jyoBPFL7z4/L8hGLd+K/6xR5uUjXu0vVg==
