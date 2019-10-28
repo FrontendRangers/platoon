@@ -3425,9 +3425,9 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^16.8.12", "@types/react@^16.8.6", "@types/react@^16.9.5", "@types/react@^16.9.7":
-  version "16.9.9"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.9.tgz#a62c6f40f04bc7681be5e20975503a64fe783c3a"
-  integrity sha512-L+AudFJkDukk+ukInYvpoAPyJK5q1GanFOINOJnM0w6tUgITuWvJ4jyoBPFL7z4/L8hGLd+K/6xR5uUjXu0vVg==
+  version "16.9.11"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.11.tgz#70e0b7ad79058a7842f25ccf2999807076ada120"
+  integrity sha512-UBT4GZ3PokTXSWmdgC/GeCGEJXE5ofWyibCcecRLUVN2ZBpXQGVgQGtG2foS7CrTKFKlQVVswLvf7Js6XA/CVQ==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -3461,9 +3461,9 @@
     "@types/webpack-env" "*"
 
 "@types/styled-components@^4.1.19":
-  version "4.1.19"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.19.tgz#535b455d7744fda1608c605df82c0800eda61a09"
-  integrity sha512-nDkoTQ8ItcJiyEvTa24TwsIpIfNKCG+Lq0LvAwApOcjQ8OaeOOCg66YSPHBePHUh6RPt1LA8aEzRlgWhQPFqPg==
+  version "4.1.20"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.20.tgz#8afd41039c0fd582152e57ff75c58a5353870de6"
+  integrity sha512-WztLENdKY+H9udccx5ZhAblgTp08NSfOFYdGaWM0MMm+1tEOioYVFwIIQ7Hx+9wWXiWKDXeoX6R3D/i1obnG3g==
   dependencies:
     "@types/react" "*"
     "@types/react-native" "*"
