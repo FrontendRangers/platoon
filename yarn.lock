@@ -4523,10 +4523,10 @@ babel-plugin-emotion@^10.0.14, babel-plugin-emotion@^10.0.22:
     find-root "^1.1.0"
     source-map "^0.5.7"
 
-babel-plugin-export-metadata@2.0.0-rc.64:
-  version "2.0.0-rc.64"
-  resolved "https://registry.yarnpkg.com/babel-plugin-export-metadata/-/babel-plugin-export-metadata-2.0.0-rc.64.tgz#7fd741b2018c931e9aa9cbf23d31bf2c4970647e"
-  integrity sha512-Rr6SZHY7RrF3sNcrhRR6b6oCmTiFLVLjiAaO+ENrMzW6dV9yaF13mVL3ikQeYV7jjM6i/2o9QBXpENs3ja/p0Q==
+babel-plugin-export-metadata@2.0.0-rc.69:
+  version "2.0.0-rc.69"
+  resolved "https://registry.yarnpkg.com/babel-plugin-export-metadata/-/babel-plugin-export-metadata-2.0.0-rc.69.tgz#da0b32d687b4ca95b74f5b6d62c9b45f54dd2478"
+  integrity sha512-AhLs/MKnw8o8Qpd1o4A170HT65ldcb3PWIPekyYlmFc2PH4LzTXNn/UjNLdWaYsYPUHudDh/so/18v0QPIWXfQ==
   dependencies:
     "@babel/cli" "^7.5.5"
     "@babel/core" "^7.5.5"
@@ -7560,16 +7560,16 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-core@2.0.0-rc.64:
-  version "2.0.0-rc.64"
-  resolved "https://registry.yarnpkg.com/docz-core/-/docz-core-2.0.0-rc.64.tgz#bda8d335093ec403c54612d742944884d91e5ff1"
-  integrity sha512-YyuodirzlwPlrTIM3C/A2lwEOqKoCMynMcMKJl6YSuZOueV4zEei0iNqJVN8r4jdohcZK0BBDNyJtgj+nThscw==
+docz-core@2.0.0-rc.69:
+  version "2.0.0-rc.69"
+  resolved "https://registry.yarnpkg.com/docz-core/-/docz-core-2.0.0-rc.69.tgz#7cc27f1aad601387362910bce2543783348fc3f4"
+  integrity sha512-BcuqCj/eg0te5fp7MToX6emk2vN4xjcPhM8/sGbn/JWZcGSkE6bvD1UvZOKObG4lzcWA/9a4fRLLgxpVzl+8Fg==
   dependencies:
     "@sindresorhus/slugify" "^0.9.1"
     chalk "^2.4.2"
     chokidar "^3.0.2"
     detect-port "^1.3.0"
-    docz-utils "2.0.0-rc.64"
+    docz-utils "2.0.0-rc.69"
     env-dot-prop "^2.0.1"
     fast-deep-equal "^2.0.1"
     fast-glob "^3.0.4"
@@ -7578,12 +7578,12 @@ docz-core@2.0.0-rc.64:
     get-pkg-repo "^4.1.0"
     humanize-string "^2.1.0"
     latest-version "^5.1.0"
-    load-cfg "2.0.0-rc.64"
+    load-cfg "2.0.0-rc.69"
     lodash "^4.17.14"
     minimatch "^3.0.4"
     ora "^3.4.0"
     react-docgen "^4.1.1"
-    react-docgen-actual-name-handler "2.0.0-rc.64"
+    react-docgen-actual-name-handler "2.0.0-rc.69"
     react-docgen-external-proptypes-handler "^1.0.3"
     react-docgen-typescript "^1.12.5"
     recast "^0.18.1"
@@ -7596,10 +7596,10 @@ docz-core@2.0.0-rc.64:
     xstate "^4.6.7"
     yargs "^13.3.0"
 
-docz-utils@2.0.0-rc.64:
-  version "2.0.0-rc.64"
-  resolved "https://registry.yarnpkg.com/docz-utils/-/docz-utils-2.0.0-rc.64.tgz#2cb26b630a8895b8adbde83becb0c6dbd2945438"
-  integrity sha512-K9PxtQjYoPlL94WcJSJ5l7fdsTU7wt5l2TZMMEKxlpzkdAPy7nBxyvLNtPc+bUt/FPgm3CQ2B7AVR8Mx7O2VDQ==
+docz-utils@2.0.0-rc.69:
+  version "2.0.0-rc.69"
+  resolved "https://registry.yarnpkg.com/docz-utils/-/docz-utils-2.0.0-rc.69.tgz#1e62d8e70ebae7798f307e23047e0343c8b05f2a"
+  integrity sha512-bIYeGZs+uC0ecfpB2Bks5a0NHdeU/+cvSLe7h4t+XKFDkWVMMgiNYt7vhLoyBHEtuCYXV/4j9x3TH6iqHfO5cA==
   dependencies:
     "@babel/generator" "^7.5.5"
     "@babel/parser" "^7.5.5"
@@ -7624,21 +7624,21 @@ docz-utils@2.0.0-rc.64:
     unist-util-is "^3.0.0"
     unist-util-visit "^1.4.1"
 
-docz@2.0.0-rc.64:
-  version "2.0.0-rc.64"
-  resolved "https://registry.yarnpkg.com/docz/-/docz-2.0.0-rc.64.tgz#928115a1663ea40de19842f0f86b5f0f4cb47a3e"
-  integrity sha512-UdVP/ldjBJAi0xnA8gGbQi9X2Bw/wrgHYK+v7YjKsrW68h299BPXqHupyFqXqy69BKAjQlDrSr86c0d5GmgwTw==
+docz@2.0.0-rc.69:
+  version "2.0.0-rc.69"
+  resolved "https://registry.yarnpkg.com/docz/-/docz-2.0.0-rc.69.tgz#e132828231774c61d8c4759a5db5ef7ece420b56"
+  integrity sha512-KdZ/KMb7q/5j0W/WaHVtngnoP8g+kWKNFM90WetyVTBhDYo5yJ8uqOK9W56RgSxqSZRtusjxwPDFygGNdecqHw==
   dependencies:
     "@emotion/core" "^10.0.16"
     "@mdx-js/react" "^1.0.27"
     array-sort "^1.0.0"
     capitalize "^2.0.0"
-    docz-core "2.0.0-rc.64"
+    docz-core "2.0.0-rc.69"
     fast-deep-equal "^2.0.1"
     gatsby "^2.13.27"
     gatsby-plugin-eslint "^2.0.5"
     gatsby-plugin-typescript "^2.1.6"
-    gatsby-theme-docz "2.0.0-rc.64"
+    gatsby-theme-docz "2.0.0-rc.69"
     lodash "^4.17.14"
     marksy "^8.0.0"
     match-sorter "^3.1.1"
@@ -9669,10 +9669,10 @@ gatsby-telemetry@^1.1.33:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-theme-docz@2.0.0-rc.64, gatsby-theme-docz@^2.0.0-rc.53:
-  version "2.0.0-rc.64"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-docz/-/gatsby-theme-docz-2.0.0-rc.64.tgz#9d135d9f7c2e445a906a04e51d83f37f16b4fdf7"
-  integrity sha512-7Z5CZLAQgiXjqolec53Gt4hdt1AzkBJ2x7Kz+fPRbflJ/LWdTexqTm0CzmPze0PC2BqHhSDVK82AoKnEa3lGuw==
+gatsby-theme-docz@2.0.0-rc.69, gatsby-theme-docz@^2.0.0-rc.53:
+  version "2.0.0-rc.69"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-docz/-/gatsby-theme-docz-2.0.0-rc.69.tgz#ed4cf30bfe65093c2016379b8fd3972869963d8a"
+  integrity sha512-TOaknV7Ff9/zFhhQGhSmOod3t/0ZQwizBtqncmt2GrtXEv+524DL7Y5be5uHXOOqvP47/u8G17QRVVf9+SBDxw==
   dependencies:
     "@emotion/core" "^10.0.14"
     "@emotion/styled" "^10.0.14"
@@ -9680,10 +9680,10 @@ gatsby-theme-docz@2.0.0-rc.64, gatsby-theme-docz@^2.0.0-rc.53:
     "@mdx-js/mdx" "^1.1.0"
     "@mdx-js/react" "^1.0.27"
     "@theme-ui/typography" "^0.2.5"
-    babel-plugin-export-metadata "2.0.0-rc.64"
+    babel-plugin-export-metadata "2.0.0-rc.69"
     copy-text-to-clipboard "^2.1.0"
-    docz "2.0.0-rc.64"
-    docz-core "2.0.0-rc.64"
+    docz "2.0.0-rc.69"
+    docz-core "2.0.0-rc.69"
     emotion-theming "^10.0.14"
     fs-extra "^8.1.0"
     gatsby "^2.13.27"
@@ -9701,9 +9701,9 @@ gatsby-theme-docz@2.0.0-rc.64, gatsby-theme-docz@^2.0.0-rc.53:
     react-feather "^2.0.3"
     react-helmet "^5.2.1"
     react-live "^2.1.2"
-    rehype-docz "2.0.0-rc.64"
+    rehype-docz "2.0.0-rc.69"
     rehype-slug "^2.0.3"
-    remark-docz "2.0.0-rc.64"
+    remark-docz "2.0.0-rc.69"
     remark-frontmatter "^1.3.2"
     theme-ui "^0.2.38"
     typescript "3.5.3"
@@ -12554,10 +12554,10 @@ load-bmfont@^1.3.1, load-bmfont@^1.4.0:
     xhr "^2.0.1"
     xtend "^4.0.0"
 
-load-cfg@2.0.0-rc.64:
-  version "2.0.0-rc.64"
-  resolved "https://registry.yarnpkg.com/load-cfg/-/load-cfg-2.0.0-rc.64.tgz#b243168057e3e19d8fafbc32d1fb9450d9c59107"
-  integrity sha512-ubc8Op0hNJ6DNslVPSjNBNb0nfOk3IZDzieqHNycAJEv6pKNZ4+CTvgUECbH9yBrgTZIpsMqMQYvgK/XskBQlw==
+load-cfg@2.0.0-rc.69:
+  version "2.0.0-rc.69"
+  resolved "https://registry.yarnpkg.com/load-cfg/-/load-cfg-2.0.0-rc.69.tgz#f59285497b91cee703491a75d36402b622468bcf"
+  integrity sha512-tFs2sY1XqFl3k4q193VIVNFDkLCLJDFLCwRb9KHlrGpfDZ9sjNv8hdYuKmJLd9yJR0lbHym20tWmh1N/W2xABw==
   dependencies:
     "@babel/core" "^7.5.5"
     "@babel/preset-env" "^7.5.5"
@@ -16273,10 +16273,10 @@ react-dev-utils@^9.0.0:
     strip-ansi "5.2.0"
     text-table "0.2.0"
 
-react-docgen-actual-name-handler@2.0.0-rc.64:
-  version "2.0.0-rc.64"
-  resolved "https://registry.yarnpkg.com/react-docgen-actual-name-handler/-/react-docgen-actual-name-handler-2.0.0-rc.64.tgz#f7f218768f880a88edbb2974e74b73ef17b007a2"
-  integrity sha512-VGJPzyUsLivYXhxbMn34+MDKpfiBs62axI4vECFPhukDLQTicT0D93yNywhTjebWGuEEhe8Q1My0995sWMSSJQ==
+react-docgen-actual-name-handler@2.0.0-rc.69:
+  version "2.0.0-rc.69"
+  resolved "https://registry.yarnpkg.com/react-docgen-actual-name-handler/-/react-docgen-actual-name-handler-2.0.0-rc.69.tgz#80744db5787ad16c37a899d17f24d673b6ce7559"
+  integrity sha512-mm7dyQMsESZEpPGTZ6CpVwnoNkAKYgazZSnJaPtss1qvR4LlgX3lsP1618hJ/rJCP2QKm9OEfEGy7xpaygc6Fg==
   dependencies:
     react-docgen "^4.1.1"
     recast "^0.18.1"
@@ -16996,13 +16996,13 @@ regjsparser@^0.6.0:
   dependencies:
     jsesc "~0.5.0"
 
-rehype-docz@2.0.0-rc.64:
-  version "2.0.0-rc.64"
-  resolved "https://registry.yarnpkg.com/rehype-docz/-/rehype-docz-2.0.0-rc.64.tgz#51141af0750f862072ee7f42f9e1e61b46d72842"
-  integrity sha512-+7c3kPXym+yrNIhi/1pPyCVgfCiWzKf8sJZHWSQN7eKY3Or3hbVikIsH0kNBS5HgVk/AHj+lVt2AK2KiIjenBw==
+rehype-docz@2.0.0-rc.69:
+  version "2.0.0-rc.69"
+  resolved "https://registry.yarnpkg.com/rehype-docz/-/rehype-docz-2.0.0-rc.69.tgz#5171e36d21c408bb62b44bef28c06a06b047a1a4"
+  integrity sha512-AcFi0BFN8tzC8tLU2fpwTQ+p0+HRBa6JOsg6qs7JVOSGAXljbt+byYVm6+wm338P8vzxMLuyvDPuXXO32B5zqA==
   dependencies:
     brace "^0.11.1"
-    docz-utils "2.0.0-rc.64"
+    docz-utils "2.0.0-rc.69"
     hast-util-to-string "^1.0.2"
     jsx-ast-utils "^2.2.1"
     lodash "^4.17.14"
@@ -17033,10 +17033,10 @@ relay-runtime@2.0.0:
     "@babel/runtime" "^7.0.0"
     fbjs "^1.0.0"
 
-remark-docz@2.0.0-rc.64:
-  version "2.0.0-rc.64"
-  resolved "https://registry.yarnpkg.com/remark-docz/-/remark-docz-2.0.0-rc.64.tgz#3be34c6214cdff61ce17ad5cae4a66c863db3574"
-  integrity sha512-bRs2JquwNgyR6LJItDIT2BpyFlbi9ijAjgNZTqQfEGPr/huvGaCTrqBqI+PJtpXwhhe5MWQ9g44RtSe6Cu/LWA==
+remark-docz@2.0.0-rc.69:
+  version "2.0.0-rc.69"
+  resolved "https://registry.yarnpkg.com/remark-docz/-/remark-docz-2.0.0-rc.69.tgz#84a76e06a5c0ba4a38d884b3de50198561a78ad4"
+  integrity sha512-1Iyt9gLdTBEqmVGrIsVgYksB+f//8+ProDMysdxRGNVJKoRqo904QMvFnGGLmIDslR7ff8sLmoqgUBorm/ObvA==
   dependencies:
     "@babel/generator" "^7.5.5"
     "@babel/types" "^7.5.5"
