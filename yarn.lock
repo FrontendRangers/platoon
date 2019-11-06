@@ -2,31 +2,25 @@
 # yarn lockfile v1
 
 
-"@atomist/slack-messages@~1.1.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@atomist/slack-messages/-/slack-messages-1.1.1.tgz#9de42932e89065fb4fe4842978ca2d1ed3424cea"
-  integrity sha512-m2OzlTDbhvzK4hgswH9Lx0cdpq1AntXu53Klz5RGkFfuoDvKsnlU7tmtVfNWtUiP0zZbGtrb/BZYH7aB6TRnMA==
-
 "@auto-it/conventional-commits@^7.12.2":
-  version "7.12.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-7.12.2.tgz#56dc1769bac1f3f7b10b0882af53f5d6f6128dab"
-  integrity sha512-gZ6C6BmCdoCiuECfxIY16HdH1gkZscPcOq4iMIcLpwi+XjdVekh38jIgHAzrjQt3Kw9aGA9siHzhyJjM03n3Pw==
+  version "7.12.6"
+  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-7.12.6.tgz#0c8b3a6fc109ce8916bf566a400a5e0b1d9d46b5"
+  integrity sha512-jlCDHTvExvpIIpvhrk9VRmzYpEYoSBDoDCuIv8SW+B9bsuDan+p9nQvQUOmjnY2q13yxsMGUU35LTfWme5mX8g==
   dependencies:
-    "@auto-it/core" "^7.12.2"
+    "@auto-it/core" "^7.12.6"
     parse-commit-message "4.0.0"
     tslib "1.10.0"
 
-"@auto-it/core@^7.12.2":
-  version "7.12.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.12.2.tgz#1b070829a5f9b3df64fbbee8f5eaf613d3ca4941"
-  integrity sha512-H1JtXElJ0HVMnnHA6ZYTC00EsRV+gISPqtmRwJLXMqtn9bDGFOQw9lLNrmOA0Uab4NUTGD2c6x3ZSYH5Zlai8w==
+"@auto-it/core@^7.12.2", "@auto-it/core@^7.12.6":
+  version "7.12.6"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.12.6.tgz#0443f32ed3d1892228180b451db5592ef99d3e77"
+  integrity sha512-r0bNzHCt80wrkxE2hfirJ+kLKaUVfSO0LjR85q+xBEizjezVOBuxG2KCfjsphX/MNYx6tnGLI0Fbd3sk+82gPg==
   dependencies:
-    "@atomist/slack-messages" "~1.1.0"
     "@octokit/graphql" "^4.0.0"
-    "@octokit/plugin-enterprise-compatibility" "^1.1.1"
+    "@octokit/plugin-enterprise-compatibility" "1.1.1"
     "@octokit/plugin-retry" "^2.2.0"
     "@octokit/plugin-throttling" "^2.6.0"
-    "@octokit/rest" "16.33.1"
+    "@octokit/rest" "16.34.0"
     await-to-js "^2.1.1"
     cosmiconfig "5.2.1"
     dedent "^0.7.0"
@@ -2490,7 +2484,7 @@
     "@octokit/request" "^5.0.0"
     universal-user-agent "^4.0.0"
 
-"@octokit/plugin-enterprise-compatibility@^1.1.1":
+"@octokit/plugin-enterprise-compatibility@1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@octokit/plugin-enterprise-compatibility/-/plugin-enterprise-compatibility-1.1.1.tgz#1d4189d588eccb1bbc23cd72278129491cfba5d2"
   integrity sha512-/o09y5I1JJMGGTU2y//QXBKjILX0BaDgBK27NRBJPRxD4BsDVzIsRFQm7ejPWW3l2xOao8tvN7Yh73D5cXBBbg==
@@ -2535,7 +2529,25 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
-"@octokit/rest@16.33.1", "@octokit/rest@^16.28.4":
+"@octokit/rest@16.34.0":
+  version "16.34.0"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.34.0.tgz#8703e46d7e9f6aec24a7e591b073f325ca13f6e2"
+  integrity sha512-EBe5qMQQOZRuezahWCXCnSe0J6tAqrW2hrEH9U8esXzKor1+HUDf8jgImaZf5lkTyWCQA296x9kAH5c0pxEgVQ==
+  dependencies:
+    "@octokit/request" "^5.2.0"
+    "@octokit/request-error" "^1.0.2"
+    atob-lite "^2.0.0"
+    before-after-hook "^2.0.0"
+    btoa-lite "^1.0.0"
+    deprecation "^2.0.0"
+    lodash.get "^4.4.2"
+    lodash.set "^4.3.2"
+    lodash.uniq "^4.5.0"
+    octokit-pagination-methods "^1.1.0"
+    once "^1.4.0"
+    universal-user-agent "^4.0.0"
+
+"@octokit/rest@^16.28.4":
   version "16.33.1"
   resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.33.1.tgz#19229f5fd28d8e071644d37c249775ee40add433"
   integrity sha512-lOQ+fJZwkeJ/1PRTdnY1uNja01aKOMioRhQfZtei64gZMXIX3EAfF4koMQMvoLFwsnVBu3ifj1JW1WAAKdXcnA==
