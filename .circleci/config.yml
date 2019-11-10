@@ -3,49 +3,67 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
+defaults: &defaults
+    working_directory: ~/repo
+    docker:
+        - image: circleci/node:latest-browsers
+
 jobs:
-    build:
-        docker:
-            # specify the version you desire here
-            - image: circleci/node:11.11
-
-            # Specify service dependencies here if necessary
-            # CircleCI maintains a library of pre-built images
-            # documented at https://circleci.com/docs/2.0/circleci-images/
-            # - image: circleci/mongo:3.4.4
-
-        working_directory: ~/repo
-
+    install:
+        <<: *defaults
         steps:
             - checkout
-
-            # Download and cache dependencies
             - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "package.json" }}
-                      # fallback to using the latest cache if no exact match is found
-                      - v1-dependencies-
-
-            - run: yarn install
-
+                  key: dependency-cache-{{ checksum "yarn.lock" }}
             - run:
-                  name: Run Bootstrap
+                  name: Install
+                  command: yarn install
+            - run:
+                  name: Bootstrap
                   command: yarn run bootstrap
-
-            - run:
-                  name: Run Build
-                  command: yarn run build
-                  environment:
-                      SKIP_PREFLIGHT_CHECK: "true"
-
-            - run:
-                  name: Run Tests
-                  command: yarn run test
-
             - save_cache:
+                  key: dependency-cache-{{ checksum "yarn.lock" }}
                   paths:
-                      - node_modules
-                  key: v1-dependencies-{{ checksum "package.json" }}
+                      - ./node_modules
+            - persist_to_workspace:
+                  root: ~/repo
+                  paths: .
+    build:
+        <<: *defaults
+        steps:
+            - attach_workspace:
+                  at: ~/repo
+            - run:
+                  name: Build
+                  command: yarn run build
+    release:
+        <<: *defaults
+        steps:
+            - attach_workspace:
+                  at: ~/repo
+            - run:
+                  name: Release
+                  command: yarn run release
 
-            # run tests!
-            - run: yarn test
+workflows:
+    version: 2
+    build_and_release:
+        jobs:
+            - install:
+                  filters:
+                      tags:
+                          only: /.*/
+            - build:
+                  requires:
+                      - install
+                  filters:
+                      tags:
+                          only: /.*/
+            - release:
+                  requires:
+                      - build
+                  filters:
+                      branches:
+                          only:
+                              - master
