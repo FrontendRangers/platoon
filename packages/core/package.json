@@ -43,7 +43,7 @@
         "@babel/preset-env": "^7.6.3",
         "@babel/preset-typescript": "^7.6.0",
         "babel-plugin-styled-components": "^1.10.6",
-        "styled-components": "5.0.0-rc.1"
+        "styled-components": "5.0.0-5.canary-sheet"
     },
     "peerDependencies": {
         "styled-components": "beta"
