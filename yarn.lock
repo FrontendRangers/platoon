@@ -3,18 +3,18 @@
 
 
 "@auto-it/conventional-commits@^7.13.2":
-  version "7.13.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-7.13.2.tgz#fd8c101cfa59e6ea76835a6cee09e6af74d65dc3"
-  integrity sha512-7uMKtd4jEbMbDHT3MbbDsXewMOV8hNtRAxJCMXn/G7cstqp17byedGiiqBrr9NbDNlgwJsGcITL8lsLkhDaxCQ==
+  version "7.15.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-7.15.0.tgz#1e6b559e5feaebc00bf8d99115ee98459fee83e9"
+  integrity sha512-/CumKuMhCjTeDBdnzfxkkr64fCEK2axpjlATrjHnQ8c/CbFgpVvXhwWJSzTS44ZbFHa6zNjCYSTb1MsPMnA3pw==
   dependencies:
-    "@auto-it/core" "^7.13.2"
+    "@auto-it/core" "^7.15.0"
     parse-commit-message "4.0.0"
     tslib "1.10.0"
 
-"@auto-it/core@^7.13.2":
-  version "7.13.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.13.2.tgz#4b39cd94493b79b6affe975b6d466777c38691ea"
-  integrity sha512-xsLx26IufYg+9W0lAs1/3t9Kvpb601S8LyI6zT8ZgkUozYX42OrhARRmW0PCHE+QnTzLyadyOBXfGQ1SrY/cWA==
+"@auto-it/core@^7.13.2", "@auto-it/core@^7.15.0":
+  version "7.15.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.15.0.tgz#127a80731834de28595428c6332f3d0c52647fb0"
+  integrity sha512-kov/eh4fOYWnBmibVcmHPhDsK5p/sHx1vKatdmVjHevd2uDIuDbPc+yg2GkMSpXjZLSmgq++Dgm+X6JsNQklyA==
   dependencies:
     "@octokit/graphql" "^4.0.0"
     "@octokit/plugin-enterprise-compatibility" "1.1.1"
