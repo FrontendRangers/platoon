@@ -11,10 +11,10 @@
     parse-commit-message "4.0.0"
     tslib "1.10.0"
 
-"@auto-it/core@^7.13.2":
-  version "7.13.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.13.2.tgz#4b39cd94493b79b6affe975b6d466777c38691ea"
-  integrity sha512-xsLx26IufYg+9W0lAs1/3t9Kvpb601S8LyI6zT8ZgkUozYX42OrhARRmW0PCHE+QnTzLyadyOBXfGQ1SrY/cWA==
+"@auto-it/core@^7.13.2", "@auto-it/core@^7.15.0":
+  version "7.15.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.15.0.tgz#127a80731834de28595428c6332f3d0c52647fb0"
+  integrity sha512-kov/eh4fOYWnBmibVcmHPhDsK5p/sHx1vKatdmVjHevd2uDIuDbPc+yg2GkMSpXjZLSmgq++Dgm+X6JsNQklyA==
   dependencies:
     "@octokit/graphql" "^4.0.0"
     "@octokit/plugin-enterprise-compatibility" "1.1.1"
@@ -42,11 +42,11 @@
     url-join "^4.0.0"
 
 "@auto-it/npm@^7.13.2":
-  version "7.13.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.13.2.tgz#5152b29e45d95ae19c0f24a06deaace188285a03"
-  integrity sha512-v6je7zenuL/aFCo/IcDAOPQz5X+c0USlsMl5d+ciid5CRx9Ko5DVUWLy9GnoM1VRm5+qFZjNJbJk6Ld8ZR79TA==
+  version "7.15.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.15.0.tgz#303c2bbd5473ec86ad5cecaaa71a74ef4a964b2a"
+  integrity sha512-UljJCHaKW58ELOUYZlvudAE60NXf+YAP42LKG2Ce7HIPbyWFDJet3QqbiJxINe/eFWfQZ4HIPJUehUmZl/qaHw==
   dependencies:
-    "@auto-it/core" "^7.13.2"
+    "@auto-it/core" "^7.15.0"
     env-ci "^4.1.1"
     get-monorepo-packages "^1.1.0"
     parse-author "^2.0.0"
