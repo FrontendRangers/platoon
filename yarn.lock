@@ -3,24 +3,24 @@
 
 
 "@auto-it/conventional-commits@^7.13.2":
-  version "7.13.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-7.13.2.tgz#fd8c101cfa59e6ea76835a6cee09e6af74d65dc3"
-  integrity sha512-7uMKtd4jEbMbDHT3MbbDsXewMOV8hNtRAxJCMXn/G7cstqp17byedGiiqBrr9NbDNlgwJsGcITL8lsLkhDaxCQ==
+  version "7.16.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-7.16.3.tgz#d9aa03307895dab30c4a5c17565109d2afeeb003"
+  integrity sha512-1aRVopPdR2iKdo+i2IrcJMPGRo6QlAAw+uVHRRUZXSidRZV8Ok185ahN7Nzf3bU1CXbTbFV7pfgMoszGRsAW0w==
   dependencies:
-    "@auto-it/core" "^7.13.2"
+    "@auto-it/core" "^7.16.3"
     parse-commit-message "4.0.0"
     tslib "1.10.0"
 
-"@auto-it/core@^7.13.2", "@auto-it/core@^7.16.2":
-  version "7.16.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.16.2.tgz#d2479457e77da6851be027eee032210340374f5b"
-  integrity sha512-BLEjgOjiDA9/0ytyzCEDjgnU1yYApnT457/C6NnbRDkAbXRWs1KATFI19VN+FVzx7CSShuRuKavlz5bmKtwa0A==
+"@auto-it/core@^7.16.2", "@auto-it/core@^7.16.3":
+  version "7.16.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.16.3.tgz#4e2926501793ee65166e2f735bc802210da43a43"
+  integrity sha512-D4T3PfFb/A8I0VoTAxzS3zmIv1IGH3g2sD3EZSC5Fw2QEnWBCflRnuQ7mgnVDN7qc8/ykt7qPrk7LiCmJnY8Lg==
   dependencies:
     "@octokit/graphql" "^4.0.0"
     "@octokit/plugin-enterprise-compatibility" "1.1.1"
     "@octokit/plugin-retry" "^2.2.0"
     "@octokit/plugin-throttling" "^2.6.0"
-    "@octokit/rest" "16.34.1"
+    "@octokit/rest" "16.35.0"
     await-to-js "^2.1.1"
     cosmiconfig "6.0.0"
     dedent "^0.7.0"
@@ -2597,10 +2597,10 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
-"@octokit/rest@16.34.1":
-  version "16.34.1"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.34.1.tgz#e28b5a573ca2f15bb002f90bc010020845ed9c01"
-  integrity sha512-JUoS12cdktf1fv86rgrjC/RvYLuL+o7p57W7zX1x7ANFJ7OvdV8emvUNkFlcidEaOkYrxK3SoWgQFt3FhNmabA==
+"@octokit/rest@16.35.0":
+  version "16.35.0"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.35.0.tgz#7ccc1f802f407d5b8eb21768c6deca44e7b4c0d8"
+  integrity sha512-9ShFqYWo0CLoGYhA1FdtdykJuMzS/9H6vSbbQWDX4pWr4p9v+15MsH/wpd/3fIU+tSxylaNO48+PIHqOkBRx3w==
   dependencies:
     "@octokit/request" "^5.2.0"
     "@octokit/request-error" "^1.0.2"
