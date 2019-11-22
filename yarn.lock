@@ -3,24 +3,24 @@
 
 
 "@auto-it/conventional-commits@^7.13.2":
-  version "7.13.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-7.13.2.tgz#fd8c101cfa59e6ea76835a6cee09e6af74d65dc3"
-  integrity sha512-7uMKtd4jEbMbDHT3MbbDsXewMOV8hNtRAxJCMXn/G7cstqp17byedGiiqBrr9NbDNlgwJsGcITL8lsLkhDaxCQ==
+  version "7.16.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-7.16.3.tgz#d9aa03307895dab30c4a5c17565109d2afeeb003"
+  integrity sha512-1aRVopPdR2iKdo+i2IrcJMPGRo6QlAAw+uVHRRUZXSidRZV8Ok185ahN7Nzf3bU1CXbTbFV7pfgMoszGRsAW0w==
   dependencies:
-    "@auto-it/core" "^7.13.2"
+    "@auto-it/core" "^7.16.3"
     parse-commit-message "4.0.0"
     tslib "1.10.0"
 
-"@auto-it/core@^7.13.2", "@auto-it/core@^7.16.2":
-  version "7.16.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.16.2.tgz#d2479457e77da6851be027eee032210340374f5b"
-  integrity sha512-BLEjgOjiDA9/0ytyzCEDjgnU1yYApnT457/C6NnbRDkAbXRWs1KATFI19VN+FVzx7CSShuRuKavlz5bmKtwa0A==
+"@auto-it/core@^7.16.2", "@auto-it/core@^7.16.3":
+  version "7.16.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.16.3.tgz#4e2926501793ee65166e2f735bc802210da43a43"
+  integrity sha512-D4T3PfFb/A8I0VoTAxzS3zmIv1IGH3g2sD3EZSC5Fw2QEnWBCflRnuQ7mgnVDN7qc8/ykt7qPrk7LiCmJnY8Lg==
   dependencies:
     "@octokit/graphql" "^4.0.0"
     "@octokit/plugin-enterprise-compatibility" "1.1.1"
     "@octokit/plugin-retry" "^2.2.0"
     "@octokit/plugin-throttling" "^2.6.0"
-    "@octokit/rest" "16.34.1"
+    "@octokit/rest" "16.35.0"
     await-to-js "^2.1.1"
     cosmiconfig "6.0.0"
     dedent "^0.7.0"
@@ -2597,10 +2597,10 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
-"@octokit/rest@16.34.1":
-  version "16.34.1"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.34.1.tgz#e28b5a573ca2f15bb002f90bc010020845ed9c01"
-  integrity sha512-JUoS12cdktf1fv86rgrjC/RvYLuL+o7p57W7zX1x7ANFJ7OvdV8emvUNkFlcidEaOkYrxK3SoWgQFt3FhNmabA==
+"@octokit/rest@16.35.0":
+  version "16.35.0"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.35.0.tgz#7ccc1f802f407d5b8eb21768c6deca44e7b4c0d8"
+  integrity sha512-9ShFqYWo0CLoGYhA1FdtdykJuMzS/9H6vSbbQWDX4pWr4p9v+15MsH/wpd/3fIU+tSxylaNO48+PIHqOkBRx3w==
   dependencies:
     "@octokit/request" "^5.2.0"
     "@octokit/request-error" "^1.0.2"
@@ -12674,9 +12674,9 @@ lines-and-columns@^1.1.6:
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
 lint-staged@^9.4.2:
-  version "9.4.2"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-9.4.2.tgz#14cb577a9512f520691f8b5aefce6a8f7ead6c04"
-  integrity sha512-OFyGokJSWTn2M6vngnlLXjaHhi8n83VIZZ5/1Z26SULRUWgR3ITWpAEQC9Pnm3MC/EpCxlwts/mQWDHNji2+zA==
+  version "9.4.3"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-9.4.3.tgz#f55ad5f94f6e105294bfd6499b23142961f7b982"
+  integrity sha512-PejnI+rwOAmKAIO+5UuAZU9gxdej/ovSEOAY34yMfC3OS4Ac82vCBPzAWLReR9zCPOMqeVwQRaZ3bUBpAsaL2Q==
   dependencies:
     chalk "^2.4.2"
     commander "^2.20.0"
@@ -16790,19 +16790,10 @@ react-transition-group@^4.3.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@^16.10.2, react@^16.11.0:
-  version "16.11.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.11.0.tgz#d294545fe62299ccee83363599bf904e4a07fdbb"
-  integrity sha512-M5Y8yITaLmU0ynd0r1Yvfq98Rmll6q8AxaEe88c8e7LxO8fZ2cNgmFt0aGAS9wzf1Ao32NKXtCl+/tVVtkxq6g==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-
-react@^16.8.3:
-  version "16.10.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.10.2.tgz#a5ede5cdd5c536f745173c8da47bda64797a4cf0"
-  integrity sha512-MFVIq0DpIhrHFyqLU0S3+4dIcBhhOvBE8bJ/5kHPVOVaGdo0KuiQzpcjCPsf585WvhypqtrMILyoE2th6dT+Lw==
+react@^16.10.2, react@^16.11.0, react@^16.8.3:
+  version "16.12.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
+  integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -17736,9 +17727,9 @@ rollup-pluginutils@^2.8.1:
     estree-walker "^0.6.1"
 
 rollup@^1.25.2:
-  version "1.26.5"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.26.5.tgz#c492c8bb88b661e7952a864e40bdec209aa1aa03"
-  integrity sha512-c6Pv0yWzjYNpy2DIhLFUnyP6e1UTGownr4IfpJcPY/k186RJjpaGGPRwKQ62KCauctG6dgtHt88pw1EGrPRkuA==
+  version "1.27.3"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.27.3.tgz#0e427d9bee9e30e6017e89b942d88276ce26f9e2"
+  integrity sha512-79AEh4m5NPCz97GTuIoXpSFIMPyk2AiqVQp040baSRPXk/I4YMGt5/CR9GX5oEYEkxwBZoWLheaS1/w/FidfJw==
   dependencies:
     "@types/estree" "*"
     "@types/node" "*"
