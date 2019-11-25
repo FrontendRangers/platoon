@@ -42,11 +42,11 @@
     url-join "^4.0.0"
 
 "@auto-it/npm@^7.13.2", "@auto-it/npm@^7.16.2":
-  version "7.16.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.16.2.tgz#2b1f0e28a0c8471ed7dbfde98fdf31d1d082ab71"
-  integrity sha512-Y5NC9cXIzcq21Z9L35H9ngh4wYKuVr11tQ0YeO/8hN8hua+r806m4BgsCG5aoBBMbQxViGuMt08Ofmkws+TKIw==
+  version "7.16.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.16.3.tgz#313f18701150f84dc5b19b3bcbd0c413edcb0a87"
+  integrity sha512-fr3NL4rCH3XvwXiwXFbRPcf2auJXNS6uAjl9ALr1igC/cTCzuX4tZk7XIjQ3vdguJmD+F9+VfmHFOsUoPMB56A==
   dependencies:
-    "@auto-it/core" "^7.16.2"
+    "@auto-it/core" "^7.16.3"
     env-ci "^4.1.1"
     get-monorepo-packages "^1.1.0"
     parse-author "^2.0.0"
