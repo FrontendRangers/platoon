@@ -23,6 +23,7 @@
     "devDependencies": {
         "@types/react": "^16.9.11",
         "@types/react-dom": "^16.9.4",
+        "lerna": "^3.19.0",
         "typescript": "^3.7.2"
     },
     "keywords": [
