@@ -40,7 +40,7 @@
     "dependencies": {
         "@frontendrangers/platoon-core": "^0.1.0",
         "vue": "^2.6.10",
-        "vue-styled-components": "^1.4.13"
+        "vue-styled-components": "^1.4.14"
     },
     "devDependencies": {
         "@babel/core": "^7.6.4",
@@ -52,7 +52,7 @@
         "babel-plugin-syntax-jsx": "^6.18.0",
         "babel-plugin-transform-vue-jsx": "^3.7.0",
         "babel-preset-vue": "^2.0.2",
-        "vue-loader": "^15.7.1",
+        "vue-loader": "^15.7.2",
         "vue-template-compiler": "^2.6.10"
     }
 }
