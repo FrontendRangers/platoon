@@ -47,7 +47,7 @@
     },
     "dependencies": {
         "@frontendrangers/platoon-core": "^0.1.0",
-        "popper.js": "^1.15.0",
+        "popper.js": "^1.16.0",
         "react-transition-group": "^4.3.0",
         "styled-system": "^5.1.4"
     },
@@ -86,7 +86,7 @@
         "stylelint-config-standard": "^19.0.0",
         "ts-loader": "^6.2.1",
         "typescript": "^3.7.2",
-        "webpack": "^4.41.1"
+        "webpack": "^4.41.2"
     },
     "peerDependencies": {
         "react": "^16.9.0",
