@@ -11,7 +11,7 @@
     parse-commit-message "4.0.0"
     tslib "1.10.0"
 
-"@auto-it/core@^7.16.2", "@auto-it/core@^7.16.3":
+"@auto-it/core@^7.16.3":
   version "7.16.3"
   resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.16.3.tgz#4e2926501793ee65166e2f735bc802210da43a43"
   integrity sha512-D4T3PfFb/A8I0VoTAxzS3zmIv1IGH3g2sD3EZSC5Fw2QEnWBCflRnuQ7mgnVDN7qc8/ykt7qPrk7LiCmJnY8Lg==
@@ -41,12 +41,12 @@
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
-"@auto-it/npm@^7.13.2", "@auto-it/npm@^7.16.2":
-  version "7.16.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.16.2.tgz#2b1f0e28a0c8471ed7dbfde98fdf31d1d082ab71"
-  integrity sha512-Y5NC9cXIzcq21Z9L35H9ngh4wYKuVr11tQ0YeO/8hN8hua+r806m4BgsCG5aoBBMbQxViGuMt08Ofmkws+TKIw==
+"@auto-it/npm@^7.16.3":
+  version "7.16.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-7.16.3.tgz#313f18701150f84dc5b19b3bcbd0c413edcb0a87"
+  integrity sha512-fr3NL4rCH3XvwXiwXFbRPcf2auJXNS6uAjl9ALr1igC/cTCzuX4tZk7XIjQ3vdguJmD+F9+VfmHFOsUoPMB56A==
   dependencies:
-    "@auto-it/core" "^7.16.2"
+    "@auto-it/core" "^7.16.3"
     env-ci "^4.1.1"
     get-monorepo-packages "^1.1.0"
     parse-author "^2.0.0"
@@ -58,12 +58,12 @@
     url-join "^4.0.0"
     user-home "^2.0.0"
 
-"@auto-it/released@^7.16.2":
-  version "7.16.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-7.16.2.tgz#a4d50f9ef197143a8f5f546838d7661d7256e8d6"
-  integrity sha512-J7N3JD81E8XeQb0tnorR4/orG5K4I5cxT1Aa6OEfZvM044+lLU86A9KfRmzXgheey02rZA0PuquNcIdypLP6ig==
+"@auto-it/released@^7.16.3":
+  version "7.16.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-7.16.3.tgz#35acef5d78dad875c6e0eac9cc94cabff6511aa2"
+  integrity sha512-yDdaCYaTGvvnAM7yfHd6LR/vm9Iad2IxIGceNBP7wohDBjmwXqIbHeZASr8lSVpjoo1r3gUOZgUJfynItgS+dg==
   dependencies:
-    "@auto-it/core" "^7.16.2"
+    "@auto-it/core" "^7.16.3"
     deepmerge "^4.0.0"
     tslib "1.10.0"
 
@@ -3534,7 +3534,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^15.0.0 || ^16.0.0", "@types/react@^16.8.12", "@types/react@^16.8.19", "@types/react@^16.8.6", "@types/react@^16.9.11", "@types/react@^16.9.5", "@types/react@^16.9.7":
+"@types/react@*", "@types/react@^15.0.0 || ^16.0.0", "@types/react@^16.8.12", "@types/react@^16.8.6", "@types/react@^16.9.11", "@types/react@^16.9.5", "@types/react@^16.9.7":
   version "16.9.14"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.14.tgz#7f1158ce450b4b5aa83b1c5e1324fa75f348bdd1"
   integrity sha512-Q4tW4RGmR+u/CgzR8VqZcsUWjP4Pz/LcHfs9AzSG+aBnwq8As3Bid3vG1eGGsXg/xuR2k2tqNlI8pzyV8kxe0g==
@@ -4496,14 +4496,14 @@ auto-bind@^2.0.0:
   dependencies:
     "@types/react" "^16.8.12"
 
-auto@^7.13.2:
-  version "7.16.2"
-  resolved "https://registry.yarnpkg.com/auto/-/auto-7.16.2.tgz#b49d7e30997af8bdb2e3e958080adca2e716890a"
-  integrity sha512-V1tX5TvDiJ65U8Jev240827gHUYxYMbOTipydbyLX8vE8qabYr2cxH8sp6MldqjP16SShTiU1atyadIW2Na+vQ==
+auto@^7.16.3:
+  version "7.16.3"
+  resolved "https://registry.yarnpkg.com/auto/-/auto-7.16.3.tgz#440b51612bc4b657518b7dce2e398b3f91a040a3"
+  integrity sha512-654GEfLyGVMVMvS/A13fPAsIvFi1dFiT/s2rDbZGJnzxzHhuEk+ZFURR/GD+ARzSlbPIWB4bd25zg/pzpRLg6g==
   dependencies:
-    "@auto-it/core" "^7.16.2"
-    "@auto-it/npm" "^7.16.2"
-    "@auto-it/released" "^7.16.2"
+    "@auto-it/core" "^7.16.3"
+    "@auto-it/npm" "^7.16.3"
+    "@auto-it/released" "^7.16.3"
     chalk "^3.0.0"
     command-line-application "^0.9.3"
     dedent "^0.7.0"
