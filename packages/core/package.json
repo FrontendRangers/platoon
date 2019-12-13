@@ -35,18 +35,18 @@
         "url": "https://github.com/FrontendRangers/platoon/issues"
     },
     "dependencies": {
-        "typescript": "^3.7.2"
+        "typescript": "^3.7.3"
     },
     "devDependencies": {
-        "@babel/cli": "^7.6.4",
-        "@babel/core": "^7.6.4",
-        "@babel/preset-env": "^7.6.3",
-        "@babel/preset-typescript": "^7.6.0",
+        "@babel/cli": "^7.7.5",
+        "@babel/core": "^7.7.5",
+        "@babel/preset-env": "^7.7.6",
+        "@babel/preset-typescript": "^7.7.4",
         "babel-plugin-styled-components": "^1.10.6",
-        "styled-components": "5.0.0-rc.1"
+        "styled-components": "5.0.0-rc.2"
     },
     "peerDependencies": {
-        "styled-components": "beta"
+        "styled-components": "5.0.0-rc.2"
     },
     "resolutions": {
         "@types/react": "^16.8.19"
