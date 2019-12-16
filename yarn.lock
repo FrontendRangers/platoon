@@ -11,10 +11,10 @@
     parse-commit-message "4.0.0"
     tslib "1.10.0"
 
-"@auto-it/core@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-8.0.0.tgz#fc2ee36df53c69bdac79175278faa91f1e9cc871"
-  integrity sha512-Yt/JhGH7qdYJ8h8hZhvhkN0dK1VQqh7uigcuNSp8EIuDXG29Jgdfq63A1fI14qnh13XgUy1ctC8w1IKO8noKEA==
+"@auto-it/core@^8.0.0", "@auto-it/core@^8.1.3":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-8.2.0.tgz#f4bb0dd6a12ba67af0174329bd620f225d30a151"
+  integrity sha512-DJ7WG56c6+RxVjr++kf8L7WXsihoAEBrOLBXc8glUcEMn1wnaZ1X5q4/vL1J28feVsZvSe66hjXoMIXqaVYR/Q==
   dependencies:
     "@octokit/graphql" "^4.0.0"
     "@octokit/plugin-enterprise-compatibility" "1.1.1"
@@ -42,11 +42,11 @@
     url-join "^4.0.0"
 
 "@auto-it/npm@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-8.0.0.tgz#6f2186ab23c2f02367175b93e673fe900a038b6a"
-  integrity sha512-K68f5IO5BSfFO+dYORIClc5LNc0f53o8mrjdXZs3ejCQwrbX6MM71uwiTtSxxIvghJcop/jzBzk/Lz8oAU9iwg==
+  version "8.1.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-8.1.3.tgz#e5c3d0f9679aa887dca7195901986e69ae92efba"
+  integrity sha512-htdIpTHjwxSw9fCE5AR4FiGbnRzxbqEQ+i3BfCuYedAsBIKwpFAI5/2Jld9PiiUxzwRYu9uku1HHW/Yox6BE/A==
   dependencies:
-    "@auto-it/core" "^8.0.0"
+    "@auto-it/core" "^8.1.3"
     env-ci "^4.1.1"
     get-monorepo-packages "^1.1.0"
     parse-author "^2.0.0"
