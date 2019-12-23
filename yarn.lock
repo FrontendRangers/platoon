@@ -11,10 +11,10 @@
     parse-commit-message "4.0.0"
     tslib "1.10.0"
 
-"@auto-it/core@^8.7.2":
-  version "8.7.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-8.7.2.tgz#d213201fc2b8859f8d7c9ac65c6f3e03ebe71d18"
-  integrity sha512-usOL9jRh+Fmy0HUZ0savZDYjnJphZbmacje4OZ+ZJWbQA0+b8/CXcfcuVAZMZZ5VBLvoMjQGLbpFKwwz5L8fUQ==
+"@auto-it/core@^8.7.2", "@auto-it/core@^8.7.3":
+  version "8.7.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-8.7.3.tgz#6e23d227dfade36736fb606570c8ce79a07e76e2"
+  integrity sha512-LlqZjaFCZYS82SrhYz9D5OmIOy7GRrCcVwY0ArIJfTEmhIBH5VqcMju7ED4+Msjuu9077sWyvfahQMx857JBRg==
   dependencies:
     "@octokit/graphql" "^4.0.0"
     "@octokit/plugin-enterprise-compatibility" "1.1.1"
@@ -41,12 +41,12 @@
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
-"@auto-it/npm@^8.7.2":
-  version "8.7.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-8.7.2.tgz#f75b6d1c37ef5a86ee7cc49979de57c0c23b435a"
-  integrity sha512-TX0A1wkDspYWY/iUBKKa6lWf/CvJUZ/GlTUv1QoL+odmBgO0DXfwMZ+Cg25XvqwQ/pjyvJ3QV2x3kzmpcbL4oQ==
+"@auto-it/npm@^8.7.2", "@auto-it/npm@^8.7.3":
+  version "8.7.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-8.7.3.tgz#78c8f356bbf3aeb33539acf1fbd92ed5563119de"
+  integrity sha512-lESH6PyQNkO6o9hAEF+gf+LIiMyExolnpQFheNPL0VyyZK4jdyQAdn/30aFfvdguZmV6wj69mqvqOcuSsFW0jw==
   dependencies:
-    "@auto-it/core" "^8.7.2"
+    "@auto-it/core" "^8.7.3"
     env-ci "^4.1.1"
     get-monorepo-packages "^1.1.0"
     parse-author "^2.0.0"
@@ -58,12 +58,12 @@
     url-join "^4.0.0"
     user-home "^2.0.0"
 
-"@auto-it/released@^8.7.2":
-  version "8.7.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-8.7.2.tgz#ab87256bfd142051784da851a52c0831dcefdea8"
-  integrity sha512-gv8hzv7cH+kYfY0CCgYFPzGghjXBVpBpPGZ67se48JZK4DLTiAc4yyrVq+dwK5wut/+Uxa2iWlNLadw88kvKoQ==
+"@auto-it/released@^8.7.3":
+  version "8.7.3"
+  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-8.7.3.tgz#8db9efa434b9f2cda20299f41f8af8cd47aa004e"
+  integrity sha512-9SJQ9abkHpNQ7u0c4Wnt9GA/9+IYMgQSULcwDXXymHE9ytj4UpIBC+eFJ2kV5S29idEvVj+yOZ7duwnVB3QoQA==
   dependencies:
-    "@auto-it/core" "^8.7.2"
+    "@auto-it/core" "^8.7.3"
     deepmerge "^4.0.0"
     tslib "1.10.0"
 
@@ -4573,13 +4573,13 @@ auto-bind@^3.0.0:
   integrity sha512-v0A231a/lfOo6kxQtmEkdBfTApvC21aJYukA8pkKnoTvVqh3Wmm7/Rwy4GBCHTTHVoLVA5qsBDDvf1XY1nIV2g==
 
 auto@^8.7.2:
-  version "8.7.2"
-  resolved "https://registry.yarnpkg.com/auto/-/auto-8.7.2.tgz#cdc29517461a0d0e3375799f0eca8201662fd5c2"
-  integrity sha512-LsuIBd8dfCIeTp0DHnj51WeBqYn01hs7srZaYUloL1GanoRWDTvwE2PYN+ISjjiYWxsm3W9BJ3EFhU0FwV/6ZA==
+  version "8.7.3"
+  resolved "https://registry.yarnpkg.com/auto/-/auto-8.7.3.tgz#6101b749ce12fbcc947261afd8e53880fe8c84ff"
+  integrity sha512-VkmynvShywId+kiemOTM8Of0SjOcCHOHG3pk2f5dA2QhDcK1aOtJPi+5jGKDwKQFwk35eEoHCRohixovx6qvzQ==
   dependencies:
-    "@auto-it/core" "^8.7.2"
-    "@auto-it/npm" "^8.7.2"
-    "@auto-it/released" "^8.7.2"
+    "@auto-it/core" "^8.7.3"
+    "@auto-it/npm" "^8.7.3"
+    "@auto-it/released" "^8.7.3"
     chalk "^3.0.0"
     command-line-application "^0.9.3"
     endent "^1.3.0"
