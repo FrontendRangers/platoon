@@ -41,6 +41,36 @@
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
+"@auto-it/core@^9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-9.0.2.tgz#8d0d497d946072e4752c6a7f6cc43ca501250528"
+  integrity sha512-NZJ4U2nMDT01sg3Q+jxhgAoqs1C3t1Fcxad0kSUhDwKtEnZNtC0ypKnmmgZgMJasvpC3SeiPF6tkgb/QF8vNTA==
+  dependencies:
+    "@octokit/graphql" "^4.0.0"
+    "@octokit/plugin-enterprise-compatibility" "1.1.1"
+    "@octokit/plugin-retry" "^2.2.0"
+    "@octokit/plugin-throttling" "^2.6.0"
+    "@octokit/rest" "16.36.0"
+    await-to-js "^2.1.1"
+    cosmiconfig "6.0.0"
+    deepmerge "^4.0.0"
+    dotenv "^8.0.0"
+    endent "^1.3.0"
+    enquirer "^2.3.0"
+    env-ci "^5.0.1"
+    gitlog "^3.1.2"
+    https-proxy-agent "^4.0.0"
+    import-cwd "^3.0.0"
+    lodash.chunk "^4.2.0"
+    node-fetch "2.6.0"
+    semver "^7.0.0"
+    signale "^1.4.0"
+    tapable "^2.0.0-beta.2"
+    tinycolor2 "^1.4.1"
+    tslib "1.10.0"
+    typescript-memoize "^1.0.0-alpha.3"
+    url-join "^4.0.0"
+
 "@auto-it/npm@^8.7.2":
   version "8.7.2"
   resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-8.7.2.tgz#f75b6d1c37ef5a86ee7cc49979de57c0c23b435a"
@@ -58,12 +88,29 @@
     url-join "^4.0.0"
     user-home "^2.0.0"
 
-"@auto-it/released@^8.7.2":
-  version "8.7.2"
-  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-8.7.2.tgz#ab87256bfd142051784da851a52c0831dcefdea8"
-  integrity sha512-gv8hzv7cH+kYfY0CCgYFPzGghjXBVpBpPGZ67se48JZK4DLTiAc4yyrVq+dwK5wut/+Uxa2iWlNLadw88kvKoQ==
+"@auto-it/npm@^9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@auto-it/npm/-/npm-9.0.2.tgz#150c96f82d3f3f1748e7bfcc0d0106e802bc68ed"
+  integrity sha512-5c3fGAFPkcBlemO+l9mAVQzsslMM1OVbOMXgpa6JoUj+/n2U4GgixDqNiRNWL/PunGwiptMs61+0WGuX8wxMHw==
   dependencies:
-    "@auto-it/core" "^8.7.2"
+    "@auto-it/core" "^9.0.2"
+    env-ci "^5.0.1"
+    get-monorepo-packages "^1.1.0"
+    parse-author "^2.0.0"
+    parse-github-url "1.0.2"
+    registry-url "^5.1.0"
+    semver "^7.0.0"
+    tslib "1.10.0"
+    typescript-memoize "^1.0.0-alpha.3"
+    url-join "^4.0.0"
+    user-home "^2.0.0"
+
+"@auto-it/released@^9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@auto-it/released/-/released-9.0.2.tgz#aed7ea9c001f3d998d39e899377608121f4bdf8b"
+  integrity sha512-kUg3DhzyJOB7gwdDXdpORQk1w9Rq/fNNLbgRnV7V/TYaSquTaIGAUCK46duyTClCPJjROVvnR4QgFfZAZfSE3A==
+  dependencies:
+    "@auto-it/core" "^9.0.2"
     deepmerge "^4.0.0"
     tslib "1.10.0"
 
@@ -2730,6 +2777,24 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
+"@octokit/rest@16.36.0":
+  version "16.36.0"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.36.0.tgz#99892c57ba632c2a7b21845584004387b56c2cb7"
+  integrity sha512-zoZj7Ya4vWBK4fjTwK2Cnmu7XBB1p9ygSvTk2TthN6DVJXM4hQZQoAiknWFLJWSTix4dnA3vuHtjPZbExYoCZA==
+  dependencies:
+    "@octokit/request" "^5.2.0"
+    "@octokit/request-error" "^1.0.2"
+    atob-lite "^2.0.0"
+    before-after-hook "^2.0.0"
+    btoa-lite "^1.0.0"
+    deprecation "^2.0.0"
+    lodash.get "^4.4.2"
+    lodash.set "^4.3.2"
+    lodash.uniq "^4.5.0"
+    octokit-pagination-methods "^1.1.0"
+    once "^1.4.0"
+    universal-user-agent "^4.0.0"
+
 "@octokit/rest@^16.28.4":
   version "16.35.0"
   resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.35.0.tgz#7ccc1f802f407d5b8eb21768c6deca44e7b4c0d8"
@@ -4572,14 +4637,14 @@ auto-bind@^3.0.0:
   resolved "https://registry.yarnpkg.com/auto-bind/-/auto-bind-3.0.0.tgz#67773e64899b228f6d2a841709e7e086cfed31a3"
   integrity sha512-v0A231a/lfOo6kxQtmEkdBfTApvC21aJYukA8pkKnoTvVqh3Wmm7/Rwy4GBCHTTHVoLVA5qsBDDvf1XY1nIV2g==
 
-auto@^8.7.2:
-  version "8.7.2"
-  resolved "https://registry.yarnpkg.com/auto/-/auto-8.7.2.tgz#cdc29517461a0d0e3375799f0eca8201662fd5c2"
-  integrity sha512-LsuIBd8dfCIeTp0DHnj51WeBqYn01hs7srZaYUloL1GanoRWDTvwE2PYN+ISjjiYWxsm3W9BJ3EFhU0FwV/6ZA==
+auto@^9.0.2:
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/auto/-/auto-9.0.2.tgz#63011e945b88b109f3828dbd0b6d041ccffa495c"
+  integrity sha512-18MHz8czx+qVtWqJ0mHipr7ZpegVVMdcMX3EJUCHt+yk3nlbB8mn7yhOteMSoDH9MrcvG6pEWpdMHoGtc6dPYA==
   dependencies:
-    "@auto-it/core" "^8.7.2"
-    "@auto-it/npm" "^8.7.2"
-    "@auto-it/released" "^8.7.2"
+    "@auto-it/core" "^9.0.2"
+    "@auto-it/npm" "^9.0.2"
+    "@auto-it/released" "^9.0.2"
     chalk "^3.0.0"
     command-line-application "^0.9.3"
     endent "^1.3.0"
@@ -8212,6 +8277,14 @@ env-ci@^4.1.1:
     execa "^3.2.0"
     java-properties "^1.0.0"
 
+env-ci@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/env-ci/-/env-ci-5.0.1.tgz#f5904477d1e1ae7593110c133292171d8b1a5d6c"
+  integrity sha512-xXgohoOAFFF1Y3EdsSKP7olyH/DLS6ZD3aglV6mDFAXBqBXLJSsZLrOZdYfDs5mOmgNaP3YYynObzwF3QkC24g==
+  dependencies:
+    execa "^4.0.0"
+    java-properties "^1.0.0"
+
 env-dot-prop@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/env-dot-prop/-/env-dot-prop-2.0.1.tgz#95657f497a3c25a935f4a87da37f3954ffa89f5b"
@@ -8797,6 +8870,21 @@ execa@^3.2.0, execa@^3.4.0:
     npm-run-path "^4.0.0"
     onetime "^5.1.0"
     p-finally "^2.0.0"
+    signal-exit "^3.0.2"
+    strip-final-newline "^2.0.0"
+
+execa@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-4.0.0.tgz#7f37d6ec17f09e6b8fc53288611695b6d12b9daf"
+  integrity sha512-JbDUxwV3BoT5ZVXQrSVbAiaXhXUkIwvbhPIwZ0N13kX+5yCzOhUNdocxB/UQRuYOHRYYwAxKYwJYc0T4D12pDA==
+  dependencies:
+    cross-spawn "^7.0.0"
+    get-stream "^5.0.0"
+    human-signals "^1.1.1"
+    is-stream "^2.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^4.0.0"
+    onetime "^5.1.0"
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
