@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Menu } from './';
 
-storiesOf('Components|Navigation.Menu', module).add('default', () => (
-    <Menu>Menu component</Menu>
-));
+export default {
+    title: 'Components/Navigation/Menu',
+};
+
+export const Default = () => <Menu>Menu component</Menu>;
+
+Default.story = {
+    name: 'default',
+};

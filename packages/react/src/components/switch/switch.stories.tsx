@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Switch } from './';
 
-storiesOf('Components|Forms.Switch', module).add('default', () => (
-    <Switch>Switch component</Switch>
-));
+export default {
+    title: 'Components/Forms/Switch',
+};
+
+export const Default = () => <Switch>Switch component</Switch>;
+
+Default.story = {
+    name: 'default',
+};

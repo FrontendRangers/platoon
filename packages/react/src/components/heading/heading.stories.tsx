@@ -1,7 +1,18 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Heading } from './';
 
-storiesOf('Components|Typography.Heading', module)
-    .add('default', () => <Heading>I'm an heading</Heading>)
-    .add('h1', () => <Heading as={'h1'}>I'm an heading</Heading>);
+export default {
+    title: 'Components/Typography/Heading',
+};
+
+export const Default = () => <Heading>I'm an heading</Heading>;
+
+Default.story = {
+    name: 'default',
+};
+
+export const H1 = () => <Heading as={'h1'}>I'm an heading</Heading>;
+
+H1.story = {
+    name: 'h1',
+};

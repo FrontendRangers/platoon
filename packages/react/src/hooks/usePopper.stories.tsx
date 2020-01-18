@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { usePopper } from './usePopper';
 
-storiesOf('Hooks|usePopper', module).add('default', () => {
+export default {
+    title: 'Hooks/usePopper',
+};
+
+export const Default = () => {
     const [visible, setVisible] = useState(false);
     const [ref, popper, popperStyles] = usePopper({ visible });
 
@@ -22,4 +25,8 @@ storiesOf('Hooks|usePopper', module).add('default', () => {
             )}
         </>
     );
-});
+};
+
+Default.story = {
+    name: 'default',
+};

@@ -1,11 +1,18 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { ButtonGroup } from './';
 
-storiesOf('Components|Actions.Button Group', module).add('default', () => (
+export default {
+    title: 'Components/Actions/Button Group',
+};
+
+export const Default = () => (
     <ButtonGroup>
         <ButtonGroup.Item>Button</ButtonGroup.Item>
         <ButtonGroup.Item>Button</ButtonGroup.Item>
         <ButtonGroup.Item>Button</ButtonGroup.Item>
     </ButtonGroup>
-));
+);
+
+Default.story = {
+    name: 'default',
+};

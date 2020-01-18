@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { AppLayout } from '.';
 
-storiesOf('Components|Layout.App Layout', module).add('default', () => (
-    <AppLayout>Applayout component</AppLayout>
-));
+export default {
+    title: 'Components/Layout/App Layout',
+};
+
+export const Default = () => <AppLayout>Applayout component</AppLayout>;
+
+Default.story = {
+    name: 'default',
+};

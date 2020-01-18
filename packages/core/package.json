@@ -34,19 +34,17 @@
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"
     },
-    "dependencies": {
-        "typescript": "^3.7.4"
-    },
     "devDependencies": {
-        "@babel/cli": "^7.7.7",
-        "@babel/core": "^7.7.7",
-        "@babel/preset-env": "^7.7.7",
-        "@babel/preset-typescript": "^7.7.7",
+        "@babel/cli": "^7.8.3",
+        "@babel/core": "^7.8.3",
+        "@babel/preset-env": "^7.8.3",
+        "@babel/preset-typescript": "^7.8.3",
         "babel-plugin-styled-components": "^1.10.6",
-        "styled-components": "5.0.0-rc.2"
+        "styled-components": "5.0.0"
     },
     "peerDependencies": {
-        "styled-components": "5.0.0-rc.2"
+        "styled-components": "4.* || 5.*",
+        "typescript": "^3.7.*"
     },
     "resolutions": {
         "@types/react": "^16.8.19"

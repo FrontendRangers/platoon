@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Breadcrumb } from './';
 
-storiesOf('Components|Navigation.Breadcrumb', module).add('default', () => (
-    <Breadcrumb>Breadcrumb component</Breadcrumb>
-));
+export default {
+    title: 'Components/Navigation/Breadcrumb',
+};
+
+export const Default = () => <Breadcrumb>Breadcrumb component</Breadcrumb>;
+
+Default.story = {
+    name: 'default',
+};

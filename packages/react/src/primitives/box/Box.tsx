@@ -6,10 +6,7 @@ export interface BoxProps extends SpaceProps, ColorProps {
 }
 
 const Box = styled('div')<BoxProps>`
-    ${compose(
-        space,
-        color,
-    )}
+    ${compose(space, color)}
 `;
 
 export { Box };

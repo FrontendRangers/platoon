@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Modal } from './';
 
-storiesOf('Components|Overlays.Modal', module).add('default', () => (
-    <Modal>I'm a modal</Modal>
-));
+export default {
+    title: 'Components/Overlays/Modal',
+};
+
+export const Default = () => <Modal>I'm a modal</Modal>;
+
+Default.story = {
+    name: 'default',
+};

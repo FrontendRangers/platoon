@@ -1,19 +1,35 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Card } from './index';
 
-storiesOf('Components|Others.Card', module)
-    .add('default', () => <Card>Hello</Card>)
-    .add('with a header', () => (
-        <Card>
-            <Card.Header>I&apos;m the header</Card.Header>
-            Hello
-        </Card>
-    ))
-    .add('with a footer', () => (
-        <Card>
-            Hello
-            <Card.Footer>I&apos;m the footer</Card.Footer>
-        </Card>
-    ));
+export default {
+    title: 'Components/Others/Card',
+};
+
+export const Default = () => <Card>Hello</Card>;
+
+Default.story = {
+    name: 'default',
+};
+
+export const WithAHeader = () => (
+    <Card>
+        <Card.Header>I&apos;m the header</Card.Header>
+        Hello
+    </Card>
+);
+
+WithAHeader.story = {
+    name: 'with a header',
+};
+
+export const WithAFooter = () => (
+    <Card>
+        Hello
+        <Card.Footer>I&apos;m the footer</Card.Footer>
+    </Card>
+);
+
+WithAFooter.story = {
+    name: 'with a footer',
+};

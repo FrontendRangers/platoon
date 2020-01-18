@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Radio } from './';
 
-storiesOf('Components|Forms.Radio', module).add('default', () => (
-    <Radio></Radio>
-));
+export default {
+    title: 'Components/Forms/Radio',
+};
+
+export const Default = () => <Radio></Radio>;
+
+Default.story = {
+    name: 'default',
+};

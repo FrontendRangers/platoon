@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Icon } from './';
 
-storiesOf('Components|Medias.Icon', module).add('default', () => (
-    <Icon name={'heart'}></Icon>
-));
+export default {
+    title: 'Components/Medias/Icon',
+};
+
+export const Default = () => <Icon name={'heart'}></Icon>;
+
+Default.story = {
+    name: 'default',
+};

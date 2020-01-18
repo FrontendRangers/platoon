@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Tooltip } from './';
 
-storiesOf('Components|Overlays.Tooltip', module).add('default', () => (
-    <Tooltip>Tooltip component</Tooltip>
-));
+export default {
+    title: 'Components/Overlays/Tooltip',
+};
+
+export const Default = () => <Tooltip>Tooltip component</Tooltip>;
+
+Default.story = {
+    name: 'default',
+};

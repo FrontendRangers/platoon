@@ -1,7 +1,14 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Avatar } from './';
 
-storiesOf('Components|Medias.Avatar', module).add('default', () => (
+export default {
+    title: 'Components/Medias/Avatar',
+};
+
+export const Default = () => (
     <Avatar image={'https://picsum.photos/200'}></Avatar>
-));
+);
+
+Default.story = {
+    name: 'default',
+};

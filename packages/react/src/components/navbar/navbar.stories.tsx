@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Navbar } from './';
 
-storiesOf('Components|Navigation.Navbar', module).add('default', () => (
-    <Navbar>Navbar component</Navbar>
-));
+export default {
+    title: 'Components/Navigation/Navbar',
+};
+
+export const Default = () => <Navbar>Navbar component</Navbar>;
+
+Default.story = {
+    name: 'default',
+};

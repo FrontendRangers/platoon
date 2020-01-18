@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Progress } from './';
 
-storiesOf('Components|Others.Progress', module).add('default', () => (
-    <Progress>Progress component</Progress>
-));
+export default {
+    title: 'Components/Others/Progress',
+};
+
+export const Default = () => <Progress>Progress component</Progress>;
+
+Default.story = {
+    name: 'default',
+};

@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Accordion } from './';
 
-storiesOf('Components|Others.Accordion', module).add('default', () => (
-    <Accordion>Accordion component</Accordion>
-));
+export default {
+    title: 'Components/Others/Accordion',
+};
+
+export const Default = () => <Accordion>Accordion component</Accordion>;
+
+Default.story = {
+    name: 'default',
+};

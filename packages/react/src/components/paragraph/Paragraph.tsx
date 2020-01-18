@@ -3,7 +3,7 @@ import { Text } from '../text';
 import { themed } from '../../themes/helpers';
 import { FontSizeProps, fontSize } from 'styled-system';
 
-export interface ParagraphProps extends FontSizeProps {}
+export type ParagraphProps = FontSizeProps;
 
 const Paragraph = styled(Text).attrs(() => ({ as: 'p' }))<ParagraphProps>`
     ${themed('Paragraph')}

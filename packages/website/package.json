@@ -8,23 +8,23 @@
         "@frontendrangers/platoon-react": "^0.1.0",
         "babel-plugin-styled-components": "^1.10.6",
         "docz": "^2.2.0",
-        "gatsby": "^2.18.16",
-        "gatsby-plugin-offline": "^3.0.30",
-        "gatsby-plugin-sharp": "^2.3.10",
-        "gatsby-plugin-styled-components": "^3.1.16",
-        "gatsby-plugin-typescript": "^2.1.23",
+        "gatsby": "^2.18.25",
+        "gatsby-plugin-offline": "^3.0.32",
+        "gatsby-plugin-sharp": "^2.3.13",
+        "gatsby-plugin-styled-components": "^3.1.17",
+        "gatsby-plugin-typescript": "^2.1.26",
         "gatsby-theme-docz": "^2.2.0",
-        "gatsby-transformer-sharp": "^2.3.9",
+        "gatsby-transformer-sharp": "^2.3.13",
         "prop-types": "^15.7.2",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
         "scheduler": "^0.18.0",
-        "styled-components": "5.0.0-rc.2"
+        "styled-components": "5.0.0"
     },
     "devDependencies": {
         "@types/react": "^16.9.17",
         "@types/react-dom": "^16.9.4",
-        "typescript": "^3.7.4"
+        "typescript": "^3.7.5"
     },
     "keywords": [
         "gatsby"

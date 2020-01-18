@@ -31,14 +31,10 @@ const ButtonElement = styled<any>(Box).attrs(() => ({
     ${themed('Button')}
 
     /* Overrides */
-    ${compose(
-        space,
-        borderRadius,
-    )}
+    ${compose(space, borderRadius)}
 `;
 
 const ButtonIcon = styled.span`
-
     margin-right: 0.5em;
     vertical-align: middle;
     font-size: 1rem;

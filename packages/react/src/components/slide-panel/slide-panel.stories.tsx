@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { SlidePanel } from './';
 import { Button } from '../button';
 
-storiesOf('Components|Overlays.Slide Panel', module).add('default', () => {
+export default {
+    title: 'Components/Overlays/Slide Panel',
+};
+
+export const Default = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
@@ -11,4 +14,8 @@ storiesOf('Components|Overlays.Slide Panel', module).add('default', () => {
             <SlidePanel isOpen={isOpen}>Slide Panel component</SlidePanel>
         </>
     );
-});
+};
+
+Default.story = {
+    name: 'default',
+};

@@ -1,8 +1,19 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Input } from './';
 
-storiesOf('Components|Forms.Input', module)
-    .add('default', () => <Input />)
-    .add('with a placeholder', () => <Input placeholder={'Fill me'} />);
+export default {
+    title: 'Components/Forms/Input',
+};
+
+export const Default = () => <Input />;
+
+Default.story = {
+    name: 'default',
+};
+
+export const WithAPlaceholder = () => <Input placeholder={'Fill me'} />;
+
+WithAPlaceholder.story = {
+    name: 'with a placeholder',
+};
