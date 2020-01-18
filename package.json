@@ -10,7 +10,8 @@
     "license": "MIT",
     "workspaces": {
         "packages": [
-            "packages/*"
+            "packages/*",
+            "examples/*"
         ]
     },
     "scripts": {
