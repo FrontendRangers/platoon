@@ -1,11 +1,11 @@
-# `vue`
+# `svelte`
 
 > TODO: description
 
 ## Usage
 
 ```
-const vue = require('vue');
+const svelte = require('svelte');
 
 // TODO: DEMONSTRATE API
 ```
