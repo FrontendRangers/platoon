@@ -1,12 +1,11 @@
-import { css } from 'styled-components';
-
-const ButtonStyles = css`
-    display: inline-flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    position: relative;
-`;
+const ButtonStyles = {
+    display: 'inline-flex',
+    flexWrap: 'nowrap',
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+    border: 'none',
+};
 
 export { ButtonStyles };
