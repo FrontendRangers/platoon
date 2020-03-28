@@ -1,25 +1,26 @@
 <script>
     import { createEventDispatcher } from 'svelte';
+    import { ButtonStyles } from '@frontendrangers/platoon-core';
+    import { css } from 'emotion';
+
+    const theme = {};
 
     export let text = '';
 
     const dispatch = createEventDispatcher();
 
-    function onClick(event) {
-        dispatch('click', event);
-    }
+    export const handleClick = (event) => dispatch('click', event);
+
+    export const styles = {
+        root: css(ButtonStyles, {
+            backgroundColor: 'red',
+        }),
+        text: css`
+            color: blue;
+        `,
+    };
 </script>
 
-<style>
-    .button {
-        border: 1px solid #eee;
-        border-radius: 3px;
-        background-color: #ffffff;
-        cursor: pointer;
-        font-size: 15px;
-        padding: 3px 10px;
-        margin: 10px;
-    }
-</style>
-
-<button class="button" on:click={onClick}>{text}</button>
+<button class={styles.root} on:click={handleClick}>
+    <span class={styles.text}>{text}</span>
+</button>
