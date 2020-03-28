@@ -1,10 +1,11 @@
 import React from 'react';
-import { PlatoonThemeProvider } from '../../src/themes/themeProvider';
-import { GlobalStyles } from '../../src/themes/globals';
-import { theme } from '../../src/themes/theme';
+import { PlatoonThemeProvider } from '../../src/theme/themeProvider';
+import { GlobalStyles } from '../../src/theme/globals';
+import platoonTheme from '../../src/presets/theme-platoon';
+import bootstrapTheme from '../../src/presets/theme-bootstrap';
 
-const AppProvider = ({ theme, children }) => (
-    <PlatoonThemeProvider theme={theme}>
+const AppProvider = ({ theme, mode, children }) => (
+    <PlatoonThemeProvider theme={theme} mode={mode}>
         <>
             <GlobalStyles />
             {children}
@@ -21,13 +22,14 @@ export const contexts = [
             { name: 'No theme', props: { theme: {} } },
             {
                 name: 'Light Theme',
-                props: { theme: { ...theme, mode: 'light' } },
+                props: { theme: platoonTheme, mode: 'light' },
             },
             {
                 name: 'Dark Theme',
-                props: { theme: { ...theme, mode: 'dark' } },
+                props: { theme: platoonTheme, mode: 'dark' },
                 default: true,
             },
+            { name: 'Bootstrap', props: { theme: bootstrapTheme } },
         ],
         options: {
             deep: true,

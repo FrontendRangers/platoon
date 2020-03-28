@@ -1,24 +1,12 @@
 module.exports = {
-    stories: [
-        '../src/primitives/**/*.stories.tsx',
-        '../src/components/**/*.stories.tsx',
-        '../src/hooks/**/*.stories.tsx',
-    ],
+    stories: ['../docs/**/*.stories.mdx', '../src/**/*.stories.(tsx|mdx)'],
+    // stories: ['../src/**/*.stories.tsx'],
     addons: [
+        '@storybook/preset-typescript',
         '@storybook/addon-contexts',
         '@storybook/addon-actions',
         '@storybook/addon-a11y',
         '@storybook/addon-knobs',
+        '@storybook/addon-docs',
     ],
-    webpackFinal: async (config) => {
-        config.module.rules.push({
-            test: /\.(ts|tsx)$/,
-            loader: require.resolve('babel-loader'),
-            options: {
-                presets: [['react-app', { flow: false, typescript: true }]],
-            },
-        });
-        config.resolve.extensions.push('.ts', '.tsx');
-        return config;
-    },
 };
