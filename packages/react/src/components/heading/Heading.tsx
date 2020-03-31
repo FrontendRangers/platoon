@@ -1,17 +1,14 @@
-import styled from 'styled-components';
+import React, { forwardRef } from 'react';
 import { Text, TextProps } from '../text';
-import { themeGet } from '../../themes/helpers';
 
-export interface HeadingProps extends TextProps {
-    as?: string;
-}
+export type HeadingProps = TextProps;
 
-const Heading = styled(Text)<HeadingProps>`
-    ${({ as }) => themeGet(`textStyles.${as}`)}
-`;
+const Heading: React.FC<HeadingProps> = forwardRef(
+    ({ as = 'h2', ...props }, forwardedRef) => (
+        <Text as={as} ref={forwardedRef} {...props} />
+    ),
+);
 
-Heading.defaultProps = {
-    as: 'h2',
-};
+Heading.displayName = 'Heading';
 
 export { Heading };

@@ -1,8 +1,12 @@
-import styled from 'styled-components';
-import { Box } from '../../primitives/box';
+import React from 'react';
+import { Box, BoxProps } from '../../primitives/box';
 
-export interface AccordionProps {}
+export type AccordionProps = {};
 
-const Accordion = styled(Box)<AccordionProps>``;
+type Props = AccordionProps & BoxProps;
 
-export { Accordion };
+const Accordion: React.FC<Props> = ({ children, ...props }) => (
+    <Box {...props}>{children}</Box>
+);
+
+export default Accordion;

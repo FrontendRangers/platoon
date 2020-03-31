@@ -1,18 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Box } from '../../primitives/box';
+import { Box, BoxProps } from '../../primitives/box';
 
-export interface RadioProps {}
+export type RadioProps = {};
 
-const RadioInputElement = styled('input').attrs(() => ({ type: 'radio' }))``;
+type Props = RadioProps & BoxProps & React.InputHTMLAttributes<HTMLHtmlElement>;
 
-const RadioComponent = styled(Box)``;
-
-const Radio = ({ ...props }: RadioProps) => (
-    <RadioComponent {...props}>
-        <RadioInputElement></RadioInputElement>
-        <label htmlFor="">Label</label>
-    </RadioComponent>
+const Radio: React.FC<Props> = ({ ...props }) => (
+    <Box {...props}>
+        <Box as="label">
+            <Box as="input" type="radio" />
+            Label
+        </Box>
+    </Box>
 );
+
+Radio.displayName = 'Radio';
 
 export { Radio };

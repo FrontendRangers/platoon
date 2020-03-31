@@ -1,8 +1,10 @@
-import styled from 'styled-components';
+import React from 'react';
 import { Box } from '../../primitives/box';
 
-export interface AppLayoutProps {}
+export type AppLayoutProps = {};
 
-const AppLayout = styled(Box)<AppLayoutProps>``;
+type Props = AppLayoutProps;
 
-export { AppLayout };
+const AppLayout: React.FC<Props> = ({ children }) => <Box>{children}</Box>;
+
+export default AppLayout;

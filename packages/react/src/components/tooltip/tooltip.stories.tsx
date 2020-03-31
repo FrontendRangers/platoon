@@ -2,11 +2,9 @@ import React from 'react';
 import { Tooltip } from './';
 
 export default {
-    title: 'Components/Overlays/Tooltip',
+    title: 'Overlays/Tooltip',
 };
 
-export const Default = () => <Tooltip>Tooltip component</Tooltip>;
-
-Default.story = {
-    name: 'default',
-};
+export const Default = () => (
+    <Tooltip content="I'm a tooltip">Tooltip component</Tooltip>
+);

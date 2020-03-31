@@ -1,23 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { forwardRef } from 'react';
 import { Box } from '../../primitives/box';
-import { themed } from '../../themes/helpers';
 
 export interface InputProps {
-    placeholder?: string;
+    size?: 'sm' | 'md' | 'lg';
 }
 
-const InputElement = styled('input').attrs(() => ({ type: 'text' }))``;
+type Props = InputProps & React.InputHTMLAttributes<HTMLInputElement>;
 
-const InputComponent = styled(Box)`
-    ${themed('Input')}
-`;
-
-const Input = ({ placeholder, ...props }: InputProps) => (
-    <InputComponent {...props}>
-        <label htmlFor="">Label</label>
-        <InputElement placeholder={placeholder}></InputElement>
-    </InputComponent>
+const Input: React.FC<Props> = forwardRef(
+    (
+        { size = 'md', type = 'text', ...props },
+        ref: React.Ref<HTMLInputElement>,
+    ) => <Box as="input" ref={ref} size={size} type={type} {...props}></Box>,
 );
+
+Input.displayName = 'Input';
 
 export { Input };

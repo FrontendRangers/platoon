@@ -1,0 +1,31 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction/Getting Started" />
+
+# Getting started
+
+## Installation
+
+**Yarn**
+
+```bash
+yarn add @platoon/react
+```
+
+**NPM**
+
+```bash
+npm install --save @platoon/react
+```
+
+Wrap your app with `PlatoonThemeProvider` and give it a theme.
+
+Learn more in the [Theming](/?path=/docs/introduction-theming--page) section
+
+```jsx
+import { PlatoonThemeProvider } from '@platoon/react';
+
+<PlatoonThemeProvider theme={theme}>
+    <App>{...your content...}</App>
+</PlatoonThemeProvider>
+```

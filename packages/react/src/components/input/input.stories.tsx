@@ -1,19 +1,13 @@
 import React from 'react';
 
 import { Input } from './';
+import { Box } from '../../primitives/box';
 
 export default {
-    title: 'Components/Forms/Input',
+    title: 'Forms/Input',
+    decorators: [(storyFn) => <Box p="lg">{storyFn()}</Box>],
 };
 
 export const Default = () => <Input />;
 
-Default.story = {
-    name: 'default',
-};
-
 export const WithAPlaceholder = () => <Input placeholder={'Fill me'} />;
-
-WithAPlaceholder.story = {
-    name: 'with a placeholder',
-};

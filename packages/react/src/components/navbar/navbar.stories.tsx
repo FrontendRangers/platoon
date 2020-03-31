@@ -1,12 +1,13 @@
 import React from 'react';
-import { Navbar } from './';
+import { NavBar, NavBarNav, NavBarBrand } from './';
 
 export default {
-    title: 'Components/Navigation/Navbar',
+    title: 'Navigation/Navbar',
 };
 
-export const Default = () => <Navbar>Navbar component</Navbar>;
-
-Default.story = {
-    name: 'default',
-};
+export const Default = () => (
+    <NavBar>
+        <NavBarBrand>Brand</NavBarBrand>
+        <NavBarNav>Navigation</NavBarNav>
+    </NavBar>
+);

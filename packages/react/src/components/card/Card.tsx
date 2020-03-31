@@ -1,31 +1,63 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Box } from '../../primitives/box';
+import React, { forwardRef, Ref } from 'react';
+import { Box, BoxProps } from '../../primitives/box';
 
-export interface CardProps {
-    children: any;
-}
+const headerBaseStyles = {
+    flex: '0 1 auto',
+};
 
-const CardComponent = styled<any>(Box)`
-    border: 1px solid rebeccapurple;
-    padding: 16px;
-`;
-
-const Header = styled<any>('div')`
-    border-bottom: 1px solid red;
-`;
-
-const Footer = styled<any>('div')`
-    border-top: 1px solid red;
-`;
-
-const Card = ({ children, ...props }: CardProps) => (
-    <CardComponent {...props}>{children}</CardComponent>
+const CardHeader = ({ ...props }) => (
+    <Box sx={headerBaseStyles} tx="cards.Header" {...props}></Box>
 );
 
-Card.Header = Header;
-Card.Footer = Footer;
+CardHeader.displayName = 'Card.Header';
 
-Card.defaultProps = {};
+const contentBaseStyles = {
+    flex: '1 1 auto',
+};
 
-export { Card };
+const CardContent = ({ ...props }) => (
+    <Box sx={contentBaseStyles} tx="cards.Content" {...props}></Box>
+);
+
+CardContent.displayName = 'Card.Footer';
+
+const footerBaseStyles = {
+    flex: '0 1 auto',
+};
+
+const CardFooter = ({ ...props }) => (
+    <Box sx={footerBaseStyles} tx="cards.Footer" {...props}></Box>
+);
+
+CardFooter.displayName = 'Card.Footer';
+
+export interface CardProps extends BoxProps {
+    variant?: string;
+}
+
+type Props = CardProps & React.HTMLAttributes<HTMLDivElement>;
+
+const rootStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    overflow: 'hidden',
+};
+
+const Card: React.FC<Props> = forwardRef(
+    ({ children, variant = 'default', ...props }, ref: Ref<HTMLDivElement>) => (
+        <Box
+            ref={ref}
+            variant={variant}
+            vx={['variant']}
+            sx={rootStyles}
+            tx="cards"
+            {...props}
+        >
+            {children}
+        </Box>
+    ),
+);
+
+Card.displayName = 'Card';
+
+export { Card, CardHeader, CardContent, CardFooter };

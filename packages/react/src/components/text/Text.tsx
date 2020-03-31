@@ -1,10 +1,16 @@
-import styled from 'styled-components';
+import React, { forwardRef } from 'react';
+import { Box, BoxProps } from '../../primitives/box';
 
-export interface TextProps {
-    children: React.ReactNode;
-    as?: string | React.Component;
-}
+export type TextProps = BoxProps;
 
-const Text = styled('span')<TextProps>``;
+const Text: React.FC<TextProps> = forwardRef(
+    ({ children, as = 'span', ...props }, ref) => (
+        <Box as={as} ref={ref} tx="textStyles" {...props}>
+            {children}
+        </Box>
+    ),
+);
+
+Text.displayName = 'Text';
 
 export { Text };

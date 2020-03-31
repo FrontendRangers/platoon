@@ -1,8 +1,10 @@
-import styled from 'styled-components';
-import { Box } from '../../primitives/box';
+import React from 'react';
+import { Box, BoxProps } from '../../primitives/box';
 
-export interface BreadcrumbProps {}
+export type BreadcrumbProps = {};
 
-const Breadcrumb = styled(Box)<BreadcrumbProps>``;
+type Props = BreadcrumbProps & BoxProps;
 
-export { Breadcrumb };
+const Breadcrumb: React.FC<Props> = () => <Box>Home / About Us</Box>;
+
+export default Breadcrumb;

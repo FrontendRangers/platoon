@@ -1,35 +1,42 @@
 import React from 'react';
 
-import { Card } from './index';
+import { Card, CardContent, CardHeader, CardFooter } from './';
+import { Image } from '../image';
 
 export default {
-    title: 'Components/Others/Card',
+    title: 'Others/Card',
+    component: Card,
 };
 
-export const Default = () => <Card>Hello</Card>;
+export const Default = () => <Card>Content</Card>;
 
-Default.story = {
-    name: 'default',
-};
-
-export const WithAHeader = () => (
+export const withContent = () => (
     <Card>
-        <Card.Header>I&apos;m the header</Card.Header>
-        Hello
+        <CardContent>Content</CardContent>
     </Card>
 );
 
-WithAHeader.story = {
-    name: 'with a header',
-};
-
-export const WithAFooter = () => (
+export const withHeader = () => (
     <Card>
-        Hello
-        <Card.Footer>I&apos;m the footer</Card.Footer>
+        <CardHeader>I&apos;m the header</CardHeader>
+        <CardContent>Content</CardContent>
     </Card>
 );
 
-WithAFooter.story = {
-    name: 'with a footer',
-};
+export const withAFooter = () => (
+    <Card>
+        <CardContent>Content</CardContent>
+        <CardFooter>I&apos;m the footer</CardFooter>
+    </Card>
+);
+
+export const withImage = () => (
+    <Card>
+        <Image
+            width="300px"
+            height="200px"
+            src="https://picsum.photos/300/200"
+        ></Image>
+        <CardContent>Content</CardContent>
+    </Card>
+);

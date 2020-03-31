@@ -1,8 +1,36 @@
-import styled from 'styled-components';
-import { Box } from '../../primitives/box';
+import { Box, BoxProps } from '../../primitives/box';
+import React, { forwardRef } from 'react';
+import { CSSObject } from '@styled-system/css';
 
-export interface NavbarProps {}
+const NavBarBrand: React.FC<{}> = ({ children, ...props }) => (
+    <Box tx="navbars.brand" {...props}>
+        {children}
+    </Box>
+);
 
-const Navbar = styled(Box)<NavbarProps>``;
+const NavBarNav: React.FC<{}> = ({ children, ...props }) => (
+    <Box tx="navbars.nav" {...props}>
+        {children}
+    </Box>
+);
 
-export { Navbar };
+export type NavbarProps = BoxProps;
+
+export type Props = NavbarProps;
+
+const styles: CSSObject = {
+    display: 'flex',
+    flexDirection: 'row',
+};
+
+const NavBar: React.FC<Props> = forwardRef(
+    ({ children, ...props }, forwardedRef) => (
+        <Box sx={styles} ref={forwardedRef} tx="navbars" {...props}>
+            {children}
+        </Box>
+    ),
+);
+
+NavBar.displayName = 'NavBar';
+
+export { NavBar, NavBarBrand, NavBarNav };

@@ -1,7 +1,13 @@
----
-name: Hello world
----
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Button } from './Button';
 
 # Hello world
 
 Hello, I'm a mdx file!
+
+<Meta></Meta>
+
+<Preview>
+    <Story id="actions-button--base"></Story>
+    <Story id="actions-button--primary"></Story>
+</Preview>

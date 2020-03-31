@@ -1,12 +1,14 @@
 import React from 'react';
-import { Select } from './';
+import { Select, SelectOption } from './';
 
 export default {
-    title: 'Components/Forms/Select',
+    title: 'Forms/Select',
 };
 
-export const Default = () => <Select>Select component</Select>;
-
-Default.story = {
-    name: 'default',
-};
+export const Default = () => (
+    <Select>
+        <SelectOption value="Option1">Option 1</SelectOption>
+        <SelectOption value="Option2">Option 2</SelectOption>
+        <SelectOption value="Option3">Option 2</SelectOption>
+    </Select>
+);

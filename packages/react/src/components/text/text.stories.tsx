@@ -1,12 +1,16 @@
 import React from 'react';
 import { Text } from './';
+// import docs from './text.mdx';
 
 export default {
-    title: 'Components/Typography/Text',
+    title: 'Typography/Text',
+    // parameters: {
+    //     docs: {
+    //         page: docs,
+    //     },
+    // },
 };
 
 export const Default = () => <Text>I'm some text</Text>;
 
-Default.story = {
-    name: 'default',
-};
+export const AsParagraph = () => <Text as="p">I'm a paragraph</Text>;

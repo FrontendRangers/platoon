@@ -1,8 +1,12 @@
-import styled from 'styled-components';
+import React from 'react';
 import { Box } from '../../primitives/box';
 
-export interface SiteLayoutProps {}
+export type SiteLayoutProps = {};
 
-const SiteLayout = styled(Box)<SiteLayoutProps>``;
+type Props = SiteLayoutProps;
 
-export { SiteLayout };
+const SiteLayout: React.FC<Props> = (children, ...props) => (
+    <Box {...props}>{children}</Box>
+);
+
+export default SiteLayout;

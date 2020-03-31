@@ -1,22 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Box } from '../../primitives/box';
 
 export interface AvatarProps {
     image: string;
 }
 
-const AvatarComponent = styled(Box)`
-    width: 32px;
-    height: 32px;
-    border-radius: 100em;
-    overflow: hidden;
-`;
+const rootStyles = {
+    width: '32px',
+    height: '32px',
+    borderRadius: 'round',
+    overflow: 'hidden',
+};
 
 const Avatar = ({ image, ...props }: AvatarProps) => (
-    <AvatarComponent {...props}>
+    <Box sx={rootStyles} {...props}>
         <img src={image} />
-    </AvatarComponent>
+    </Box>
 );
 
-export { Avatar };
+export default Avatar;

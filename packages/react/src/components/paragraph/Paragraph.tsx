@@ -1,13 +1,17 @@
-import styled from 'styled-components';
+import React, { forwardRef } from 'react';
+import { FontSizeProps } from 'styled-system';
 import { Text } from '../text';
-import { themed } from '../../themes/helpers';
-import { FontSizeProps, fontSize } from 'styled-system';
 
 export type ParagraphProps = FontSizeProps;
 
-const Paragraph = styled(Text).attrs(() => ({ as: 'p' }))<ParagraphProps>`
-    ${themed('Paragraph')}
-    ${fontSize}
-`;
+const Paragraph: React.FC<ParagraphProps> = forwardRef(
+    ({ children, ...props }, forwardedRef) => (
+        <Text as="p" ref={forwardedRef} {...props}>
+            {children}
+        </Text>
+    ),
+);
+
+Paragraph.displayName = 'Paragraph';
 
 export { Paragraph };

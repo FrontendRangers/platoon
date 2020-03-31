@@ -1,35 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Box } from '../../primitives/box';
 import { MarginProps } from 'styled-system';
 import { Button } from '../button';
 
-const ButtonGroupItem = styled<any>(Button)`
-    &:first-of-type {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
+const itemStyles = {
+    '&:first-of-type': {
+        borderTopRightRadius: '0',
+        borderBottomRightRadius: '0',
+    },
+    '&:last-of-type': { borderTopLeftRadius: '0', borderBottomLeftRadius: '0' },
+    '&:not(:first-of-type):not(:last-of-type)': { borderRadius: '0' },
+};
 
-    &:last-of-type {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
+const ButtonGroupItem = (props) => <Button {...props} sx={itemStyles}></Button>;
 
-    &:not(:first-of-type):not(:last-of-type) {
-        border-radius: 0;
-    }
-`;
+export type ButtonGroupProps = MarginProps;
 
-export interface ButtonGroupProps extends MarginProps {
-    children: any;
+export interface ButtonGroupSubComponents {
+    Item: typeof ButtonGroupItem;
 }
-const ButtonGroupComponent = styled<any>(Box)`
-    color: red;
-`;
 
-const ButtonGroup = ({ children, ...props }: ButtonGroupProps) => (
-    <ButtonGroupComponent {...props}>{children}</ButtonGroupComponent>
-);
+const ButtonGroup: React.FC<ButtonGroupProps> & ButtonGroupSubComponents = ({
+    children,
+    ...props
+}) => <Box {...props}>{children}</Box>;
 
 ButtonGroup.Item = ButtonGroupItem;
 

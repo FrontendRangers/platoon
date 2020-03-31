@@ -7,11 +7,7 @@ export default {
 
 export const Default = () => (
     <>
-        <p>Overlay component</p>
-        <Overlay></Overlay>
+        <p>Outside the overlay</p>
+        <Overlay>Inside the overlay</Overlay>
     </>
 );
-
-Default.story = {
-    name: 'default',
-};

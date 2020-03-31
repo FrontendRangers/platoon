@@ -1,17 +1,21 @@
-import styled from 'styled-components';
-import { Box } from '../box';
+import React from 'react';
+import { Box, BoxProps } from '../box';
 
-export interface OverlayProps {
-    children?: any;
-}
+export type OverlayProps = BoxProps;
 
-const Overlay = styled(Box)<OverlayProps>`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(40, 68, 112, 0.8);
-`;
+const overlayStyles = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: 'overlay',
+};
 
-export { Overlay };
+const Overlay: React.FC<OverlayProps> = ({ children, ...props }) => (
+    <Box sx={overlayStyles} {...props}>
+        {children}
+    </Box>
+);
+
+export default Overlay;

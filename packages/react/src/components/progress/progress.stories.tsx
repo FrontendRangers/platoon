@@ -2,11 +2,11 @@ import React from 'react';
 import { Progress } from './';
 
 export default {
-    title: 'Components/Others/Progress',
+    title: 'Others/Progress',
 };
 
-export const Default = () => <Progress>Progress component</Progress>;
+export const Default = () => <Progress value="70" max="100"></Progress>;
 
-Default.story = {
-    name: 'default',
-};
+export const Secondary = () => (
+    <Progress variant="secondary" value="70" max="100"></Progress>
+);

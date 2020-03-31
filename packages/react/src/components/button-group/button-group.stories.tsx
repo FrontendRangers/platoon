@@ -2,7 +2,7 @@ import React from 'react';
 import { ButtonGroup } from './';
 
 export default {
-    title: 'Components/Actions/Button Group',
+    title: 'Actions/Button Group',
 };
 
 export const Default = () => (
@@ -12,7 +12,3 @@ export const Default = () => (
         <ButtonGroup.Item>Button</ButtonGroup.Item>
     </ButtonGroup>
 );
-
-Default.story = {
-    name: 'default',
-};
