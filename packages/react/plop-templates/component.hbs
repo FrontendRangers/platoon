@@ -1,8 +1,13 @@
-import styled from 'styled-components';
-import { Box } from '../../primitives/box';
+import React from 'react';
+import { Box, BoxProps } from '../../primitives/box';
 
-export interface {{properCase name}}Props {}
+export type {{properCase name}}Props = BoxProps;
 
-const {{properCase name}} = styled(Box)<{{properCase name}}Props>``;
+type Props = {{properCase name}}Props;
 
-    export { {{properCase name}} };
+const {{properCase name}}: React.FC<Props> = ({
+    children,
+    ...props
+    }) => <Box {...props}>{children}</Box>;
+
+export default {{properCase name}};

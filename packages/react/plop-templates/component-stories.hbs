@@ -1,7 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { {{properCase name}} } from './';
 
-storiesOf('Components|{{titleCase name}}', module).add('default', () => (
-<{{properCase name}}>{{titleCase name}} component</{{properCase name}}>
-));
+export default {
+    title: '{{properCase category}}/{{properCase name}}',
+    component: {{properCase name}},
+};
+
+export const Default = () => <{{properCase name}}>{{titleCase name}} component</{{properCase name}}>;

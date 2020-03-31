@@ -1,4 +1,4 @@
-module.exports = function(plop) {
+module.exports = function (plop) {
     plop.setGenerator('component', {
         description: 'generate a react component',
         prompts: [
@@ -6,6 +6,21 @@ module.exports = function(plop) {
                 type: 'input',
                 name: 'name',
                 message: 'Name of your component',
+            },
+            {
+                type: 'list',
+                name: 'category',
+                message: 'Choose a category',
+                choices: [
+                    'Typography',
+                    'Actions',
+                    'Forms',
+                    'Medias',
+                    'Navigation',
+                    'Overlays',
+                    'Layout',
+                    'Others',
+                ],
             },
         ],
         actions: [
