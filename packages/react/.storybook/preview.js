@@ -77,7 +77,6 @@ addParameters({
 const StoryComponent = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
