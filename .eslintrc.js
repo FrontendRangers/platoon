@@ -6,6 +6,9 @@ module.exports = {
         'plugin:jest/recommended',
         'plugin:prettier/recommended',
         'plugin:react/recommended',
+        'plugin:import/errors',
+        'plugin:import/warnings',
+        'plugin:import/typescript',
         'prettier',
         'prettier/@typescript-eslint',
         'prettier/react',
@@ -14,7 +17,6 @@ module.exports = {
         '@typescript-eslint',
         'prettier',
         'jest',
-        'import',
         'react',
         'jsx-a11y',
     ],
@@ -27,9 +29,6 @@ module.exports = {
     settings: {
         react: {
             version: 'detect',
-        },
-        'import/resolver': {
-            node: { extensions: ['.js', '.ts', '.tsx'] },
         },
     },
     rules: {
