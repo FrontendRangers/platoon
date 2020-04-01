@@ -3742,9 +3742,9 @@
   integrity sha512-s3CtmKoSZCyOZfe03ftUrOqVhFTryWuQhs0koYOvyoNnsMtV+NDvMSFf/SHxl9uvy/jp20qkkFlIVu0x9WJOFA==
 
 "@types/styled-system__css@^5.0.6":
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/@types/styled-system__css/-/styled-system__css-5.0.6.tgz#ceac02d9839026fbbc10978f53947f22167dca54"
-  integrity sha512-i/smjcALDt4JB9/wn1osPWK5W2bWHz06QPELSa/yK5PFiUbsVjsf4qpnLi4oZ4n7T5KM/xvA31Kx8gvam5zQ5w==
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@types/styled-system__css/-/styled-system__css-5.0.8.tgz#3886fc89e003aadda858349a5cf324fe54b09980"
+  integrity sha512-skv+daDje8vWQ8wnqVV0GCzgWVKx4gI9lJpAxWE77s52Ne6k/SCPP8HGE4BFbWDvK+qi5O3p89BGWVOQ1VHjMg==
   dependencies:
     csstype "^2.6.6"
 
