@@ -12,20 +12,17 @@ const itemStyles = {
     '&:not(:first-of-type):not(:last-of-type)': { borderRadius: '0' },
 };
 
-const ButtonGroupItem = (props) => <Button {...props} sx={itemStyles}></Button>;
+export const ButtonGroupItem = (props) => (
+    <Button {...props} sx={itemStyles}></Button>
+);
 
-export type ButtonGroupProps = MarginProps;
+export type ButtonGroupProps = {};
 
-export interface ButtonGroupSubComponents {
-    Item: typeof ButtonGroupItem;
-}
+type Props = ButtonGroupProps & MarginProps;
 
-const ButtonGroup: React.FC<ButtonGroupProps> & ButtonGroupSubComponents = ({
-    children,
-    ...props
-}) => <Box {...props}>{children}</Box>;
-
-ButtonGroup.Item = ButtonGroupItem;
+const ButtonGroup: React.FC<Props> = ({ children, ...props }) => (
+    <Box {...props}>{children}</Box>
+);
 
 ButtonGroup.displayName = 'ButtonGroup';
 

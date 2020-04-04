@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonGroup } from './';
+import { ButtonGroup, ButtonGroupItem } from './';
 
 export default {
     title: 'Actions/Button Group',
@@ -7,8 +7,8 @@ export default {
 
 export const Default = () => (
     <ButtonGroup>
-        <ButtonGroup.Item>Button</ButtonGroup.Item>
-        <ButtonGroup.Item>Button</ButtonGroup.Item>
-        <ButtonGroup.Item>Button</ButtonGroup.Item>
+        <ButtonGroupItem>Button</ButtonGroupItem>
+        <ButtonGroupItem>Button</ButtonGroupItem>
+        <ButtonGroupItem>Button</ButtonGroupItem>
     </ButtonGroup>
 );
