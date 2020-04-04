@@ -146,7 +146,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@7.9.0", "@babel/core@>=7.2.2", "@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.4.5", "@babel/core@^7.5.5", "@babel/core@^7.7.5", "@babel/core@^7.8.3", "@babel/core@^7.8.7", "@babel/core@^7.9.0":
+"@babel/core@7.9.0", "@babel/core@>=7.2.2", "@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.1.6", "@babel/core@^7.4.5", "@babel/core@^7.5.5", "@babel/core@^7.7.5", "@babel/core@^7.8.7", "@babel/core@^7.9.0":
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.9.0.tgz#ac977b538b77e132ff706f3b8a4dbad09c03c56e"
   integrity sha512-kWc7L0fw1xwvI0zi8OKVBuxRVefwGOrKSQMvrQ3dW+bIIavBY3/NpXmpjMy7bQnLgwgzWQZ8TlM57YHpHNHz4w==
@@ -2609,10 +2609,10 @@
     lodash.debounce "^4.0.8"
     react-dev-utils "^9.1.0"
 
-"@popperjs/core@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.1.1.tgz#12c572ab88ef7345b43f21883fca26631c223085"
-  integrity sha512-sLqWxCzC5/QHLhziXSCAksBxHfOnQlhPRVgPK0egEw+ktWvG75T2k+aYWVjVh9+WKeT3tlG3ZNbZQvZLmfuOIw==
+"@popperjs/core@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.2.1.tgz#d7d1d7fbdc1f2aa24e62f4ef4b001be7727340c5"
+  integrity sha512-BChdj3idQiLi+7vPhE6gEDiPzpozvSrUqbSMoSTlRbOQkU0p6u4si0UBydegTyphsYSZC2AUHGYYICP0gqmEVg==
 
 "@reach/router@^1.2.1", "@reach/router@^1.3.3":
   version "1.3.3"
@@ -3914,10 +3914,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.5.tgz#59738bf30b31aea1faa2df7f4a5f55613750cf00"
   integrity sha512-hkzMMD3xu6BrJpGVLeQ3htQQNAcOrJjX7WFmtK8zWQpz2UJf13LCFF2ALA7c9OVdvc2vQJeDdjfR35M0sBCxvw==
 
-"@types/node@^13.9.8":
-  version "13.9.8"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.8.tgz#09976420fc80a7a00bf40680c63815ed8c7616f4"
-  integrity sha512-1WgO8hsyHynlx7nhP1kr0OFzsgKz5XDQL+Lfc3b1Q3qIln/n8cKD4m09NJ0+P1Rq7Zgnc7N0+SsMnoD1rEb0kA==
+"@types/node@^13.11.0":
+  version "13.11.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.11.0.tgz#390ea202539c61c8fa6ba4428b57e05bc36dc47b"
+  integrity sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
 
 "@types/node@^8.5.7":
   version "8.10.59"
@@ -5254,7 +5254,7 @@ auto@^9.22.2:
     terminal-link "^2.1.1"
     tslib "1.11.1"
 
-autoprefixer@^9.6.1, autoprefixer@^9.7.2, autoprefixer@^9.7.4:
+autoprefixer@^9.6.1, autoprefixer@^9.7.2, autoprefixer@^9.7.4, autoprefixer@^9.7.5:
   version "9.7.5"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.7.5.tgz#8df10b9ff9b5814a8d411a5cfbab9c793c392376"
   integrity sha512-URo6Zvt7VYifomeAfJlMFnYDhow1rk2bufwkbamPEAtQFcL11moLk4PnR7n9vlu7M+BkXAZkHFA0mIcY7tjQFg==
@@ -14958,7 +14958,7 @@ meow@^4.0.0:
     redent "^2.0.0"
     trim-newlines "^2.0.0"
 
-meow@^6.0.1:
+meow@^6.0.1, meow@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/meow/-/meow-6.1.0.tgz#4ff4641818d3502afcddc631f94cb6971a581cb3"
   integrity sha512-iIAoeI01v6pmSfObAAWFoITAA4GgiT45m4SmJgoxtZfvI0fyZwhV4d0lTwiUXvAKIPlma05Feb2Xngl52Mj5Cg==
@@ -17491,7 +17491,7 @@ postcss-safe-parser@4.0.1:
   dependencies:
     postcss "^7.0.0"
 
-postcss-safe-parser@^4.0.1:
+postcss-safe-parser@^4.0.1, postcss-safe-parser@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/postcss-safe-parser/-/postcss-safe-parser-4.0.2.tgz#a6d4e48f0f37d9f7c11b2a581bf00f8ba4870b96"
   integrity sha512-Uw6ekxSWNLCPesSv/cmqf2bY/77z11O7jZGPax3ycZMFU/oi2DMH9i89AdHc1tRwFg/arFoEwX0IS3LCUxJh1g==
@@ -19660,6 +19660,13 @@ rollup@^2.3.1:
   optionalDependencies:
     fsevents "~2.1.2"
 
+rollup@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.3.2.tgz#afa68e4f3325bcef4e150d082056bef450bcac60"
+  integrity sha512-p66+fbfaUUOGE84sHXAOgfeaYQMslgAazoQMp//nlR519R61213EPFgrMZa48j31jNacJwexSAR1Q8V/BwGKBA==
+  optionalDependencies:
+    fsevents "~2.1.2"
+
 rsvp@^4.8.4:
   version "4.8.5"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.8.5.tgz#c8f155311d167f68f21e168df71ec5b083113734"
@@ -21062,6 +21069,60 @@ stylelint@^13.2.1:
     postcss-reporter "^6.0.1"
     postcss-resolve-nested-selector "^0.1.1"
     postcss-safe-parser "^4.0.1"
+    postcss-sass "^0.4.2"
+    postcss-scss "^2.0.0"
+    postcss-selector-parser "^6.0.2"
+    postcss-syntax "^0.36.2"
+    postcss-value-parser "^4.0.3"
+    resolve-from "^5.0.0"
+    slash "^3.0.0"
+    specificity "^0.4.1"
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    style-search "^0.1.0"
+    sugarss "^2.0.0"
+    svg-tags "^1.0.0"
+    table "^5.4.6"
+    v8-compile-cache "^2.1.0"
+    write-file-atomic "^3.0.3"
+
+stylelint@^13.3.0:
+  version "13.3.0"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.3.0.tgz#06a5e3d34e99d1d02891bc827f660f2bd2e79897"
+  integrity sha512-ehNzQu9JAbxuiNhUhmoyPgMjIdz7Fg1AxC5urPVhKotto/faF5GxwljSoLvQa6pB6yd+BVuofApWjWT/6/rBMQ==
+  dependencies:
+    autoprefixer "^9.7.5"
+    balanced-match "^1.0.0"
+    chalk "^3.0.0"
+    cosmiconfig "^6.0.0"
+    debug "^4.1.1"
+    execall "^2.0.0"
+    file-entry-cache "^5.0.1"
+    get-stdin "^7.0.0"
+    global-modules "^2.0.0"
+    globby "^11.0.0"
+    globjoin "^0.1.4"
+    html-tags "^3.1.0"
+    ignore "^5.1.4"
+    import-lazy "^4.0.0"
+    imurmurhash "^0.1.4"
+    known-css-properties "^0.18.0"
+    leven "^3.1.0"
+    lodash "^4.17.15"
+    log-symbols "^3.0.0"
+    mathml-tag-names "^2.1.3"
+    meow "^6.1.0"
+    micromatch "^4.0.2"
+    normalize-selector "^0.2.0"
+    postcss "^7.0.27"
+    postcss-html "^0.36.0"
+    postcss-jsx "^0.36.4"
+    postcss-less "^3.1.4"
+    postcss-markdown "^0.36.0"
+    postcss-media-query-parser "^0.2.3"
+    postcss-reporter "^6.0.1"
+    postcss-resolve-nested-selector "^0.1.1"
+    postcss-safe-parser "^4.0.2"
     postcss-sass "^0.4.2"
     postcss-scss "^2.0.0"
     postcss-selector-parser "^6.0.2"
