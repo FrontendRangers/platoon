@@ -49,6 +49,7 @@ export type SystemProps = SpaceProps &
     ShadowProps;
 
 export interface BoxProps extends SystemProps {
+    /** Define which element to use to render the component */
     as?: any;
     base?: Record<any, any>;
     sx?: Record<any, any>;
