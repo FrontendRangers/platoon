@@ -94,7 +94,7 @@
         "stylelint": "^13.3.3",
         "stylelint-config-standard": "^20.0.0",
         "stylelint-config-styled-components": "^0.1.1",
-        "ts-loader": "^6.2.2",
+        "ts-loader": "^7.0.1",
         "typescript": "^3.8.3",
         "webpack": "^4.43.0",
         "yarnhook": "^0.4.3"
