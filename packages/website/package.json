@@ -8,7 +8,7 @@
         "@frontendrangers/platoon-react": "^0.1.0",
         "babel-plugin-styled-components": "^1.10.7",
         "docz": "^2.3.1",
-        "gatsby": "^2.21.1",
+        "gatsby": "^2.21.5",
         "gatsby-plugin-offline": "^3.2.0",
         "gatsby-plugin-styled-components": "^3.3.0",
         "gatsby-plugin-typescript": "^2.4.0",
