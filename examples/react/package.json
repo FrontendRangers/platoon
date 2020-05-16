@@ -7,9 +7,9 @@
         "react": "16.13.1",
         "react-dom": "^16.13.1",
         "react-scripts": "^3.4.1",
+        "snyk": "^1.321.0",
         "styled-components": "^5.1.0",
-        "typescript": "^3.8.3",
-        "snyk": "^1.316.1"
+        "typescript": "^3.9.2"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -29,8 +29,8 @@
         "not op_mini all"
     ],
     "devDependencies": {
-        "@types/react": "^16.9.34",
-        "@types/react-dom": "^16.9.7"
+        "@types/react": "^16.9.35",
+        "@types/react-dom": "^16.9.8"
     },
     "snyk": true
 }
