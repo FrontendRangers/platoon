@@ -37,7 +37,7 @@
         "@storybook/addon-actions": "^5.3.18",
         "@storybook/addon-contexts": "^5.3.18",
         "@storybook/addon-links": "^5.3.18",
-        "@storybook/addons": "^5.3.18",
+        "@storybook/addons": "^6.0.0-beta.8",
         "@storybook/svelte": "^5.3.18",
         "babel-loader": "^8.1.0",
         "emotion": "^10.0.27",
