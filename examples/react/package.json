@@ -7,9 +7,9 @@
         "react": "16.13.1",
         "react-dom": "^16.13.1",
         "react-scripts": "^3.4.1",
-        "snyk": "^1.321.0",
-        "styled-components": "^5.1.0",
-        "typescript": "^3.9.2"
+        "snyk": "^1.337.0",
+        "styled-components": "^5.1.1",
+        "typescript": "^3.9.5"
     },
     "scripts": {
         "start": "react-scripts start",
