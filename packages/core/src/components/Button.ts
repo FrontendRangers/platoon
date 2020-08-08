@@ -1,4 +1,4 @@
-const ButtonStyles = {
+export default {
     display: 'inline-flex',
     flexWrap: 'nowrap',
     justifyContent: 'center',
@@ -7,5 +7,3 @@ const ButtonStyles = {
     position: 'relative',
     border: 'none',
 };
-
-export { ButtonStyles };
