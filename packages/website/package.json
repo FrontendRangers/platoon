@@ -5,21 +5,21 @@
     "version": "0.2.0",
     "author": "Benoit Deziel <ben@benoitdeziel.com>",
     "dependencies": {
-        "babel-plugin-styled-components": "^1.10.7",
+        "babel-plugin-styled-components": "^1.11.1",
         "docz": "^2.3.1",
-        "gatsby": "^2.23.14",
-        "gatsby-plugin-offline": "^3.2.15",
-        "gatsby-plugin-styled-components": "^3.3.8",
-        "gatsby-plugin-typescript": "^2.4.10",
+        "gatsby": "^2.24.37",
+        "gatsby-plugin-offline": "^3.2.22",
+        "gatsby-plugin-styled-components": "^3.3.10",
+        "gatsby-plugin-typescript": "^2.4.17",
         "gatsby-theme-docz": "^2.3.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "styled-components": "^5.1.1"
     },
     "devDependencies": {
-        "@types/react": "^16.9.41",
+        "@types/react": "^16.9.45",
         "@types/react-dom": "^16.9.8",
-        "typescript": "^3.9.6"
+        "typescript": "^3.9.7"
     },
     "keywords": [
         "gatsby"
