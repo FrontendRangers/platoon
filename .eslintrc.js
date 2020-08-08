@@ -3,29 +3,23 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:jest/recommended',
-        'plugin:prettier/recommended',
         'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
         'plugin:import/errors',
         'plugin:import/warnings',
         'plugin:import/typescript',
+        'plugin:prettier/recommended',
         'prettier',
         'prettier/@typescript-eslint',
         'prettier/react',
     ],
-    plugins: [
-        '@typescript-eslint',
-        'prettier',
-        'jest',
-        'react',
-        'jsx-a11y',
-    ],
+    plugins: ['@typescript-eslint', 'prettier', 'react', 'jsx-a11y'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 8,
         sourceType: 'module',
     },
-    env: { browser: true, node: true, es6: true, 'jest/globals': true },
+    env: { browser: true, node: true, es6: true },
     settings: {
         react: {
             version: 'detect',
@@ -38,5 +32,6 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 0,
         'react/prop-types': 0,
         'react/no-unescaped-entities': 0,
+        'react/self-closing-comp': 'warn',
     },
 };
