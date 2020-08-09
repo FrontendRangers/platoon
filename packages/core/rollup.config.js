@@ -2,7 +2,6 @@ import configure from '../../config/rollup.config';
 import pkg from './package.json';
 
 export default configure({
-    pkg: pkg,
     input: './src/index.ts',
     output: [
         {
