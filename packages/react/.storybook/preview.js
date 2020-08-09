@@ -1,14 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
-import { addDecorator, addParameters } from '@storybook/react';
-import { withContexts } from '@storybook/addon-contexts/react';
-import { contexts } from './configs/contexts';
-import { withKnobs } from '@storybook/addon-knobs';
-import { withA11y } from '@storybook/addon-a11y';
-
-import { Preview, Story } from './components';
-
-//////////////////////////////////////////////////////
+import { addParameters } from '@storybook/react';
 
 // functions from Circuit UI - https://github.com/sumup-oss/circuit-ui/blob/master/.storybook/util/story-helpers.js
 
@@ -18,9 +8,7 @@ function position(item, array = []) {
     return index === -1 ? 10000 : index;
 }
 
-function splitStoryName(name) {
-    return name.split('/');
-}
+const splitStoryName = (name) => name.split('/');
 
 function sortStories(sortOrder) {
     const groups = Object.keys(sortOrder);
@@ -48,10 +36,9 @@ function sortStories(sortOrder) {
     };
 }
 
-//////////////////////////////////////////////////////
-
 const SORT_ORDER = {
     Introduction: ['Welcome', 'Getting Started', 'Theming', 'Color Modes'],
+    Tokens: [],
     Primitives: ['Box'],
     Typography: ['Text'],
     Actions: ['Button'],
@@ -59,6 +46,8 @@ const SORT_ORDER = {
     Medias: [],
     Navigation: [],
     Overlays: [],
+    Data: [],
+    Transitions: [],
     Layout: [],
     Others: [],
     Hooks: [],
@@ -67,32 +56,19 @@ const SORT_ORDER = {
 addParameters({
     options: {
         storySort: sortStories(SORT_ORDER),
-        showRoots: true,
     },
-    docs: { components: { Story, Preview } },
 });
 
-//////////////////////////////////////////////////////
-
-const StoryComponent = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-
-    .sbdocs & {
-        min-height: auto;
-    }
-`;
-
-const withStoryStyles = (storyFn) => {
-    return <StoryComponent>{storyFn()}</StoryComponent>;
+export const globalArgTypes = {
+    theme: {
+        name: 'Theme',
+        description: 'Global theme for components',
+        defaultValue: 'light',
+        toolbar: {
+            icon: 'category',
+            items: ['none', 'light', 'dark', 'Bootstrap'],
+        },
+    },
 };
 
-//////////////////////////////////////////////////////
-
-addDecorator(withContexts(contexts));
-addDecorator(withKnobs);
-addDecorator(withA11y);
-addDecorator(withStoryStyles);
+export const decorators = [];
