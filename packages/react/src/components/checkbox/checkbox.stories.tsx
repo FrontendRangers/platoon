@@ -5,4 +5,4 @@ export default {
     title: 'Forms/Checkbox',
 };
 
-export const Default = () => <Checkbox></Checkbox>;
+export const Default = () => <Checkbox label="A checkbox" />;

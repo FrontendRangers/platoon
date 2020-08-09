@@ -3,6 +3,7 @@ import { Overlay } from './';
 
 export default {
     title: 'Primitives/Overlay',
+    component: Overlay,
 };
 
 export const Default = () => (

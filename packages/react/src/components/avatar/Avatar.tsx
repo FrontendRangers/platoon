@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Box } from '../../primitives/box';
 
 export interface AvatarProps {
@@ -12,10 +12,14 @@ const rootStyles = {
     overflow: 'hidden',
 };
 
-const Avatar = ({ image, ...props }: AvatarProps) => (
-    <Box sx={rootStyles} {...props}>
-        <img src={image} />
-    </Box>
+const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
+    ({ image, ...props }) => (
+        <Box sx={rootStyles} {...props}>
+            <img src={image} />
+        </Box>
+    ),
 );
+
+Avatar.displayName = 'Avatar';
 
 export default Avatar;

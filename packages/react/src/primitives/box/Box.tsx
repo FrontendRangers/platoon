@@ -26,10 +26,21 @@ import css from '@styled-system/css';
 // Move variant to another file
 import { get, createParser } from '@styled-system/core';
 
-export const variant = ({ scale, prop = 'variant', variants = {} }) => {
+export const variant = ({ scale, prop = 'variant', variants = {} }): any => {
     const sx = (value, scale, props) => css(get(scale, value))(props.theme);
     sx.scale = scale;
     sx.defaults = variants;
+    const config = {
+        [prop]: sx,
+    };
+    const parser = createParser(config);
+    return parser;
+};
+
+export const state = ({ scale, prop = 'variant', states = {} }): any => {
+    const sx = (value, scale, props) => css(get(scale, value))(props.theme);
+    sx.scale = scale;
+    sx.defaults = states;
     const config = {
         [prop]: sx,
     };
@@ -48,45 +59,25 @@ export type SystemProps = SpaceProps &
     PositionProps &
     ShadowProps;
 
-export interface BoxProps extends SystemProps {
-    /** Define which element to use to render the component */
-    as?: any;
-    base?: Record<any, any>;
+interface BaseBoxProps {
     sx?: Record<any, any>;
-    vx?: Record<any, any>;
-    tx?: string;
     theme?: Record<any, any>;
-    ref?: React.Ref<any>;
+    as?: any;
 }
 
-type Props = BoxProps & React.HTMLAttributes<any> & React.RefAttributes<any>;
+export type BoxProps = BaseBoxProps &
+    SystemProps &
+    React.HTMLAttributes<HTMLElement>;
 
 // Themeable styles
-const sx = ({ sx, theme }) => css(sx)(theme);
+const componentStyles = ({ sx, theme }: BoxProps) => css(sx)(theme);
 
-const base = ({ theme, tx }) => css(get(theme, tx))(theme);
-
-// Variation styles
-const vx = ({ vx = [], tx = 'variants' }: { vx: string[]; tx: string }) => {
-    const scalePrefix = `${tx}.`;
-
-    return vx.map((v: string) =>
-        variant({
-            prop: v,
-            scale: scalePrefix + v,
-            variants: {},
-        }),
-    );
-};
-
-const Box = styled.div<Props>(
+const Box = styled.div<BoxProps>(
     {
         boxSizing: 'border-box',
         minWidth: 0,
     },
-    base,
-    vx,
-    sx,
+    componentStyles,
     space,
     color,
     typography,
@@ -101,4 +92,4 @@ const Box = styled.div<Props>(
 
 Box.displayName = 'Box';
 
-export { Box };
+export default Box;

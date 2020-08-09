@@ -1,14 +1,9 @@
 import React from 'react';
 import { Button } from '.';
 
-// import docs from './button.mdx';
-
 export default {
     title: 'Actions/Button',
     component: Button,
-    // parameters: {
-    //     docs: { page: docs },
-    // },
 };
 
 export const Base = () => (

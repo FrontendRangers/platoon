@@ -1,43 +1,97 @@
-import React, { forwardRef } from 'react';
-import { Box } from '../../primitives/box';
+import React, { forwardRef, useRef, useState } from 'react';
+import { Input } from '../input';
+import { Popper } from '../../primitives/popper';
+import { IconButton } from '../button';
 
-export type SelectOptionProps = React.OptionHTMLAttributes<HTMLOptionElement>;
+import { useSelect } from 'downshift';
+import { Menu } from '../menu';
+
+export type SelectOptionProps = Record<string, unknown>;
 
 const SelectOption: React.FC<SelectOptionProps> = ({ children, ...props }) => (
-    <Box as="option" {...props}>
-        {children}
-    </Box>
+    <Menu.Item {...props}>{children}</Menu.Item>
 );
 
 SelectOption.displayName = 'Select.Option';
 
-export type SelectOptionGroupProps = React.OptgroupHTMLAttributes<
-    HTMLOptGroupElement
->;
+export interface SelectOptionGroupProps {
+    title: string | React.ReactNode;
+}
 
 const SelectOptionGroup: React.FC<SelectOptionGroupProps> = ({
     children,
+    title,
     ...props
 }) => (
-    <Box as="optiongroup" {...props}>
+    <>
+        <Menu.Header {...props}>{title}</Menu.Header>
         {children}
-    </Box>
+    </>
 );
 
 SelectOptionGroup.displayName = 'Select.OptionGroup';
 
-export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement>;
+export interface SelectProps {
+    onChange?: (selectedItem: string) => void;
+}
 
-const Select: React.FC<SelectProps> = forwardRef(
-    ({ children, ...props }, ref: React.RefObject<HTMLSelectElement>) => (
-        <Box>
-            <Box as="select" ref={ref} {...props}>
-                {children}
-            </Box>
-        </Box>
-    ),
-);
+type Props = SelectProps & React.HTMLAttributes<HTMLSelectElement>;
+
+type SelectComponent = React.ForwardRefExoticComponent<
+    Props & React.RefAttributes<HTMLSelectElement>
+>;
+
+const Select: SelectComponent = forwardRef(({ onChange, ...props }, ref) => {
+    const anchorRef = useRef(ref);
+    const innerRef = useRef(null);
+
+    const [items] = useState<string[]>(['Option1', 'Option2', 'Option3']);
+
+    const {
+        isOpen,
+        selectedItem,
+        getToggleButtonProps,
+        getMenuProps,
+        getItemProps,
+    } = useSelect({
+        items,
+        onSelectedItemChange: ({ selectedItem }) =>
+            selectedItem && onChange && onChange(selectedItem),
+    });
+
+    return (
+        <>
+            <Input
+                ref={anchorRef}
+                value={selectedItem ? selectedItem : ''}
+                readOnly
+                addonRight={<IconButton icon="chevronDown" />}
+                {...getToggleButtonProps({ refKey: 'innerRef' })}
+                {...props}
+            />
+            <Popper
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                popperOptions={{ placement: 'bottom' }}
+            >
+                <Menu ref={innerRef} {...getMenuProps()}>
+                    {items.map((item, idx) => (
+                        <SelectOption
+                            key={idx}
+                            {...getItemProps({
+                                item,
+                                refKey: 'innerRef',
+                            })}
+                        >
+                            {item}
+                        </SelectOption>
+                    ))}
+                </Menu>
+            </Popper>
+        </>
+    );
+});
 
 Select.displayName = 'Select';
 
-export { Select, SelectOption, SelectOptionGroup };
+export default Select;

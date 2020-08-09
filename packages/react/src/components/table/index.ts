@@ -1,4 +1,2 @@
+export { default as Table } from './Table';
 export * from './Table';
-export * from './TableRow';
-export * from './TableHead';
-export * from './TableCell';

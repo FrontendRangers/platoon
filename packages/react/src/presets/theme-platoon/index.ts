@@ -1,13 +1,5 @@
 import { themeMode } from '../../theme/helpers';
 
-// const breakpoints = {
-//     xs: '0',
-//     sm: '600px',
-//     md: '960px',
-//     lg: '1280px',
-//     xl: '1920px',
-// };
-
 const breakpoints = ['0', '600px', '960px', '1280px', '1920px'];
 
 breakpoints['xs'] = breakpoints[0];
@@ -29,22 +21,54 @@ const space = {
 
 const palette = {
     primary: {
-        100: '#f2f6ff',
-        200: '#d9e4ff',
-        300: '#a6c1ff',
-        400: '#598bff',
-        500: '#3366ff',
-        600: '#274bdb',
-        700: '#1a34b8',
-        800: '#102694',
-        900: '#091c7a',
+        100: '#e7f0ff',
+        200: '#b9d3ff',
+        300: '#8bb7ff',
+        400: '#5c9aff',
+        500: '#2e7dff',
+        600: '#0061ff',
+        700: '#0050d1',
+        800: '#003ea3',
     },
-    success: '#67c23a',
+    secondary: {
+        100: '#f0eaff',
+        200: '#d3c1ff',
+        300: '#b798ff',
+        400: '#9a6fff',
+        500: '#7d46ff',
+        600: '#611eff',
+        700: '#5019d1',
+        800: '#3e14a3',
+    },
+    success: {
+        100: '#e9f7f1',
+        200: '#bfe8d6',
+        300: '#95d8bb',
+        400: '#6ac9a0',
+        500: '#40ba85',
+        600: '#16ab6b',
+        700: '#138c58',
+        800: '#0f6d45',
+    },
     danger: {
-        500: '#f56c6c',
+        100: '#fdeeee',
+        200: '#facccc',
+        300: '#f7abab',
+        400: '#f48989',
+        500: '#f16868',
+        600: '#ef4747',
+        700: '#c43b3b',
+        800: '#992e2e',
     },
     warning: {
-        500: '#e6a23c',
+        100: '#fff6e7',
+        200: '#ffe4b9',
+        300: '#ffd28b',
+        400: '#ffc15c',
+        500: '#ffaf2e',
+        600: '#ff9e00',
+        700: '#d18200',
+        800: '#a36500',
     },
     neutral: {
         0: '#ffffff',
@@ -59,10 +83,36 @@ const palette = {
         900: '#151a30',
         1000: '#101426',
     },
+    neutralDark: {
+        100: '#ebecee',
+        200: '#c4c8cc',
+        300: '#9ca3aa',
+        400: '#757f88',
+        500: '#4e5a66',
+        600: '#273645',
+        700: '#202d39',
+        800: '#19232c',
+    },
+    neutralLight: {
+        100: '#ffffff',
+        200: '#fafbfc',
+        300: '#f4f5f7',
+        400: '#ebecf0',
+        500: '#dfe1e6',
+        600: '#c1c7d0',
+        700: '#a5adba',
+        800: '#97a0af',
+    },
 };
 
 const colors = {
-    overlay: palette['1000'],
+    ...palette,
+    primary: palette.primary[600],
+    secondary: palette.secondary[600],
+    danger: palette.danger[600],
+    text: palette.neutral[900],
+    background: palette.neutral['1000'],
+    overlay: palette.neutral['1000'],
 };
 
 const fontSizes = {
@@ -71,6 +121,11 @@ const fontSizes = {
     md: '1rem',
     sm: '1.4rem',
     xs: '1.2rem',
+};
+
+const borders = {
+    base: `1px solid ${palette.neutral[200]}`,
+    input: `1px solid ${palette.neutral[400]}`,
 };
 
 const text = {
@@ -113,8 +168,9 @@ export default {
         base: 'Verdana',
     },
     fontSizes,
-    colors: { ...palette, ...colors },
+    colors,
     text,
+    borders,
     radii: {
         md: '4px',
         round: '100em',
@@ -134,17 +190,21 @@ export default {
                 bg: 'neutral.500',
             },
             primary: {
-                bg: themeMode({
-                    dark: 'primary.500',
-                    light: 'secondary.500',
-                }),
+                bg: 'primary',
 
                 '&:hover': {
                     bg: 'primary.700',
                 },
             },
+            secondary: {
+                bg: 'secondary',
+
+                '&:hover': {
+                    bg: 'secondary.700',
+                },
+            },
             danger: {
-                bg: 'danger.500',
+                bg: 'danger',
 
                 '&:hover': {
                     bg: 'danger.700',
@@ -152,23 +212,23 @@ export default {
             },
         },
         size: {
-            sm: { px: 'sm', py: 'xs' },
-            md: { px: 'md', py: 'sm' },
-            lg: { px: 'lg', py: 'md' },
+            sm: { px: 'xs', py: 'xxs' },
+            md: { px: 'sm', py: 'xs' },
+            lg: { px: 'md', py: 'sm' },
         },
     },
     cards: {
         borderRadius: 'md',
         variant: {
             default: {
-                bg: 'primary.500',
+                bg: 'neutral.700',
             },
         },
         Header: {
             p: 'sm',
             variant: {
                 default: {
-                    borderBottom: '1px solid red',
+                    borderBottom: 'base',
                 },
             },
         },
@@ -176,7 +236,7 @@ export default {
             p: 'sm',
         },
         Footer: {
-            borderTop: '1px solid red',
+            borderTop: 'base',
             p: 'sm',
         },
     },
@@ -244,4 +304,31 @@ export default {
         bg: 'primary.500',
     },
     navbars: {},
+    modals: {
+        backgroundColor: 'neutral.0',
+        borderRadius: 'md',
+        Header: {
+            borderBottom: 'base',
+            p: 'md',
+        },
+        Footer: {
+            p: 'md',
+        },
+    },
+    inputs: {
+        Text: {
+            bg: 'neutral.100',
+            focus: {
+                bg: 'neutral.200',
+                borderColor: 'neutral.500',
+            },
+            size: {
+                md: {
+                    p: 'md',
+                },
+            },
+        },
+        Radio: {},
+        Checkbox: {},
+    },
 };

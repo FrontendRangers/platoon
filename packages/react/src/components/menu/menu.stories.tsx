@@ -1,18 +1,19 @@
 import React from 'react';
-import { Menu, MenuItem, MenuHeader } from './';
+import { Menu } from './';
 
 export default {
     title: 'Navigation/Menu',
+    component: Menu,
 };
 
 export const Default = () => (
     <Menu>
-        <MenuItem>Item 1</MenuItem>
-        <MenuItem>Item 2</MenuItem>
-        <MenuItem>Item 3</MenuItem>
-        <MenuHeader>A header</MenuHeader>
-        <MenuItem>Item 4</MenuItem>
-        <MenuItem>Item 5</MenuItem>
-        <MenuItem>Item 6</MenuItem>
+        <Menu.Item>Item 1</Menu.Item>
+        <Menu.Item>Item 2</Menu.Item>
+        <Menu.Item>Item 3</Menu.Item>
+        <Menu.Header>A header</Menu.Header>
+        <Menu.Item>Item 4</Menu.Item>
+        <Menu.Item>Item 5</Menu.Item>
+        <Menu.Item>Item 6</Menu.Item>
     </Menu>
 );

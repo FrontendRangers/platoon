@@ -23,7 +23,7 @@ interface PlatoonThemeProviderProps {
 
 const PlatoonThemeProvider: React.FC<PlatoonThemeProviderProps> = ({
     children,
-    theme,
+    theme = {},
     mode = null,
 }) => (
     <ThemeProvider theme={theme}>

@@ -1,14 +1,15 @@
 import React, { forwardRef } from 'react';
-import { Box } from '../../primitives/box';
 
-export type ImageProps = React.ImgHTMLAttributes<HTMLImageElement>;
+export type ImageProps = React.HTMLAttributes<HTMLImageElement>;
 
-const Image: React.FC<ImageProps> = forwardRef(
-    ({ src = '', ...props }, ref: React.Ref<HTMLImageElement>) => (
-        <Box as="img" src={src} ref={ref} {...props}></Box>
-    ),
-);
+type ImageComponent = React.ForwardRefExoticComponent<
+    ImageProps & React.RefAttributes<HTMLImageElement>
+>;
+
+const Image: ImageComponent = forwardRef(({ src = '', ...props }, ref) => (
+    <img src={src} ref={ref} {...props} />
+));
 
 Image.displayName = 'Image';
 
-export { Image };
+export default Image;

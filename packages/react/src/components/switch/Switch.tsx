@@ -1,41 +1,56 @@
 import React, { forwardRef } from 'react';
-import { Box } from '../..';
 import { MarginProps } from 'styled-system';
+import { Label } from '../label';
+import styled from 'styled-components';
 
-const controlStyles = {
+const HiddenCheckbox = styled.input.attrs(() => ({
+    type: 'checkbox',
+    hidden: true,
+}))({});
+
+const HandleContainer = styled.div({
     display: 'flex',
-    bg: 'neutral.500',
-    borderRadius: 'round',
+    flexDirection: 'row',
     width: '24px',
-    height: '14px',
-    p: '2px',
-};
+    height: '12px',
+    backgroundColor: 'whitesmoke',
+    'input[type=checkbox]:checked + &': {
+        flexDirection: 'row-reverse',
+    },
+});
 
-const toggleStyles = {
-    bg: 'neutral.0',
-    borderRadius: 'round',
-    width: '10px',
-    height: '10px',
-};
+const Handle = styled.div({
+    width: '12px',
+    height: '12px',
+    backgroundColor: 'black',
+});
 
-export type SwitchProps = MarginProps;
+export interface SwitchProps {
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-const Switch: React.FC<SwitchProps> = forwardRef(
-    ({ ...props }, ref: React.RefObject<any>) => (
-        <Box as="label" {...props}>
-            <Box
-                as="input"
-                type="checkbox"
-                base={{ opacity: '0' }}
-                ref={ref}
-            ></Box>
-            <Box base={controlStyles}>
-                <Box base={toggleStyles}></Box>
-            </Box>
-        </Box>
-    ),
-);
+type Props = SwitchProps & MarginProps;
+
+type SwitchComponent = React.ForwardRefExoticComponent<
+    Props & React.RefAttributes<HTMLDivElement>
+>;
+
+const Switch: SwitchComponent = forwardRef(({ onChange, ...props }, ref) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (onChange) {
+            onChange(event);
+        }
+    };
+    return (
+        <Label ref={ref} {...props}>
+            <HiddenCheckbox onChange={handleChange} />
+            <HandleContainer>
+                <Handle />
+            </HandleContainer>
+        </Label>
+    );
+});
 
 Switch.displayName = 'Switch';
 
-export { Switch };
+export default Switch;

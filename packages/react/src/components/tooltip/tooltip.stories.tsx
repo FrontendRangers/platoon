@@ -3,6 +3,7 @@ import { Tooltip } from './';
 
 export default {
     title: 'Overlays/Tooltip',
+    component: Tooltip,
 };
 
 export const Default = () => (

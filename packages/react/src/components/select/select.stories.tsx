@@ -1,14 +1,12 @@
 import React from 'react';
-import { Select, SelectOption } from './';
+import { Select } from './';
 
 export default {
     title: 'Forms/Select',
+    component: Select,
 };
 
-export const Default = () => (
-    <Select>
-        <SelectOption value="Option1">Option 1</SelectOption>
-        <SelectOption value="Option2">Option 2</SelectOption>
-        <SelectOption value="Option3">Option 2</SelectOption>
-    </Select>
-);
+export const Default = () => {
+    const handleChange = (selectedItem) => console.log(selectedItem);
+    return <Select onChange={handleChange} />;
+};

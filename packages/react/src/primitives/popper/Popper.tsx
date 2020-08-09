@@ -1,51 +1,125 @@
-import React, { useEffect, createRef } from 'react';
-import { createPopper, Options as PopperOptions } from '@popperjs/core';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
+import {
+    createPopper,
+    Options as PopperOptions,
+    Instance,
+} from '@popperjs/core';
 
 import { Box } from '../../primitives/box';
 import { Portal } from '../portal';
 
 export interface PopperProps {
-    triggerRef: any;
+    anchorRef: React.RefObject<any>;
     isOpen: boolean;
     popperOptions?: Partial<PopperOptions>;
 }
 
-const Popper: React.FC<PopperProps> = ({
+const defaultPopperOptions: PopperOptions = {
+    placement: 'auto',
+    modifiers: [],
+    strategy: 'absolute',
+};
+
+type PopperComponent = React.FC<PopperProps>;
+
+const Popper: PopperComponent = ({
     children,
-    triggerRef,
+    anchorRef,
     isOpen,
-    popperOptions,
+    popperOptions = defaultPopperOptions,
     ...props
 }) => {
-    const popupRef = createRef<HTMLElement>();
+    const popupRef = useRef<HTMLElement | null>(null);
+    const popperRef = useRef<Instance | null>(null);
+
+    const [exited, setExited] = useState(true);
+    const [hasTransition] = useState<boolean>(
+        !!children && typeof children === 'function',
+    );
+
+    const handleOpen = useCallback(() => {
+        if (!anchorRef.current || !popupRef.current || !isOpen) {
+            return;
+        }
+
+        if (popperRef.current) {
+            popperRef.current.destroy();
+            popperRef.current = null;
+        }
+
+        const popper = createPopper(
+            anchorRef.current,
+            popupRef.current,
+            popperOptions,
+        );
+        popperRef.current = popper;
+    }, [isOpen, popperOptions, popupRef, anchorRef]);
+
+    const handleClose = (): void => {
+        if (!popperRef.current) {
+            return;
+        }
+
+        popperRef.current.destroy();
+        popperRef.current = null;
+    };
+
+    // Function triggered by Transition
+    const handleEnter = (): void => {
+        setExited(false);
+    };
+
+    // Function triggered by Transition
+    const handleExited = (): void => {
+        setExited(true);
+        handleClose();
+    };
+
+    React.useEffect(() => {
+        if (popperRef.current) {
+            popperRef.current.update();
+        }
+    });
+
+    React.useEffect(() => {
+        handleOpen();
+    }, [handleOpen]);
 
     useEffect(() => {
-        if (triggerRef.current && popupRef.current) {
-            const popper = createPopper(
-                triggerRef.current,
-                popupRef.current,
-                popperOptions,
-            );
+        return (): void => {
+            handleClose();
+        };
+    }, []);
 
-            return () => {
-                popper.destroy();
-            };
+    useEffect(() => {
+        if (!isOpen && !hasTransition) {
+            // Otherwise handleExited will call this.
+            handleClose();
         }
-    }, [isOpen]);
+    }, [hasTransition, isOpen]);
+
+    if (!isOpen && exited) {
+        // Prevent the Portal to be rendered
+        return null;
+    }
 
     return (
-        <>
-            {isOpen && (
-                <Portal>
-                    <Box ref={popupRef} position="absolute" {...props}>
-                        {children}
-                    </Box>
-                </Portal>
-            )}
-        </>
+        <Portal>
+            <Box ref={popupRef} {...props}>
+                {typeof children === 'function'
+                    ? children({
+                          TransitionProps: {
+                              in: isOpen,
+                              onEnter: handleEnter,
+                              onExited: handleExited,
+                          },
+                      })
+                    : children}
+            </Box>
+        </Portal>
     );
 };
 
 Popper.displayName = 'Popper';
 
-export { Popper };
+export default Popper;

@@ -1,10 +1,13 @@
 import React from 'react';
-import { Box } from '../../primitives/box';
 
-const TableCell = ({ children, ...props }) => (
-    <Box as="td" {...props}>
-        {children}
-    </Box>
+type Props = React.HTMLAttributes<HTMLTableCellElement>;
+
+type TableCellComponent = React.FC<Props>;
+
+const TableCell: TableCellComponent = ({ children, ...props }) => (
+    <td {...props}>{children}</td>
 );
 
-export { TableCell };
+TableCell.displayName = 'Table.Cell';
+
+export default TableCell;

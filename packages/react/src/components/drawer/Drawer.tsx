@@ -14,7 +14,7 @@ export interface DrawerProps {
     side?: string;
 }
 
-export interface DrawerComponentProps {
+export interface DrawerElementProps {
     state: any;
     side: string;
 }
@@ -54,7 +54,7 @@ const getAnimation = (state: string, side: string) => {
     );
 };
 
-const DrawerComponent = styled(Box)<DrawerComponentProps>`
+const DrawerElement = styled(Box)<DrawerElementProps>`
     width: 400px;
     height: 100%;
     background-color: lightgrey;
@@ -64,19 +64,23 @@ const DrawerComponent = styled(Box)<DrawerComponentProps>`
     ${({ state, side }) => getAnimation(state, side)}
 `;
 
-const Drawer = ({ children, isOpen, side = 'left' }: DrawerProps) => (
+type DrawerComponent = React.FC<DrawerProps>;
+
+const Drawer: DrawerComponent = ({ children, isOpen, side = 'left' }) => (
     <Transition in={isOpen} timeout={DURATION} unmountOnExit mountOnEnter>
         {(state: TransitionStatus) => (
             <Portal>
                 <Overlay>
-                    <DrawerComponent state={state} side={side}>
+                    <DrawerElement state={state} side={side}>
                         {children}
                         {state}
-                    </DrawerComponent>
+                    </DrawerElement>
                 </Overlay>
             </Portal>
         )}
     </Transition>
 );
+
+Drawer.displayName = 'Drawer';
 
 export default Drawer;

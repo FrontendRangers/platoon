@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Modal } from './';
 import { Box } from '../../primitives/box';
-import { Paragraph } from '../../components/paragraph';
+import { Paragraph, Button } from '../';
 
 export default {
     title: 'Overlays/Modal',
+    component: Modal,
     decorators: [
         (storyFn) => (
             <Box>
@@ -20,4 +21,20 @@ export default {
     ],
 };
 
-export const Default = () => <Modal isOpen={true}>I'm a modal</Modal>;
+export const Default = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleModal = () => setIsOpen(!isOpen);
+    return (
+        <>
+            <Button onClick={toggleModal}>Open modal</Button>
+            <Modal isOpen={isOpen}>
+                <Modal.Header>Modal Header</Modal.Header>
+                The content
+                <Modal.Footer>
+                    <Button>Cancel</Button>
+                    <Button>Confirm</Button>
+                </Modal.Footer>
+            </Modal>
+        </>
+    );
+};

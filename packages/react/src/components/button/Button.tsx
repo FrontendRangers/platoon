@@ -1,57 +1,52 @@
-import React from 'react';
-import { ButtonStyles } from '@frontendrangers/platoon-core';
-import { MarginProps } from 'styled-system';
+import React, { forwardRef } from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 import { Icon } from '../icon';
 
-const variants = ['intent', 'size'];
-
-export interface ButtonProps extends MarginProps {
+export interface ButtonProps {
+    as?: string;
     /** Which icon to use */
     icon?: string;
     /** The intent of the button */
     intent?: string;
     /** The size of the button */
     size?: 'sm' | 'md' | 'lg';
+    kind?: any;
     isDisabled?: boolean;
+    onClick?: (
+        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
+    ) => void;
 }
 
 type Props = ButtonProps &
     BoxProps &
-    React.HTMLProps<HTMLButtonElement | HTMLAnchorElement>;
+    React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>;
 
-const Button: React.FC<Props> = React.forwardRef(
-    (
-        {
-            children,
-            as = 'button',
-            icon,
-            size = 'md',
-            intent = 'default',
-            type = 'button',
-            onClick,
-            isDisabled,
-            ...props
-        },
-        ref: React.Ref<HTMLButtonElement | HTMLAnchorElement>,
-    ) => (
-        <Box
-            as={as}
-            ref={ref}
-            sx={ButtonStyles}
-            intent={intent}
-            size={size}
-            vx={variants}
-            tx="buttons"
-            type={type}
-            onClick={onClick}
-            disabled={isDisabled}
-            {...props}
-        >
-            {!!icon && <Icon name={icon} size="sm" mr="4px"></Icon>}
-            {children}
-        </Box>
-    ),
+type ButtonComponent = React.ForwardRefExoticComponent<
+    Props & React.RefAttributes<HTMLButtonElement | HTMLAnchorElement>
+>;
+
+const Button: ButtonComponent = forwardRef(
+    ({ children, as = 'button', icon, onClick, isDisabled, ...props }, ref) => {
+        const handleClick = (
+            event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
+        ) => {
+            if (onClick) {
+                onClick(event);
+            }
+        };
+        return (
+            <Box
+                as={as}
+                ref={ref}
+                onClick={handleClick}
+                disabled={isDisabled}
+                {...props}
+            >
+                {!!icon && <Icon name={icon} size="sm" mr="4px" />}
+                <span>{children}</span>
+            </Box>
+        );
+    },
 );
 
 Button.displayName = 'Button';

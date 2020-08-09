@@ -3,7 +3,14 @@ import { Box, BoxProps } from '../../primitives/box';
 
 export type TextProps = BoxProps;
 
-const Text: React.FC<TextProps> = forwardRef(
+type TextComponent = React.ForwardRefExoticComponent<
+    TextProps &
+        React.RefAttributes<
+            HTMLSpanElement | HTMLParagraphElement | HTMLHeadingElement
+        >
+>;
+
+const Text: TextComponent = forwardRef(
     ({ children, as = 'span', ...props }, ref) => (
         <Box as={as} ref={ref} tx="textStyles" {...props}>
             {children}
@@ -13,4 +20,4 @@ const Text: React.FC<TextProps> = forwardRef(
 
 Text.displayName = 'Text';
 
-export { Text };
+export default Text;

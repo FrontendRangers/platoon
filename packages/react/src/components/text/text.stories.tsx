@@ -1,14 +1,9 @@
 import React from 'react';
 import { Text } from './';
-// import docs from './text.mdx';
 
 export default {
     title: 'Typography/Text',
-    // parameters: {
-    //     docs: {
-    //         page: docs,
-    //     },
-    // },
+    component: Text,
 };
 
 export const Default = () => <Text>I'm some text</Text>;

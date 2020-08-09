@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 
-export type AccordionProps = {};
+export type AccordionProps = Record<string, unknown>;
 
 type Props = AccordionProps & BoxProps;
 

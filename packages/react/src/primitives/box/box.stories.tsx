@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box } from './';
-
 export default {
     title: 'Primitives/Box',
+    component: Box,
 };
 
 export const Default = () => <Box>Hello</Box>;

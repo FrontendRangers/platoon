@@ -1,12 +1,15 @@
 import React, { forwardRef } from 'react';
-import { FontSizeProps } from 'styled-system';
-import { Text } from '../text';
+import { Text, TextProps } from '../text';
 
-export type ParagraphProps = FontSizeProps;
+export type ParagraphProps = TextProps;
 
-const Paragraph: React.FC<ParagraphProps> = forwardRef(
-    ({ children, ...props }, forwardedRef) => (
-        <Text as="p" ref={forwardedRef} {...props}>
+type ParagraphComponent = React.ForwardRefExoticComponent<
+    ParagraphProps & React.RefAttributes<HTMLElement>
+>;
+
+const Paragraph: ParagraphComponent = forwardRef(
+    ({ children, ...props }, ref) => (
+        <Text as="p" ref={ref} {...props}>
             {children}
         </Text>
     ),
@@ -14,4 +17,4 @@ const Paragraph: React.FC<ParagraphProps> = forwardRef(
 
 Paragraph.displayName = 'Paragraph';
 
-export { Paragraph };
+export default Paragraph;

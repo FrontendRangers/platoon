@@ -1,13 +1,28 @@
 import React from 'react';
 
 import { Input } from './';
-import { Box } from '../../primitives/box';
 
 export default {
     title: 'Forms/Input',
-    decorators: [(storyFn) => <Box p="lg">{storyFn()}</Box>],
+    component: Input,
 };
 
-export const Default = () => <Input />;
+export const Default = () => <Input value="Input text" />;
 
-export const WithAPlaceholder = () => <Input placeholder={'Fill me'} />;
+export const WithAPlaceholder = () => <Input placeholder="Placeholder" />;
+
+export const WithAddonLeft = () => <Input addonLeft={<>AddonLeft</>} />;
+
+export const WithMultipleAddonLeft = () => (
+    <Input addonLeft={[<>AddonLeft</>, <>AddonLeft</>]} />
+);
+
+export const WithAddonRight = () => <Input addonRight={<>AddonRight</>} />;
+
+export const WithMultipleAddonRight = () => (
+    <Input addonRight={[<>AddonRight</>, <>AddonRight</>]} />
+);
+
+export const WithAddonLeftAndRight = () => (
+    <Input addonLeft={<>AddonLeft</>} addonRight={<>AddonRight</>} />
+);

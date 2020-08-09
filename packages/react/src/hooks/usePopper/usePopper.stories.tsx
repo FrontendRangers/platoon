@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { usePopper } from '.';
 
 export default {
@@ -6,23 +6,28 @@ export default {
 };
 
 export const Default = () => {
-    const [visible, setVisible] = useState(false);
-    const [ref, popper, popperStyles] = usePopper({ visible });
+    const { anchorRef, triggerProps, popperProps, isOpen } = usePopper();
 
     return (
         <>
-            <button
-                ref={ref}
-                onMouseEnter={() => setVisible(true)}
-                onMouseLeave={() => setVisible}
-            >
+            <button ref={anchorRef} {...triggerProps}>
                 Show popper
             </button>
-            {visible && (
-                <div ref={popper} style={{ ...popperStyles }}>
-                    I&apos;m popping
-                </div>
-            )}
+            {isOpen && <div {...popperProps}>I&apos;m popping</div>}
         </>
     );
+};
+
+export const onHover = () => {
+    // const { anchorRef, triggerProps, popperProps, isOpen } = usePopper({
+    //     trigger: 'hover',
+    // });
+    // return (
+    //     <>
+    //         <button ref={anchorRef} {...triggerProps}>
+    //             Show popper
+    //         </button>
+    //         {isOpen && <div {...popperProps}>I&apos;m popping</div>}
+    //     </>
+    // );
 };

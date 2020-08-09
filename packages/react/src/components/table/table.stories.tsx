@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableRow, TableCell, TableHead } from './';
+import { Table } from './';
 
 export default {
     title: 'Data/Table',
@@ -8,21 +8,21 @@ export default {
 
 export const Default = () => (
     <Table>
-        <TableRow>
-            <TableHead>Column 1</TableHead>
-            <TableHead>Column 2</TableHead>
-            <TableHead>Column 3</TableHead>
-        </TableRow>
-        <TableRow>
-            <TableCell>Cell 1</TableCell>
-            <TableCell>Cell 2</TableCell>
-            <TableCell>Cell 3</TableCell>
-        </TableRow>
-        <TableRow>
-            <TableCell>Cell 1</TableCell>
-            <TableCell>Cell 2</TableCell>
-            <TableCell>Cell 3</TableCell>
-        </TableRow>
+        <Table.Row>
+            <Table.Head>Column 1</Table.Head>
+            <Table.Head>Column 2</Table.Head>
+            <Table.Head>Column 3</Table.Head>
+        </Table.Row>
+        <Table.Row>
+            <Table.Cell>Cell 1</Table.Cell>
+            <Table.Cell>Cell 2</Table.Cell>
+            <Table.Cell>Cell 3</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+            <Table.Cell>Cell 1</Table.Cell>
+            <Table.Cell>Cell 2</Table.Cell>
+            <Table.Cell>Cell 3</Table.Cell>
+        </Table.Row>
     </Table>
 );
 
@@ -34,15 +34,15 @@ export const withData = () => {
     ];
     return (
         <Table>
-            <TableRow>
-                <TableHead>Name</TableHead>
-                <TableHead>Value</TableHead>
-            </TableRow>
+            <Table.Row>
+                <Table.Head>Name</Table.Head>
+                <Table.Head>Value</Table.Head>
+            </Table.Row>
             {data.map(({ name, value }, index) => (
-                <TableRow key={`${name}-${index}`}>
-                    <TableCell>{name}</TableCell>
-                    <TableCell>{value}</TableCell>
-                </TableRow>
+                <Table.Row key={`${name}-${index}`}>
+                    <Table.Cell>{name}</Table.Cell>
+                    <Table.Cell>{value}</Table.Cell>
+                </Table.Row>
             ))}
         </Table>
     );

@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Box } from '../../primitives/box';
-import { MarginProps } from 'styled-system';
+import { Label } from '..';
+import styled from 'styled-components';
 
-export type CheckboxProps = MarginProps;
+const CheckboxComponent = styled.input.attrs(() => ({ type: 'checkbox' }))({});
 
-const Checkbox: React.FC<CheckboxProps> = ({ ...props }) => (
-    <Box {...props}>
-        <Box as="label">
-            <Box as="input" type="checkbox" />
-            Label
-        </Box>
-    </Box>
-);
+export interface CheckboxProps {
+    label?: string;
+}
 
-Checkbox.displayName = 'Checkbox';
+type Props = CheckboxProps & React.HTMLAttributes<HTMLInputElement>;
 
-export { Checkbox };
+type CheckboxComponent = React.ForwardRefExoticComponent<
+    Props & React.RefAttributes<HTMLInputElement>
+>;
+
+const Component: CheckboxComponent = forwardRef(({ label, ...props }, ref) => (
+    <Label>
+        <CheckboxComponent ref={ref} {...props} />
+        <Box>{label}</Box>
+    </Label>
+));
+
+Component.displayName = 'Checkbox';
+
+export default Component;

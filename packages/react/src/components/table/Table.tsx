@@ -1,14 +1,26 @@
 import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import TableCell from './TableCell';
+import TableRow from './TableRow';
+import TableHead from './TableHead';
 
-export type TableProps = BoxProps;
+export type TableProps = Record<string, any>;
 
-type Props = TableProps;
+type Props = TableProps & React.HTMLAttributes<HTMLTableElement>;
 
-const Table: React.FC<Props> = ({ children, ...props }) => (
-    <Box as="table" {...props}>
-        {children}
-    </Box>
+interface TableComponent extends React.FC<Props> {
+    Row: typeof TableRow;
+    Head: typeof TableHead;
+    Cell: typeof TableCell;
+}
+
+const Table: TableComponent = ({ children, ...props }) => (
+    <table {...props}>{children}</table>
 );
 
-export { Table };
+Table.displayName = 'Table';
+
+Table.Row = TableRow;
+Table.Head = TableHead;
+Table.Cell = TableCell;
+
+export default Table;

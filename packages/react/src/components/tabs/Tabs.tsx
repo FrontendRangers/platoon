@@ -1,67 +1,40 @@
 import React, { useState } from 'react';
-import { Box } from '../../primitives/box';
-import { CSSObject } from '@styled-system/css';
+import styled from 'styled-components';
 
-const tabLinkStyles: CSSObject = {
-    flex: '1 1 auto',
-};
-
-export interface TabsLinkProps
-    extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface TabsLinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
     isActive: boolean;
 }
 
-const TabLink: React.FC<TabsLinkProps> = ({ children, isActive, ...props }) => {
-    const state = isActive ? `.isActive` : ``;
-    return (
-        <Box
-            as="a"
-            role="tab"
-            sx={tabLinkStyles}
-            tx={`tabs.tabLink${state}`}
-            {...props}
-        >
-            {children}
-        </Box>
-    );
-};
+const TabLink = styled.a.attrs(() => ({ role: 'tab' }))<TabsLinkProps>({});
 
-const tabStyles: CSSObject = {
-    display: 'flex',
-    cursor: 'pointer',
-};
+export type TabsTabProps = React.HTMLAttributes<HTMLLIElement>;
 
-export type TabsTabProps = React.LiHTMLAttributes<HTMLLIElement>;
+const Tab = styled.li.attrs(() => ({ role: 'presentation' }))<TabsTabProps>({});
 
-const Tab: React.FC<TabsTabProps> = ({ children, ...props }) => (
-    <Box as="li" role="presentation" sx={tabStyles} tx="tabs.tab" {...props}>
-        {children}
-    </Box>
-);
+const TabList = styled.ul.attrs(() => ({ role: 'tablist' }))<TabsTabProps>({});
 
 export interface TabsPaneProps {
     title: string | React.ReactNode;
 }
 
-export const TabsPane: React.FC<TabsPaneProps> = ({ children, ...props }) => (
-    <Box tx="tabs.pane" {...props}>
-        {children}
-    </Box>
-);
+const TabsPane = styled.div<TabsPaneProps>({});
 
-const tablistStyles: CSSObject = {
-    display: 'flex',
-    flexDirection: 'row',
-};
+const TabsPaneContainer = styled.div({});
 
-export type TabsProps = {};
+export type TabsProps = Record<string, unknown>;
 
-const Tabs: React.FC<TabsProps> = ({ children, ...props }) => {
+const TabsContainer = styled.div<TabsProps>({});
+
+interface TabsComponent extends React.FC<TabsProps> {
+    Pane: typeof TabsPane;
+}
+
+const Tabs: TabsComponent = ({ children, ...props }) => {
     const panes = React.Children.toArray(children);
     const [activeTab, setActiveTab] = useState(0);
     return (
-        <Box tx="tabs" {...props}>
-            <Box as="ul" role="tablist" sx={tablistStyles}>
+        <TabsContainer {...props}>
+            <TabList>
                 {panes.map((pane: React.ReactElement, index) => (
                     <Tab
                         key={`tab-${index}`}
@@ -72,12 +45,16 @@ const Tabs: React.FC<TabsProps> = ({ children, ...props }) => {
                         </TabLink>
                     </Tab>
                 ))}
-            </Box>
-            <Box>{panes.filter((pane, index) => activeTab === index)}</Box>
-        </Box>
+            </TabList>
+            <TabsPaneContainer>
+                {panes.filter((pane, index) => activeTab === index)}
+            </TabsPaneContainer>
+        </TabsContainer>
     );
 };
 
 Tabs.displayName = 'Tabs';
+
+Tabs.Pane = TabsPane;
 
 export default Tabs;

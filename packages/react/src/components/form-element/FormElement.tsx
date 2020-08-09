@@ -1,12 +1,24 @@
 import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import { Box } from '../../primitives/box';
+import { Label, Text } from '..';
 
-export type FormElementProps = BoxProps;
+export interface FormElementProps {
+    label?: string;
+}
 
 type Props = FormElementProps;
 
-const FormElement: React.FC<Props> = ({ children, ...props }) => (
-    <Box {...props}>{children}</Box>
+type FormElementComponent = React.FC<Props>;
+
+const FormElement: FormElementComponent = ({ children, label, ...props }) => (
+    <Box {...props}>
+        <Label>{label}</Label>
+        {children}
+        <Box>Helper text</Box>
+        <Box>
+            <Text color="danger.500">Error text</Text>
+        </Box>
+    </Box>
 );
 
 export default FormElement;

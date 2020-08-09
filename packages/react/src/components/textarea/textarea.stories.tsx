@@ -14,6 +14,4 @@ export default {
     ],
 };
 
-export const Default = () => (
-    <Textarea placeholder="Textarea component"></Textarea>
-);
+export const Default = () => <Textarea placeholder="Textarea component" />;

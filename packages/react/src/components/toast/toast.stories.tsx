@@ -3,6 +3,7 @@ import { Toast } from '.';
 
 export default {
     title: 'Overlays/Toast',
+    component: Toast,
 };
 
 export const Default = () => (

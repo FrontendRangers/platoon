@@ -1,29 +1,28 @@
 import React from 'react';
 import { Box } from '../../primitives/box';
 import { MarginProps } from 'styled-system';
-import { Button } from '../button';
+import { CSSObject } from '@styled-system/css';
 
-const itemStyles = {
-    '&:first-of-type': {
-        borderTopRightRadius: '0',
-        borderBottomRightRadius: '0',
-    },
-    '&:last-of-type': { borderTopLeftRadius: '0', borderBottomLeftRadius: '0' },
-    '&:not(:first-of-type):not(:last-of-type)': { borderRadius: '0' },
+const buttonGroupStyles: CSSObject = {
+    display: 'grid',
+    gap: 'xs',
+    gridAutoFlow: 'column',
 };
 
-export const ButtonGroupItem = (props) => (
-    <Button {...props} sx={itemStyles}></Button>
-);
-
-export type ButtonGroupProps = {};
+export type ButtonGroupProps = Record<string, unknown>;
 
 type Props = ButtonGroupProps & MarginProps;
 
-const ButtonGroup: React.FC<Props> = ({ children, ...props }) => (
-    <Box {...props}>{children}</Box>
+type ButtonGroupComponent = React.FC<Props>;
+
+const ButtonGroup: ButtonGroupComponent = ({ children, ...props }) => (
+    <Box sx={buttonGroupStyles} {...props}>
+        {React.Children.map(children, (child) => (
+            <Box>{child}</Box>
+        ))}
+    </Box>
 );
 
 ButtonGroup.displayName = 'ButtonGroup';
 
-export { ButtonGroup };
+export default ButtonGroup;

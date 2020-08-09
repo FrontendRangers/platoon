@@ -1,11 +1,13 @@
 import React from 'react';
 import { Box } from '../../primitives/box';
 
-export type SiteLayoutProps = {};
+export type SiteLayoutProps = Record<string, unknown>;
 
 type Props = SiteLayoutProps;
 
-const SiteLayout: React.FC<Props> = (children, ...props) => (
+type SiteLayoutComponent = React.FC<Props>;
+
+const SiteLayout: SiteLayoutComponent = ({ children, ...props }) => (
     <Box {...props}>{children}</Box>
 );
 

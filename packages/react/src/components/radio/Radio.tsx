@@ -1,19 +1,29 @@
-import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import React, { forwardRef } from 'react';
+import { Box } from '../../primitives/box';
+import { Label } from '..';
+import styled from 'styled-components';
 
-export type RadioProps = {};
+const RadioElement = styled.input.attrs(() => ({ type: 'radio' }))({});
 
-type Props = RadioProps & BoxProps & React.InputHTMLAttributes<HTMLHtmlElement>;
+export interface RadioProps {
+    label?: string;
+}
 
-const Radio: React.FC<Props> = ({ ...props }) => (
-    <Box {...props}>
-        <Box as="label">
-            <Box as="input" type="radio" />
-            Label
-        </Box>
-    </Box>
+type Props = RadioProps & React.HTMLAttributes<HTMLInputElement>;
+
+type RadioComponent = React.ForwardRefExoticComponent<
+    Props & React.RefAttributes<HTMLInputElement>
+>;
+
+const Radio: RadioComponent = forwardRef<HTMLInputElement, Props>(
+    ({ label, ...props }, ref) => (
+        <Label>
+            <RadioElement ref={ref} {...props} />
+            <Box>{label}</Box>
+        </Label>
+    ),
 );
 
 Radio.displayName = 'Radio';
 
-export { Radio };
+export default Radio;

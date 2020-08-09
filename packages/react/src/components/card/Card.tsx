@@ -1,63 +1,37 @@
-import React, { forwardRef, Ref } from 'react';
+import React from 'react';
 import { Box, BoxProps } from '../../primitives/box';
+import styled from 'styled-components';
 
-const headerBaseStyles = {
-    flex: '0 1 auto',
-};
-
-const CardHeader = ({ ...props }) => (
-    <Box sx={headerBaseStyles} tx="cards.Header" {...props}></Box>
-);
+const CardHeader = styled.div({});
 
 CardHeader.displayName = 'Card.Header';
 
-const contentBaseStyles = {
-    flex: '1 1 auto',
-};
-
-const CardContent = ({ ...props }) => (
-    <Box sx={contentBaseStyles} tx="cards.Content" {...props}></Box>
-);
+const CardContent = styled.div({});
 
 CardContent.displayName = 'Card.Footer';
 
-const footerBaseStyles = {
-    flex: '0 1 auto',
-};
-
-const CardFooter = ({ ...props }) => (
-    <Box sx={footerBaseStyles} tx="cards.Footer" {...props}></Box>
-);
+const CardFooter = styled.div({});
 
 CardFooter.displayName = 'Card.Footer';
 
-export interface CardProps extends BoxProps {
-    variant?: string;
-}
+export type CardProps = BoxProps;
 
 type Props = CardProps & React.HTMLAttributes<HTMLDivElement>;
 
-const rootStyles = {
-    display: 'flex',
-    flexDirection: 'column',
-    overflow: 'hidden',
-};
+interface CardComponent extends React.FC<Props> {
+    Header: typeof CardHeader;
+    Content: typeof CardContent;
+    Footer: typeof CardFooter;
+}
 
-const Card: React.FC<Props> = forwardRef(
-    ({ children, variant = 'default', ...props }, ref: Ref<HTMLDivElement>) => (
-        <Box
-            ref={ref}
-            variant={variant}
-            vx={['variant']}
-            sx={rootStyles}
-            tx="cards"
-            {...props}
-        >
-            {children}
-        </Box>
-    ),
+const Card: CardComponent = ({ children, ...props }) => (
+    <Box {...props}>{children}</Box>
 );
 
 Card.displayName = 'Card';
 
-export { Card, CardHeader, CardContent, CardFooter };
+Card.Header = CardHeader;
+Card.Content = CardContent;
+Card.Footer = CardFooter;
+
+export default Card;

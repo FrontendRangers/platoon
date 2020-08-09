@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from '../../primitives/box';
 
-export type AppLayoutProps = {};
+export type AppLayoutProps = Record<string, unknown>;
 
 type Props = AppLayoutProps;
 

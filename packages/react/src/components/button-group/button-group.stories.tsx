@@ -1,14 +1,17 @@
 import React from 'react';
-import { ButtonGroup, ButtonGroupItem } from './';
+import { ButtonGroup } from './';
+import { Button } from '../button';
 
 export default {
-    title: 'Actions/Button Group',
+    title: 'Actions/Button/Button Group',
+    component: ButtonGroup,
+    subcomponents: { Button },
 };
 
 export const Default = () => (
     <ButtonGroup>
-        <ButtonGroupItem>Button</ButtonGroupItem>
-        <ButtonGroupItem>Button</ButtonGroupItem>
-        <ButtonGroupItem>Button</ButtonGroupItem>
+        <Button>Button</Button>
+        <Button>A Button</Button>
+        <Button>Another Button</Button>
     </ButtonGroup>
 );

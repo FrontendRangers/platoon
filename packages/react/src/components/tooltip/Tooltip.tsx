@@ -1,30 +1,29 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 import { Popper } from '../../primitives/popper';
+import { Fade } from '../fade';
+import { usePopper } from '../../hooks';
 
-export type TooltipProps = {
+type BaseTooltipProps = {
     content: string;
 };
 
-type Props = TooltipProps & BoxProps;
+export type TooltipProps = BaseTooltipProps & BoxProps;
 
-const Tooltip: React.FC<Props> = ({ children, content, ...props }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const triggerRef = useRef();
+type TooltipComponent = React.FC<TooltipProps>;
+
+const Tooltip: TooltipComponent = ({ children, content, ...props }) => {
+    const { triggerProps, popperProps } = usePopper({
+        trigger: 'hover',
+    });
 
     return (
         <>
-            <Box
-                as="span"
-                ref={triggerRef}
-                onMouseEnter={() => setIsOpen(true)}
-                onMouseLeave={() => setIsOpen(false)}
-            >
+            <Box as="span" {...triggerProps}>
                 {children}
             </Box>
             <Popper
-                isOpen={isOpen}
-                triggerRef={triggerRef}
+                {...popperProps}
                 popperOptions={{
                     placement: 'top',
                     modifiers: [
@@ -37,12 +36,14 @@ const Tooltip: React.FC<Props> = ({ children, content, ...props }) => {
                     ],
                 }}
             >
-                <Box tx="tooltips" {...props}>
-                    {content}
-                </Box>
+                {({ TransitionProps }) => (
+                    <Fade {...TransitionProps}>
+                        <Box {...props}>{content}</Box>
+                    </Fade>
+                )}
             </Popper>
         </>
     );
 };
 
-export { Tooltip };
+export default Tooltip;
