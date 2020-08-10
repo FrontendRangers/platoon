@@ -28,7 +28,9 @@
         "bump": "lerna version --yes",
         "prerelease": "yarn build",
         "release": "./scripts/release.sh",
-        "react": "yarn workspace @platoon/react"
+        "core": "yarn workspace @platoon/core",
+        "react": "yarn workspace @platoon/react",
+        "svelte": "yarn workspace @platoon/svelte"
     },
     "config": {
         "commitizen": {
