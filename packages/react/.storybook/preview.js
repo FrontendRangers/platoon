@@ -1,4 +1,7 @@
-import { addParameters } from '@storybook/react';
+import React from 'react';
+import { ThemeProvider, GlobalStyles } from '../src';
+import bootstrapTheme from '../src/presets/theme-bootstrap';
+import platoonTheme from '../src/presets/theme-platoon';
 
 // functions from Circuit UI - https://github.com/sumup-oss/circuit-ui/blob/master/.storybook/util/story-helpers.js
 
@@ -53,22 +56,57 @@ const SORT_ORDER = {
     Hooks: [],
 };
 
-addParameters({
+export const parameters = {
     options: {
         storySort: sortStories(SORT_ORDER),
     },
-});
+};
 
-export const globalArgTypes = {
+export const globalTypes = {
     theme: {
         name: 'Theme',
         description: 'Global theme for components',
         defaultValue: 'light',
         toolbar: {
             icon: 'category',
-            items: ['none', 'light', 'dark', 'Bootstrap'],
+            items: [
+                { value: 'none', title: 'None' },
+                { value: 'light', title: 'Light' },
+                { value: 'dark', title: 'Dark' },
+                { value: 'bootstrap', title: 'Bootstrap' },
+            ],
         },
     },
 };
 
-export const decorators = [];
+const getTheme = (theme) => {
+    const themes = {
+        none: { theme: {}, mode: null },
+        light: { theme: platoonTheme, mode: 'light' },
+        dark: { theme: platoonTheme, mode: 'dark' },
+        bootstrap: { theme: bootstrapTheme, mode: 'light' },
+    };
+
+    return themes[theme];
+};
+
+const fontUrl =
+    'https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800,900&display=swap';
+
+const withThemeProvider = (Story, context) => {
+    const { theme, mode } = getTheme(context.globals.theme);
+    const fontLink = document.createElement('link');
+
+    fontLink.href = fontUrl;
+    fontLink.rel = 'stylesheet';
+
+    document.head.appendChild(fontLink);
+    return (
+        <ThemeProvider theme={theme} mode={mode}>
+            <GlobalStyles />
+            <Story {...context} />
+        </ThemeProvider>
+    );
+};
+
+export const decorators = [withThemeProvider];
