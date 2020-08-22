@@ -1,13 +1,15 @@
 {
-    "name": "@platoon/core",
-    "version": "0.1.0",
-    "description": "Core functions and utilities for platoon",
+    "name": "@platoon/utils",
+    "version": "0.0.1",
+    "description": "Set of utils",
+    "keywords": [
+        "utils"
+    ],
     "author": "Benoit Deziel <ben@benoitdeziel.com>",
-    "homepage": "https://github.com/FrontendRangers/platoon#readme",
+    "homepage": "https://github.com/FrontendRangers/platoon/tree/master/packages/utils#readme",
     "license": "MIT",
     "main": "dist/index.js",
     "module": "dist/index.es.js",
-    "jsnext:main": "dist/index.es.js",
     "directories": {
         "lib": "dist",
         "test": "__tests__"

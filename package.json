@@ -28,8 +28,8 @@
         "bump": "lerna version --yes",
         "release": "lerna publish from-package -y --no-verify-access",
         "core": "yarn workspace @platoon/core",
+        "utils": "yarn workspace @platoon/utils",
         "react": "yarn workspace @platoon/react",
-        "vue": "yarn workspace @platoon/vue",
         "svelte": "yarn workspace @platoon/svelte"
     },
     "config": {
