@@ -18,6 +18,8 @@ module.exports = function (plop) {
                     'Medias',
                     'Navigation',
                     'Overlays',
+                    'Data',
+                    'Transitions',
                     'Layout',
                     'Others',
                 ],
