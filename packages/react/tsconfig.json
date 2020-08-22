@@ -2,9 +2,9 @@
     "compilerOptions": {
         "outDir": "dist",
         "rootDir": "src",
-        "module": "esnext",
-        "target": "esnext",
-        "lib": ["esnext", "es6", "dom"],
+        "lib": ["ES2019", "DOM"],
+        "module": "commonjs",
+        "target": "ES2019",
         "sourceMap": true,
         "allowJs": false,
         "jsx": "react",
@@ -18,14 +18,14 @@
         "noUnusedLocals": true,
         "declaration": true,
         "esModuleInterop": true,
-        "types": ["react", "node"]
+        "types": [
+            "react",
+            "node",
+            "jest",
+            "@testing-library/react",
+            "@testing-library/jest-dom"
+        ]
     },
-    "include": ["**/*.ts", "**/*.tsx"],
-    "exclude": [
-        "node_modules",
-        "**/*.spec.tsx",
-        "**/*.stories.tsx",
-        "dist",
-        "plop-templates"
-    ]
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "exclude": ["node_modules", "**/*.stories.tsx", "dist", "plop-templates"]
 }
