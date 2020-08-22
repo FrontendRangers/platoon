@@ -32,7 +32,7 @@
         "build:storybook": "build-storybook",
         "type-check": "tsc --noEmit",
         "type-check:watch": "yarn type-check -- --watch",
-        "test": "jest",
+        "test": "jest --passWithNoTests",
         "lint": "run-p -c lint:*",
         "lint:ts": "eslint './**/*.{ts,tsx}'",
         "lint:css": "stylelint './**/*.{ts,tsx}'",
