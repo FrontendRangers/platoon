@@ -7,7 +7,6 @@ module.exports = {
             shouldExtractLiteralValuesFromEnum: true,
             shouldRemoveUndefinedFromOptional: true,
             propFilter: (prop) => {
-                prop.name === 'aria-label' && console.log(prop);
                 return prop.parent
                     ? !prop.parent.fileName.includes('react/index.d.ts')
                     : true;

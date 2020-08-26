@@ -5,16 +5,9 @@ export interface AvatarProps {
     image: string;
 }
 
-const rootStyles = {
-    width: '32px',
-    height: '32px',
-    borderRadius: 'round',
-    overflow: 'hidden',
-};
-
 const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
     ({ image, ...props }) => (
-        <Box sx={rootStyles} {...props}>
+        <Box {...props}>
             <img src={image} />
         </Box>
     ),

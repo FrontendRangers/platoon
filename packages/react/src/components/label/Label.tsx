@@ -1,11 +1,9 @@
 import React from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 
-export type LabelProps = BoxProps;
+export type LabelProps = BoxProps & React.LabelHTMLAttributes<HTMLLabelElement>;
 
-type Props = LabelProps & React.HTMLAttributes<HTMLLabelElement>;
-
-type LabelComponent = React.FC<Props>;
+type LabelComponent = React.FC<LabelProps>;
 
 const Label: LabelComponent = ({ children, ...props }) => (
     <Box as="label" {...props}>

@@ -6,9 +6,7 @@ export interface FormElementProps {
     label?: string;
 }
 
-type Props = FormElementProps;
-
-type FormElementComponent = React.FC<Props>;
+type FormElementComponent = React.FC<FormElementProps>;
 
 const FormElement: FormElementComponent = ({ children, label, ...props }) => (
     <Box {...props}>

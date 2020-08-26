@@ -1,20 +1,7 @@
 import React, { forwardRef } from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 
-const variantStyles = {
-    size: {
-        prop: 'size',
-        scale: 'icons.size',
-    },
-};
-
-export interface IconProps extends Omit<BoxProps, 'size'> {
-    name: string;
-    size?: string;
-}
-
-type Props = IconProps;
-
+// Move to theme
 const svgContent = {
     chevronDown: {
         path: <polyline points="6 9 12 15 18 9" />,
@@ -37,8 +24,13 @@ const svgContent = {
     },
 };
 
+export interface IconProps extends Omit<BoxProps, 'size'> {
+    name: string;
+    size?: string;
+}
+
 type IconComponent = React.ForwardRefExoticComponent<
-    Props & React.RefAttributes<SVGElement>
+    IconProps & React.RefAttributes<SVGElement>
 >;
 
 const Icon: IconComponent = forwardRef(
@@ -47,7 +39,6 @@ const Icon: IconComponent = forwardRef(
             as="svg"
             ref={ref}
             size={size}
-            vx={variantStyles}
             tx="icons"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

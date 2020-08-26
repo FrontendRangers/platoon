@@ -1,18 +1,15 @@
 import React, { useState, useRef } from 'react';
-import { BoxProps } from '../../primitives/box';
 import { useCombobox } from 'downshift';
-import { Input } from '../input';
+import { Input, InputProps } from '../input';
 import { Popper } from '../../primitives/popper';
 import { IconButton } from '../button';
 import { Menu } from '../menu';
 
-export interface ComboBoxProps {
+export interface ComboBoxProps extends InputProps {
     items: string[];
 }
 
-type Props = ComboBoxProps & BoxProps;
-
-type ComboBoxComponent = React.FC<Props>;
+type ComboBoxComponent = React.FC<ComboBoxProps>;
 
 const ComboBox: ComboBoxComponent = ({ items, ...props }) => {
     const [inputItems, setInputItems] = useState(items);

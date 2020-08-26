@@ -2,7 +2,7 @@ import React, { forwardRef, useState, useEffect } from 'react';
 import { Box } from '../../primitives/box';
 import styled from 'styled-components';
 
-type InputBaseProps = React.HTMLAttributes<HTMLInputElement>;
+type InputBaseProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 const InputBase = styled.input<InputBaseProps>({});
 
@@ -10,7 +10,8 @@ InputBase.displayName = 'InputBase';
 
 type InputSize = 'sm' | 'md' | 'lg';
 
-export interface InputProps {
+export interface InputProps
+    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
     size?: InputSize;
     addonLeft?: React.ReactNode;
     addonRight?: React.ReactNode;
@@ -18,10 +19,8 @@ export interface InputProps {
     inputRef?: any;
 }
 
-type Props = InputProps & React.HTMLAttributes<HTMLInputElement>;
-
 type InputComponent = React.ForwardRefExoticComponent<
-    Props & React.RefAttributes<HTMLDivElement>
+    InputProps & React.RefAttributes<HTMLDivElement>
 >;
 
 const Input: InputComponent = forwardRef(

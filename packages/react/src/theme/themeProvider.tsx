@@ -33,4 +33,4 @@ const PlatoonThemeProvider: React.FC<PlatoonThemeProviderProps> = ({
     </ThemeProvider>
 );
 
-export { PlatoonThemeProvider };
+export { PlatoonThemeProvider as ThemeProvider };

@@ -1,14 +1,12 @@
 import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import { Box } from '../../primitives/box';
 import { Popper } from '../../primitives/popper';
 import { Fade } from '../fade';
 import { usePopper } from '../../hooks';
 
-type BaseTooltipProps = {
+export interface TooltipProps {
     content: string;
-};
-
-export type TooltipProps = BaseTooltipProps & BoxProps;
+}
 
 type TooltipComponent = React.FC<TooltipProps>;
 
@@ -19,9 +17,7 @@ const Tooltip: TooltipComponent = ({ children, content, ...props }) => {
 
     return (
         <>
-            <Box as="span" {...triggerProps}>
-                {children}
-            </Box>
+            <Box {...triggerProps}>{children}</Box>
             <Popper
                 {...popperProps}
                 popperOptions={{
