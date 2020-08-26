@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.2
+
+### Patch Changes
+
+-   731f69f: chore: add utils package
+
 ## 0.1.1
 
 ### Patch Changes
