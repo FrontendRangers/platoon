@@ -3,7 +3,7 @@
         "outDir": "dist",
         "rootDir": "src",
         "lib": ["ES2019", "DOM"],
-        "module": "commonjs",
+        "module": "ESNext",
         "target": "ES2019",
         "sourceMap": true,
         "allowJs": false,

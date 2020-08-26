@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 import { Overlay } from '../../primitives/overlay';
 import { Portal } from '../../primitives/portal';
-import { Fade } from '../..';
+import { Fade } from '../fade';
 import { IconButton } from '../button';
 import ModalHeader from './ModalHeader';
 import ModalFooter from './ModalFooter';

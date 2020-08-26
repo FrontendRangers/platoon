@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box } from '../../primitives/box';
-import { Label, Text } from '..';
+import { Label } from '../label';
+import { Text } from '../text';
 
 export interface FormElementProps {
     label?: string;
