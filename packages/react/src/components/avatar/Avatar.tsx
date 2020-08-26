@@ -6,8 +6,8 @@ export interface AvatarProps {
 }
 
 const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
-    ({ image, ...props }) => (
-        <Box {...props}>
+    ({ image, ...props }, ref) => (
+        <Box ref={ref} {...props}>
             <img src={image} />
         </Box>
     ),
