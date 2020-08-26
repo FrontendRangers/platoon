@@ -1,6 +1,6 @@
 {
     "name": "@platoon/react",
-    "version": "0.1.1-alpha.31+d176cd0",
+    "version": "0.1.1",
     "description": "A themeable component library for React",
     "keywords": [
         "react",

@@ -1,6 +1,6 @@
 {
     "name": "@platoon/core",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Core functions and utilities for platoon",
     "author": "Benoit Deziel <ben@benoitdeziel.com>",
     "homepage": "https://github.com/FrontendRangers/platoon#readme",
