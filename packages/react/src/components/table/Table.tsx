@@ -3,11 +3,9 @@ import TableCell from './TableCell';
 import TableRow from './TableRow';
 import TableHead from './TableHead';
 
-export type TableProps = Record<string, any>;
+export type TableProps = React.HTMLAttributes<HTMLTableElement>;
 
-type Props = TableProps & React.HTMLAttributes<HTMLTableElement>;
-
-interface TableComponent extends React.FC<Props> {
+interface TableComponent extends React.FC<TableProps> {
     Row: typeof TableRow;
     Head: typeof TableHead;
     Cell: typeof TableCell;

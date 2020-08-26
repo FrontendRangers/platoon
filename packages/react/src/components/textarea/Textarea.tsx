@@ -1,12 +1,11 @@
 import React, { forwardRef } from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 
-export type TextareaProps = BoxProps;
-
-type Props = TextareaProps & React.HTMLAttributes<HTMLTextAreaElement>;
+export type TextareaProps = BoxProps &
+    React.HTMLAttributes<HTMLTextAreaElement>;
 
 type TextareaComponent = React.ForwardRefExoticComponent<
-    Props & React.RefAttributes<HTMLTextAreaElement>
+    TextareaProps & React.RefAttributes<HTMLTextAreaElement>
 >;
 
 const Textarea: TextareaComponent = forwardRef(({ ...props }, ref) => (

@@ -32,9 +32,7 @@ export interface TransitionBaseProps extends Omit<TransitionProps, 'timeout'> {
     timeout?: number | { appear?: number; enter?: number; exit?: number };
 }
 
-type Props = TransitionBaseProps;
-
-type TransitionBaseComponent = React.FC<Props>;
+type TransitionBaseComponent = React.FC<TransitionBaseProps>;
 
 const TransitionBase: TransitionBaseComponent = ({
     children,

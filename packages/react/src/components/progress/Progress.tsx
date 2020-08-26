@@ -1,31 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variant } from 'styled-system';
 
-export interface ProgressProps {
+export interface ProgressProps
+    extends React.HTMLAttributes<HTMLProgressElement> {
     variant?: string;
 }
 
-const variants = variant({
-    prop: 'variant',
-    scale: 'progress.variant',
-    variants: {
-        primary: {},
-        secondary: {},
-    },
+const Component = styled.progress<ProgressProps>({
+    appearance: 'none',
+    overflow: 'hidden',
 });
 
-const Component = styled.progress<ProgressProps>(
-    {
-        appearance: 'none',
-        overflow: 'hidden',
-    },
-    variants,
-);
-
-type Props = ProgressProps & React.HTMLAttributes<HTMLProgressElement>;
-
-type ProgressComponent = React.FC<Props>;
+type ProgressComponent = React.FC<ProgressProps>;
 
 const Progress: ProgressComponent = ({ ...props }) => <Component {...props} />;
 

@@ -1,11 +1,13 @@
 import { createPortal } from 'react-dom';
 import React, { useEffect } from 'react';
 
-export type PortalProps = { id?: string };
+export interface PortalProps {
+    id?: string;
+}
 
-type Props = PortalProps;
+type PortalComponent = React.FC<PortalProps>;
 
-const Portal: React.FC<Props> = ({ children, id = 'portal' }) => {
+const Portal: PortalComponent = ({ children, id = 'portal' }) => {
     const container = document.createElement('div');
     container.setAttribute('id', id);
     const mount = document.body;

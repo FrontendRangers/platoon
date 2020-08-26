@@ -5,10 +5,8 @@ import { IconButton } from '../button';
 
 export type ChipInputProps = InputProps;
 
-type Props = ChipInputProps;
-
 type ChipInputComponent = React.ForwardRefExoticComponent<
-    Props & React.RefAttributes<HTMLInputElement>
+    ChipInputProps & React.RefAttributes<HTMLInputElement>
 >;
 
 const ChipInput: ChipInputComponent = forwardRef(

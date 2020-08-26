@@ -5,25 +5,16 @@ import { Paragraph } from '../paragraph';
 import { Button, DismissButton } from '../button';
 import { Icon } from '../icon';
 import { ButtonGroup } from '../button-group';
-import { CSSObject } from '@styled-system/css';
 
-const toastStyles: CSSObject = {
-    display: 'grid',
-    gridTemplateColumns: '1fr auto',
-    gridGap: 'sm',
-};
-
-export interface ToastProps {
+export interface ToastProps extends BoxProps {
     title?: string;
     description: string;
 }
 
-type Props = ToastProps & BoxProps;
-
-type ToastComponent = React.FC<Props>;
+type ToastComponent = React.FC<ToastProps>;
 
 const Toast: ToastComponent = ({ title, description, ...props }) => (
-    <Box sx={toastStyles} {...props}>
+    <Box {...props}>
         <Box>
             <Icon name="heart" />
             {title && <Heading>{title}</Heading>}

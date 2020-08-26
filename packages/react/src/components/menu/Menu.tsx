@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 import styled from 'styled-components';
 
@@ -10,23 +10,18 @@ export const MenuHeader = styled.div({});
 
 MenuHeader.displayName = 'MenuHeader';
 
-export type MenuProps = Record<string, unknown>;
+export type MenuProps = BoxProps & React.HTMLAttributes<Element>;
 
-type Props = MenuProps & BoxProps;
-
-interface MenuComponent
-    extends React.ForwardRefExoticComponent<
-        Props & React.RefAttributes<HTMLElement>
-    > {
+interface MenuComponent extends React.FC<MenuProps> {
     Item: typeof MenuItem;
     Header: typeof MenuHeader;
 }
 
-const Menu: MenuComponent = forwardRef(({ children, ...props }, ref) => (
-    <Box ref={ref} as="nav" {...props}>
+const Menu: MenuComponent = ({ children, ...props }) => (
+    <Box as="nav" {...props}>
         {children}
     </Box>
-));
+);
 
 Menu.displayName = 'Menu';
 

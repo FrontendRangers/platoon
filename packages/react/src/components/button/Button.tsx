@@ -30,9 +30,7 @@ const Button: ButtonComponent = forwardRef(
         const handleClick = (
             event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
         ) => {
-            if (onClick) {
-                onClick(event);
-            }
+            onClick?.(event);
         };
         return (
             <Box

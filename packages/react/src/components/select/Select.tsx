@@ -35,10 +35,8 @@ export interface SelectProps {
     onChange?: (selectedItem: string) => void;
 }
 
-type Props = SelectProps & React.HTMLAttributes<HTMLSelectElement>;
-
 type SelectComponent = React.ForwardRefExoticComponent<
-    Props & React.RefAttributes<HTMLSelectElement>
+    SelectProps & React.RefAttributes<HTMLSelectElement>
 >;
 
 const Select: SelectComponent = forwardRef(({ onChange, ...props }, ref) => {
