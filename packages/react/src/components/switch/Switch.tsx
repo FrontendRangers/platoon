@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
-import { MarginProps } from 'styled-system';
 import { Label } from '../label';
 import styled from 'styled-components';
+import { BoxProps } from '../../primitives/box';
 
 const HiddenCheckbox = styled.input.attrs(() => ({
     type: 'checkbox',
@@ -25,14 +25,12 @@ const Handle = styled.div({
     backgroundColor: 'black',
 });
 
-export interface SwitchProps {
+export interface SwitchProps extends BoxProps {
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-type Props = SwitchProps & MarginProps;
-
 type SwitchComponent = React.ForwardRefExoticComponent<
-    Props & React.RefAttributes<HTMLDivElement>
+    SwitchProps & React.RefAttributes<HTMLDivElement>
 >;
 
 const Switch: SwitchComponent = forwardRef(({ onChange, ...props }, ref) => {

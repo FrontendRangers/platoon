@@ -22,9 +22,7 @@ const styles: TransitionStyles = {
 
 export type FadeProps = Omit<TransitionBaseProps, 'transitionStyles'>;
 
-type Props = FadeProps;
-
-type FadeComponent = React.FC<Props>;
+type FadeComponent = React.FC<FadeProps>;
 
 const Fade: FadeComponent = ({ children, ...props }) => (
     <Transition transitionStyles={styles} {...props}>

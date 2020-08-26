@@ -29,8 +29,8 @@ const Popper: PopperComponent = ({
     popperOptions = defaultPopperOptions,
     ...props
 }) => {
-    const popupRef = useRef<HTMLElement | null>(null);
-    const popperRef = useRef<Instance | null>(null);
+    const popupRef = useRef<HTMLDivElement>(null);
+    const popperRef = useRef<Instance>();
 
     const [exited, setExited] = useState(true);
     const [hasTransition] = useState<boolean>(
@@ -44,7 +44,6 @@ const Popper: PopperComponent = ({
 
         if (popperRef.current) {
             popperRef.current.destroy();
-            popperRef.current = null;
         }
 
         const popper = createPopper(
@@ -61,7 +60,6 @@ const Popper: PopperComponent = ({
         }
 
         popperRef.current.destroy();
-        popperRef.current = null;
     };
 
     // Function triggered by Transition

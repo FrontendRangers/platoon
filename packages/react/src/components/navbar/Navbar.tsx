@@ -11,9 +11,7 @@ const NavBarNav: React.FC<any> = ({ children, ...props }) => (
 
 export type NavbarProps = BoxProps;
 
-type Props = NavbarProps;
-
-interface NavBarComponent extends React.FC<Props> {
+interface NavBarComponent extends React.FC<NavbarProps> {
     Brand: typeof NavBarBrand;
     Nav: typeof NavBarNav;
 }
