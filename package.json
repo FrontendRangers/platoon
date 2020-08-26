@@ -27,7 +27,7 @@
         "test": "lerna run test",
         "commit": "git-cz",
         "bump": "lerna version --yes",
-        "release": "yarn build && changeset publish",
+        "release": "yarn build && changeset publish && git push --follow-tags",
         "core": "yarn workspace @platoon/core",
         "utils": "yarn workspace @platoon/utils",
         "react": "yarn workspace @platoon/react",
