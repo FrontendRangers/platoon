@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { Box } from '../../primitives/box';
-import { Label } from '..';
+import { Label } from '../label';
 import styled from 'styled-components';
 
 const CheckboxComponent = styled.input.attrs(() => ({ type: 'checkbox' }))({});
