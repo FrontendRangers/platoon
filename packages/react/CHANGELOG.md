@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.2
+
+### Patch Changes
+
+-   3f312d3: fix(react): cleanup component
+
 ## 0.1.1
 
 ### Patch Changes
