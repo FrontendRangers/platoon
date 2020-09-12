@@ -82,7 +82,7 @@
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-is": "^16.13.1",
-        "rollup": "^2.26.5",
+        "rollup": "^2.26.11",
         "rollup-plugin-terser": "^7.0.0",
         "rollup-plugin-typescript2": "^0.27.2",
         "styled-components": "5.2.0",
