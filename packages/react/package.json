@@ -61,9 +61,9 @@
         "styled-system": "^5.1.5"
     },
     "devDependencies": {
-        "@storybook/addon-a11y": "^6.0.20",
-        "@storybook/addon-essentials": "^6.0.20",
-        "@storybook/react": "^6.0.20",
+        "@storybook/addon-a11y": "^6.0.21",
+        "@storybook/addon-essentials": "^6.0.21",
+        "@storybook/react": "^6.0.21",
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^10.4.9",
         "@types/jest": "^26.0.10",
