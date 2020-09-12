@@ -56,7 +56,7 @@
         "@types/styled-system__core": "npm:@peduarte/styled-system__core@0.0.1",
         "@types/styled-system__css": "^5.0.13",
         "@types/styled-system__theme-get": "^5.0.0",
-        "downshift": "^6.0.5",
+        "downshift": "^6.0.6",
         "react-transition-group": "^4.4.1",
         "styled-system": "^5.1.5"
     },
