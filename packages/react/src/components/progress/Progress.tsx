@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ProgressHTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 export interface ProgressProps
-    extends React.HTMLAttributes<HTMLProgressElement> {
+    extends ProgressHTMLAttributes<HTMLProgressElement> {
     variant?: string;
 }
 

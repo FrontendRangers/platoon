@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 import styled from 'styled-components';
 
@@ -14,11 +14,9 @@ const CardFooter = styled.div({});
 
 CardFooter.displayName = 'Card.Footer';
 
-export type CardProps = BoxProps;
+export type CardProps = BoxProps & HTMLAttributes<HTMLDivElement>;
 
-type Props = CardProps & React.HTMLAttributes<HTMLDivElement>;
-
-interface CardComponent extends React.FC<Props> {
+interface CardComponent extends React.FC<CardProps> {
     Header: typeof CardHeader;
     Content: typeof CardContent;
     Footer: typeof CardFooter;

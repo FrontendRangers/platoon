@@ -7,14 +7,12 @@ import { IconButton } from '../button';
 import ModalHeader from './ModalHeader';
 import ModalFooter from './ModalFooter';
 
-export type ModalProps = {
+export interface ModalProps extends BoxProps {
     isOpen: boolean;
     onClose?: () => void;
-};
+}
 
-type Props = ModalProps & BoxProps;
-
-interface ModalComponent extends React.FC<Props> {
+interface ModalComponent extends React.FC<ModalProps> {
     Header: typeof ModalHeader;
     Footer: typeof ModalFooter;
 }

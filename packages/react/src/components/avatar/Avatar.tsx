@@ -5,13 +5,15 @@ export interface AvatarProps {
     image: string;
 }
 
-const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
-    ({ image, ...props }, ref) => (
-        <Box ref={ref} {...props}>
-            <img src={image} />
-        </Box>
-    ),
-);
+type AvatarComponent = React.ForwardRefExoticComponent<
+    AvatarProps & React.RefAttributes<HTMLDivElement>
+>;
+
+const Avatar: AvatarComponent = forwardRef(({ image, ...props }, ref) => (
+    <Box ref={ref} {...props}>
+        <img src={image} />
+    </Box>
+));
 
 Avatar.displayName = 'Avatar';
 

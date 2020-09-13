@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 import styled from 'styled-components';
 
@@ -10,7 +10,7 @@ export const MenuHeader = styled.div({});
 
 MenuHeader.displayName = 'MenuHeader';
 
-export type MenuProps = BoxProps & React.HTMLAttributes<Element>;
+export type MenuProps = BoxProps & HTMLAttributes<Element>;
 
 interface MenuComponent extends React.FC<MenuProps> {
     Item: typeof MenuItem;

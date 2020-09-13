@@ -18,13 +18,7 @@
         "noUnusedLocals": true,
         "declaration": true,
         "esModuleInterop": true,
-        "types": [
-            "react",
-            "node",
-            "jest",
-            "@testing-library/react",
-            "@testing-library/jest-dom"
-        ]
+        "skipLibCheck": true
     },
     "include": ["src/**/*.ts", "src/**/*.tsx"],
     "exclude": ["node_modules", "**/*.stories.tsx", "dist", "plop-templates"]

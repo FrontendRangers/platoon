@@ -1,6 +1,6 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, ImgHTMLAttributes } from 'react';
 
-export type ImageProps = React.ImgHTMLAttributes<HTMLImageElement>;
+export type ImageProps = ImgHTMLAttributes<HTMLImageElement>;
 
 type ImageComponent = React.ForwardRefExoticComponent<
     ImageProps & React.RefAttributes<HTMLImageElement>

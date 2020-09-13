@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import { Box } from '../../primitives/box';
 
 export type AccordionProps = Record<string, unknown>;
 
-type Props = AccordionProps & BoxProps;
+type AccordionComponent = React.FC<AccordionProps>;
 
-const Accordion: React.FC<Props> = ({ children, ...props }) => (
+const Accordion: AccordionComponent = ({ children, ...props }) => (
     <Box {...props}>{children}</Box>
 );
 

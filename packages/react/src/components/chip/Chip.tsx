@@ -2,14 +2,12 @@ import React, { forwardRef } from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 import { IconButton } from '../button';
 
-export interface ChipProps {
+export interface ChipProps extends BoxProps {
     onDismiss?: () => void;
 }
 
-type Props = ChipProps & BoxProps;
-
 type ChipComponent = React.ForwardRefExoticComponent<
-    Props & React.RefAttributes<HTMLDivElement>
+    ChipProps & React.RefAttributes<HTMLDivElement>
 >;
 
 const Chip: ChipComponent = forwardRef(

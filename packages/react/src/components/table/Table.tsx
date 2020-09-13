@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { TableHTMLAttributes } from 'react';
 import TableCell from './TableCell';
 import TableRow from './TableRow';
 import TableHead from './TableHead';
 
-export type TableProps = React.HTMLAttributes<HTMLTableElement>;
+export type TableProps = TableHTMLAttributes<HTMLTableElement>;
 
 interface TableComponent extends React.FC<TableProps> {
     Row: typeof TableRow;

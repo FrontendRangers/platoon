@@ -1,7 +1,7 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, HTMLAttributes } from 'react';
 import { Text, TextProps } from '../text';
 
-export type HeadingProps = TextProps & React.HTMLAttributes<HTMLHeadingElement>;
+export type HeadingProps = TextProps & HTMLAttributes<HTMLHeadingElement>;
 
 type HeadingComponent = React.ForwardRefExoticComponent<
     HeadingProps & React.RefAttributes<HTMLHeadingElement>
