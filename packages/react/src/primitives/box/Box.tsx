@@ -1,3 +1,4 @@
+import { ComponentType, AllHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import {
     SpaceProps,
@@ -35,12 +36,10 @@ export type SystemProps = SpaceProps &
 
 interface BaseBoxProps {
     theme?: Record<any, any>;
-    as?: any;
+    as?: JSX.IntrinsicElements | ComponentType<any>;
 }
 
-export type BoxProps = BaseBoxProps &
-    SystemProps &
-    React.HTMLAttributes<Element>;
+export type BoxProps = BaseBoxProps & SystemProps & AllHTMLAttributes<Element>;
 
 const Box = styled.div<BoxProps>(
     {
