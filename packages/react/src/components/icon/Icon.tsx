@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import { Box } from '../../primitives/box';
 
 // Move to theme
 const svgContent = {
@@ -24,13 +24,13 @@ const svgContent = {
     },
 };
 
-export interface IconProps extends Omit<BoxProps, 'size'> {
+export interface IconProps {
     name: string;
     size?: string;
 }
 
 type IconComponent = React.ForwardRefExoticComponent<
-    IconProps & React.RefAttributes<SVGElement>
+    IconProps & React.RefAttributes<SVGSVGElement>
 >;
 
 const Icon: IconComponent = forwardRef(
@@ -39,7 +39,6 @@ const Icon: IconComponent = forwardRef(
             as="svg"
             ref={ref}
             size={size}
-            tx="icons"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"

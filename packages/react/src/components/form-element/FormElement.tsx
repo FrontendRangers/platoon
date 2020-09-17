@@ -14,8 +14,8 @@ const FormElement: FormElementComponent = ({ children, label, ...props }) => (
         <Label>{label}</Label>
         {children}
         <Box>Helper text</Box>
-        <Box>
-            <Text color="danger.500">Error text</Text>
+        <Box color="danger.500">
+            <Text>Error text</Text>
         </Box>
     </Box>
 );

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import { Box } from '../../primitives/box';
 
-export type ButtonGroupProps = BoxProps;
+export type ButtonGroupProps = Record<string, unknown>;
 
 type ButtonGroupComponent = React.FC<ButtonGroupProps>;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import { Box } from '../../primitives/box';
 
 const NavBarBrand: React.FC<any> = ({ children, ...props }) => (
     <Box {...props}>{children}</Box>
@@ -9,7 +9,7 @@ const NavBarNav: React.FC<any> = ({ children, ...props }) => (
     <Box {...props}>{children}</Box>
 );
 
-export type NavbarProps = BoxProps;
+export type NavbarProps = Record<string, unknown>;
 
 interface NavBarComponent extends React.FC<NavbarProps> {
     Brand: typeof NavBarBrand;

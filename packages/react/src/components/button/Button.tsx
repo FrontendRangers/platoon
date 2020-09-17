@@ -37,7 +37,7 @@ const Button: ButtonComponent = forwardRef(
                 disabled={isDisabled}
                 {...props}
             >
-                {!!icon && <Icon name={icon} size="sm" mr="4px" />}
+                {!!icon && <Icon name={icon} size="sm" />}
                 <span>{children}</span>
             </Box>
         );

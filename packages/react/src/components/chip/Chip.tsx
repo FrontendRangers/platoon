@@ -1,8 +1,8 @@
-import React, { forwardRef } from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import React, { forwardRef, HTMLAttributes } from 'react';
+import { Box } from '../../primitives/box';
 import { IconButton } from '../button';
 
-export interface ChipProps extends BoxProps {
+export interface ChipProps extends HTMLAttributes<Element> {
     onDismiss?: () => void;
 }
 

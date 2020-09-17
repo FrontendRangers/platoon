@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import { Box } from '../../primitives/box';
 
-type ChipGroupProps = BoxProps;
+type ChipGroupProps = Record<string, unknown>;
 
 type ChipGroupComponent = React.FC<ChipGroupProps>;
 
