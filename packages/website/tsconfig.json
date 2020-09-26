@@ -13,12 +13,13 @@
         "noEmit": true,
         "jsx": "preserve",
         "resolveJsonModule": true,
-        "rootDir": "src",
+        "rootDir": "pages",
         "baseUrl": ".",
         "paths": {
-            "src/*": ["src/*"]
+            "pages/*": ["pages/*"]
         },
         "forceConsistentCasingInFileNames": true
     },
-    "include": ["src"]
+    "include": ["pages"],
+    "exclude": ["node_modules"]
 }

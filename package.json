@@ -31,7 +31,8 @@
         "core": "yarn workspace @platoon/core",
         "utils": "yarn workspace @platoon/utils",
         "react": "yarn workspace @platoon/react",
-        "svelte": "yarn workspace @platoon/svelte"
+        "svelte": "yarn workspace @platoon/svelte",
+        "website": "yarn workspace website"
     },
     "config": {
         "commitizen": {
