@@ -78,7 +78,7 @@
         "jest": "^26.4.1",
         "jest-styled-components": "^7.0.3",
         "plop": "^2.7.4",
-        "polished": "^3.6.5",
+        "polished": "^4.0.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-is": "^16.13.1",
