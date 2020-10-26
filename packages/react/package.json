@@ -81,7 +81,7 @@
         "polished": "^4.0.3",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
-        "react-is": "^16.13.1",
+        "react-is": "^17.0.1",
         "rollup": "^2.27.0",
         "rollup-plugin-terser": "^7.0.0",
         "rollup-plugin-typescript2": "^0.28.0",
