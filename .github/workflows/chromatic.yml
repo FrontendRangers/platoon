@@ -13,8 +13,8 @@ jobs:
         runs-on: ubuntu-latest
         # Job steps
         steps:
+            - uses: actions/checkout@v1
             - name: Install dependencies
-              uses: actions/checkout@v1
               run: yarn
             - name: Deploy to Chromatic
               uses: chromaui/action@v1
