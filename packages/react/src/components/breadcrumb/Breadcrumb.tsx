@@ -1,12 +1,10 @@
 import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import { Box } from '../../primitives/box';
 import BreadcrumbItem from './BreadcrumbItem';
 
 export type BreadcrumbProps = Record<string, unknown>;
 
-type Props = BreadcrumbProps & BoxProps;
-
-interface BreadcrumbComponent extends React.FC<Props> {
+interface BreadcrumbComponent extends React.FC<BreadcrumbProps> {
     Item: typeof BreadcrumbItem;
 }
 

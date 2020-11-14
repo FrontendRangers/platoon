@@ -3,8 +3,8 @@ import { Box } from '../../primitives/box';
 
 export type AppLayoutProps = Record<string, unknown>;
 
-type Props = AppLayoutProps;
+type AppLayoutComponent = React.FC<AppLayoutProps>;
 
-const AppLayout: React.FC<Props> = ({ children }) => <Box>{children}</Box>;
+const AppLayout: AppLayoutComponent = ({ children }) => <Box>{children}</Box>;
 
 export default AppLayout;

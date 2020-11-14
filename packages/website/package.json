@@ -1,44 +1,20 @@
 {
     "name": "website",
+    "version": "0.1.0",
     "private": true,
-    "description": "A simple starter to get up and developing quickly with Gatsby",
-    "version": "0.2.0",
-    "author": "Benoit Deziel <ben@benoitdeziel.com>",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
     "dependencies": {
-        "babel-plugin-styled-components": "^1.11.1",
-        "docz": "^2.3.1",
-        "gatsby": "^2.24.47",
-        "gatsby-plugin-offline": "^3.2.23",
-        "gatsby-plugin-styled-components": "^3.3.10",
-        "gatsby-plugin-typescript": "^2.4.18",
-        "gatsby-theme-docz": "^2.3.1",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
-        "styled-components": "^5.1.1"
+        "@platoon/react": "^0.1.2",
+        "next": "9.5.5",
+        "react": "17.0.1",
+        "react-dom": "17.0.1",
+        "styled-components": "^5.2.1"
     },
     "devDependencies": {
-        "@types/react": "^16.9.48",
-        "@types/react-dom": "^16.9.8",
-        "typescript": "^3.9.7"
-    },
-    "keywords": [
-        "gatsby"
-    ],
-    "license": "MIT",
-    "scripts": {
-        "build": "gatsby build",
-        "develop": "gatsby develop",
-        "format": "prettier --write src/**/*.{js,jsx}",
-        "start": "yarn develop",
-        "serve": "gatsby serve",
-        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-    },
-    "bugs": {
-        "url": "https://github.com/gatsbyjs/gatsby/issues"
-    },
-    "snyk": true
+        "babel-plugin-styled-components": "^1.11.1"
+    }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, BoxProps } from '../box';
+import { Box } from '../box';
 
-export type OverlayProps = BoxProps;
+export type OverlayProps = Record<string, unknown>;
 
 type OverlayComponent = React.FC<OverlayProps>;
 

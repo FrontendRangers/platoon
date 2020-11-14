@@ -1,6 +1,13 @@
 module.exports = {
-    stories: ['../**/*.stories.@(tsx|mdx)'],
-    addons: ['@storybook/addon-essentials', '@storybook/addon-a11y'],
+    stories: [
+        '../src/**/*.stories.mdx',
+        '../src/**/*.stories.@(js|jsx|ts|tsx)',
+    ],
+    addons: [
+        '@storybook/addon-links',
+        '@storybook/addon-essentials',
+        '@storybook/addon-a11y',
+    ],
     logLevel: 'debug',
     typescript: {
         reactDocgenTypescriptOptions: {

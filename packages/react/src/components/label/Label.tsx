@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { LabelHTMLAttributes } from 'react';
 import { Box, BoxProps } from '../../primitives/box';
 
-export type LabelProps = BoxProps & React.LabelHTMLAttributes<HTMLLabelElement>;
+export type LabelProps = BoxProps & LabelHTMLAttributes<HTMLLabelElement>;
 
 type LabelComponent = React.FC<LabelProps>;
 

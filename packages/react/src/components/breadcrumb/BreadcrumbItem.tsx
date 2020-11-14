@@ -1,11 +1,9 @@
 import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import { Box } from '../../primitives/box';
 
-export type BreadcrumbItemProps = Record<string, unknown>;
+export type BreadcrumbProps = Record<string, unknown>;
 
-type Props = BreadcrumbItemProps & BoxProps;
-
-type BreadcrumbItemComponent = React.FC<Props>;
+type BreadcrumbItemComponent = React.FC<BreadcrumbProps>;
 
 const BreadcrumbItem: BreadcrumbItemComponent = ({ children, ...props }) => (
     <Box {...props}>{children}</Box>

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { TableHTMLAttributes } from 'react';
 
-type Props = React.HTMLAttributes<HTMLTableCellElement>;
+type TableCellProps = TableHTMLAttributes<HTMLTableCellElement>;
 
-type TableCellComponent = React.FC<Props>;
+type TableCellComponent = React.FC<TableCellProps>;
 
 const TableCell: TableCellComponent = ({ children, ...props }) => (
     <td {...props}>{children}</td>

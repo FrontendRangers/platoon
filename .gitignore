@@ -23,10 +23,6 @@ dist
 # Dependency directories
 node_modules/
 
-# Docz Cache
-
-**/.docz
-
 # TypeScript v1 declaration files
 typings/
 
@@ -53,3 +49,6 @@ typings/
 
 #VS Code settings
 .vscode
+
+# Storybook build
+storybook-static

@@ -1,7 +1,9 @@
-import React, { forwardRef } from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import React, { forwardRef, HTMLAttributes } from 'react';
+import { Box } from '../../primitives/box';
 
-export type TextProps = BoxProps;
+export interface TextProps extends HTMLAttributes<Element> {
+    as?: any;
+}
 
 type TextComponent = React.ForwardRefExoticComponent<
     TextProps &
@@ -12,7 +14,7 @@ type TextComponent = React.ForwardRefExoticComponent<
 
 const Text: TextComponent = forwardRef(
     ({ children, as = 'span', ...props }, ref) => (
-        <Box as={as} ref={ref} tx="textStyles" {...props}>
+        <Box as={as} ref={ref} {...props}>
             {children}
         </Box>
     ),

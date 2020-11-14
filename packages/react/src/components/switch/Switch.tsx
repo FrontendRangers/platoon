@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react';
 import { Label } from '../label';
 import styled from 'styled-components';
-import { BoxProps } from '../../primitives/box';
 
 const HiddenCheckbox = styled.input.attrs(() => ({
     type: 'checkbox',
@@ -25,7 +24,7 @@ const Handle = styled.div({
     backgroundColor: 'black',
 });
 
-export interface SwitchProps extends BoxProps {
+export interface SwitchProps {
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 

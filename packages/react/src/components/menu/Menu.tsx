@@ -1,31 +1,64 @@
-import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import React, { useContext, HTMLAttributes } from 'react';
 import styled from 'styled-components';
+import { Box, BoxProps } from '../../primitives/box';
+import { MenuContext, useMenu } from './useMenu';
+import { useMenuAria } from './useMenuAria';
+import { MenuItem } from './MenuItem';
+import { MenuTrigger } from './MenuTrigger';
 
-export const MenuItem = styled.div({});
+type MenuListProps = Record<string, unknown>;
 
-MenuItem.displayName = 'MenuItem';
+export const MenuList: React.FC<MenuListProps> = ({ children, ...props }) => {
+    const { isOpen } = useContext(MenuContext);
+    const ariaProps = useMenuAria();
+    return (
+        <>
+            {isOpen && (
+                <Box {...props} {...ariaProps}>
+                    {children}
+                </Box>
+            )}
+        </>
+    );
+};
 
-export const MenuHeader = styled.div({});
+MenuList.displayName = 'Menu.List';
 
-MenuHeader.displayName = 'MenuHeader';
+type MenuHeaderProps = Record<string, unknown>;
 
-export type MenuProps = BoxProps & React.HTMLAttributes<Element>;
+export const MenuHeader = styled.div<MenuHeaderProps>({});
+
+MenuHeader.displayName = 'Menu.Header';
+
+type MenuDividerProps = Record<string, unknown>;
+
+export const MenuDivider = styled('hr')<MenuDividerProps>({});
+
+MenuDivider.displayName = 'Menu.Divider';
+
+export type MenuProps = BoxProps & HTMLAttributes<Element>;
 
 interface MenuComponent extends React.FC<MenuProps> {
+    Trigger: typeof MenuTrigger;
+    List: typeof MenuList;
     Item: typeof MenuItem;
     Header: typeof MenuHeader;
+    Divider: typeof MenuDivider;
 }
 
-const Menu: MenuComponent = ({ children, ...props }) => (
-    <Box as="nav" {...props}>
-        {children}
-    </Box>
-);
+const Menu: MenuComponent = ({ children }) => {
+    const context = useMenu();
+    return (
+        <MenuContext.Provider value={context}>{children}</MenuContext.Provider>
+    );
+};
 
 Menu.displayName = 'Menu';
 
+Menu.Trigger = MenuTrigger;
+Menu.List = MenuList;
 Menu.Item = MenuItem;
 Menu.Header = MenuHeader;
+Menu.Divider = MenuDivider;
 
 export default Menu;

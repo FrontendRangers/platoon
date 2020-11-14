@@ -1,12 +1,12 @@
 import React from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import { Box } from '../../primitives/box';
 import { Heading } from '../heading';
 import { Paragraph } from '../paragraph';
 import { Button, DismissButton } from '../button';
 import { Icon } from '../icon';
 import { ButtonGroup } from '../button-group';
 
-export interface ToastProps extends BoxProps {
+export interface ToastProps {
     title?: string;
     description: string;
 }

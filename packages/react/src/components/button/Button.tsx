@@ -1,9 +1,10 @@
-import React, { forwardRef } from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import React, { forwardRef, HTMLAttributes } from 'react';
+import { Box } from '../../primitives/box';
 import { Icon } from '../icon';
 
-export interface ButtonProps {
-    as?: string;
+export interface ButtonProps
+    extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
+    as?: any;
     /** Which icon to use */
     icon?: string;
     /** The intent of the button */
@@ -17,12 +18,8 @@ export interface ButtonProps {
     ) => void;
 }
 
-type Props = ButtonProps &
-    BoxProps &
-    React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>;
-
 type ButtonComponent = React.ForwardRefExoticComponent<
-    Props & React.RefAttributes<HTMLButtonElement | HTMLAnchorElement>
+    ButtonProps & React.RefAttributes<HTMLButtonElement | HTMLAnchorElement>
 >;
 
 const Button: ButtonComponent = forwardRef(
@@ -40,7 +37,7 @@ const Button: ButtonComponent = forwardRef(
                 disabled={isDisabled}
                 {...props}
             >
-                {!!icon && <Icon name={icon} size="sm" mr="4px" />}
+                {!!icon && <Icon name={icon} size="sm" />}
                 <span>{children}</span>
             </Box>
         );

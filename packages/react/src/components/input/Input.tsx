@@ -1,8 +1,13 @@
-import React, { forwardRef, useState, useEffect } from 'react';
+import React, {
+    forwardRef,
+    useState,
+    useEffect,
+    InputHTMLAttributes,
+} from 'react';
 import { Box } from '../../primitives/box';
 import styled from 'styled-components';
 
-type InputBaseProps = React.InputHTMLAttributes<HTMLInputElement>;
+type InputBaseProps = InputHTMLAttributes<HTMLInputElement>;
 
 const InputBase = styled.input<InputBaseProps>({});
 
@@ -11,7 +16,7 @@ InputBase.displayName = 'InputBase';
 type InputSize = 'sm' | 'md' | 'lg';
 
 export interface InputProps
-    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
+    extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
     size?: InputSize;
     addonLeft?: React.ReactNode;
     addonRight?: React.ReactNode;

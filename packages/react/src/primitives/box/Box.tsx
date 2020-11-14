@@ -20,6 +20,7 @@ import {
     position,
     ShadowProps,
     shadow,
+    compose,
 } from 'styled-system';
 
 export type SystemProps = SpaceProps &
@@ -33,30 +34,25 @@ export type SystemProps = SpaceProps &
     PositionProps &
     ShadowProps;
 
-interface BaseBoxProps {
-    theme?: Record<any, any>;
-    as?: any;
-}
-
-export type BoxProps = BaseBoxProps &
-    SystemProps &
-    React.HTMLAttributes<Element>;
+export type BoxProps = SystemProps;
 
 const Box = styled.div<BoxProps>(
     {
         boxSizing: 'border-box',
         minWidth: 0,
     },
-    space,
-    color,
-    typography,
-    layout,
-    flexbox,
-    grid,
-    background,
-    border,
-    position,
-    shadow,
+    compose(
+        space,
+        color,
+        typography,
+        layout,
+        flexbox,
+        grid,
+        background,
+        border,
+        position,
+        shadow,
+    ),
 );
 
 Box.displayName = 'Box';

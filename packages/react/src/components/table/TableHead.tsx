@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 
-type Props = React.HTMLAttributes<HTMLTableHeaderCellElement>;
+type TableHeadProps = HTMLAttributes<HTMLTableHeaderCellElement>;
 
-type TableHeadComponent = React.FC<Props>;
+type TableHeadComponent = React.FC<TableHeadProps>;
 
 const TableHead: TableHeadComponent = ({ children, ...props }) => (
     <th {...props}>{children}</th>
