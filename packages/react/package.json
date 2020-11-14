@@ -29,7 +29,7 @@
     "scripts": {
         "prebuild": "rimraf ./dist & yarn type-check",
         "build": "rollup -c",
-        "build:storybook": "build-storybook",
+        "build:storybook": "build-storybook --no-dll",
         "type-check": "tsc --noEmit",
         "type-check:watch": "yarn type-check -- --watch",
         "test": "jest --passWithNoTests",
@@ -41,8 +41,7 @@
         "fix:prettier": "yarn prettier --write",
         "start": "yarn run storybook",
         "storybook": "start-storybook -p 6006 --no-dll",
-        "generate": "plop",
-        "build-storybook": "build-storybook --no-dll"
+        "generate": "plop"
     },
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"

@@ -32,7 +32,8 @@
         "utils": "yarn workspace @platoon/utils",
         "react": "yarn workspace @platoon/react",
         "svelte": "yarn workspace @platoon/svelte",
-        "website": "yarn workspace website"
+        "website": "yarn workspace website",
+        "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
     },
     "config": {
         "commitizen": {
