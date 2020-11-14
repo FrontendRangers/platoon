@@ -6,10 +6,6 @@ name: 'Chromatic Deployment'
 # Event for the workflow
 on: push
 
-defaults:
-    run:
-        working-directory: packages/react
-
 # List of jobs
 jobs:
     chromatic-deployment:
@@ -18,9 +14,16 @@ jobs:
 
         # Job steps
         steps:
-            - uses: actions/checkout@v1
+            - uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 14.x
             - name: Install dependencies
               run: yarn
+            - name: Build Storybook
+              run: yarn react build:storybook
             - name: Deploy to Chromatic
               uses: chromaui/action@v1
               # Chromatic GitHub Action options
@@ -28,4 +31,4 @@ jobs:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   # 👇 Chromatic projectToken, refer to the manage page to obtain it.
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-                  buildScriptName: build:storybook
+                  storybookBuildDir: ./packages/react/storybook-static
