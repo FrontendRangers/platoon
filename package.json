@@ -33,7 +33,8 @@
         "react": "yarn workspace @platoon/react",
         "svelte": "yarn workspace @platoon/svelte",
         "website": "yarn workspace website",
-        "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
+        "build-storybook:react": "yarn react build:storybook",
+        "chromatic": "yarn workspace @platoon/react chromatic"
     },
     "config": {
         "commitizen": {
