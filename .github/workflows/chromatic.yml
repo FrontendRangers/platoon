@@ -14,6 +14,7 @@ jobs:
         # Job steps
         steps:
             - name: Install dependencies
+              uses: actions/checkout@v1
               run: yarn
             - name: Deploy to Chromatic
               uses: chromaui/action@v1
