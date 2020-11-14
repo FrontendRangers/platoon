@@ -15,8 +15,6 @@ jobs:
         steps:
             - name: Install dependencies
               run: yarn
-            - name: Build Storybook
-              run: yarn react build:storybook
             - name: Deploy to Chromatic
               uses: chromaui/action@v1
               # Chromatic GitHub Action options

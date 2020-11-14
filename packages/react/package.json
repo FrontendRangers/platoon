@@ -42,7 +42,7 @@
         "start": "yarn run storybook",
         "storybook": "start-storybook -p 6006 --no-dll",
         "generate": "plop",
-        "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
+        "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN -b build:storybook --exit-zero-on-changes"
     },
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"
