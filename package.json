@@ -62,7 +62,6 @@
         ]
     },
     "devDependencies": {
-        "@babel/core": "^7.11.6",
         "@commitlint/cli": "^11.0.0",
         "@commitlint/config-conventional": "^11.0.0",
         "@rollup/plugin-commonjs": "^15.0.0",
@@ -70,7 +69,6 @@
         "@types/react": "^16.9.55",
         "@typescript-eslint/eslint-plugin": "^4.6.1",
         "@typescript-eslint/parser": "^4.6.1",
-        "babel-loader": "^8.1.0",
         "commitizen": "^4.2.1",
         "cross-env": "^7.0.2",
         "cz-lerna-changelog": "^2.0.3",
@@ -97,9 +95,7 @@
         "stylelint": "^13.7.2",
         "stylelint-config-standard": "^20.0.0",
         "stylelint-config-styled-components": "^0.1.1",
-        "ts-loader": "^8.0.6",
         "typescript": "^4.0.5",
-        "webpack": "^4.44.1",
         "yarnhook": "^0.4.3"
     },
     "dependencies": {

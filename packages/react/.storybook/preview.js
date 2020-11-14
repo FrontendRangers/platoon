@@ -57,6 +57,7 @@ const SORT_ORDER = {
 };
 
 export const parameters = {
+    actions: { argTypesRegex: '^on[A-Z].*' },
     options: {
         storySort: sortStories(SORT_ORDER),
     },

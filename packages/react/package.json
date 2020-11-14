@@ -40,8 +40,9 @@
         "fix:lint": "run-p -c 'lint:* --fix'",
         "fix:prettier": "yarn prettier --write",
         "start": "yarn run storybook",
-        "storybook": "start-storybook -p 6006",
-        "generate": "plop"
+        "storybook": "start-storybook -p 6006 --no-dll",
+        "generate": "plop",
+        "build-storybook": "build-storybook --no-dll"
     },
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"
@@ -51,18 +52,16 @@
         "@popperjs/core": "^2.4.4",
         "@styled-system/css": "^5.1.5",
         "@styled-system/theme-get": "^5.1.2",
-        "@types/react-transition-group": "^4.4.0",
-        "@types/styled-system": "^5.1.10",
-        "@types/styled-system__core": "npm:@peduarte/styled-system__core@0.0.1",
-        "@types/styled-system__css": "^5.0.13",
-        "@types/styled-system__theme-get": "^5.0.0",
         "downshift": "^6.0.6",
         "react-transition-group": "^4.4.1",
         "styled-system": "^5.1.5"
     },
     "devDependencies": {
+        "@babel/core": "^7.12.3",
         "@storybook/addon-a11y": "^6.0.28",
+        "@storybook/addon-actions": "^6.0.28",
         "@storybook/addon-essentials": "^6.0.28",
+        "@storybook/addon-links": "^6.0.28",
         "@storybook/react": "^6.0.28",
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.0.4",
@@ -72,8 +71,13 @@
         "@types/react-dom": "^16.9.9",
         "@types/react-transition-group": "^4.4.0",
         "@types/styled-components": "^5.1.3",
+        "@types/styled-system": "^5.1.10",
+        "@types/styled-system__core": "npm:@peduarte/styled-system__core@0.0.1",
+        "@types/styled-system__css": "^5.0.13",
+        "@types/styled-system__theme-get": "^5.0.0",
         "@types/testing-library__jest-dom": "^5.9.5",
         "@types/testing-library__react": "^10.2.0",
+        "babel-loader": "^8.2.1",
         "chromatic": "^5.2.0",
         "jest": "^26.4.1",
         "jest-styled-components": "^7.0.3",
