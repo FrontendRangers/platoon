@@ -1,6 +1,6 @@
 {
     "name": "@platoon/react",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "A themeable component library for React",
     "keywords": [
         "react",
@@ -52,7 +52,7 @@
     },
     "dependencies": {
         "@platoon/core": "^0.1.2",
-        "@platoon/system": "^0.0.0",
+        "@platoon/system": "^0.0.1",
         "@popperjs/core": "^2.6.0",
         "@types/styled-system": "^5.1.10",
         "@types/styled-system__css": "^5.0.14",
