@@ -1,6 +1,6 @@
 {
     "name": "@platoon/system",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "The system",
     "author": "Benoit Deziel <ben@benoitdeziel.com>",
     "homepage": "https://github.com/FrontendRangers/platoon/tree/master/packages/package#readme",
