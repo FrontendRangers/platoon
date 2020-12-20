@@ -1,13 +1,8 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, Ref } from 'react';
+import { platoon } from '@platoon/system';
 import { Label } from '../label';
-import styled from 'styled-components';
 
-const HiddenCheckbox = styled.input.attrs(() => ({
-    type: 'checkbox',
-    hidden: true,
-}))({});
-
-const HandleContainer = styled.div({
+const HandleContainer = platoon('span', {
     display: 'flex',
     flexDirection: 'row',
     width: '24px',
@@ -18,7 +13,7 @@ const HandleContainer = styled.div({
     },
 });
 
-const Handle = styled.div({
+const Handle = platoon('span', {
     width: '12px',
     height: '12px',
     backgroundColor: 'black',
@@ -26,27 +21,31 @@ const Handle = styled.div({
 
 export interface SwitchProps {
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    inputRef?: Ref<HTMLInputElement>;
 }
 
-type SwitchComponent = React.ForwardRefExoticComponent<
-    SwitchProps & React.RefAttributes<HTMLDivElement>
->;
-
-const Switch: SwitchComponent = forwardRef(({ onChange, ...props }, ref) => {
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (onChange) {
-            onChange(event);
-        }
-    };
-    return (
-        <Label ref={ref} {...props}>
-            <HiddenCheckbox onChange={handleChange} />
-            <HandleContainer>
-                <Handle />
-            </HandleContainer>
-        </Label>
-    );
-});
+const Switch = forwardRef<HTMLInputElement, SwitchProps>(
+    ({ onChange, inputRef, ...props }, ref) => {
+        const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+            if (onChange) {
+                onChange(event);
+            }
+        };
+        return (
+            <Label ref={ref} {...props}>
+                <platoon.input
+                    ref={inputRef}
+                    type="checkbox"
+                    hidden
+                    onChange={handleChange}
+                />
+                <HandleContainer>
+                    <Handle />
+                </HandleContainer>
+            </Label>
+        );
+    },
+);
 
 Switch.displayName = 'Switch';
 

@@ -1,11 +1,10 @@
-import React, { HTMLAttributes } from 'react';
+import React, { ComponentPropsWithoutRef, FC } from 'react';
+import { platoon } from '@platoon/system';
 
-type TableHeadProps = HTMLAttributes<HTMLTableHeaderCellElement>;
+export type TableHeadProps = ComponentPropsWithoutRef<'thead'>;
 
-type TableHeadComponent = React.FC<TableHeadProps>;
-
-const TableHead: TableHeadComponent = ({ children, ...props }) => (
-    <th {...props}>{children}</th>
+const TableHead: FC<TableHeadProps> = ({ children, ...props }) => (
+    <platoon.thead {...props}>{children}</platoon.thead>
 );
 
 TableHead.displayName = 'Table.Head';

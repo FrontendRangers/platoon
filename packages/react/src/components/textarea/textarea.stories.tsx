@@ -1,17 +1,21 @@
 import React from 'react';
 import { Textarea } from './';
 import { Box } from '../../primitives/box';
+import { Meta, Story } from '@storybook/react';
+import { TextareaProps } from './Textarea';
 
 export default {
     title: 'Forms/Textarea',
     component: Textarea,
     decorators: [
-        (storyFn) => (
+        (StoryComponent: Story) => (
             <Box width="75vw" p="md">
-                {storyFn()}
+                <StoryComponent />
             </Box>
         ),
     ],
-};
+} as Meta;
 
-export const Default = () => <Textarea placeholder="Textarea component" />;
+export const Default: Story<TextareaProps> = () => (
+    <Textarea placeholder="Textarea component" />
+);

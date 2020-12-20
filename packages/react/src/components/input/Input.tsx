@@ -1,114 +1,64 @@
-import React, {
-    forwardRef,
-    useState,
-    useEffect,
-    InputHTMLAttributes,
-} from 'react';
-import { Box } from '../../primitives/box';
-import styled from 'styled-components';
+import React, { ComponentPropsWithRef, forwardRef, RefObject } from 'react';
+import { Flex } from '../../primitives/flex';
+import { platoon } from '@platoon/system';
+import { inputStyles } from '@platoon/core';
 
-type InputBaseProps = InputHTMLAttributes<HTMLInputElement>;
+type InputSize = 'sm' | 'md' | 'lg';
+type InputVariant = 'outlined' | 'filled' | 'unstyled';
 
-const InputBase = styled.input<InputBaseProps>({});
+type InputBaseProps = ComponentPropsWithRef<'input'>;
+
+const InputBase = platoon('input');
 
 InputBase.displayName = 'InputBase';
 
-type InputSize = 'sm' | 'md' | 'lg';
-
-export interface InputProps
-    extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
+export interface InputOptions {
+    variant?: InputVariant;
     size?: InputSize;
     addonLeft?: React.ReactNode;
     addonRight?: React.ReactNode;
-    inputProps?: any;
-    inputRef?: any;
+    inputProps?: ComponentPropsWithRef<'input'>;
+    inputRef?: RefObject<HTMLInputElement>;
 }
 
-type InputComponent = React.ForwardRefExoticComponent<
-    InputProps & React.RefAttributes<HTMLDivElement>
->;
+export type InputProps = InputOptions & InputBaseProps;
 
-const Input: InputComponent = forwardRef(
-    (
-        {
-            size = 'md',
-            addonLeft,
-            addonRight,
-            onChange,
-            onFocus,
-            onBlur,
-            onKeyDown,
-            type = 'text',
-            readOnly,
-            placeholder,
-            value: controlledValue,
-            inputRef,
-            inputProps,
-            ...props
-        },
-        ref,
-    ) => {
-        const [value, setValue] = useState(controlledValue);
+const Input = forwardRef<HTMLDivElement, InputProps>((props, ref) => {
+    const {
+        addonLeft,
+        addonRight,
+        type = 'text',
+        readOnly,
+        placeholder,
+        inputRef,
+        inputProps,
+        ...rest
+    } = props;
+    return (
+        <Flex ref={ref} {...rest}>
+            {addonLeft && (
+                <platoon.div>
+                    {React.Children.map(addonLeft, (addon) => addon)}
+                </platoon.div>
+            )}
 
-        useEffect(() => {
-            setValue(controlledValue);
-        }, [controlledValue]);
+            <InputBase
+                ref={inputRef}
+                type={type}
+                readOnly={readOnly}
+                placeholder={placeholder}
+                {...inputProps}
+                {...inputStyles}
+            />
 
-        const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-            setValue(event.currentTarget.value);
-            if (onChange) {
-                onChange(event);
-            }
-        };
-
-        const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
-            if (onFocus) {
-                onFocus(event);
-            }
-        };
-
-        const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
-            if (onBlur) {
-                onBlur(event);
-            }
-        };
-
-        const handleKeyDown = (
-            event: React.KeyboardEvent<HTMLInputElement>,
-        ) => {
-            if (onKeyDown) {
-                onKeyDown(event);
-            }
-        };
-        return (
-            <Box ref={ref} size={size} {...props}>
-                {addonLeft && (
-                    <Box>{React.Children.map(addonLeft, (addon) => addon)}</Box>
-                )}
-
-                <InputBase
-                    ref={inputRef}
-                    typ={type}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    onKeyDown={handleKeyDown}
-                    readOnly={readOnly}
-                    value={value}
-                    placeholder={placeholder}
-                    size={size}
-                    {...inputProps}
-                />
-
-                {addonRight && (
-                    <Box>
-                        {React.Children.map(addonRight, (addon) => addon)}
-                    </Box>
-                )}
-            </Box>
-        );
-    },
-);
+            {addonRight && (
+                <platoon.div>
+                    {React.Children.map(addonRight, (addon) => addon)}
+                </platoon.div>
+            )}
+        </Flex>
+    );
+});
 
 Input.displayName = 'Input';
 

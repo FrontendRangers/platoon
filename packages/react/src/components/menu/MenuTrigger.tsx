@@ -3,26 +3,21 @@ import React, {
     Children,
     isValidElement,
     cloneElement,
-    MouseEvent,
+    FC,
 } from 'react';
 import { MenuContext } from './useMenu';
 import { useMenuTriggerAria } from './useMenuAria';
 
 type MenuTriggerProps = Record<string, unknown>;
 
-export const MenuTrigger: React.FC<MenuTriggerProps> = ({ children }) => {
-    const { isOpen, toggle } = useContext(MenuContext);
+export const MenuTrigger: FC<MenuTriggerProps> = ({ children }) => {
+    const { isOpen, getButtonProps } = useContext(MenuContext);
     const ariaProps = useMenuTriggerAria({ isExpanded: isOpen });
 
     if (!Children.only(children) || !isValidElement(children)) return <></>;
 
-    const handleClick = (event: MouseEvent<Element>) => {
-        children.props.onClick?.(event);
-        toggle();
-    };
-
     return cloneElement(children, {
-        onClick: handleClick,
+        ...getButtonProps(),
         ...ariaProps,
     });
 };

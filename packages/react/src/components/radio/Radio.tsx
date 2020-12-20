@@ -1,21 +1,31 @@
-import React, { forwardRef, InputHTMLAttributes } from 'react';
-import { Box } from '../../primitives/box';
+import React, { ComponentPropsWithRef, forwardRef } from 'react';
+import { platoon } from '@platoon/system';
 import { Label } from '../label';
 
-export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface RadioProps extends ComponentPropsWithRef<'label'> {
     label?: string;
 }
 
-type RadioComponent = React.ForwardRefExoticComponent<
-    RadioProps & React.RefAttributes<HTMLInputElement>
->;
+const Control = platoon('span', {
+    display: 'inline-block',
+    backgroundColor: 'red',
+    width: '1rem',
+    height: '1rem',
+    borderRadius: '100em',
+    'input[type=radio]:checked + &': {
+        backgroundColor: 'blue',
+    },
+});
 
-const Radio: RadioComponent = forwardRef(({ label, ...props }, ref) => (
-    <Label>
-        <input type="radio" ref={ref} {...props} />
-        <Box>{label}</Box>
-    </Label>
-));
+const Radio = forwardRef<HTMLLabelElement, RadioProps>(
+    ({ label, ...props }, ref) => (
+        <Label ref={ref}>
+            <platoon.input type="radio" hidden {...props} />
+            <Control />
+            <platoon.span>{label}</platoon.span>
+        </Label>
+    ),
+);
 
 Radio.displayName = 'Radio';
 

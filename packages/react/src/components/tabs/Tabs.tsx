@@ -1,60 +1,69 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import { platoon } from '@platoon/system';
+import React, { forwardRef, isValidElement, useState } from 'react';
+import { Nav, NavItem } from '../nav';
 
-export interface TabsLinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
+export type TabsLinkProps = {
     isActive: boolean;
-}
+};
 
-const TabLink = styled.a.attrs(() => ({ role: 'tab' }))<TabsLinkProps>({});
+const TabLink = platoon('button', {
+    attrs: () => ({
+        role: 'tab',
+    }),
+});
 
-export type TabsTabProps = React.HTMLAttributes<HTMLLIElement>;
+export type TabsTabProps = Record<string, unknown>;
 
-const Tab = styled.li.attrs(() => ({ role: 'presentation' }))<TabsTabProps>({});
+const Tab = platoon(NavItem, {
+    attrs: () => ({
+        role: 'presentation',
+    }),
+});
 
-const TabList = styled.ul.attrs(() => ({ role: 'tablist' }))<TabsTabProps>({});
+const TabList = platoon(Nav, { role: 'tablist' });
 
 export interface TabsPaneProps {
     title: string | React.ReactNode;
 }
 
-const TabsPane = styled.div<TabsPaneProps>({});
+export const TabsPane = platoon('div');
 
-const TabsPaneContainer = styled.div({});
+const TabsPaneContainer = platoon('div');
 
 export type TabsProps = Record<string, unknown>;
 
-const TabsContainer = styled.div<TabsProps>({});
+const TabsContainer = platoon('div');
 
-interface TabsComponent extends React.FC<TabsProps> {
-    Pane: typeof TabsPane;
-}
+const Component = forwardRef<HTMLDivElement, TabsProps>(
+    ({ children, ...props }, ref) => {
+        const panes = React.Children.toArray(children).filter((child) =>
+            isValidElement(child),
+        );
+        const [activeTab, setActiveTab] = useState(0);
+        return (
+            <TabsContainer ref={ref} {...props}>
+                <TabList>
+                    {panes.map((pane: any, index) => (
+                        <Tab
+                            key={`tab-${index}`}
+                            onClick={() => setActiveTab(index)}
+                        >
+                            <TabLink isActive={activeTab === index}>
+                                {pane.props.title}
+                            </TabLink>
+                        </Tab>
+                    ))}
+                </TabList>
+                <TabsPaneContainer>
+                    {panes.filter((_pane, index) => activeTab === index)}
+                </TabsPaneContainer>
+            </TabsContainer>
+        );
+    },
+);
 
-const Tabs: TabsComponent = ({ children, ...props }) => {
-    const panes = React.Children.toArray(children);
-    const [activeTab, setActiveTab] = useState(0);
-    return (
-        <TabsContainer {...props}>
-            <TabList>
-                {panes.map((pane: React.ReactElement, index) => (
-                    <Tab
-                        key={`tab-${index}`}
-                        onClick={() => setActiveTab(index)}
-                    >
-                        <TabLink isActive={activeTab === index}>
-                            {pane.props.title}
-                        </TabLink>
-                    </Tab>
-                ))}
-            </TabList>
-            <TabsPaneContainer>
-                {panes.filter((pane, index) => activeTab === index)}
-            </TabsPaneContainer>
-        </TabsContainer>
-    );
-};
+Component.displayName = 'Tabs';
 
-Tabs.displayName = 'Tabs';
-
-Tabs.Pane = TabsPane;
+const Tabs = Object.assign(Component, { Pane: TabsPane });
 
 export default Tabs;

@@ -1,23 +1,34 @@
-import React from 'react';
-import { Box } from '../../primitives/box';
+import React, { forwardRef } from 'react';
+import { platoon } from '@platoon/system';
 import { Label } from '../label';
-import { Text } from '../text';
+import { SpaceProps } from 'styled-system';
 
-export interface FormElementProps {
-    label?: string;
+export type FormElementProps = SpaceProps;
+
+const FormElementLabel = platoon(Label);
+
+const FormElementHint = platoon('div', { textStyle: 'hint' });
+
+const FormElementError = platoon('div', { textStyle: 'hint' });
+
+interface FormElementComposition {
+    Label: typeof FormElementLabel;
+    Hint: typeof FormElementHint;
+    Error: typeof FormElementError;
 }
 
-type FormElementComponent = React.FC<FormElementProps>;
-
-const FormElement: FormElementComponent = ({ children, label, ...props }) => (
-    <Box {...props}>
-        <Label>{label}</Label>
-        {children}
-        <Box>Helper text</Box>
-        <Box color="danger.500">
-            <Text>Error text</Text>
-        </Box>
-    </Box>
+const Component = forwardRef<HTMLDivElement, FormElementProps>(
+    ({ children, ...props }) => (
+        <platoon.div {...props}>{children}</platoon.div>
+    ),
 );
+
+Component.displayName = 'FormElement';
+
+const FormElement = Component as typeof Component & FormElementComposition;
+
+FormElement.Label = FormElementLabel;
+FormElement.Hint = FormElementHint;
+FormElement.Error = FormElementError;
 
 export default FormElement;

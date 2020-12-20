@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box } from '../../primitives/box';
+import { platoon } from '@platoon/system';
 
-const ModalFooter = ({ children, ...props }) => (
-    <Box {...props}>{children}</Box>
+const ModalFooter: React.FC = ({ children, ...props }) => (
+    <platoon.footer {...props}>{children}</platoon.footer>
 );
 
 export default ModalFooter;

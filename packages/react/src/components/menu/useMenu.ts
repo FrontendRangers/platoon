@@ -1,32 +1,19 @@
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
+import {
+    UseDiscloseProps,
+    useDisclosure,
+    UseDisclosureReturn,
+} from '../../hooks';
 
-interface MenuContextOptions {
-    isOpen: boolean;
-    open: () => void;
-    close: () => void;
-    toggle: () => void;
-}
+type MenuContextOptions = UseDisclosureReturn;
 
-export const MenuContext = createContext<MenuContextOptions>({
-    isOpen: false,
-    open: () => void 0,
-    close: () => void 0,
-    toggle: () => void 0,
-});
+export const MenuContext = createContext({} as MenuContextOptions);
 
-export const useMenu = () => {
-    const [isOpen, setIsOpen] = useState(false);
+type UseMenuProps = UseDiscloseProps;
 
-    const open = () => setIsOpen(true);
+type UseMenu = (props?: UseMenuProps) => UseDisclosureReturn;
 
-    const close = () => setIsOpen(false);
-
-    const toggle = () => setIsOpen(!isOpen);
-
-    return {
-        isOpen,
-        open,
-        close,
-        toggle,
-    };
+export const useMenu: UseMenu = (props) => {
+    const options = useDisclosure(props);
+    return options;
 };

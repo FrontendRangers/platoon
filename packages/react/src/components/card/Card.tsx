@@ -1,35 +1,35 @@
-import React, { HTMLAttributes } from 'react';
-import { Box, BoxProps } from '../../primitives/box';
-import styled from 'styled-components';
+import React, { forwardRef } from 'react';
+import { Box } from '../../primitives/box';
+import { platoon } from '@platoon/system';
 
-const CardHeader = styled.div({});
+export const CardHeader = platoon(Box);
 
 CardHeader.displayName = 'Card.Header';
 
-const CardContent = styled.div({});
+export const CardContent = platoon(Box);
 
 CardContent.displayName = 'Card.Footer';
 
-const CardFooter = styled.div({});
+export const CardFooter = platoon(Box);
 
 CardFooter.displayName = 'Card.Footer';
 
-export type CardProps = BoxProps & HTMLAttributes<HTMLDivElement>;
+export type CardProps = Record<string, any>;
 
-interface CardComponent extends React.FC<CardProps> {
-    Header: typeof CardHeader;
-    Content: typeof CardContent;
-    Footer: typeof CardFooter;
-}
-
-const Card: CardComponent = ({ children, ...props }) => (
-    <Box {...props}>{children}</Box>
+const Component = forwardRef<HTMLDivElement, CardProps>(
+    ({ children, ...props }, ref) => (
+        <platoon.div ref={ref} {...props}>
+            {children}
+        </platoon.div>
+    ),
 );
 
-Card.displayName = 'Card';
+Component.displayName = 'Card';
 
-Card.Header = CardHeader;
-Card.Content = CardContent;
-Card.Footer = CardFooter;
+const Card = Object.assign(Component, {
+    Header: CardHeader,
+    Content: CardHeader,
+    Footer: CardHeader,
+});
 
 export default Card;

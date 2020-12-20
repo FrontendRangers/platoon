@@ -2,12 +2,6 @@ import { themeMode } from '../../theme/helpers';
 
 const breakpoints = ['0', '600px', '960px', '1280px', '1920px'];
 
-breakpoints['xs'] = breakpoints[0];
-breakpoints['sm'] = breakpoints[1];
-breakpoints['md'] = breakpoints[2];
-breakpoints['lg'] = breakpoints[3];
-breakpoints['xl'] = breakpoints[4];
-
 const space = {
     none: '0',
     xxs: '0.4rem',
@@ -105,17 +99,20 @@ const palette = {
     },
 };
 
-const colors = {
+export const colors = {
     ...palette,
-    primary: palette.primary[600],
-    secondary: palette.secondary[600],
-    danger: palette.danger[600],
-    text: palette.neutral[900],
+    text: { primary: palette.neutral[900] },
     background: palette.neutral['1000'],
     overlay: palette.neutral['1000'],
 };
 
-const fontSizes = {
+export const fonts = {
+    body: 'Verdana',
+    heading: 'Verdana',
+    monospace: 'Menlo',
+};
+
+export const fontSizes = {
     xl: '2.5rem',
     lg: '2rem',
     md: '1rem',
@@ -123,28 +120,44 @@ const fontSizes = {
     xs: '1.2rem',
 };
 
-const borders = {
-    base: `1px solid ${palette.neutral[200]}`,
-    input: `1px solid ${palette.neutral[400]}`,
+export const lineHeights = {
+    sm: '1.25',
+    md: '1.5',
+    lg: '1.75',
 };
 
-const text = {
+export const fontWeights = {
+    regular: '500',
+    bold: '700',
+};
+
+const borders = {
+    base: `1px solid ${palette.neutral[200]}`,
+    input: `2px solid ${palette.neutral[400]}`,
+};
+
+const textStyles = {
     body: {
         fontSize: fontSizes.md,
-        mb: 'sm',
+        marginBottom: space.sm,
     },
-    heading: {
-        h1: {
-            fontSize: fontSizes.xl,
-            color: 'red',
-        },
-        h2: {
-            fontSize: fontSizes.lg,
-            color: 'blue',
-        },
+    heading1: {
+        fontSize: ['48px', '72px'],
+        fontWeight: 'bold',
+        lineHeight: '110%',
+        letterSpacing: '-2%',
     },
-    danger: {
-        color: palette.danger[500],
+    heading2: {
+        fontSize: ['48px', '72px'],
+        fontWeight: 'bold',
+        lineHeight: '110%',
+        letterSpacing: '-2%',
+    },
+    hint: {
+        color: palette.warning[500],
+    },
+    label: {
+        textTransform: 'uppercase',
     },
 };
 
@@ -164,12 +177,11 @@ const styles = {
 export default {
     space,
     breakpoints,
-    fonts: {
-        base: 'Verdana',
-    },
+    fonts,
     fontSizes,
+    lineHeights,
+    fontWeights,
     colors,
-    text,
     borders,
     radii: {
         md: '4px',
@@ -181,6 +193,7 @@ export default {
             fast: 300,
         },
     },
+    textStyles,
     styles,
     buttons: {
         color: 'neutral.0',
@@ -212,9 +225,9 @@ export default {
             },
         },
         size: {
-            sm: { px: 'xs', py: 'xxs' },
-            md: { px: 'sm', py: 'xs' },
-            lg: { px: 'md', py: 'sm' },
+            sm: { px: 'xs', py: 'xxs', fontSize: 'sm' },
+            md: { px: 'sm', py: 'xs', fontSize: 'md' },
+            lg: { px: 'md', py: 'sm', fontSize: 'lg' },
         },
     },
     cards: {

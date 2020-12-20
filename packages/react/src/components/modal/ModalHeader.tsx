@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box } from '../../primitives/box';
+import { platoon } from '@platoon/system';
 
-const ModalHeader = ({ children, ...props }) => (
-    <Box {...props}>{children}</Box>
+const ModalHeader: React.FC = ({ children, ...props }) => (
+    <platoon.header {...props}>{children}</platoon.header>
 );
 
 export default ModalHeader;

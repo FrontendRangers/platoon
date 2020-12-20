@@ -1,11 +1,10 @@
-import React, { TableHTMLAttributes } from 'react';
+import { platoon } from '@platoon/system';
+import React, { ComponentPropsWithoutRef, FC } from 'react';
 
-type TableCellProps = TableHTMLAttributes<HTMLTableCellElement>;
+export type TableCellProps = ComponentPropsWithoutRef<'td'>;
 
-type TableCellComponent = React.FC<TableCellProps>;
-
-const TableCell: TableCellComponent = ({ children, ...props }) => (
-    <td {...props}>{children}</td>
+const TableCell: FC<TableCellProps> = ({ children, ...props }) => (
+    <platoon.td {...props}>{children}</platoon.td>
 );
 
 TableCell.displayName = 'Table.Cell';

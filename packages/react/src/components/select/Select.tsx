@@ -35,60 +35,58 @@ export interface SelectProps {
     onChange?: (selectedItem: string) => void;
 }
 
-type SelectComponent = React.ForwardRefExoticComponent<
-    SelectProps & React.RefAttributes<HTMLSelectElement>
->;
+const Select = forwardRef<HTMLDivElement, SelectProps>(
+    ({ onChange, ...props }, ref) => {
+        const anchorRef = useRef(ref);
+        const innerRef = useRef(null);
 
-const Select: SelectComponent = forwardRef(({ onChange, ...props }, ref) => {
-    const anchorRef = useRef(ref);
-    const innerRef = useRef(null);
+        const [items] = useState<string[]>(['Option1', 'Option2', 'Option3']);
 
-    const [items] = useState<string[]>(['Option1', 'Option2', 'Option3']);
+        const {
+            isOpen,
+            selectedItem,
+            getToggleButtonProps,
+            getMenuProps,
+            getItemProps,
+        } = useSelect({
+            items,
+            onSelectedItemChange: ({ selectedItem }) =>
+                selectedItem && onChange && onChange(selectedItem),
+        });
 
-    const {
-        isOpen,
-        selectedItem,
-        getToggleButtonProps,
-        getMenuProps,
-        getItemProps,
-    } = useSelect({
-        items,
-        onSelectedItemChange: ({ selectedItem }) =>
-            selectedItem && onChange && onChange(selectedItem),
-    });
-
-    return (
-        <>
-            <Input
-                ref={anchorRef}
-                value={selectedItem ? selectedItem : ''}
-                readOnly
-                addonRight={<IconButton icon="chevronDown" />}
-                {...getToggleButtonProps({ refKey: 'innerRef' })}
-                {...props}
-            />
-            <Popper
-                isOpen={isOpen}
-                anchorRef={anchorRef}
-                popperOptions={{ placement: 'bottom' }}
-            >
-                <Menu ref={innerRef} {...getMenuProps()}>
-                    {items.map((item, idx) => (
-                        <SelectOption
-                            key={idx}
-                            {...getItemProps({
-                                item,
-                                refKey: 'innerRef',
-                            })}
-                        >
-                            {item}
-                        </SelectOption>
-                    ))}
-                </Menu>
-            </Popper>
-        </>
-    );
-});
+        return (
+            <>
+                <Input
+                    ref={anchorRef}
+                    value={selectedItem ? selectedItem : ''}
+                    readOnly
+                    addonRight={<IconButton icon="chevronDown" />}
+                    {...getToggleButtonProps({ refKey: 'innerRef' })}
+                    {...props}
+                />
+                <Popper
+                    isOpen={isOpen}
+                    anchorRef={anchorRef}
+                    popperOptions={{ placement: 'bottom' }}
+                >
+                    <Menu ref={innerRef} {...getMenuProps()}>
+                        {items.map((item, idx) => (
+                            <SelectOption
+                                key={idx}
+                                {...getItemProps({
+                                    item,
+                                    refKey: 'innerRef',
+                                })}
+                            >
+                                {item}
+                            </SelectOption>
+                        ))}
+                    </Menu>
+                </Popper>
+            </>
+        );
+    },
+);
 
 Select.displayName = 'Select';
 

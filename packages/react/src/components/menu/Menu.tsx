@@ -1,59 +1,57 @@
-import React, { useContext, HTMLAttributes } from 'react';
-import styled from 'styled-components';
-import { Box, BoxProps } from '../../primitives/box';
+import React, { useContext, HTMLAttributes, FC } from 'react';
+import { BoxProps } from '../../primitives/box';
 import { MenuContext, useMenu } from './useMenu';
 import { useMenuAria } from './useMenuAria';
 import { MenuItem } from './MenuItem';
 import { MenuTrigger } from './MenuTrigger';
+import { platoon } from '@platoon/system';
 
 type MenuListProps = Record<string, unknown>;
 
-export const MenuList: React.FC<MenuListProps> = ({ children, ...props }) => {
-    const { isOpen } = useContext(MenuContext);
+export const MenuList: FC<MenuListProps> = ({ children, ...props }) => {
+    const { getDisclosureProps } = useContext(MenuContext);
     const ariaProps = useMenuAria();
     return (
-        <>
-            {isOpen && (
-                <Box {...props} {...ariaProps}>
-                    {children}
-                </Box>
-            )}
-        </>
+        <platoon.div {...getDisclosureProps(props)} {...ariaProps}>
+            {children}
+        </platoon.div>
     );
 };
 
 MenuList.displayName = 'Menu.List';
 
-type MenuHeaderProps = Record<string, unknown>;
+// type MenuHeaderProps = Record<string, unknown>;
 
-export const MenuHeader = styled.div<MenuHeaderProps>({});
+export const MenuHeader = platoon('div');
 
 MenuHeader.displayName = 'Menu.Header';
 
-type MenuDividerProps = Record<string, unknown>;
+// type MenuDividerProps = Record<string, unknown>;
 
-export const MenuDivider = styled('hr')<MenuDividerProps>({});
+export const MenuDivider = platoon('hr');
 
 MenuDivider.displayName = 'Menu.Divider';
 
 export type MenuProps = BoxProps & HTMLAttributes<Element>;
 
-interface MenuComponent extends React.FC<MenuProps> {
-    Trigger: typeof MenuTrigger;
-    List: typeof MenuList;
-    Item: typeof MenuItem;
-    Header: typeof MenuHeader;
-    Divider: typeof MenuDivider;
-}
-
-const Menu: MenuComponent = ({ children }) => {
+const Component: FC<MenuProps> = ({ children }) => {
     const context = useMenu();
     return (
         <MenuContext.Provider value={context}>{children}</MenuContext.Provider>
     );
 };
 
-Menu.displayName = 'Menu';
+Component.displayName = 'Menu';
+
+type MenuComponent = typeof Component & {
+    Trigger: typeof MenuTrigger;
+    List: typeof MenuList;
+    Item: typeof MenuItem;
+    Header: typeof MenuHeader;
+    Divider: typeof MenuDivider;
+};
+
+const Menu = Component as MenuComponent;
 
 Menu.Trigger = MenuTrigger;
 Menu.List = MenuList;

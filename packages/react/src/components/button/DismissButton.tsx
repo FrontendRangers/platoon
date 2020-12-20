@@ -1,15 +1,9 @@
 import React, { forwardRef } from 'react';
 import IconButton, { IconButtonProps } from './IconButton';
 
-export type DismissButtonProps = IconButtonProps;
+export type DismissButtonProps = Omit<IconButtonProps, 'icon'>;
 
-type Props = DismissButtonProps;
-
-type DismissButtonComponent = React.ForwardRefExoticComponent<
-    Props & React.RefAttributes<HTMLButtonElement | HTMLAnchorElement>
->;
-
-const DismissButton: DismissButtonComponent = forwardRef(
+const DismissButton = forwardRef<HTMLButtonElement, DismissButtonProps>(
     ({ ...props }, ref) => <IconButton ref={ref} icon="x" {...props} />,
 );
 

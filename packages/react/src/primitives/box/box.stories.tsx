@@ -1,16 +1,21 @@
 import React from 'react';
-import { Box } from './';
+import { Meta, Story } from '@storybook/react';
+
+import { Box, BoxProps } from './';
+
 export default {
     title: 'Primitives/Box',
     component: Box,
-};
+} as Meta;
 
-export const Default = () => <Box>Hello</Box>;
+export const Default: Story<BoxProps> = () => <Box>Box</Box>;
 
-export const CustomPadding = () => <Box p="sm">I'm a box</Box>;
+export const CustomPadding: Story<BoxProps> = () => <Box p="md">Box</Box>;
 
-export const CustomBackgroundColor = () => (
-    <Box backgroundColor="primary">I'm a box</Box>
+export const CustomBackgroundColor: Story<BoxProps> = () => (
+    <Box bg="yellow">Box</Box>
 );
 
-export const CustomTextColor = () => <Box color="primary">I'm a box</Box>;
+export const CustomTextColor: Story<BoxProps> = () => (
+    <Box color="primary">Box</Box>
+);

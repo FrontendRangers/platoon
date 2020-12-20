@@ -1,14 +1,12 @@
-import React, { forwardRef, ImgHTMLAttributes } from 'react';
+import { platoon } from '@platoon/system';
+import React, { ComponentPropsWithRef, forwardRef } from 'react';
 
-export type ImageProps = ImgHTMLAttributes<HTMLImageElement>;
+export type ImageProps = ComponentPropsWithRef<'img'>;
 
-type ImageComponent = React.ForwardRefExoticComponent<
-    ImageProps & React.RefAttributes<HTMLImageElement>
->;
-
-const Image: ImageComponent = forwardRef(({ src = '', ...props }, ref) => (
-    <img src={src} ref={ref} {...props} />
-));
+const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
+    const { src = '', ...rest } = props;
+    return <platoon.img src={src} ref={ref} {...rest} />;
+});
 
 Image.displayName = 'Image';
 

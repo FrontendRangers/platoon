@@ -1,18 +1,18 @@
 import React from 'react';
+import { Meta, Story } from '@storybook/react';
 import { usePopper } from '.';
+import { UsePopperProps } from './usePopper';
 
 export default {
     title: 'Hooks/usePopper',
-};
+} as Meta;
 
-export const Default = () => {
-    const { anchorRef, triggerProps, popperProps, isOpen } = usePopper();
+export const Default: Story<UsePopperProps> = (args) => {
+    const { triggerProps, popperProps, isOpen } = usePopper(args);
 
     return (
         <>
-            <button ref={anchorRef} {...triggerProps}>
-                Show popper
-            </button>
+            <button {...triggerProps}>Show popper</button>
             {isOpen && <div {...popperProps}>I&apos;m popping</div>}
         </>
     );

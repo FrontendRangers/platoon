@@ -1,47 +1,37 @@
-import React from 'react';
-import { Box } from '../../primitives/box';
-import { Overlay } from '../../primitives/overlay';
-import { Portal } from '../../primitives/portal';
-import { Fade } from '../fade';
-import { IconButton } from '../button';
+import React, { ComponentPropsWithRef, forwardRef } from 'react';
+import { DismissButton } from '../button';
 import ModalHeader from './ModalHeader';
 import ModalFooter from './ModalFooter';
+import { platoon } from '@platoon/system';
 
-export interface ModalProps {
+export interface ModalProps extends ComponentPropsWithRef<'div'> {
     isOpen: boolean;
-    onClose?: () => void;
+    onClose: () => void;
 }
 
-interface ModalComponent extends React.FC<ModalProps> {
-    Header: typeof ModalHeader;
-    Footer: typeof ModalFooter;
-}
+const Component = forwardRef<HTMLDivElement, ModalProps>(
+    ({ children, isOpen, onClose, ...props }, ref) => {
+        const handleOnClose = () => {
+            onClose?.();
+        };
+        return (
+            <>
+                {isOpen && (
+                    <platoon.div ref={ref} {...props}>
+                        <DismissButton onClick={handleOnClose} />
+                        {children}
+                    </platoon.div>
+                )}
+            </>
+        );
+    },
+);
 
-const Modal: ModalComponent = ({ children, isOpen, onClose, ...props }) => {
-    const handleOnClose = () => {
-        onClose?.();
-    };
-    return (
-        <>
-            {isOpen && (
-                <Portal>
-                    <Fade in={isOpen}>
-                        <Overlay>
-                            <Box {...props}>
-                                <IconButton onClick={handleOnClose} />
-                                {children}
-                            </Box>
-                        </Overlay>
-                    </Fade>
-                </Portal>
-            )}
-        </>
-    );
-};
+Component.displayName = 'Modal';
 
-Modal.displayName = 'Modal';
-
-Modal.Header = ModalHeader;
-Modal.Footer = ModalFooter;
+const Modal = Object.assign(Component, {
+    Header: ModalHeader,
+    Footer: ModalFooter,
+});
 
 export default Modal;

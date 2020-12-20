@@ -1,14 +1,10 @@
-import React, { LabelHTMLAttributes } from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import { platoon } from '@platoon/system';
+import { TextProps } from '../text';
 
-export type LabelProps = BoxProps & LabelHTMLAttributes<HTMLLabelElement>;
+export type LabelProps = TextProps;
 
-type LabelComponent = React.FC<LabelProps>;
+const Label = platoon('label');
 
-const Label: LabelComponent = ({ children, ...props }) => (
-    <Box as="label" {...props}>
-        {children}
-    </Box>
-);
+Label.displayName = 'Label';
 
 export default Label;

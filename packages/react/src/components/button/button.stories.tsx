@@ -1,69 +1,54 @@
 import React from 'react';
-import { Button } from '.';
+import { Meta, Story } from '@storybook/react';
+
+import { Button, ButtonProps } from '.';
 
 export default {
     title: 'Actions/Button',
     component: Button,
-};
+} as Meta;
 
-export const Base = () => (
-    <Button onClick={() => alert(`You've clicked me`)}>Button</Button>
+export const Base: Story<ButtonProps> = (args) => (
+    <Button {...args}>Button</Button>
 );
 
-export const asALink = () => (
-    <Button as="a" onClick={() => alert(`You've clicked me`)}>
-        Button
-    </Button>
-);
+// export const asALink: Story<ButtonProps> = () => <Button as="a">Button</Button>;
 
-export const Primary = () => (
-    // eslint-disable-next-line no-undef
-    <Button intent="primary" onClick={() => alert(`You've clicked me`)}>
-        Button
-    </Button>
-);
+// export const Primary: Story<ButtonProps> = (args) => (
+//     <Button {...args}>Button</Button>
+// );
 
-export const Secondary = () => (
-    <Button intent={'secondary'} onClick={() => alert(`You've clicked me`)}>
-        Button
-    </Button>
-);
+// Primary.args = { intent: 'primary' };
 
-export const Danger = () => (
-    <Button intent={'danger'} onClick={() => alert(`You've clicked me`)}>
-        Button
-    </Button>
-);
+// export const Secondary: Story<ButtonProps> = (args) => (
+//     <Button {...args}>Button</Button>
+// );
 
-export const Disabled = () => (
-    <Button isDisabled onClick={() => alert(`You've clicked me`)}>
-        Button
-    </Button>
-);
+// Secondary.args = { intent: 'secondary' };
 
-export const Small = () => (
-    <Button size="sm" onClick={() => alert(`You've clicked me`)}>
-        Button
-    </Button>
-);
+// export const Danger: Story<ButtonProps> = () => (
+//     <Button intent={'danger'}>Button</Button>
+// );
 
-export const Large = () => (
-    <Button size="lg" onClick={() => alert(`You've clicked me`)}>
-        Button
-    </Button>
-);
+// export const Disabled: Story<ButtonProps> = () => (
+//     <Button isDisabled>Button</Button>
+// );
 
-export const WithAnIcon = () => (
-    <Button icon={'heart'} onClick={() => alert(`You've clicked me`)}>
-        Eat
-    </Button>
-);
+// export const Small: Story<ButtonProps> = () => (
+//     <Button size="sm">Button</Button>
+// );
 
-export const Multiple = () => (
-    <>
-        <Button mr={'sm'} onClick={() => alert(`You've clicked me`)}>
-            Button
-        </Button>
-        <Button onClick={() => alert(`You've clicked me`)}>Button</Button>
-    </>
-);
+// export const Large: Story<ButtonProps> = () => (
+//     <Button size="lg">Button</Button>
+// );
+
+// export const WithAnIcon: Story<ButtonProps> = () => (
+//     <Button icon="heart">Eat</Button>
+// );
+
+// export const Multiple: Story<ButtonProps> = () => (
+//     <>
+//         <Button>Button</Button>
+//         <Button>Button</Button>
+//     </>
+// );

@@ -1,24 +1,23 @@
-import React, { TableHTMLAttributes } from 'react';
+import React, { ComponentPropsWithoutRef, forwardRef } from 'react';
 import TableCell from './TableCell';
 import TableRow from './TableRow';
 import TableHead from './TableHead';
+import { platoon } from '@platoon/system';
 
-export type TableProps = TableHTMLAttributes<HTMLTableElement>;
+export type TableProps = ComponentPropsWithoutRef<'table'>;
 
-interface TableComponent extends React.FC<TableProps> {
-    Row: typeof TableRow;
-    Head: typeof TableHead;
-    Cell: typeof TableCell;
-}
-
-const Table: TableComponent = ({ children, ...props }) => (
-    <table {...props}>{children}</table>
+const Component = forwardRef<HTMLTableElement, TableProps>(
+    ({ children, ...props }) => (
+        <platoon.table {...props}>{children}</platoon.table>
+    ),
 );
 
-Table.displayName = 'Table';
+Component.displayName = 'Table';
 
-Table.Row = TableRow;
-Table.Head = TableHead;
-Table.Cell = TableCell;
+const Table = Object.assign(Component, {
+    Row: TableRow,
+    Head: TableHead,
+    Cell: TableCell,
+});
 
 export default Table;

@@ -1,8 +1,10 @@
 import React, { forwardRef } from 'react';
-import { Box } from '../../primitives/box';
+import { platoon } from '@platoon/system';
+
+type SVGContent = Record<string, any>;
 
 // Move to theme
-const svgContent = {
+const svgContent: SVGContent = {
     chevronDown: {
         path: <polyline points="6 9 12 15 18 9" />,
     },
@@ -24,21 +26,20 @@ const svgContent = {
     },
 };
 
+type IconSize = 'sm' | 'md' | 'lg';
+
 export interface IconProps {
     name: string;
-    size?: string;
+    size?: IconSize;
 }
 
-type IconComponent = React.ForwardRefExoticComponent<
-    IconProps & React.RefAttributes<SVGSVGElement>
->;
-
-const Icon: IconComponent = forwardRef(
-    ({ name = 'x', size = 'md', ...props }, ref) => (
-        <Box
-            as="svg"
+const Icon = forwardRef<SVGElement, IconProps>((props, ref) => {
+    const { name = 'x', size = '16px', ...rest } = props;
+    return (
+        <platoon.svg
             ref={ref}
-            size={size}
+            width={size}
+            height={size}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
@@ -46,12 +47,12 @@ const Icon: IconComponent = forwardRef(
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            {...props}
+            {...rest}
         >
             {svgContent[name].path}
-        </Box>
-    ),
-);
+        </platoon.svg>
+    );
+});
 
 Icon.displayName = 'Icon';
 
