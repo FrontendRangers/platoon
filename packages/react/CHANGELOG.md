@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.6
+
+### Patch Changes
+
+-   Updated dependencies [9d7c7b7]
+    -   @platoon/system@0.0.2
+
 ## 0.1.5
 
 ### Patch Changes
