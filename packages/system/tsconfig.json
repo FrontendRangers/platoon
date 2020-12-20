@@ -1,6 +1,6 @@
 {
     "extends": "rollpkg/configs/tsconfig.json",
     "compilerOptions": {
-        "lib": ["DOM", "ES6"]
+        "lib": ["DOM", "ESNext"]
     }
 }
