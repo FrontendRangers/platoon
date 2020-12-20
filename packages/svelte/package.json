@@ -5,7 +5,7 @@
     "keywords": [
         "svelte"
     ],
-    "author": "Benoit Deziel <bdeziel@landr.com>",
+    "author": "Benoit Deziel <ben@benoitdeziel.com>",
     "homepage": "https://github.com/FrontendRangers/platoon/tree/master/packages/svelte#readme",
     "license": "MIT",
     "main": "dist/index.js",
@@ -27,12 +27,12 @@
         "url": "https://github.com/FrontendRangers/platoon/issues"
     },
     "dependencies": {
-        "@platoon/core": "^0.1.0"
+        "@platoon/core": "^0.1.2"
     },
     "devDependencies": {
-        "@babel/core": "^7.11.6",
-        "babel-loader": "^8.1.0",
-        "svelte": "^3.25.1",
+        "@babel/core": "^7.12.10",
+        "babel-loader": "^8.2.2",
+        "svelte": "^3.31.0",
         "svelte-loader": "^2.13.6"
     }
 }

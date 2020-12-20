@@ -1,12 +1,25 @@
-import React from 'react';
-import { Box } from '../../primitives/box';
+import React, { FC } from 'react';
+import { platoon } from '@platoon/system';
 
-export type AccordionProps = Record<string, unknown>;
+export type AccordionPaneProps = Record<string, any>;
 
-type AccordionComponent = React.FC<AccordionProps>;
-
-const Accordion: AccordionComponent = ({ children, ...props }) => (
-    <Box {...props}>{children}</Box>
+export const Pane: FC<AccordionPaneProps> = ({ children, ...props }) => (
+    <div {...props}>{children}</div>
 );
+
+export type AccordionProps = Record<string, any>;
+
+type AccordionComposition = {
+    Pane: typeof Pane;
+};
+
+const Accordion: FC<AccordionProps> & AccordionComposition = ({
+    children,
+    ...props
+}) => <platoon.div {...props}>{children}</platoon.div>;
+
+Accordion.displayName = 'Accordion';
+
+Accordion.Pane = Pane;
 
 export default Accordion;

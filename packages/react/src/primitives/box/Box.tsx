@@ -24,7 +24,7 @@ import {
 } from 'styled-system';
 
 export type SystemProps = SpaceProps &
-    ColorProps &
+    Omit<ColorProps, 'color'> &
     TypographyProps &
     LayoutProps &
     FlexboxProps &
@@ -34,6 +34,19 @@ export type SystemProps = SpaceProps &
     PositionProps &
     ShadowProps;
 
+export const styleFns = compose(
+    space,
+    color,
+    typography,
+    layout,
+    flexbox,
+    grid,
+    background,
+    border,
+    position,
+    shadow,
+);
+
 export type BoxProps = SystemProps;
 
 const Box = styled.div<BoxProps>(
@@ -41,18 +54,7 @@ const Box = styled.div<BoxProps>(
         boxSizing: 'border-box',
         minWidth: 0,
     },
-    compose(
-        space,
-        color,
-        typography,
-        layout,
-        flexbox,
-        grid,
-        background,
-        border,
-        position,
-        shadow,
-    ),
+    styleFns,
 );
 
 Box.displayName = 'Box';

@@ -1,23 +1,20 @@
-import React from 'react';
-import { Box } from '../../primitives/box';
+import React, { FC } from 'react';
+import { platoon } from '@platoon/system';
 import { Popper } from '../../primitives/popper';
-import { Fade } from '../fade';
 import { usePopper } from '../../hooks';
 
 export interface TooltipProps {
     content: string;
 }
 
-type TooltipComponent = React.FC<TooltipProps>;
-
-const Tooltip: TooltipComponent = ({ children, content, ...props }) => {
+const Tooltip: FC<TooltipProps> = ({ children, content, ...props }) => {
     const { triggerProps, popperProps } = usePopper({
         trigger: 'hover',
     });
 
     return (
         <>
-            <Box {...triggerProps}>{children}</Box>
+            <platoon.span {...triggerProps}>{children}</platoon.span>
             <Popper
                 {...popperProps}
                 popperOptions={{
@@ -32,11 +29,7 @@ const Tooltip: TooltipComponent = ({ children, content, ...props }) => {
                     ],
                 }}
             >
-                {({ TransitionProps }) => (
-                    <Fade {...TransitionProps}>
-                        <Box {...props}>{content}</Box>
-                    </Fade>
-                )}
+                <platoon.div {...props}>{content}</platoon.div>
             </Popper>
         </>
     );

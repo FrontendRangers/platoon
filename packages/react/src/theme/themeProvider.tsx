@@ -8,7 +8,17 @@ export const useColorMode = () => {
     return context;
 };
 
-const ColorModeProvider = ({ value, children }) => {
+export type ColorMode = 'light' | 'dark';
+
+export interface ColorModeProviderProps {
+    value?: ColorMode;
+    children?: React.ReactNode;
+}
+
+export const ColorModeProvider = ({
+    value = 'light',
+    children,
+}: ColorModeProviderProps) => {
     return (
         <ColorModeContext.Provider value={value}>
             {children}
@@ -18,19 +28,12 @@ const ColorModeProvider = ({ value, children }) => {
 
 interface PlatoonThemeProviderProps {
     theme: any;
-    mode?: string;
+    mode?: ColorMode;
 }
 
 const PlatoonThemeProvider: React.FC<PlatoonThemeProviderProps> = ({
     children,
     theme = {},
-    mode = null,
-}) => (
-    <ThemeProvider theme={theme}>
-        <ColorModeProvider value={mode}>
-            <>{children}</>
-        </ColorModeProvider>
-    </ThemeProvider>
-);
+}) => <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 
 export { PlatoonThemeProvider as ThemeProvider };

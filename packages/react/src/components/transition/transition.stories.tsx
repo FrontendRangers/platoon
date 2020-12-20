@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { Meta, Story } from '@storybook/react';
 import { Transition } from './';
 import { Box } from '../../primitives/box';
 import { Button } from '../';
+import { TransitionProps } from 'react-transition-group/Transition';
 
 export default {
     title: 'Transitions/Transition',
     component: Transition,
-};
+} as Meta;
 
 const transitionStyles = {
     entering: {
@@ -23,7 +25,7 @@ const transitionStyles = {
     },
 };
 
-export const Default = () => {
+export const Default: Story<TransitionProps> = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleTransition = () => setIsOpen(!isOpen);
     return (

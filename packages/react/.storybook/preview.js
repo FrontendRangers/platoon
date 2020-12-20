@@ -2,6 +2,8 @@ import React from 'react';
 import { ThemeProvider, GlobalStyles } from '../src';
 import bootstrapTheme from '../src/presets/theme-bootstrap';
 import platoonTheme from '../src/presets/theme-platoon';
+import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { withPerformance } from 'storybook-addon-performance';
 
 // functions from Circuit UI - https://github.com/sumup-oss/circuit-ui/blob/master/.storybook/util/story-helpers.js
 
@@ -56,13 +58,6 @@ const SORT_ORDER = {
     Hooks: [],
 };
 
-export const parameters = {
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    options: {
-        storySort: sortStories(SORT_ORDER),
-    },
-};
-
 export const globalTypes = {
     theme: {
         name: 'Theme',
@@ -110,4 +105,24 @@ const withThemeProvider = (Story, context) => {
     );
 };
 
-export const decorators = [withThemeProvider];
+export const parameters = {
+    layout: 'centered',
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    options: {
+        storySort: sortStories(SORT_ORDER),
+    },
+    docs: {
+        container: ({ children, context }) => {
+            const { theme, mode } = getTheme(context.globals.theme);
+            return (
+                <DocsContainer context={context}>
+                    <ThemeProvider theme={theme} mode={mode}>
+                        {children}
+                    </ThemeProvider>
+                </DocsContainer>
+            );
+        },
+    },
+};
+
+export const decorators = [withThemeProvider, withPerformance];

@@ -1,25 +1,19 @@
-import React, { forwardRef, HTMLAttributes } from 'react';
-import { Box } from '../../primitives/box';
+import styled from 'styled-components';
+import { textStyle, TextStyleProps } from 'styled-system';
+import { Box, styleFns, SystemProps } from '../../primitives/box';
 
-export interface TextProps extends HTMLAttributes<Element> {
-    as?: any;
-}
+export type TextProps = SystemProps &
+    TextStyleProps & {
+        as?: 'span' | 'p' | 'caption' | 'label';
+    };
 
-type TextComponent = React.ForwardRefExoticComponent<
-    TextProps &
-        React.RefAttributes<
-            HTMLSpanElement | HTMLParagraphElement | HTMLHeadingElement
-        >
->;
-
-const Text: TextComponent = forwardRef(
-    ({ children, as = 'span', ...props }, ref) => (
-        <Box as={as} ref={ref} {...props}>
-            {children}
-        </Box>
-    ),
-);
+const Text = styled(Box)<TextProps>(textStyle, styleFns);
 
 Text.displayName = 'Text';
+
+Text.defaultProps = {
+    as: 'span',
+    textStyle: 'body',
+};
 
 export default Text;

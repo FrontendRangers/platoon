@@ -18,7 +18,7 @@ const getStyles = ({
     inProp,
     timeout,
     transitionStyles,
-}): CSSObject => ({
+}: any): CSSObject => ({
     visibility: state === 'exited' && !inProp ? 'hidden' : undefined,
     transition: `opacity ${timeout}ms ease-in-out`,
     willChange: 'opacity',

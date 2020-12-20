@@ -1,5 +1,27 @@
-import { Meta, Typeset } from '@storybook/addon-docs/blocks';
+import { Meta, Typeset, Title, Subtitle } from '@storybook/addon-docs/blocks';
+import {
+  fonts,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+} from '../../src/presets/theme-platoon';
+import { Flex } from '../../src/primitives';
 
 <Meta title="Tokens/Typography" />
 
-# Typography
+<!-- TODO: get from context -->
+
+# Typography Tokens
+
+<Subtitle>
+  Base font size is <code>16px</code> and using Helvetica Neue and Roboto font
+  families.
+</Subtitle>
+
+### Typography Scale
+
+<Typeset
+  fontSizes={Object.values(fontSizes)}
+  fontFamily={fonts.body}
+  fontWeight={fontWeights.bold}
+/>

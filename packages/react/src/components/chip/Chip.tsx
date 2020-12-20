@@ -1,26 +1,21 @@
-import React, { forwardRef, HTMLAttributes } from 'react';
-import { Box } from '../../primitives/box';
+import React, { ComponentPropsWithRef, forwardRef } from 'react';
+import { platoon } from '@platoon/system';
 import { IconButton } from '../button';
 
-export interface ChipProps extends HTMLAttributes<Element> {
+export interface ChipProps extends ComponentPropsWithRef<'span'> {
     onDismiss?: () => void;
 }
 
-type ChipComponent = React.ForwardRefExoticComponent<
-    ChipProps & React.RefAttributes<HTMLDivElement>
->;
-
-const Chip: ChipComponent = forwardRef(
-    ({ children, onDismiss, ...props }, ref) => {
-        const handleDismiss = () => onDismiss && onDismiss();
-        return (
-            <Box ref={ref} {...props}>
-                {children}
-                {onDismiss && <IconButton onClick={handleDismiss} />}
-            </Box>
-        );
-    },
-);
+const Chip = forwardRef<HTMLSpanElement, ChipProps>((props, ref) => {
+    const { children, onDismiss, ...rest } = props;
+    const handleDismiss = () => onDismiss && onDismiss();
+    return (
+        <platoon.span ref={ref} {...rest}>
+            {children}
+            {onDismiss && <IconButton onClick={handleDismiss} />}
+        </platoon.span>
+    );
+});
 
 Chip.displayName = 'Chip';
 

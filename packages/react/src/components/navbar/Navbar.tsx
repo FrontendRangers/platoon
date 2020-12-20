@@ -1,28 +1,29 @@
-import React from 'react';
-import { Box } from '../../primitives/box';
+import { platoon } from '@platoon/system';
+import React, { ComponentPropsWithRef, forwardRef } from 'react';
+import { Flex } from '../../primitives';
 
 const NavBarBrand: React.FC<any> = ({ children, ...props }) => (
-    <Box {...props}>{children}</Box>
+    <platoon.div {...props}>{children}</platoon.div>
 );
 
 const NavBarNav: React.FC<any> = ({ children, ...props }) => (
-    <Box {...props}>{children}</Box>
+    <platoon.div {...props}>{children}</platoon.div>
 );
 
-export type NavbarProps = Record<string, unknown>;
+export type NavBarOptions = Record<string, unknown>;
 
-interface NavBarComponent extends React.FC<NavbarProps> {
-    Brand: typeof NavBarBrand;
-    Nav: typeof NavBarNav;
-}
+export type NavBarProps = NavBarOptions & ComponentPropsWithRef<'div'>;
 
-const NavBar: NavBarComponent = ({ children, ...props }) => (
-    <Box {...props}>{children}</Box>
+const Component = forwardRef<HTMLDivElement, NavBarProps>(
+    ({ children, ...props }, ref) => (
+        <Flex ref={ref} {...props}>
+            {children}
+        </Flex>
+    ),
 );
 
-NavBar.displayName = 'NavBar';
+Component.displayName = 'NavBar';
 
-NavBar.Brand = NavBarBrand;
-NavBar.Nav = NavBarNav;
+const NavBar = Object.assign(Component, { Brand: NavBarBrand, Nav: NavBarNav });
 
 export default NavBar;

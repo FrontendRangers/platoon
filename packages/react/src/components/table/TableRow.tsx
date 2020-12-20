@@ -1,11 +1,10 @@
-import React, { TableHTMLAttributes } from 'react';
+import React, { ComponentPropsWithoutRef, FC } from 'react';
+import { platoon } from '@platoon/system';
 
-type TableRowProps = TableHTMLAttributes<HTMLTableRowElement>;
+export type TableRowProps = ComponentPropsWithoutRef<'tr'>;
 
-type TableRowComponent = React.FC<TableRowProps>;
-
-const TableRow: TableRowComponent = ({ children, ...props }) => (
-    <tr {...props}>{children}</tr>
+const TableRow: FC<TableRowProps> = ({ children, ...props }) => (
+    <platoon.tr {...props}>{children}</platoon.tr>
 );
 
 TableRow.displayName = 'Table.Row';

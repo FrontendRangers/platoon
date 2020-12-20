@@ -1,15 +1,15 @@
-import React from 'react';
-import { Box } from '../../primitives/box';
+import React, { ComponentPropsWithoutRef } from 'react';
+import { Flex } from '../../primitives';
 import BreadcrumbItem from './BreadcrumbItem';
 
-export type BreadcrumbProps = Record<string, unknown>;
+export type BreadcrumbProps = ComponentPropsWithoutRef<'div'>;
 
 interface BreadcrumbComponent extends React.FC<BreadcrumbProps> {
     Item: typeof BreadcrumbItem;
 }
 
 const Breadcrumb: BreadcrumbComponent = ({ children, ...props }) => (
-    <Box {...props}>{children}</Box>
+    <Flex {...props}>{children}</Flex>
 );
 
 Breadcrumb.displayName = 'Breadcrumb';

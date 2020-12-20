@@ -8,42 +8,30 @@
     "author": "Benoit Deziel <ben@benoitdeziel.com>",
     "homepage": "https://github.com/FrontendRangers/platoon/tree/master/packages/utils#readme",
     "license": "MIT",
-    "main": "dist/index.js",
-    "module": "dist/index.es.js",
-    "directories": {
-        "lib": "dist",
-        "test": "__tests__"
-    },
+    "main": "dist/platoon-utils.cjs.js",
+    "module": "dist/platoon-utils.esm.js",
+    "types": "dist/index.d.ts",
+    "sideEffects": false,
     "files": [
         "dist"
     ],
-    "publishConfig": {
-        "access": "public"
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/FrontendRangers/platoon.git"
     },
     "scripts": {
-        "prebuild": "rimraf ./dist & yarn type-check",
-        "build": "rollup -c",
-        "type-check": "tsc --noEmit",
-        "type-check:watch": "yarn type-check -- --watch",
-        "test": "echo \"No tests yet\" && exit 0",
+        "test": "echo \"Error: run tests from root\" && exit 1",
+        "build": "rollpkg build",
+        "watch": "rollpkg watch",
+        "prepublishOnly": "yarn build",
         "lint": "run-p -c lint:*",
-        "lint:ts": "eslint './**/*.ts{,x}' --fix"
+        "lint:ts": "eslint './**/*.ts' --fix"
     },
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"
     },
     "devDependencies": {
-        "@babel/cli": "^7.11.6",
-        "@babel/core": "^7.11.6",
-        "@babel/preset-env": "^7.11.5",
-        "@babel/preset-typescript": "^7.10.4",
-        "typescript": "^4.0.5"
-    },
-    "peerDependencies": {
-        "typescript": ">=4.0"
+        "rollpkg": "^0.2.1",
+        "typescript": "^4.1.3"
     }
 }

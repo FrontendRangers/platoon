@@ -1,20 +1,12 @@
-import React, { forwardRef } from 'react';
-import { Text, TextProps } from '../text';
+import { platoon } from '@platoon/system';
+import { SystemProps } from '../../primitives';
 
-export type ParagraphProps = TextProps;
+export type ParagraphProps = SystemProps;
 
-type ParagraphComponent = React.ForwardRefExoticComponent<
-    ParagraphProps & React.RefAttributes<HTMLElement>
->;
-
-const Paragraph: ParagraphComponent = forwardRef(
-    ({ children, ...props }, ref) => (
-        <Text as="p" ref={ref} {...props}>
-            {children}
-        </Text>
-    ),
-);
+const Paragraph = platoon('p');
 
 Paragraph.displayName = 'Paragraph';
+
+Paragraph.defaultProps = { textStyle: 'body' };
 
 export default Paragraph;

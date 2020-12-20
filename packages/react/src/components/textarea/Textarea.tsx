@@ -1,15 +1,12 @@
-import React, { forwardRef, HTMLAttributes } from 'react';
-import { Box, BoxProps } from '../../primitives/box';
+import React, { ComponentPropsWithRef, forwardRef } from 'react';
+import { platoon } from '@platoon/system';
+import { BoxProps } from '../../primitives/box';
 
-export type TextareaProps = BoxProps & HTMLAttributes<HTMLTextAreaElement>;
+export type TextareaProps = BoxProps & ComponentPropsWithRef<'textarea'>;
 
-type TextareaComponent = React.ForwardRefExoticComponent<
-    TextareaProps & React.RefAttributes<HTMLTextAreaElement>
->;
-
-const Textarea: TextareaComponent = forwardRef(({ ...props }, ref) => (
-    <Box as="textarea" ref={ref} {...props} />
-));
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
+    (props, ref) => <platoon.textarea ref={ref} {...props} />,
+);
 
 Textarea.displayName = 'Textarea';
 

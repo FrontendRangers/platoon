@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal } from './';
 import { Box } from '../../primitives/box';
 import { Paragraph, Button } from '../';
+import { Meta, Story } from '@storybook/react';
+import { ModalProps } from './Modal';
+import { useDisclosure } from '../../hooks';
 
 export default {
     title: 'Overlays/Modal',
     component: Modal,
     decorators: [
-        (storyFn) => (
+        (StoryComponent: Story): any => (
             <Box>
                 <Paragraph>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -15,19 +18,18 @@ export default {
                     suscipit, dicta dolore est soluta iure facere rem culpa nisi
                     minima molestiae dolores aperiam error.
                 </Paragraph>
-                {storyFn()}
+                <StoryComponent />
             </Box>
         ),
     ],
-};
+} as Meta;
 
-export const Default = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleModal = () => setIsOpen(!isOpen);
+export const Default: Story<ModalProps> = (args) => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
     return (
         <>
-            <Button onClick={toggleModal}>Open modal</Button>
-            <Modal isOpen={isOpen}>
+            <Button onClick={onOpen}>Open modal</Button>
+            <Modal {...args} isOpen={isOpen} onClose={onClose}>
                 <Modal.Header>Modal Header</Modal.Header>
                 The content
                 <Modal.Footer>

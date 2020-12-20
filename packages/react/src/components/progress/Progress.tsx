@@ -1,18 +1,15 @@
-import React, { ProgressHTMLAttributes } from 'react';
-import styled from 'styled-components';
+import { platoon } from '@platoon/system';
+import React, { ComponentPropsWithRef, FC } from 'react';
 
-export interface ProgressProps
-    extends ProgressHTMLAttributes<HTMLProgressElement> {
+export type ProgressProps = ComponentPropsWithRef<'progress'> & {
     variant?: string;
-}
+};
 
-const Component = styled.progress<ProgressProps>({
+const Component = platoon('progress', {
     appearance: 'none',
     overflow: 'hidden',
 });
 
-type ProgressComponent = React.FC<ProgressProps>;
-
-const Progress: ProgressComponent = ({ ...props }) => <Component {...props} />;
+const Progress: FC<ProgressProps> = ({ ...props }) => <Component {...props} />;
 
 export default Progress;

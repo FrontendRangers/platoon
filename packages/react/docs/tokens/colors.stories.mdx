@@ -1,16 +1,16 @@
 import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
-import theme from '../../src/presets/theme-platoon';
+import { colors } from '../../src/presets/theme-platoon';
 
 <Meta title="Tokens/Colors" />
 
 # Colors
 
-<!-- TODO: get from theme -->
+<!-- TODO: get from context -->
 
 <ColorPalette>
-    <ColorItem
-        title="Primary"
-        subtitle="theme.color.primary"
-        colors={[theme.colors.primary]}
-    />
+    {Object.keys(colors).map(color => <ColorItem
+        title={color}
+        subtitle={`theme.color.${color}`}
+        colors={[colors[color][100], colors[color][200], colors[color][300], colors[color][400], colors[color][500], colors[color][600], colors[color][700], colors[color][800]]}
+    />)}
 </ColorPalette>

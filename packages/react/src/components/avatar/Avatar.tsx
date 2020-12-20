@@ -1,19 +1,17 @@
-import React, { forwardRef } from 'react';
-import { Box } from '../../primitives/box';
+import React, { ComponentPropsWithRef, forwardRef } from 'react';
+import { platoon } from '@platoon/system';
 
-export interface AvatarProps {
+export type AvatarProps = ComponentPropsWithRef<'div'> & {
     image: string;
-}
+};
 
-type AvatarComponent = React.ForwardRefExoticComponent<
-    AvatarProps & React.RefAttributes<HTMLDivElement>
->;
-
-const Avatar: AvatarComponent = forwardRef(({ image, ...props }, ref) => (
-    <Box ref={ref} {...props}>
-        <img src={image} />
-    </Box>
-));
+const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
+    ({ image, ...props }, ref) => (
+        <platoon.div ref={ref} {...props}>
+            <platoon.img src={image} />
+        </platoon.div>
+    ),
+);
 
 Avatar.displayName = 'Avatar';
 
