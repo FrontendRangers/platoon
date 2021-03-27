@@ -1,3 +1,7 @@
+const path = require('path');
+
+const toPath = (_path) => path.join(process.cwd(), _path);
+
 module.exports = {
     stories: [
         '../src/**/*.stories.mdx',
@@ -26,5 +30,19 @@ module.exports = {
                 return !(isExternalProp || isHTMLElementProp);
             },
         },
+    },
+    webpackFinal: async (config) => {
+        return {
+            ...config,
+            resolve: {
+                ...config.resolve,
+                alias: {
+                    ...config.resolve.alias,
+                    'styled-components': toPath(
+                        'node_modules/styled-components',
+                    ),
+                },
+            },
+        };
     },
 };

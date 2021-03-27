@@ -1,9 +1,10 @@
 import React from 'react';
-import { ThemeProvider, GlobalStyles } from '../src';
+import { PlatoonThemeProvider, GlobalStyles } from '../src';
 import bootstrapTheme from '../src/presets/theme-bootstrap';
 import platoonTheme from '../src/presets/theme-platoon';
 import { DocsContainer } from '@storybook/addon-docs/blocks';
 import { withPerformance } from 'storybook-addon-performance';
+import { defaultTheme } from '@xstyled/styled-components';
 
 // functions from Circuit UI - https://github.com/sumup-oss/circuit-ui/blob/master/.storybook/util/story-helpers.js
 
@@ -77,7 +78,7 @@ export const globalTypes = {
 
 const getTheme = (theme) => {
     const themes = {
-        none: { theme: {}, mode: null },
+        none: { theme: defaultTheme, mode: null },
         light: { theme: platoonTheme, mode: 'light' },
         dark: { theme: platoonTheme, mode: 'dark' },
         bootstrap: { theme: bootstrapTheme, mode: 'light' },
@@ -98,10 +99,10 @@ const withThemeProvider = (Story, context) => {
 
     document.head.appendChild(fontLink);
     return (
-        <ThemeProvider theme={theme} mode={mode}>
+        <PlatoonThemeProvider theme={theme} mode={mode}>
             <GlobalStyles />
             <Story {...context} />
-        </ThemeProvider>
+        </PlatoonThemeProvider>
     );
 };
 
@@ -116,9 +117,9 @@ export const parameters = {
             const { theme, mode } = getTheme(context.globals.theme);
             return (
                 <DocsContainer context={context}>
-                    <ThemeProvider theme={theme} mode={mode}>
+                    <PlatoonThemeProvider theme={theme} mode={mode}>
                         {children}
-                    </ThemeProvider>
+                    </PlatoonThemeProvider>
                 </DocsContainer>
             );
         },
