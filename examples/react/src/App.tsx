@@ -1,35 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
     PlatoonThemeProvider,
     GlobalStyles,
-    theme,
     Button,
-} from '@frontendrangers/platoon-react';
+    platoon,
+} from '@platoon/react';
 
 class App extends Component {
     render() {
         return (
-            <PlatoonThemeProvider theme={theme}>
+            <PlatoonThemeProvider theme={{}}>
                 <GlobalStyles />
-                <div className="App">
-                    <header className="App-header">
-                        <img src={logo} className="App-logo" alt="logo" />
-                        <p>
-                            Edit <code>src/App.tsx</code> and save to reload.
-                        </p>
-                        <a
-                            className="App-link"
-                            href="https://reactjs.org"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Learn React
-                        </a>
-                        <Button>button</Button>
-                    </header>
-                </div>
+                <platoon.div>
+                    <platoon.h1>Test app for Platoon</platoon.h1>
+                    <Button css>Button</Button>
+                </platoon.div>
             </PlatoonThemeProvider>
         );
     }
