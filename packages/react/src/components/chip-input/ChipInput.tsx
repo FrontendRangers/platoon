@@ -38,12 +38,13 @@ const ChipInput = forwardRef<HTMLInputElement, ChipInputProps>((props, ref) => {
         ));
 
     return (
-        <Input
-            ref={ref}
-            onKeyDown={addValue}
-            addonLeft={<ChipGroup>{badges}</ChipGroup>}
-            addonRight={hasValues && <IconButton onClick={resetValues} />}
-        >
+        <Input ref={ref} onKeyDown={addValue}>
+            <Input.Left>
+                <ChipGroup>{badges}</ChipGroup>
+            </Input.Left>
+            <Input.Right>
+                {hasValues && <IconButton onClick={resetValues} />}
+            </Input.Right>
             {children}
         </Input>
     );

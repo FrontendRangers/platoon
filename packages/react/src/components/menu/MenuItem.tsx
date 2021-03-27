@@ -1,5 +1,5 @@
-import React, { useContext, MouseEvent } from 'react';
-import { MenuContext } from './useMenu';
+import React, { MouseEvent } from 'react';
+import { useMenuContext } from './useMenu';
 import { useMenuItemAria } from './useMenuAria';
 import { platoon } from '@platoon/system';
 
@@ -10,7 +10,7 @@ interface MenuItemProps {
 }
 
 export const MenuItem: React.FC<MenuItemProps> = ({ children, onClick }) => {
-    const { onClose } = useContext(MenuContext);
+    const { onClose } = useMenuContext();
     const ariaProps = useMenuItemAria();
 
     const handleClick = (event: MouseEvent<Element>) => {

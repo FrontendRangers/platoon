@@ -1,14 +1,14 @@
-import { platoon } from '@platoon/system';
-import Button, { ButtonProps } from './Button';
+import React, { forwardRef } from 'react';
+import { Button, ButtonProps } from './Button';
 
 export type IconButtonProps = ButtonProps;
 
-const IconButton = platoon(Button, {});
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+    (props, ref) => <Button ref={ref} {...props} />,
+);
 
 IconButton.displayName = 'IconButton';
 
 IconButton.defaultProps = {
     icon: 'heart',
 };
-
-export default IconButton;

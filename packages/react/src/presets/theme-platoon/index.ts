@@ -104,6 +104,7 @@ export const colors = {
     text: { primary: palette.neutral[900] },
     background: palette.neutral['1000'],
     overlay: palette.neutral['1000'],
+    button: '#2e7dff',
 };
 
 export const fonts = {
@@ -195,46 +196,49 @@ export default {
     },
     textStyles,
     styles,
-    buttons: {
-        color: 'neutral.0',
-        borderRadius: 'md',
-        intent: {
-            default: {
-                bg: 'neutral.500',
-            },
-            primary: {
-                bg: 'primary',
+    Button: {
+        baseStyle: { color: 'neutral.0', borderRadius: 'md' },
+        variants: {
+            intent: {
+                default: {
+                    bg: 'neutral.500',
+                },
+                primary: {
+                    bg: 'primary',
 
-                '&:hover': {
-                    bg: 'primary.700',
+                    '&:hover': {
+                        bg: 'primary.700',
+                    },
+                },
+                secondary: {
+                    bg: 'secondary',
+
+                    '&:hover': {
+                        bg: 'secondary.700',
+                    },
+                },
+                danger: {
+                    bg: 'danger',
+
+                    '&:hover': {
+                        bg: 'danger.700',
+                    },
                 },
             },
-            secondary: {
-                bg: 'secondary',
-
-                '&:hover': {
-                    bg: 'secondary.700',
-                },
+            size: {
+                sm: { px: 'xs', py: 'xxs', fontSize: 'sm' },
+                md: { px: 'sm', py: 'xs', fontSize: 'md' },
+                lg: { px: 'md', py: 'sm', fontSize: 'lg' },
             },
-            danger: {
-                bg: 'danger',
-
-                '&:hover': {
-                    bg: 'danger.700',
-                },
-            },
-        },
-        size: {
-            sm: { px: 'xs', py: 'xxs', fontSize: 'sm' },
-            md: { px: 'sm', py: 'xs', fontSize: 'md' },
-            lg: { px: 'md', py: 'sm', fontSize: 'lg' },
         },
     },
-    cards: {
-        borderRadius: 'md',
-        variant: {
-            default: {
-                bg: 'neutral.700',
+    Card: {
+        baseStyle: {
+            borderRadius: 'md',
+            variant: {
+                default: {
+                    bg: 'neutral.700',
+                },
             },
         },
         Header: {

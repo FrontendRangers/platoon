@@ -1,6 +1,8 @@
 import React, { ComponentPropsWithRef, forwardRef } from 'react';
 import { platoon } from '@platoon/system';
 import { Label } from '../label';
+import { checkboxStyles } from '@platoon/core';
+import { useCheckboxGroupContext } from './CheckboxGroup';
 
 export interface CheckboxProps extends ComponentPropsWithRef<'label'> {
     label?: string;
@@ -17,13 +19,17 @@ const Control = platoon('span', {
 });
 
 const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
-    ({ label, ...props }, ref) => (
-        <Label ref={ref}>
-            <platoon.input type="checkbox" hidden {...props} />
-            <Control />
-            <platoon.span>{label}</platoon.span>
-        </Label>
-    ),
+    ({ label, ...props }, ref) => {
+        const group = useCheckboxGroupContext();
+        console.log(group);
+        return (
+            <Label ref={ref} {...checkboxStyles}>
+                <platoon.input type="checkbox" hidden {...props} />
+                <Control />
+                <platoon.span>{label}</platoon.span>
+            </Label>
+        );
+    },
 );
 
 Checkbox.displayName = 'Checkbox';

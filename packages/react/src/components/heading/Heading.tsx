@@ -1,21 +1,16 @@
-import styled from 'styled-components';
-import { textStyle, TextStyleProps } from 'styled-system';
-import { Box, styleFns, SystemProps } from '../../primitives/box';
+import { HTMLAttributes } from 'react';
+import styled from '@xstyled/styled-components';
 
-type HeadingAs = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+export type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
+    textStyle?: string;
+};
 
-export type HeadingProps = SystemProps &
-    TextStyleProps & {
-        as?: HeadingAs;
-    };
-
-const Heading = styled(Box)<HeadingProps>(textStyle, styleFns);
+const Heading = styled.h2<HeadingProps>``;
 
 Heading.displayName = 'Heading';
 
 Heading.defaultProps = {
-    as: 'h2',
-    textStyle: 'heading2',
+    textStyle: 'heading',
 };
 
 export default Heading;

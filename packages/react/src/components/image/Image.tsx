@@ -1,11 +1,12 @@
-import { platoon } from '@platoon/system';
-import React, { ComponentPropsWithRef, forwardRef } from 'react';
+import React from 'react';
+import { forwardRef } from '@platoon/system';
+import { Box, BoxProps } from '../../primitives';
 
-export type ImageProps = ComponentPropsWithRef<'img'>;
+export type ImageProps = BoxProps;
 
-const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
+const Image = forwardRef<ImageProps, 'img'>((props, ref) => {
     const { src = '', ...rest } = props;
-    return <platoon.img src={src} ref={ref} {...rest} />;
+    return <Box as="img" src={src} ref={ref} {...rest} />;
 });
 
 Image.displayName = 'Image';

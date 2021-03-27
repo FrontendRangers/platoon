@@ -1,6 +1,6 @@
-import React, { useContext, HTMLAttributes, FC } from 'react';
+import React, { FC } from 'react';
 import { BoxProps } from '../../primitives/box';
-import { MenuContext, useMenu } from './useMenu';
+import { MenuProvider, useMenu, useMenuContext } from './useMenu';
 import { useMenuAria } from './useMenuAria';
 import { MenuItem } from './MenuItem';
 import { MenuTrigger } from './MenuTrigger';
@@ -9,7 +9,7 @@ import { platoon } from '@platoon/system';
 type MenuListProps = Record<string, unknown>;
 
 export const MenuList: FC<MenuListProps> = ({ children, ...props }) => {
-    const { getDisclosureProps } = useContext(MenuContext);
+    const { getDisclosureProps } = useMenuContext();
     const ariaProps = useMenuAria();
     return (
         <platoon.div {...getDisclosureProps(props)} {...ariaProps}>
@@ -32,13 +32,11 @@ export const MenuDivider = platoon('hr');
 
 MenuDivider.displayName = 'Menu.Divider';
 
-export type MenuProps = BoxProps & HTMLAttributes<Element>;
+export type MenuProps = BoxProps;
 
 const Component: FC<MenuProps> = ({ children }) => {
     const context = useMenu();
-    return (
-        <MenuContext.Provider value={context}>{children}</MenuContext.Provider>
-    );
+    return <MenuProvider value={context}>{children}</MenuProvider>;
 };
 
 Component.displayName = 'Menu';

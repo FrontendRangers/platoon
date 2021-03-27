@@ -8,4 +8,8 @@ export default {
     component: ComboBox,
 } as Meta;
 
-export const Default: Story<ComboBoxProps> = (args) => <ComboBox {...args} />;
+const items = ['item 1', 'item 2', 'item3'];
+
+export const Default: Story<ComboBoxProps> = (args) => (
+    <ComboBox {...args} items={items} />
+);

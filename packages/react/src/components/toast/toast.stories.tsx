@@ -4,7 +4,7 @@ import { Toast } from '.';
 import { ToastProps } from './Toast';
 
 export default {
-    title: 'Overlays/Toast',
+    title: 'Feedback/Toast',
     component: Toast,
 } as Meta;
 

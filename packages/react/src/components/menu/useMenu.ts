@@ -1,13 +1,16 @@
-import { createContext } from 'react';
 import {
     UseDiscloseProps,
     useDisclosure,
     UseDisclosureReturn,
 } from '../../hooks';
+import { createContext } from '@platoon/utils';
 
 type MenuContextOptions = UseDisclosureReturn;
 
-export const MenuContext = createContext({} as MenuContextOptions);
+export const [
+    MenuProvider,
+    useMenuContext,
+] = createContext<MenuContextOptions>();
 
 type UseMenuProps = UseDiscloseProps;
 

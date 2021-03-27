@@ -1,8 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
-import resetStyles from './reset';
+import { createGlobalStyle } from '@xstyled/styled-components';
 
 const GlobalStyles = createGlobalStyle`
-    ${resetStyles}
 
     html, body {
         width: 100%;

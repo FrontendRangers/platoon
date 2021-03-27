@@ -1,71 +1,54 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
+import {
+    createPopper,
+    Instance,
+    Placement,
+    VirtualElement,
+} from '@popperjs/core';
 
 export interface UsePopperProps {
-    onOpen?: (event: React.MouseEvent<any>) => void;
-    onClose?: (event: React.MouseEvent<any>) => void;
-    isOpen?: boolean;
-    trigger?: 'hover' | 'onclick';
+    placement?: Placement;
 }
 
-const usePopper = ({
-    onOpen,
-    onClose,
-    isOpen: controlledIsOpen = false,
-    trigger = 'onclick',
-}: UsePopperProps = {}) => {
-    const anchorRef = useRef<any>();
-    const [isOpen, setIsOpen] = useState(controlledIsOpen);
+const usePopper = (args: UsePopperProps = {}) => {
+    const anchorRef = useRef<Element | VirtualElement | null>(null);
+    const popperRef = useRef<HTMLElement | null>(null);
+
+    const popperInstance = useRef<Instance | null>(null);
 
     useEffect(() => {
-        setIsOpen(controlledIsOpen);
-    }, [controlledIsOpen]);
+        if (!anchorRef.current || !popperRef.current) {
+            return;
+        }
 
-    const popperProps = {
-        anchorRef,
-        isOpen,
-    };
+        if (popperInstance.current) {
+            popperInstance.current.destroy();
+            popperInstance.current = null;
+        }
 
-    const triggerProps = {
-        ref: anchorRef,
-        onClick: (event: React.MouseEvent<any>) => {
-            if (trigger !== 'onclick') return;
-            if (isOpen) {
-                if (onClose) {
-                    onClose(event);
-                }
-                setIsOpen(false);
-            }
-            if (!isOpen) {
-                if (onOpen) {
-                    onOpen(event);
-                }
-                setIsOpen(true);
-            }
-            return;
+        popperInstance.current = createPopper(
+            anchorRef.current,
+            popperRef.current,
+            {
+                placement: 'top-start',
+                strategy: 'fixed',
+                ...args,
+            },
+        );
+        return () => {
+            popperInstance.current?.destroy();
+            popperInstance.current = null;
+        };
+    }, []);
+
+    return {
+        anchorRef: <T extends Element | VirtualElement>(node: T | null) => {
+            anchorRef.current = node;
         },
-        onMouseEnter: (event: React.MouseEvent<any>) => {
-            if (trigger !== 'hover') return;
-            if (!isOpen) {
-                if (onOpen) {
-                    onOpen(event);
-                }
-                setIsOpen(true);
-            }
-            return;
-        },
-        onMouseLeave: (event: React.MouseEvent<any>) => {
-            if (trigger !== 'hover') return;
-            if (isOpen) {
-                if (onClose) {
-                    onClose(event);
-                }
-                setIsOpen(false);
-            }
-            return;
+        popperRef: <T extends HTMLElement>(node: T | null) => {
+            popperRef.current = node;
         },
     };
-
-    return { anchorRef, popperProps, triggerProps, isOpen };
 };
 
 export default usePopper;

@@ -4,9 +4,10 @@ export const color = (key: string) => ({ theme }: any): string =>
     theme.components ? theme.color[key] : null;
 
 export const themeMode = (styles: any): any => (): any => {
-    const mode = useColorMode();
-    if (!mode) {
+    const [colorMode] = useColorMode();
+
+    if (!colorMode) {
         return;
     }
-    return styles[mode];
+    return styles[colorMode];
 };

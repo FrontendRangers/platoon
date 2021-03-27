@@ -1,6 +1,6 @@
-import React, { forwardRef } from 'react';
-import { Box } from '../../primitives/box';
-import { platoon } from '@platoon/system';
+import React from 'react';
+import { Box, BoxProps } from '../../primitives/box';
+import { forwardRef, platoon } from '@platoon/system';
 
 export const CardHeader = platoon(Box);
 
@@ -14,15 +14,16 @@ export const CardFooter = platoon(Box);
 
 CardFooter.displayName = 'Card.Footer';
 
-export type CardProps = Record<string, any>;
+export type CardProps = BoxProps;
 
-const Component = forwardRef<HTMLDivElement, CardProps>(
-    ({ children, ...props }, ref) => (
-        <platoon.div ref={ref} {...props}>
+const Component = forwardRef<CardProps, 'div'>((props, ref) => {
+    const { children, ...rest } = props;
+    return (
+        <platoon.div ref={ref} {...rest}>
             {children}
         </platoon.div>
-    ),
-);
+    );
+});
 
 Component.displayName = 'Card';
 

@@ -1,6 +1,7 @@
 import React, { ComponentPropsWithRef, forwardRef } from 'react';
 import { platoon } from '@platoon/system';
 import { Label } from '../label';
+import { radioStyles } from '@platoon/core';
 
 export interface RadioProps extends ComponentPropsWithRef<'label'> {
     label?: string;
@@ -19,7 +20,7 @@ const Control = platoon('span', {
 
 const Radio = forwardRef<HTMLLabelElement, RadioProps>(
     ({ label, ...props }, ref) => (
-        <Label ref={ref}>
+        <Label ref={ref} {...radioStyles}>
             <platoon.input type="radio" hidden {...props} />
             <Control />
             <platoon.span>{label}</platoon.span>

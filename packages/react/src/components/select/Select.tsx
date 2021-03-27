@@ -1,35 +1,10 @@
 import React, { forwardRef, useRef, useState } from 'react';
-import { Input } from '../input';
 import { Popper } from '../../primitives/popper';
-import { IconButton } from '../button';
 
 import { useSelect } from 'downshift';
-import { Menu } from '../menu';
-
-export type SelectOptionProps = Record<string, unknown>;
-
-const SelectOption: React.FC<SelectOptionProps> = ({ children, ...props }) => (
-    <Menu.Item {...props}>{children}</Menu.Item>
-);
-
-SelectOption.displayName = 'Select.Option';
-
-export interface SelectOptionGroupProps {
-    title: string | React.ReactNode;
-}
-
-const SelectOptionGroup: React.FC<SelectOptionGroupProps> = ({
-    children,
-    title,
-    ...props
-}) => (
-    <>
-        <Menu.Header {...props}>{title}</Menu.Header>
-        {children}
-    </>
-);
-
-SelectOptionGroup.displayName = 'Select.OptionGroup';
+import { platoon } from '@platoon/system';
+import { Input } from '../input';
+import { Icon } from '../icon';
 
 export interface SelectProps {
     onChange?: (selectedItem: string) => void;
@@ -37,8 +12,7 @@ export interface SelectProps {
 
 const Select = forwardRef<HTMLDivElement, SelectProps>(
     ({ onChange, ...props }, ref) => {
-        const anchorRef = useRef(ref);
-        const innerRef = useRef(null);
+        const anchorRef = useRef<HTMLButtonElement>();
 
         const [items] = useState<string[]>(['Option1', 'Option2', 'Option3']);
 
@@ -48,42 +22,46 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
             getToggleButtonProps,
             getMenuProps,
             getItemProps,
+            highlightedIndex,
         } = useSelect({
             items,
             onSelectedItemChange: ({ selectedItem }) =>
-                selectedItem && onChange && onChange(selectedItem),
+                !!selectedItem && onChange?.(selectedItem),
         });
 
         return (
-            <>
+            <platoon.div ref={ref}>
                 <Input
                     ref={anchorRef}
-                    value={selectedItem ? selectedItem : ''}
                     readOnly
-                    addonRight={<IconButton icon="chevronDown" />}
-                    {...getToggleButtonProps({ refKey: 'innerRef' })}
+                    value={selectedItem || 'Select'}
+                    {...getToggleButtonProps({ refKey: 'inputRef' })}
                     {...props}
-                />
-                <Popper
-                    isOpen={isOpen}
-                    anchorRef={anchorRef}
-                    popperOptions={{ placement: 'bottom' }}
                 >
-                    <Menu ref={innerRef} {...getMenuProps()}>
-                        {items.map((item, idx) => (
-                            <SelectOption
-                                key={idx}
-                                {...getItemProps({
-                                    item,
-                                    refKey: 'innerRef',
-                                })}
-                            >
-                                {item}
-                            </SelectOption>
-                        ))}
-                    </Menu>
+                    <Input.Right>
+                        <Icon name="chevronDown" />
+                    </Input.Right>
+                </Input>
+
+                <Popper anchorRef={anchorRef}>
+                    <platoon.ul {...getMenuProps()}>
+                        {isOpen &&
+                            items.map((item, index) => (
+                                <platoon.li
+                                    style={
+                                        highlightedIndex === index
+                                            ? { backgroundColor: '#bde4ff' }
+                                            : {}
+                                    }
+                                    key={`${item}${index}`}
+                                    {...getItemProps({ item, index })}
+                                >
+                                    {item}
+                                </platoon.li>
+                            ))}
+                    </platoon.ul>
                 </Popper>
-            </>
+            </platoon.div>
         );
     },
 );

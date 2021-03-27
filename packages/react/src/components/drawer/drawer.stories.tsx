@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Drawer } from '.';
 import { Button } from '../button';
 import { DrawerProps } from './Drawer';
+import { useDisclosure } from '../../hooks';
 
 export default {
     title: 'Overlays/Drawer',
@@ -10,11 +11,11 @@ export default {
 } as Meta;
 
 export const Default: Story<DrawerProps> = (args) => {
-    const [isOpen, setIsOpen] = useState(false);
+    const { isOpen, onToggle, onClose } = useDisclosure();
     return (
         <>
-            <Button onClick={() => setIsOpen(true)}>Open</Button>
-            <Drawer {...args} isOpen={isOpen}>
+            <Button onClick={onToggle}>Open</Button>
+            <Drawer {...args} isOpen={isOpen} onClose={onClose}>
                 Drawer component
             </Drawer>
         </>

@@ -7,8 +7,10 @@ import { platoon } from '@platoon/system';
 export type TableProps = ComponentPropsWithoutRef<'table'>;
 
 const Component = forwardRef<HTMLTableElement, TableProps>(
-    ({ children, ...props }) => (
-        <platoon.table {...props}>{children}</platoon.table>
+    ({ children, ...props }, ref) => (
+        <platoon.table ref={ref} {...props}>
+            {children}
+        </platoon.table>
     ),
 );
 

@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 
 export interface UseDiscloseProps {
+    defaultIsOpen?: boolean;
     onOpen?(): void;
     onClose?(): void;
     id?: string;
@@ -18,8 +19,13 @@ export interface UseDisclosureReturn {
 export type UseDisclosure = (prop?: UseDiscloseProps) => UseDisclosureReturn;
 
 const useDisclosure: UseDisclosure = (props = {}) => {
-    const { onOpen: onOpenProp, onClose: onCloseProp, id } = props;
-    const [isOpen, setIsOpen] = useState(false);
+    const {
+        defaultIsOpen,
+        onOpen: onOpenProp,
+        onClose: onCloseProp,
+        id,
+    } = props;
+    const [isOpen, setIsOpen] = useState(defaultIsOpen);
 
     const onOpen = useCallback(() => {
         setIsOpen(true);
@@ -43,7 +49,7 @@ const useDisclosure: UseDisclosure = (props = {}) => {
         onToggle,
         getButtonProps: (props: any = {}) => ({
             ...props,
-            'aria-expanded': 'true',
+            'aria-expanded': isOpen,
             'aria-controls': id,
             onClick: onToggle,
         }),

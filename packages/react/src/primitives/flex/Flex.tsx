@@ -1,10 +1,11 @@
-import { platoon } from '@platoon/system';
-import { ComponentPropsWithRef } from 'react';
-import { SystemProps } from '../box';
+import styled from 'styled-components';
+import { Box, BoxProps } from '../box';
 
-export type FlexProps = SystemProps & ComponentPropsWithRef<'div'>;
+export type FlexProps = BoxProps;
 
-const Flex = platoon('div', { display: 'flex' });
+const Flex = styled(Box)<FlexProps>`
+    display: flex;
+`;
 
 Flex.displayName = 'Flex';
 

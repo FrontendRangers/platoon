@@ -1,19 +1,16 @@
-import React, { ComponentPropsWithoutRef } from 'react';
-import { Flex } from '../../primitives';
-import BreadcrumbItem from './BreadcrumbItem';
+import { forwardRef } from '@platoon/system';
+import React from 'react';
+import { BoxProps, Flex } from '../../primitives';
 
-export type BreadcrumbProps = ComponentPropsWithoutRef<'div'>;
+export type BreadcrumbProps = BoxProps;
 
-interface BreadcrumbComponent extends React.FC<BreadcrumbProps> {
-    Item: typeof BreadcrumbItem;
-}
-
-const Breadcrumb: BreadcrumbComponent = ({ children, ...props }) => (
-    <Flex {...props}>{children}</Flex>
-);
+export const Breadcrumb = forwardRef<BreadcrumbProps, 'div'>((props, ref) => {
+    const { children, ...rest } = props;
+    return (
+        <Flex ref={ref} {...rest}>
+            {children}
+        </Flex>
+    );
+});
 
 Breadcrumb.displayName = 'Breadcrumb';
-
-Breadcrumb.Item = BreadcrumbItem;
-
-export default Breadcrumb;

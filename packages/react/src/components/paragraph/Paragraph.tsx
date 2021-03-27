@@ -1,12 +1,16 @@
-import { platoon } from '@platoon/system';
-import { SystemProps } from '../../primitives';
+import { HTMLAttributes } from 'react';
+import styled from '@xstyled/styled-components';
 
-export type ParagraphProps = SystemProps;
+export type ParagraphProps = HTMLAttributes<HTMLParagraphElement> & {
+    textStyle?: string;
+};
 
-const Paragraph = platoon('p');
+const Paragraph = styled.h2<ParagraphProps>``;
 
 Paragraph.displayName = 'Paragraph';
 
-Paragraph.defaultProps = { textStyle: 'body' };
+Paragraph.defaultProps = {
+    textStyle: 'body',
+};
 
 export default Paragraph;

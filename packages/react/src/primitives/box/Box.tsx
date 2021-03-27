@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
     SpaceProps,
     space,
@@ -47,15 +47,27 @@ export const styleFns = compose(
     shadow,
 );
 
-export type BoxProps = SystemProps;
+export const sxFn = (props: any): any => {
+    if (!props.sx) {
+        return;
+    }
+    return css`
+        ${props.sx}
+    `;
+};
 
-const Box = styled.div<BoxProps>(
-    {
-        boxSizing: 'border-box',
-        minWidth: 0,
-    },
-    styleFns,
-);
+export type BoxProps = SystemProps & {
+    sx?: any;
+};
+
+const Box = styled.div<BoxProps>`
+    box-sizing: border-box;
+    min-width: 0;
+    ${sxFn};
+    && {
+        ${styleFns}
+    }
+`;
 
 Box.displayName = 'Box';
 

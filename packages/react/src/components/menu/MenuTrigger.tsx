@@ -1,17 +1,11 @@
-import React, {
-    useContext,
-    Children,
-    isValidElement,
-    cloneElement,
-    FC,
-} from 'react';
-import { MenuContext } from './useMenu';
+import React, { Children, isValidElement, cloneElement, FC } from 'react';
+import { useMenuContext } from './useMenu';
 import { useMenuTriggerAria } from './useMenuAria';
 
 type MenuTriggerProps = Record<string, unknown>;
 
 export const MenuTrigger: FC<MenuTriggerProps> = ({ children }) => {
-    const { isOpen, getButtonProps } = useContext(MenuContext);
+    const { isOpen, getButtonProps } = useMenuContext();
     const ariaProps = useMenuTriggerAria({ isExpanded: isOpen });
 
     if (!Children.only(children) || !isValidElement(children)) return <></>;

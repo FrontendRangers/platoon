@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Popper } from './';
+import { Popper } from '.';
 import { Button } from '../../components/button';
-import { usePopper } from '../../hooks';
 import { PopperProps } from './Popper';
 
 export default {
@@ -18,23 +17,11 @@ export const Default: Story<PopperProps> = (args) => {
             <Button onClick={() => setIsOpen(!isOpen)} ref={ref}>
                 Trigger
             </Button>
-            <Popper {...args} isOpen={isOpen} anchorRef={ref}>
-                Popper component
-            </Popper>
-        </>
-    );
-};
-
-export const WithHook: Story<PopperProps> = (args) => {
-    const { popperProps, triggerProps } = usePopper({
-        onOpen: () => console.log('I open'),
-    });
-    return (
-        <>
-            <Button {...triggerProps}>Trigger</Button>
-            <Popper {...args} {...popperProps}>
-                Popper component
-            </Popper>
+            {isOpen && (
+                <Popper {...args} anchorRef={ref}>
+                    Popper component
+                </Popper>
+            )}
         </>
     );
 };

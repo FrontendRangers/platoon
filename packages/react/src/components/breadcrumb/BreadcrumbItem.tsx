@@ -1,12 +1,16 @@
+import { forwardRef } from '@platoon/system';
 import React from 'react';
-import { Box } from '../../primitives/box';
+import { Box, BoxProps } from '../../primitives/box';
 
-export type BreadcrumbProps = Record<string, unknown>;
+export type BreadcrumbItemProps = BoxProps;
 
-type BreadcrumbItemComponent = React.FC<BreadcrumbProps>;
-
-const BreadcrumbItem: BreadcrumbItemComponent = ({ children, ...props }) => (
-    <Box {...props}>{children}</Box>
+export const BreadcrumbItem = forwardRef<BreadcrumbItemProps, 'div'>(
+    (props, ref) => {
+        const { children, ...rest } = props;
+        return (
+            <Box ref={ref} {...rest}>
+                {children}
+            </Box>
+        );
+    },
 );
-
-export default BreadcrumbItem;
