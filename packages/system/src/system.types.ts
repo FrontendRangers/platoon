@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import React from 'react';
 
 export type As<Props = any> = React.ElementType<Props>;
@@ -15,24 +16,21 @@ export type OmitCommonProps<
 > = Omit<Target, 'transition' | 'as' | 'color' | OmitAdditionalProps>;
 
 export type RightJoinProps<
-    SourceProps extends Record<string, unknown>,
-    OverrideProps extends Record<string, unknown>
+    SourceProps extends object = {},
+    OverrideProps extends object = {}
 > = OmitCommonProps<SourceProps, keyof OverrideProps> & OverrideProps;
 
 export type MergeWithAs<
-    ComponentProps extends Record<string, unknown>,
-    AsProps extends Record<string, unknown>,
-    AdditionalProps extends Record<string, unknown>,
+    ComponentProps extends object,
+    AsProps extends object,
+    AdditionalProps extends object = {},
     AsComponent extends As = As
 > = RightJoinProps<ComponentProps, AdditionalProps> &
     RightJoinProps<AsProps, AdditionalProps> & {
         as?: AsComponent;
     };
 
-export type ComponentWithAs<
-    Component extends As,
-    Props extends Record<string, unknown>
-> = {
+export type ComponentWithAs<Component extends As, Props extends object = {}> = {
     <AsComponent extends As>(
         props: MergeWithAs<
             React.ComponentProps<Component>,
