@@ -36,7 +36,9 @@
         "svelte": "yarn workspace @platoon/svelte",
         "website": "yarn workspace website",
         "build-storybook:react": "yarn react build:storybook",
-        "chromatic": "yarn workspace @platoon/react chromatic"
+        "chromatic": "yarn workspace @platoon/react chromatic",
+        "postinstall": "husky install",
+        "prepare": "husky install"
     },
     "config": {
         "commitizen": {
@@ -66,43 +68,35 @@
         ]
     },
     "devDependencies": {
-        "@commitlint/cli": "^11.0.0",
-        "@commitlint/config-conventional": "^11.0.0",
-        "@rollup/plugin-commonjs": "^17.0.0",
-        "@rollup/plugin-node-resolve": "^11.0.1",
-        "@types/react": "^17.0.0",
-        "@typescript-eslint/eslint-plugin": "^4.10.0",
-        "@typescript-eslint/parser": "^4.10.0",
-        "commitizen": "^4.2.2",
+        "@commitlint/cli": "^12.0.1",
+        "@commitlint/config-conventional": "^12.0.1",
+        "@types/react": "^17.0.3",
+        "@typescript-eslint/eslint-plugin": "^4.19.0",
+        "@typescript-eslint/parser": "^4.19.0",
+        "commitizen": "^4.2.3",
         "cross-env": "^7.0.3",
-        "cz-lerna-changelog": "^2.0.3",
-        "eslint": "^7.16.0",
-        "eslint-config-prettier": "^7.1.0",
+        "eslint": "^7.23.0",
+        "eslint-config-prettier": "^8.1.0",
         "eslint-config-react": "^1.1.7",
         "eslint-import-resolver-lerna": "^2.0.0",
         "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-jsx-a11y": "^6.4.1",
-        "eslint-plugin-prettier": "^3.3.0",
-        "eslint-plugin-react": "^7.21.5",
+        "eslint-plugin-prettier": "^3.3.1",
+        "eslint-plugin-react": "^7.23.1",
         "eslint-plugin-react-hooks": "^4.2.0",
-        "husky": "^4.3.6",
-        "lerna": "^3.22.1",
-        "lint-staged": "^10.5.3",
+        "husky": "^5.2.0",
+        "lerna": "^4.0.0",
+        "lint-staged": "^10.5.4",
         "npm-run-all": "^4.1.5",
         "prettier": "^2.2.1",
         "rimraf": "^3.0.2",
-        "rollup": "^2.35.1",
-        "rollup-plugin-copy": "^3.3.0",
-        "rollup-plugin-peer-deps-external": "^2.2.4",
-        "rollup-plugin-terser": "^7.0.2",
-        "rollup-plugin-typescript2": "^0.29.0",
-        "stylelint": "^13.8.0",
-        "stylelint-config-standard": "^20.0.0",
+        "stylelint": "^13.12.0",
+        "stylelint-config-standard": "^21.0.0",
         "stylelint-config-styled-components": "^0.1.1",
-        "typescript": "^4.1.3",
+        "typescript": "^4.2.3",
         "yarnhook": "^0.5.1"
     },
     "dependencies": {
-        "@changesets/cli": "^2.12.0"
+        "@changesets/cli": "^2.14.1"
     }
 }

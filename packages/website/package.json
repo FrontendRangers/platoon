@@ -8,10 +8,10 @@
         "start": "next start"
     },
     "dependencies": {
-        "@platoon/react": "^0.1.2",
-        "next": "10.0.3",
-        "react": "17.0.1",
-        "react-dom": "17.0.1",
+        "@platoon/react": "^0.1.6",
+        "next": "10.0.9",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
         "styled-components": "^5.2.1"
     },
     "devDependencies": {

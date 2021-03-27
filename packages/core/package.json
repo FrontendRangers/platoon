@@ -28,7 +28,7 @@
         "url": "https://github.com/FrontendRangers/platoon/issues"
     },
     "devDependencies": {
-        "rollpkg": "^0.2.1",
-        "typescript": "^4.1.3"
+        "rollpkg": "^0.5.2",
+        "typescript": "^4.2.3"
     }
 }
