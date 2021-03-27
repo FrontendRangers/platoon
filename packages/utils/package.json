@@ -25,7 +25,7 @@
         "watch": "rollpkg watch",
         "prepublishOnly": "yarn build",
         "lint": "run-p -c lint:*",
-        "lint:ts": "eslint './**/*.ts' --fix"
+        "lint:ts": "eslint './src/**/*.{ts, tsx}' --fix --config ../../.eslintrc"
     },
     "bugs": {
         "url": "https://github.com/FrontendRangers/platoon/issues"

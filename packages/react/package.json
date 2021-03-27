@@ -38,7 +38,7 @@
         "type-check": "tsc --noEmit",
         "type-check:watch": "yarn type-check -- --watch",
         "lint": "run-p -c lint:*",
-        "lint:ts": "eslint './**/*.{ts,tsx}'",
+        "lint:ts": "eslint './src/**/*.{ts, tsx}' --quiet --config ../../.eslintrc",
         "lint:css": "stylelint './**/*.{ts,tsx}'",
         "prettier": "prettier './**/*.{json,md,scss,yaml,yml,ts,tsx}'",
         "fix:lint": "run-p -c 'lint:* --fix'",
