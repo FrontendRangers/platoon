@@ -1,1 +1,5 @@
-export default {};
+export default {
+    '&:focus': {
+        outline: 0,
+    },
+};
