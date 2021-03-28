@@ -6,7 +6,7 @@
         "svelte"
     ],
     "author": "Benoit Deziel <ben@benoitdeziel.com>",
-    "homepage": "https://github.com/FrontendRangers/platoon/tree/master/packages/svelte#readme",
+    "homepage": "https://github.com/FrontendRangers/platoon/tree/main/packages/svelte#readme",
     "license": "MIT",
     "main": "dist/index.js",
     "directories": {

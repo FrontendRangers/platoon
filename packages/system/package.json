@@ -3,7 +3,7 @@
     "version": "0.0.2",
     "description": "The system",
     "author": "Benoit Deziel <ben@benoitdeziel.com>",
-    "homepage": "https://github.com/FrontendRangers/platoon/tree/master/packages/package#readme",
+    "homepage": "https://github.com/FrontendRangers/platoon/tree/main/packages/package#readme",
     "license": "MIT",
     "main": "dist/platoon-system.cjs.js",
     "module": "dist/platoon-system.esm.js",

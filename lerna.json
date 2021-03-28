@@ -7,7 +7,7 @@
         "publish": {
             "conventionalCommits": true,
             "access": "public",
-            "allowBranch": ["master", "next", "feat/*", "fix/*"]
+            "allowBranch": ["main", "next", "feat/*", "fix/*"]
         }
     }
 }
