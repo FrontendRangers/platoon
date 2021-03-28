@@ -37,7 +37,6 @@
         "website": "yarn workspace website",
         "build-storybook:react": "yarn react build:storybook",
         "chromatic": "yarn workspace @platoon/react chromatic",
-        "postinstall": "husky install",
         "prepare": "husky install"
     },
     "config": {
