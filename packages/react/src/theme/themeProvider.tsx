@@ -1,28 +1,21 @@
 import React from 'react';
-import {
-    Preflight,
-    ThemeProvider,
-    ColorModeProvider,
-    useColorMode,
-    defaultTheme,
-    DefaultTheme,
-} from '@xstyled/styled-components';
-
-export type ColorMode = 'light' | 'dark';
+import { DefaultTheme, ThemeProvider } from '@platoon/system';
+import { ColorMode, ColorModeProvider } from './colorModes';
 
 interface PlatoonThemeProviderProps {
     theme?: DefaultTheme;
     mode?: ColorMode;
 }
 
-const PlatoonThemeProvider: React.FC<PlatoonThemeProviderProps> = (props) => {
-    const { children, theme = defaultTheme } = props;
+export const PlatoonThemeProvider: React.FC<PlatoonThemeProviderProps> = (
+    props,
+) => {
+    const { children, theme = {}, mode = 'light' } = props;
     return (
         <ThemeProvider theme={theme}>
-            <Preflight />
-            {children}
+            <ColorModeProvider value={{ colorMode: mode }}>
+                {children}
+            </ColorModeProvider>
         </ThemeProvider>
     );
 };
-
-export { PlatoonThemeProvider, ColorModeProvider, useColorMode };

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from '@xstyled/styled-components';
+import { createGlobalStyle } from '@platoon/system';
 
 const GlobalStyles = createGlobalStyle`
 

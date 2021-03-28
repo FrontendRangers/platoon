@@ -21,11 +21,13 @@ import {
     ShadowProps,
     shadow,
     compose,
+    system,
 } from 'styled-system';
 
 export type SystemProps = SpaceProps &
-    Omit<ColorProps, 'color'> &
-    TypographyProps &
+    Omit<ColorProps, 'color'> & {
+        textColor?: ColorProps['color'];
+    } & TypographyProps &
     LayoutProps &
     FlexboxProps &
     GridProps &
@@ -34,9 +36,16 @@ export type SystemProps = SpaceProps &
     PositionProps &
     ShadowProps;
 
+const textColor = system({
+    textColor: {
+        property: 'color',
+    },
+});
+
 export const styleFns = compose(
     space,
     color,
+    textColor,
     typography,
     layout,
     flexbox,

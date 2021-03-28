@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react';
-import styled from '@xstyled/styled-components';
+import styled from 'styled-components';
 
 export type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
     textStyle?: string;

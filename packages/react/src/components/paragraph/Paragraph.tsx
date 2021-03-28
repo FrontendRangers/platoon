@@ -1,11 +1,11 @@
-import { HTMLAttributes } from 'react';
-import styled from '@xstyled/styled-components';
+import styled from 'styled-components';
+import { Box, BoxProps } from '../../primitives';
 
-export type ParagraphProps = HTMLAttributes<HTMLParagraphElement> & {
+export type ParagraphProps = BoxProps & {
     textStyle?: string;
 };
 
-const Paragraph = styled.h2<ParagraphProps>``;
+const Paragraph = styled(Box)<ParagraphProps>``;
 
 Paragraph.displayName = 'Paragraph';
 

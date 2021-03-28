@@ -9,7 +9,7 @@ export const Base: Story<CenterProps> = (args) => (
 );
 
 Base.args = {
-    color: 'white',
+    textColor: 'white',
     backgroundColor: 'rebeccapurple',
     size: '300px',
 };

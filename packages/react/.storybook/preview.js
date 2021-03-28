@@ -4,7 +4,6 @@ import bootstrapTheme from '../src/presets/theme-bootstrap';
 import platoonTheme from '../src/presets/theme-platoon';
 import { DocsContainer } from '@storybook/addon-docs/blocks';
 import { withPerformance } from 'storybook-addon-performance';
-import { defaultTheme } from '@xstyled/styled-components';
 
 // functions from Circuit UI - https://github.com/sumup-oss/circuit-ui/blob/master/.storybook/util/story-helpers.js
 
@@ -78,7 +77,7 @@ export const globalTypes = {
 
 const getTheme = (theme) => {
     const themes = {
-        none: { theme: defaultTheme, mode: null },
+        none: { theme: {}, mode: null },
         light: { theme: platoonTheme, mode: 'light' },
         dark: { theme: platoonTheme, mode: 'dark' },
         bootstrap: { theme: bootstrapTheme, mode: 'light' },
