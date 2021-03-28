@@ -4,3 +4,9 @@ export * from './system.types';
 export * from './display';
 export * from './position';
 export * from './forward-ref';
+export {
+    css,
+    ThemeProvider,
+    DefaultTheme,
+    createGlobalStyle,
+} from 'styled-components';
